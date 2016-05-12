@@ -9,7 +9,7 @@ runmode_props-module_Description
 
 Examples: 
 
-fw_bas_2D-Heat-Transfer\
+fw_bas_2D-Heat-Transfer
 
 fw_mphase_const_2D-CO2-injection
 
