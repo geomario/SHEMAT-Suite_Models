@@ -18,4 +18,6 @@ sm_bas_MonteCarlo
 
 Every Model folder should contain a /doc folder, which describes how to compile 
 and run the model. And a /results folder which collects the output results. 
-A short description of the model can also be put in the /doc folder. 
+A short description of the model can also be put in the /doc folder. This should 
+contain a small note about the runtime needed and the number of processes used
+to obtain this runtime. 
