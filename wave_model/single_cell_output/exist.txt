@@ -1,0 +1,1 @@
+ SHEMAT knows: single_cell_output exists, really
