@@ -7,16 +7,8 @@
 #Deletes the files with P or monitor in samples_output
 
 #----------------------------Variables-----------------------
-this_date=$(date +"%Y_%m_%d")	# Read in later from run.py
-dir_letter="a"			# Read in later from run.py
-
 model_dir="/home/jk125262/shematModelsDir/wave_model"
 output_dir="/home/jk125262/shematOutputDir/wave_output"
-#The next three variables are changed below (after input)
-#new_output_dir="${this_date}/${this_date}_${dir_letter}"
-#output_enkf_dir="${output_dir}/${new_output_dir}/enkf_output"
-#output_samples_dir="${output_dir}/${new_output_dir}/samples_output"
-#output_single_cell_dir="${output_dir}/${new_output_dir}/single_cell_output"
 
 input_file="WAVE"
 read input_file
@@ -46,10 +38,10 @@ true_file="TrueWAVE.plt"
 read true_file
 true_chem_file="TrueWAVE_chem.plt"
 read true_chem_file
-
+tgz_date=$(date +"%d%m%y")
+tgz_file="shemat_suite-${tgz_date}.tgz"
 
 #--------------------------Commands-----------------------
-
 
 # Make the new output directories
 if [ -d ${output_dir} ]
@@ -64,8 +56,7 @@ then
     output_single_cell_dir="${output_dir}/${new_output_dir}/single_cell_output"
     if [ ! -d ${new_output_dir} ]
     then
-	echo ${new_output_dir}
-	# echo  ${new_output_dir}
+	echo  ${new_output_dir}
 	if [ ! -d ${this_date} ]
 	then
 	    mkdir ${this_date}
@@ -180,6 +171,13 @@ then
 	cp ${true_chem_file}  ${output_dir}
 	cd ${output_dir}
 	mv ${true_chem_file}  ${new_output_dir}
+    fi
+    cd ${model_dir}
+    if [ -f ${tgz_file} ]
+    then 
+	cp ${tgz_file}  ${output_dir}
+	cd ${output_dir}
+	mv ${tgz_file}  ${new_output_dir}
     fi
     cd ${model_dir}
 

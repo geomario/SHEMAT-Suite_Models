@@ -3,17 +3,12 @@
 # Move files from temporary output folders to
 # shematOutputDir/model_output/yyyy_mm_dd_a
 
-#----------------------------Variables-----------------------
-this_date=$(date +"%Y_%m_%d")
-dir_letter="a"
 
+#Deletes the files with P or monitor in samples_output
+
+#----------------------------Variables-----------------------
 model_dir="/home/jk125262/shematModelsDir/wave_model"
 output_dir="/home/jk125262/shematOutputDir/wave_output"
-#The next three variables are changed below (after input)
-new_output_dir="${this_date}/${this_date}_${dir_letter}"
-output_enkf_dir="${output_dir}/${new_output_dir}/enkf_output"
-output_samples_dir="${output_dir}/${new_output_dir}/samples_output"
-output_single_cell_dir="${output_dir}/${new_output_dir}/single_cell_output"
 
 input_file="WAVE"
 enkf_input_file="WAVE.enkf"
@@ -29,8 +24,9 @@ init_dist_file_three="init_dist_wave_3.dat"
 observations_file="observations_WAVE.dat"
 true_file="TrueWAVE.plt"
 true_chem_file="TrueWAVE_chem.plt"
-
-
+tgz_date=$(date +"%d%m%y")
+tgz_file="shemat_suite-${tgz_date}.tgz"
+echo ${tgz_file}
 #--------------------------Commands-----------------------
 
 # Make the new output directories
@@ -39,14 +35,13 @@ then
     cd ${output_dir}
     echo "Enter the final letter of the new directoryname:"
     read dir_letter
-    echo
+    this_date=$(date +"%Y_%m_%d")
     new_output_dir="${this_date}/${this_date}_${dir_letter}"
     output_enkf_dir="${output_dir}/${new_output_dir}/enkf_output"
     output_samples_dir="${output_dir}/${new_output_dir}/samples_output"
     output_single_cell_dir="${output_dir}/${new_output_dir}/single_cell_output"
     if [ ! -d ${new_output_dir} ]
     then
-	echo 'Make new output-directory'
 	echo  ${new_output_dir}
 	if [ ! -d ${this_date} ]
 	then
@@ -164,11 +159,26 @@ then
 	mv ${true_chem_file}  ${new_output_dir}
     fi
     cd ${model_dir}
+    if [ -f ${tgz_file} ]
+    then
+	echo "Exists ${tgz_file}"
+	cp ${tgz_file}  ${output_dir}
+	cd ${output_dir}
+	mv ${tgz_file}  ${new_output_dir}
+    fi
+    cd ${model_dir}
 
 
 # Move the outputfiles to the output directory
     cd ${model_dir}
+    # Delete all but the first 29 samples
+    find samples_output -type f -name '*[2-9][0-9]*' ! -name '*time_out*' -delete
+    find samples_output -type f -name '*[0-9][0-9][0-9]*' ! -name '*time_out*' -delete
     cd samples_output
+    # Delete all the files with P and monitor!!!!!
+    # rm *P*.dat
+    #rm *monitor*.dat
+
     mv * ${output_samples_dir}
 
     cd ${model_dir}
@@ -213,7 +223,5 @@ then
 
     cd ${model_dir}
 else
-    echo 'Directory does not exist'
-    echo ${output_dir}
-    exit 1
+    echo 'Directory does not exist ${output_dir}'
 fi

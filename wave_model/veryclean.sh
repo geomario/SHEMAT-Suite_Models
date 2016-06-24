@@ -99,6 +99,19 @@ if [ "$(ls . | grep "_status.log")" ]
 then
     rm -f *_status.log
 fi
+
+# Remove output files
+if [ "$(ls . | grep '\.out')" ]
+then
+    rm -f *.out
+fi
+
+# Remove backup files
+if [ "$(ls . | grep '\.tgz')" ]
+then
+    rm -f *.tgz
+fi
+
 echo "Removed files from model directory:"
 pwd
 echo "veryclean.sh done"
