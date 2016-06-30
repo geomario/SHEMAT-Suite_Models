@@ -9,17 +9,21 @@ model_dir="${HOME}/shematModelsDir/wave_model"
 make_dir="${HOME}/SHEMAT-Suite"
 
 shem_type="sm"			# "sm", "fw"
+read shem_type
 shem_type_name="sm_sgsim"	# "sm_sgsim", "fw"
+read shem_type_name
 
 props="const"
 
 compiler="ling64"	       # "ling64","lini64"
 compiler_name="64gnu"	       # "64gnu","64int"
 
-my_name="own"
+my_name="py"
 
 flags="omp noplt vtk nohdf -j16" # Flags: "omp","debug","noplt","novtk","nohdf"
+read flags
 flags_name="vtk_omp"	 # Flags in name.
+read flags_name
 
 #New executable name
 new_exe_name="shem_${shem_type_name}${compiler_name}_${props}_${flags_name}_${my_name}.x"
@@ -37,6 +41,10 @@ fi
 cd ${make_dir}
 gmake clean
 
+echo ${shem_type}
+echo ${compiler}
+echo ${props}
+echo ${flags}
 #Compilation command 
 gmake ${shem_type} COMPTYPE=${compiler} PROPS=${props} ${flags}
 

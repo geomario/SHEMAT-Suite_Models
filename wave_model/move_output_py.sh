@@ -7,8 +7,8 @@
 #Deletes the files with P or monitor in samples_output
 
 #----------------------------Variables-----------------------
-model_dir="/home/jk125262/shematModelsDir/wave_model"
-output_dir="/home/jk125262/shematOutputDir/wave_output"
+model_dir="${HOME}/shematModelsDir/wave_model"
+output_dir="${HOME}/shematOutputDir/wave_output"
 
 input_file="WAVE"
 read input_file

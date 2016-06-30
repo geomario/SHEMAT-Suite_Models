@@ -3,9 +3,9 @@
 # Make observations
 
 #-----------------------------------------------Variables ---------------------------------
-var_dir="/home/jk125262/shematModelsDir/wave_model"
-obs_make_dir="/home/jk125262/Code/Fortran/obs2FromMonitor"
-obs_make_dir_input="/home/jk125262/Code/Fortran/obs2FromMonitor/inputdir"
+var_dir="${HOME}/shematModelsDir/wave_model"
+obs_make_dir="${HOME}/Code/Fortran/obs2FromMonitor"
+obs_make_dir_input="${HOME}/Code/Fortran/obs2FromMonitor/inputdir"
 
 monitor_name="WAVE_TRUE_E0_monitor_1.dat"
 monitor_used_name="WAVE_TRUE_E0_monitor_1_USED_AS_OBS.dat"

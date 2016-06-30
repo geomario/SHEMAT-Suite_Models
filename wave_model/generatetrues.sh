@@ -3,7 +3,7 @@
 # Generate trues from .plt in samples output
 
 #-----------------------------------------------Variables ---------------------------------
-var_dir="/home/jk125262/shematModelsDir/wave_model"
+var_dir="${HOME}/shematModelsDir/wave_model"
 
 general_name="WAVE_TRUE_E0_1.plt"
 general_chem_name="WAVE_TRUE_E0_1_chem.plt"

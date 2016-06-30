@@ -7,8 +7,8 @@
 this_date=$(date +"%Y_%m_%d")	
 dir_letter="a"			
 
-model_dir="/home/jk125262/shematModelsDir/wave_model"
-output_dir="/home/jk125262/shematOutputDir/wave_output"
+model_dir="${HOME}/shematModelsDir/wave_model"
+output_dir="${HOME}/shematOutputDir/wave_output"
 # The next three variables are changed below (after input)
 new_output_dir="${this_date}/${this_date}_${dir_letter}"
 output_enkf_dir="${output_dir}/${new_output_dir}/enkf_output"

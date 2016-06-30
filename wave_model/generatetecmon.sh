@@ -3,9 +3,9 @@
 # Make tec-readable monitor files
 
 #-----------------------------------------------Variables ---------------------------------
-var_dir="/home/jk125262/shematModelsDir/wave_model"
+var_dir="${HOME}/shematModelsDir/wave_model"
 samples_dir="${var_dir}/samples_output"
-mon_make_dir="/home/jk125262/Code/Fortran/TecplotFromMonitor"
+mon_make_dir="${HOME}/Code/Fortran/TecplotFromMonitor"
 mon_make_dir_input="${mon_make_dir}/inputdir"
 
 monitor_name="WAVE_TRUE_E0_monitor_1.dat"
