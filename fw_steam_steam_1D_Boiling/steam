@@ -37,7 +37,7 @@ Leaky Well 1
 
 # variable step size
 1
-1.0 0.1E-8 2e5 1.26144e9  3
+1.0 0.1E-8 2e6 1.26144e9  1
 !delt_start delt_min delt_max t_end delt_double
 
 !==========>>>>>  NONLINEAR SOLVER
