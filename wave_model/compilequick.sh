@@ -40,6 +40,15 @@ gmake clean
 #Compilation command 
 gmake ${shem_type} COMPTYPE=${compiler} PROPS=${props} ${flags}
 
+# Catch compilation errors
+if [ $? -ge 1 ];
+then
+    echo ""
+    echo "------------------------------------"
+    echo "compilequick.sh: Compilation aborted"
+    exit 1
+fi
+
 #Rename executable
 rename shem_${shem_type_name}${compiler_name}_${props}.x ${new_exe_name} shem_${shem_type_name}${compiler_name}_${props}.x
 
