@@ -42,10 +42,12 @@ for i = 1:endindex
   satn(i,:) = reshape(coeff(17,:,:,:),[26 1]);
 end
 
-
+pw=load('TOUGH2_Pw_Theis.txt');
+pw=pw/1e6;
 cell = 1;
 figure(1);
 semilogx(time(1:endindex)/0.5^2/86400,pres(:,cell)/1e6,'gx-.')
+semilogx(time(1:endindex)/0.5^2/86400,pw,'ro-.')
 hold on
 xlabel('t r^{-2} [Days m^{-2}]');
 ylabel('Pressure [MPa]');
