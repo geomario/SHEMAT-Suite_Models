@@ -62,6 +62,8 @@ Leaky Well 1
 # enth bcd, simple=right, value=init, error=ignore
 # pres bcn, records=1, direction=none, error=ignore
 1 1 1 10e-6 0
+# enth bcn, records=1, direction=none, error=ignore
+1 1 1 10.0 0
 !# enth bcd, simple=left, value=init, error=ignore
 
 !# pres bcn, error=ignore, records=1
