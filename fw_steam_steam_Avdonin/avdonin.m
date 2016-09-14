@@ -46,9 +46,13 @@ hold on
 hinfo = hdf5info('petsc_coeff_10_1000000000.00000.h5');
 coeff = hdf5read(hinfo.GroupHierarchy.Datasets(1));
 
-x=25:25:1000;
+T_TOUGH=load('TOUGH2_Avdonin.txt');
+T_TOUGH=T_TOUGH(:,5);
+
+x=12.5:25:1000;
 plot(x,coeff(1,:),'gx-.');
-legend('Avdonin','SHEMAT-Suite','Location','SouthEast');
+plot(x,T_TOUGH,'ro-.');
+legend('Avdonin','SHEMAT-Suite','TOUGH2','Location','SouthEast');
 xlabel('Extension [m]');
 ylabel('Temperature [^{\circ}C]');
 for i=1:40
