@@ -116,8 +116,8 @@ Leaky Well 1
 # enth bcd, simple=right, value=init, error=ignore
 # pres bcn, records=1, direction=0, error=ignore
 1 1 1 -14e-6 0
-!# enth bcn, simple=left, error=ignore
-0.0
+# enth bcn, records=1, direction=0, error=ignore
+1 1 1 -14.0 0
 
 # bcunits, records=1
 1 0.E-8 pres
@@ -139,7 +139,7 @@ s_wr, hbc, tbc, cbc, ebc, snbc, tp, sbc (24 values)
 26*0.0
 ! 260 ÂC at 9 MPa
 # enth init
-26*1134227.437
+26*1134.227437
 # temp init
 26*0.0
 
