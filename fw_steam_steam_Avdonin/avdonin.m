@@ -61,6 +61,6 @@ for i=1:40
 end
 stil
 save('T_ana2.txt','TT','-ascii','-double');
-
+print('-dpng','-r600','Avdonin.png')
 %Tout=load('Tout');
 %plot(Tout(:,1),Tout(:,4),'b-')

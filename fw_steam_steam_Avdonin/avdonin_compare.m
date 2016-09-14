@@ -15,3 +15,4 @@ legend('Analytical','SHEMAT-Suite','Location','SouthEast');
 xlabel('Extension [m]');
 ylabel('Temperature [^{\circ}C]');
 stil
+print('-dpng','-r600','Avdonin.png')
