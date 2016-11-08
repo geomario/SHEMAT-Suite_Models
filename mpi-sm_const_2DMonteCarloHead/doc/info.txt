@@ -1,0 +1,1 @@
+Small 2D (cross-sectional) Monte Carlo example where permeability field is varied stochastically and transient flow from south to north through the model domain is simulated. 
