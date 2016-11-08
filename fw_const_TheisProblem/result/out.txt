@@ -1,0 +1,197 @@
+  
+ ======================================
+ Shem-FW/AD/SM 7.50 (Smarty)                                                     
+ ======================================
+  
+  
+  
+  *** NEW MODEL 
+
+   checking input definitions:
+     from file "THEIS"
+  
+   reading model input parameter:
+     from file "THEIS"
+  
+  [R] : title
+  [R] : runmode
+     >>> forward modeling
+  <D> : free=0, confined flow !
+  [R] : linfo
+  [R] : [i0, j0, k0] = [  69,  69,   1]
+  [R] : nonlinear solver parameter
+  [I] : fixed relxation factor assumed
+  [R] : output suffix: .h5:[ ], .plt:[ ], .vtk:[X], .txt:[ ]
+  
+   reading flow parameters
+  
+  [R] : flow linear solver (control=  64)
+  [R] : flow nonlinear iteration tolerance
+  [I] : flow nonlinear relaxation factor
+  
+  <D> : no temperature [disabled]
+  
+  
+  <D> : no transport [disabled]
+  
+  
+  <D> : no electric potential [disabled]
+  
+  
+  <D> : grav =   0.9810E+01
+  <D> : no fluid heat production
+  [R] : rref, reference density =   0.1000E+04
+  <D> : tref, reference temperature =   0.2000E+02
+  <D> : fixed rhocm, defined by unit
+  
+   reading zone parameter 
+  
+  [R] : "uindex" - unit index number, unit-cell assignment
+  [I] : approx. speedup for the full solver :   1.00
+  
+  [I] : ... alloc_arrays
+  [R] : "units" - unit (rock) properties
+  <D> : WARNING while reading section "# units", to few values (need    17 in each of the     1 lines) !
+ 17 properties each line : [ por,a_kx,a_ky,  kz,comp,a_lx,a_ly,  lz,   q,  rc,  df,  ec,  lc, bcl,bcpd,s_nr,s_wr,]
+  
+ properties:
+   por: porosity                                                                        
+  a_kx: permeability, anisotropic direction X (ratio of Z), default 1.0                 
+  a_ky: permeability, anisotropic direction Y (ratio of Z), default 1.0                 
+    kz: permeability, direction Z                                                       
+  comp: compressibility of rock, default 1.0e-10                                        
+  a_lx: conductivity, anisotropic direction X (ratio of Z), default 1.0                 
+  a_ly: conductivity, anisotropic direction Y (ratio of Z), default 1.0                 
+    lz: conductivity, direction Z                                                       
+     q: heat production, default 0.0                                                    
+    rc: heat capacity of rock, default 2.06e6                                           
+    df: diffusivity, default 10.0                                                       
+    ec: electrical conductivity, default 0.0                                            
+    lc: coupling coefficient, default 0.0                                               
+   bcl: Brooks Corey "lambda" - pore size distribution index, default 2.0               
+  bcpd: Brooks Corey displacement pressure (PD), default 1.0d6                          
+  s_nr: residual saturation of the non-wetting phase, default 0.05                      
+  s_wr: residual saturation of the wetting phase, default 0.2                           
+  
+  unit properties:     por        a_kx        a_ky          kz        comp        a_lx        a_ly          lz           q          rc          df          ec          lc         bcl        bcpd        s_nr        s_wr     unit#
+                    0.1000E+00  0.1000E+01  0.1000E+01  0.1000E-11  0.1000E-07  0.1000E+01  0.1000E+01  0.3350E+01  0.1000E-19  0.2300E+07  0.1000E+02  0.1000E-09  0.0000E+00  0.2000E+01  0.1000E+04  0.5000E-01  0.2000E+00     1
+  
+   reading/preprocessing arrays
+  
+  [R] : delx
+  [R] : dely
+  [R] : delz
+  
+   reading initial values 
+  
+  [R] : head, in [m]
+  [R] : temp, in [degree Celsius]
+  [R] : pres, in [MPa]
+  
+   reading boundary conditions 
+  
+  [R] : head bcn, direction=none , records=     1, bcmy=  0.1000E+19, (offset=     1)
+  [R] : head bcd, simple=right, (size=    69), bcmy=  0.1000E+19, error=ignore, (offset=     2)
+             1 BC's ignored (SIMPLE mode)
+  [R] : head bcd, simple=back , (size=    69), bcmy=  0.1000E+19, error=ignore, (offset=    70)
+  
+  <D> : property limitations
+  [R] : No default Darcy velocity - head active!
+  
+   reading external file control
+  
+
+   reading time input parameter:
+     from file "THEIS"
+
+  [R] : Steady state !
+  [R] : tunit =          0.86400000E+05
+  [R] : tstart =          0.00000000E+00
+  <D> : tshift=          0.00000000E+00
+  <D> : titer =      0
+  [R] : periods, records=   1
+    time :  0.0000E+00 -   0.3500E+01, #    10000, linear
+  [R] : BC time periods, records=   0 (max index =   0)
+  [R] : monitoring points, records=   2, data orientation= 0
+  [R] : output times, records=   9
+
+
+  [W] : "THEIS_status.log"
+  ... forward_init
+  ... pressure (init=0)
+  ... user_init (REINJECTION)
+  
+   reading constant fluid properties:
+     from file "THEIS"
+  
+  [R] : constant fluid properties
+  
+     fluid properties: 
+        rhof       compf         cpf        lamf        visf      (sigmaf)
+  0.1000E+04  0.5000E-07  0.4218E+04  0.6500E+00  0.1000E-02  0.2000E-01
+  
+  [?] : WARNING: overwrite "rref" with constant "rhof"
+  [D] : constant gas properties assumed
+  
+  non-wetting properties: 
+        rhon        visn
+  0.6717E+03  0.5310E-04
+  
+  ... pressure (init=0)
+ 
+  [I] : memory:       3.389 MByte data
+ 
+  ... forward(picard)
+ Calculate difmaxf from loc_nltolf =    1.0000000000000000E-010
+ difmaxf =   0.10000000000000001     
+ Testing convergence with difmaxf =   0.10000000000000001     
+ ENOUGH =   0.10000000000000001     
+ Testing   0.10000000000000001      for convergence in range    1.0000000000000000E-010
+  ... init: history[1]
+ ENOUGH =    1.0000000000000001E-021
+ Testing    1.0000000000000001E-021 for convergence in range    1.0000000000000001E-030
+  ... init: history[2]
+  ... calc_user
+  ... pressure (init=1)
+  ... calc_head
+  ... fcoef
+  ... solve(head)
+  ilu precondition
+  nrm2(R) = 0.1846681144647D-02,  nrm2[r] = 0.1846681144647D-02,  nrm2[r] = 0.2095294855891D-03,  nrm2[r] = 0.3484093686572D-02,  nrm2[r] = 0.1910766891876D-02,  nrm2[r] = 0.1789124838377D-02,  nrm2[r] = 0.1013133711958D-02,  nrm2[r] = 0.3771428468125D-03,  nrm2[r] = 0.2331556679189D-03,  nrm2[r] = 0.3078658741476D-03,  nrm2[r] = 0.2664903055735D-03,  nrm2[r] = 0.2803776022989D-03,  nrm2[r] = 0.1194385793816D-03,  nrm2[r] = 0.5751276031969D-03,  nrm2[r] = 0.1055388789805D-03,  nrm2[r] = 0.1375219828166D-03,  nrm2[r] = 0.1473349255386D-03,  nrm2[r] = 0.3691778388641D-03,  nrm2[r] = 0.1844012978581D-03,  nrm2[r] = 0.3572165403460D-04,  nrm2[r] = 0.7316435084700D-04,  nrm2[r] = 0.2098343778521D-04,  nrm2[r] = 0.2090693470195D-04,  nrm2[r] = 0.6747285023762D-04,  nrm2[r] = 0.3644069150494D-04,  nrm2[r] = 0.1765657495945D-04,  nrm2[r] = 0.1460906762605D-04,  nrm2[r] = 0.2133171982369D-04,  nrm2[r] = 0.8297395230498D-05,  nrm2[r] = 0.1011319395840D-04,  nrm2[r] = 0.2095738309511D-04,  nrm2[r] = 0.3468042024684D-05,  nrm2[r] = 0.3575092145285D-05,  nrm2[r] = 0.2793647920302D-05,  nrm2[r] = 0.2345961904420D-05,  nrm2[r] = 0.1671884548499D-05,  nrm2[r] = 0.2565406980259D-05,  nrm2[r] = 0.8244015434055D-06,  nrm2[r] = 0.6148888594686D-06,  nrm2[r] = 0.1135491076133D-06,  nrm2[r] = 0.2161325935656D-07,  nrm2[r] = 0.2296837326550D-07,  nrm2[r] = 0.1445651783024D-07,  nrm2[r] = 0.1950677484602D-06,  nrm2[r] = 0.1540171671073D-07,  nrm2[r] = 0.9829751342231D-08,  nrm2[r] = 0.1486171276033D-07,  nrm2[r] = 0.5251048768970D-08,  nrm2[r] = 0.2890201379243D-08,  nrm2[r] = 0.2692582089169D-08,  nrm2[r] = 0.1342207040771D-07,  nrm2[r] = 0.2676246673604D-08,  nrm2[r] = 0.1209381890710D-08,  nrm2[r] = 0.8573744332404D-09,  nrm2[r] = 0.1106581565646D-08,  nrm2[r] = 0.2268744073462D-08,  nrm2[r] = 0.1915735663713D-09,  nrm2[r] = 0.2781301879134D-09,  nrm2[r] = 0.1502338711356D-09,  nrm2[r] = 0.1194856800836D-09,  nrm2[r] = 0.8979247045917D-10,  nrm2[r] = 0.8681586439611D-10,  nrm2[r] = 0.9695881834206D-10,  nrm2[r] = 0.1092134390688D-09,  nrm2[r] = 0.1455884504766D-09,  nrm2[r] = 0.5975987115481D-10,  nrm2[r] = 0.5943970140489D-10,  nrm2[r] = 0.6589007124259D-11,  nrm2[r] = 0.5962069293759D-11,  nrm2[r] = 0.5873099871555D-11,  nrm2[r] = 0.6315091477583D-11,  nrm2[r] = 0.1935872896691D-11,  nrm2[r] = 0.3831534075035D-11,  nrm2[r] = 0.1722011498333D-11,  nrm2[r] = 0.2791646518091D-12,  nrm2(R) = 0.1188050040497D-11,  nrm2(R) = 0.8241710464406D-12 ,    1 threads used, Number of Iterations:    75 (BiCGStab)
+ Compare difmaxfold and difmaxf:   0.10000000000000001       -   0.10000000000000001     
+ Check change with difmaxf =   0.10000000000000001     
+  ... check_change
+   nl iteration rms = 0.78662E+01,  difmax =-0.26074E+02, [    1,    1,    1]
+ difmaxf after check_change:   -26.073752286948576     
+ ENOUGH =   -26.073752286948576     
+ Testing    26.073752286948576      for convergence in range    1.0000000000000000E-010
+  [I] : iter_nl =     1, difmaxh = -0.26073752E+02, difmaxt =  0.10000000E-20
+  [W] : "THEIS_status.log"
+  ... setting total salinity
+  ... calc_user
+  ... pressure (init=1)
+  ... calc_head
+  ... fcoef
+  ... solve(head)
+  ilu precondition
+  nrm2(R) = 0.8241710636068D-12 ,    1 threads used, Number of Iterations:     1 (BiCGStab)
+ Compare difmaxfold and difmaxf:   -26.073752286948576       -   -26.073752286948576     
+ Check change with difmaxf =   -26.073752286948576     
+  ... check_change
+   nl iteration rms = 0.00000E+00,  difmax = 0.00000E+00, [    1,    1,    1]
+ difmaxf after check_change:    0.0000000000000000     
+ ENOUGH =    0.0000000000000000     
+ Testing    0.0000000000000000      for convergence in range    1.0000000000000000E-010
+ Simple case converged:  T
+  [I] : iter_nl =     2, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "THEIS_status.log"
+  ... setting total salinity
+ delt_count          -1 delt_double           0 iter_nlold          25
+  [W] : VTK to "THEIS_final.vtk"
+  [I] : ... dealloc_arrays
+ Deallocated Memory, remaining    1.0681152343750000E-004  MB
+  
+  [I] : ... dealloc_data
+  
+ total cpu time:    0: 0.18 min
+ RUN O.K.
