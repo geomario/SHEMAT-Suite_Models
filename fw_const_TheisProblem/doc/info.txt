@@ -1,0 +1,9 @@
+Verification for two-dimensional flow
+
+2D steady state model of a pumping test, model is similar to the Theis Problem described in Clauser (2003), chapter 2.6.1. 
+Numerical simulations with MODFLOW (Processing Modflow 8, Simcore), Processing SHEMAT (Clauser 2003) and SHEMAT-Suite show nearly the same results. For comparison to the analytical solution after Theis see Clauser(2003). 
+
+date: September 2015
+contact person: Johanna Bruckmann
+
+Run time: 18 seconds serially
