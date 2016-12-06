@@ -1,0 +1,134 @@
+!==========>>>>> INFO
+! hdf5 order
+! Temp, rhof, rhon, visf, visn, por, log10(kx), log10(ky), log10(kz), uindex, sigx, sigy, sigz, cplx, cply, cplz
+# title
+Leaky Well 1
+# linfo
+4*1
+# runmode
+0
+
+# samples
+1
+# FD_eps
+1e-8
+
+# radial 
+.FALSE.
+
+# active pres, enth
+# PROPS=steam
+# USER=none
+
+# file output: 
+
+!==========>>>>> MESH
+# grid
+1 1 1
+
+# delx
+1*10
+# dely
+1*10
+# delz
+1*10
+
+!==========>>>>> Time
+# timestep control
+1
+1. 1.0 1.0 0.0 
+
+# variable step size
+1
+10 1 31536000 7.0e8  1
+!delt_start delt_min delt_max t_end delt_double
+
+!==========>>>>>  NONLINEAR SOLVER
+# nlsolve
+15 0
+
+!==========>>>>>  FLOW
+# lsolvef  (linear solver control)
+1.0d-18 16  50
+# nliterf (nonlinear iteration control)
+1.0d-1 1.0
+
+
+==========>>>>>  TEMP
+# lsolvet  (linear solver control)
+1.0d-10 67   500
+# nlitert (nonlinear iteration control)
+1.0d-8 1.0
+
+
+# bcunits, records=1
+1 0.E-8 pres
+
+!==========>>>>>   UNIT DESCRIPTION
+!por, a_kx, a_ky, kz, comp, a_lx, a_ly, lz, q, rc, df, ec, lc, bcl, bcpd, s_nr,
+s_wr, hbc, tbc, cbc, ebc, snbc, tp, sbc (24 values)
+# units 
+.5D0  1.d0 1.d0 1.D-13    1.0d-10  1.d0 2.d0 0.0D0  0.D-6 2.60d6 5.0E0 3.D-9 2D-10 2.0 0.0 0.05 0.3
+
+# uindex
+1*1
+
+!==========>>>>>   INITIAL VALUES 
+# pres init
+1*20.0
+
+
+# satn init
+1*0.0
+! 300 °C at 9 MPa
+! TOUGH2 example
+# enth init
+1*1445.302065
+! TOUGH2 example
+# temp init
+1*320.0
+# state init
+1*0
+
+!==========>>>>>   GENERAL 
+# grav
+9.81
+# rhocm 
+2300.d0 1.0d-40 0.00000 0.00000
+# fluid props
+1045.0 0.0d0 4218.0d0 0.65d0 2.535d-4 0.001d0
+
+
+# output times, records=32
+ 1.000000000000000e+02
+     3.000000000000000e+02
+     6.999999999999999e+02
+     1.500000000000000e+03
+     3.100000000000000e+03
+     6.300000000000000e+03
+     1.270000000000000e+04
+     2.550000000000000e+04
+     5.110000000000001e+04
+     1.023000000000000e+05
+     2.047000000000000e+05
+     4.094999999999999e+05
+     8.191000000000001e+05
+     1.638300000000000e+06
+     3.276700000000000e+06
+     6.553500000000000e+06
+     1.310710000000000e+07
+     2.621430000000000e+07
+     5.242870000000000e+07
+     1.048580000000000e+08
+     1.572860000000000e+08
+     2.097150000000000e+08
+     2.621440000000000e+08
+     3.145730000000000e+08
+     3.670019999999999e+08
+     4.194300000000000e+08
+     4.718590000000000e+08
+     5.242880000000000e+08
+     5.767170000000000e+08
+     6.291460000000000e+08
+     6.815740000000000e+08
+     7.00000000000000e+08
