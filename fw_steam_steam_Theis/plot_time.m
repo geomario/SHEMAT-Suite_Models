@@ -46,11 +46,13 @@ pw=load('TOUGH2_Pw_Theis.txt');
 pw=pw/1e6;
 cell = 1;
 figure(1);
+semilogx(time(1:endindex)/0.5^2/86400,pw,'ko-.')
+hold on
 semilogx(time(1:endindex)/0.5^2/86400,pres(:,cell)/1e6,'gx-.')
-semilogx(time(1:endindex)/0.5^2/86400,pw,'ro-.')
 hold on
 xlabel('t r^{-2} [Days m^{-2}]');
 ylabel('Pressure [MPa]');
+axis([1e-6 1e2 6.5 9])
 
 % figure;
 % semilogx(time(1:endindex),satn(:,cell),'go-')

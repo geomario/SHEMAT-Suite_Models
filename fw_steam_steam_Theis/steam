@@ -11,6 +11,9 @@ Leaky Well 1
 # FD_eps
 1e-8
 
+# radial
+.TRUE.
+
 # active pres, enth
 # PROPS=steam
 # USER=none
@@ -137,11 +140,13 @@ s_wr, hbc, tbc, cbc, ebc, snbc, tp, sbc (24 values)
 
 # satn init
 26*0.0
-! 260 ÂC at 9 MPa
+! 260 °C at 9 MPa
 # enth init
 26*1134.227437
 # temp init
 26*0.0
+# state init
+26*0
 
 !==========>>>>>   GENERAL 
 # grav
