@@ -38,7 +38,7 @@ figure;
 Ti=160; % injection temperature
 T0=170; % initial temperature
 T = @(x)myint(x)*(Ti-T0)+T0;
-fplot(@(x)T(x),[0,500],'k-');
+%fplot(@(x)T(x),[0,500],'r-');
 axis([0 500 160 170])
 hold on
 
@@ -50,9 +50,10 @@ T_TOUGH=load('TOUGH2_Avdonin.txt');
 T_TOUGH=T_TOUGH(:,5);
 
 x=12.5:25:1000;
+plot(x,T_TOUGH,'ko-.');
 plot(x,coeff(1,:),'gx-.');
-plot(x,T_TOUGH,'ro-.');
-legend('Avdonin','SHEMAT-Suite','TOUGH2','Location','SouthEast');
+%legend('Avdonin','SHEMAT-Suite','TOUGH2','Location','SouthEast');
+legend('TOUGH2','SHEMAT-Suite','Location','SouthEast');
 xlabel('Extension [m]');
 ylabel('Temperature [^{\circ}C]');
 for i=1:40
