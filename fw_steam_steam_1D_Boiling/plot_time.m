@@ -1,5 +1,5 @@
 clear all
-close all
+%close all
 depth = 50:100:2000;
 endindex = 40;
 time = [1:endindex]'*365*86400;
@@ -52,7 +52,7 @@ legend('SHEMAT-Suite 1.95 km','SHEMAT-Suite 1.55 km', 'SHEMAT-Suite 1.05 km',...
        'TOUGH2 1.95 km','TOUGH2 1.55 km', 'TOUGH2 1.05 km',...
        'Location','NorthEast');
 stil
-print('Pressure_TOUGH2.png','-dpng','-r600');
+%print('Pressure_TOUGH2.png','-dpng','-r600');
 
 figure;
 plot(1:endindex,1-satn(:,1),'rx-.')
@@ -70,7 +70,7 @@ legend('SHEMAT-Suite 1.95 km','SHEMAT-Suite 1.55 km', 'SHEMAT-Suite 1.05 km',...
        'TOUGH2 1.95 km','TOUGH2 1.55 km', 'TOUGH2 1.05 km',...
        'Location','SouthWest');
 stil
-print('Saturation_TOUGH2.png','-dpng','-r600');
+%print('Saturation_TOUGH2.png','-dpng','-r600');
 
 figure;
 plot(1:endindex,temp(:,1),'rx-.')
@@ -87,4 +87,4 @@ legend('SHEMAT 1.95 km','SHEMAT 1.55 km', 'SHEMAT 1.05 km',...
        'Location','NorthWest');
 ylabel('T [^{\circ}C]');
 stil
-print('Temperature_TOUGH2.png','-dpng','-r600');
+%print('Temperature_TOUGH2.png','-dpng','-r600');

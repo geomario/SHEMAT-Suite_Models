@@ -9,7 +9,10 @@ Leaky Well 1
 # samples
 1
 # FD_eps
-1e-8
+1e-10
+
+# radial
+.FALSE.
 
 # active pres, enth
 # PROPS=steam
@@ -141,6 +144,9 @@ s_wr, hbc, tbc, cbc, ebc, snbc, tp, sbc (24 values)
 
 # temp init
 20*0.0
+
+# state init
+20*0
 
 !==========>>>>>   GENERAL 
 # grav
