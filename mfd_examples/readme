@@ -3,13 +3,13 @@ the folder contains models regarding to the manuscript
 as included here
 
 note:
-1. each folder contains original code, input file, and output files for a model
-   compile and run mfd version, please refer to the file README in:
-   SHEMAT-Suite (Repository for code development for SHEMAT-Suite)/ mfd (branch for mimetic finite difference method)/ mfd_README / README 
-
+1. each folder contains original code, input file, and output files for a model 
+   (as the folder size is big, please find the models in the branch 'mfd_models')
    
-2. the code may have a slight change (from mfd branch) for the models for either exporting some variables or simplify calculations
-
+2. compile and run mfd version, please refer to the file README in:
+   SHEMAT-Suite (Repository for code development for SHEMAT-Suite)/ mfd (branch for mimetic finite difference method)/ mfd_README / README 
+   
+3. the code may have a slight change (from mfd branch) for the models for either exporting some variables or simplify calculations
 
 
 _________________________________________________________________
