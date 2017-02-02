@@ -1,0 +1,137 @@
+!==========>>>>> INFO
+# title
+Leaky Well 1
+# linfo
+4*1
+# runmode
+0
+
+# samples
+1
+# FD_eps
+1e-8
+
+# radial
+.TRUE.
+
+# active pres, temp
+# PROPS=steam
+# USER=none
+
+# file output: 
+
+!==========>>>>> MESH
+# grid
+40 1 1
+
+# delx
+39*25 1*25
+
+# dely
+1*100
+
+# delz
+1*100
+
+!==========>>>>> Time
+# timestep control
+1
+1. 1.0 1.0 0.0 
+
+# variable step size
+1
+1.67e4 0.1E-8 2e7 1e9  2
+!delt_start delt_min delt_max t_end delt_double
+
+!==========>>>>>  NONLINEAR SOLVER
+# nlsolve
+10 0
+
+!==========>>>>>  FLOW
+# lsolvef  (linear solver control)
+1.0d-18 16  50
+# nliterf (nonlinear iteration control)
+1.0d-1 1.0
+
+
+==========>>>>>  TEMP
+# lsolvet  (linear solver control)
+1.0d-10 67   500
+# nlitert (nonlinear iteration control)
+1.0d-8 1.0
+
+
+# pres bcd, simple=right, value=init, error=ignore
+
+# temp bcd, simple=right, value=init, error=ignore
+
+# pres bcn, records=1, direction=none, error=ignore
+1 1 1 10e-6 0
+
+# temp bcn, records=1, direction=none, error=ignore
+1 1 1 10.0 0
+
+!# enth bcd, simple=left, value=init, error=ignore
+
+!# pres bcn, error=ignore, records=1
+1 1 1 1e-5 0
+
+!# bcunits, records=1
+1 0.E-8 pres
+
+!==========>>>>>   UNIT DESCRIPTION
+!por, a_kx, a_ky, kz, comp, a_lx, a_ly, lz, q, rc, df, ec, lc, bcl, bcpd, s_nr,
+s_wr, hbc, tbc, cbc, ebc, snbc, tp, sbc (24 values)
+# units 
+.2D0  1.d0 1.d0 1.D-12  1.0d-10  1.d0 1.d0 2.0D0  0.D-6 1e12 5.0E0 3.D-9 2D-10 2.0 0.0 0.0 0.0
+.2D0  1.d0 1.d0 1.D-12  1.0d-10  1.d0 1.d0 2.0D0  0.D-6 2.50d6 5.0E0 3.D-9 2D-10 2.0 0.0 0.0 0.0
+
+!# uindex
+40*2
+
+! Infinite heat capacity --> Dirichlet Enthalpy
+# uindex
+1*1 39*2
+
+!==========>>>>>   INITIAL VALUES 
+# pres init
+40*5.0
+
+# satn init
+40*0.0
+
+! 1st value 160 °C, 5 MPa
+! 2nd value 170 �C, 5 Mpa
+!# enth init
+1*678.0423813
+39*721.3950125
+
+# temp init
+1*160
+39*170
+
+# state init
+40*0
+
+!==========>>>>>   GENERAL 
+# grav
+9.81
+!# rhocm 
+2650.d0 1.0d-40 0.00000 0.00000
+!# fluid props
+1045.0 0.0d0 4218.0d0 0.65d0 2.535d-4 0.001d0
+
+
+# output times, records=10
+ .1e9
+ .2e9
+ .3e9
+ .4e9
+ .5e9
+ .6e9
+ .7e9
+ .8e9
+ .9e9
+ 1e9
+ 
+!100s, 1d, 10d, 100d, 200d, ... 1000d
