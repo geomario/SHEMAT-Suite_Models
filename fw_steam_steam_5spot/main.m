@@ -104,6 +104,7 @@ plot(time(1:endindex),pres(:,10,10)/1e6,'ro--')
 axis([0 time(endindex) 5 10])
 axis tight
 legend(lstr);
+%print('-dpng','-r600','Pressure.png')
 
 %SHEMAT Temperature Data 
 figure(2);
@@ -114,6 +115,7 @@ plot(time(1:endindex),temp(:,10,10),'ro--')
 axis([0 time(endindex) 275 305])
 axis tight
 legend(lstr);
+%print('-dpng','-r600','Temperature.png')
 
 %SHEMAT Saturation Data
 figure(3);
@@ -124,6 +126,7 @@ plot(time(1:endindex), satn(:,10,10),'ro--')
 axis([0 time(endindex) 0 1])    
 axis tight
 legend(lstr);
+%print('-dpng','-r600','Saturation.png')
 
 figure;
 plot(temp(:,1,1),pres(:,1,1)/1e6,'b-')
