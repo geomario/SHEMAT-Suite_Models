@@ -78,6 +78,23 @@ s_wr, hbc, tbc, cbc, ebc, snbc, tp, sbc (24 values)
 # uindex
 500*1
 
+!==========>>>>>   GENERAL 
+# grav
+9.81
+# rhocm 
+2300.d0 1.0d-40 0.00000 0.00000
+!# fluid props
+1045.0 0.0d0 4218.0d0 0.65d0 2.535d-4 0.001d0
+
+
+# output times, records=6
+   1e5
+   1e6
+   1e7
+   2e7
+   1e8
+   1e9
+
 !==========>>>>>   INITIAL VALUES 
 # temp init
 500*45.0D0
