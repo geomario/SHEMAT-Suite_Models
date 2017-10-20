@@ -1,0 +1,106 @@
+!==========>>>>> INFO
+# title
+Leaky Well 1
+# linfo
+4*1
+# runmode
+0
+
+# samples
+1
+# FD_eps
+1e-8
+
+# radial
+.TRUE.
+
+# active pres, satn
+# PROPS=CO2seq
+# USER=none
+
+# file output: 
+
+!==========>>>>> MESH
+# grid
+1 1 500
+
+# delx
+1*25.0D0
+    
+# dely
+1*25.0D0
+
+# delz
+500*1.0D0
+
+!==========>>>>> Time
+# timestep control
+1
+1. 1.0 1.0 0.0 
+
+# variable step size
+1
+1.0e-8 1.0e-10 8.64e7 1.0e9  3
+!delt_start delt_min delt_max t_end delt_double
+
+!==========>>>>>  NONLINEAR SOLVER
+# nlsolve
+15 0
+
+!==========>>>>>  FLOW
+# lsolvef  (linear solver control)
+1.0d-18 16  50
+# nliterf (nonlinear iteration control)
+1.0d-1 1.0
+
+
+==========>>>>>  TEMP
+# lsolvet  (linear solver control)
+1.0d-10 67   500
+# nlitert (nonlinear iteration control)
+1.0d-8 1.0
+
+
+# pres bcd, simple=top, value=init, error=ignore
+# satn bcd, simple=top, value=init, error=ignore
+
+!# pres bcd, simple=base, value=init, error=ignore                                                                                    
+!# satn bcd, simple=base, value=init, error=ignore
+
+
+!==========>>>>>   UNIT DESCRIPTION
+!por, a_kx, a_ky, kz, comp, a_lx, a_ly, lz, q, rc, df, ec, lc, bcl, bcpd, s_nr,
+s_wr, hbc, tbc, cbc, ebc, snbc, tp, sbc (24 values)
+# units 
+.35D0  1.d0 1.d0 1.D-13    1.0d-10  1.d0 1.d0 0.0D0  0.D-6 2.650d6 5.0E0 3.D-9 2D-10 2.0 0.0 0.05 0.3 0.0 0.0
+!.35D0  1.d0 1.d0 1.D-13    1.0d-10  1.d0 1.d0 0.0D0  0.D-6 2.650d6 5.0E0 3.D-9 2D-10 2.0 0.0 0.05 0.3
+
+# uindex
+500*1
+
+!==========>>>>>   INITIAL VALUES 
+# pres init
+500*10.0D0
+
+# satn init
+500*-5.5280048153331429E-002
+
+# temp init
+500*45.0
+
+!==========>>>>>   GENERAL 
+# grav
+9.81
+# rhocm 
+2300.d0 1.0d-40 0.00000 0.00000
+!# fluid props
+1045.0 0.0d0 4218.0d0 0.65d0 2.535d-4 0.001d0
+
+
+# output times, records=6
+   1e5
+   1e6
+   1e7
+   2e7
+   1e8
+   1e9
