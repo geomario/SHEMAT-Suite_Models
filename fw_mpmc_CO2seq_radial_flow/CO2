@@ -14,6 +14,9 @@ Leaky Well 1
 # radial
 .TRUE.
 
+# twopinit
+.FALSE.
+
 # active pres, satn
 # PROPS=CO2seq
 # USER=none
@@ -518,7 +521,7 @@ s_wr, hbc, tbc, cbc, ebc, snbc, tp, sbc (24 values)
 435*12
 
 # satn init
-435*-5.7157537316426456E-002
+435*0.0D0
 
 ! 260 °C at 9 MPa
 # temp init
