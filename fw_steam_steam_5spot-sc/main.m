@@ -1,6 +1,11 @@
 clear all
 close all
 
+% Digitalized data from Brikowski
+prod=load('Brikowski_data/producer_Brikowski.PNG.dat');
+inj=load('Brikowski_data/injector_Brikowski.PNG.dat');
+twop=load('Brikowski_data/twophase_cell_Brikowski.PNG.dat');
+
 lstr = {'Injector (SHEMAT-Suite)', 'Cell (3,3) (SHEMAT-Suite)', 'Producer (SHEMAT-Suite)'};
 %============================================================
 
@@ -92,18 +97,27 @@ T=psatot(:,1);
 P=psatot(:,2);
 
 
-figure;
+figure(4);
 h=plot(T,P,'k-');
 set(h,'LineWidth',1);
 hold on
-h=plot(temp(:,1,1),pres(:,1,1)/1e6,'b-');
+h=plot(temp(:,1,1),pres(:,1,1)/1e6,'bx');
 set(h,'LineWidth',2);
-h=plot(temp(:,3,3),pres(:,3,3)/1e6,'g-');
+h=plot(temp(:,3,3),pres(:,3,3)/1e6,'gx');
 set(h,'LineWidth',2);
-h=plot(temp(:,10,10),pres(:,10,10)/1e6,'r-');
+h=plot(temp(:,10,10),pres(:,10,10)/1e6,'rx');
 set(h,'LineWidth',2);
 xlabel('Temperature [{^\circ}C]')
 ylabel('Pressure [MPa]');
 set(gca,'Ydir','reverse')
-legend('Two-phase envelope', 'Injector', 'Cell (3,3)', 'Producer','Location','NorthEast');
+
+% Brikowski data
+plot(inj(:,1),inj(:,2),'b');
+plot(twop(:,1),twop(:,2),'g');
+plot(prod(:,1),prod(:,2),'r');
+axis([100 500 0 30]);
+legend('Two-phase envelope', 'Injector (SHEMAT-Suite)', 'Cell (3,3) (SHEMAT-Suite)', 'Producer (SHEMAT-Suite)','Injector (Brikowski)', 'Cell (x,x) (Brikowski)', 'Producer (Brikowski)', 'Location','NorthEast');
+stil
+
+%print('-dpng','-r600','Brikowski2.png')
 
