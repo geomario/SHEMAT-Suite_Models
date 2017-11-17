@@ -67,7 +67,7 @@ Leaky Well 1
 # pres bcd, simple=top, value=init, error=ignore
 # satn bcd, simple=top, value=init, error=ignore
 
-# pres bcd, simple=base, value=init, error=ignore                                                                                    
+# pres bcd, simple=base, value=init, error=ignore                                                            
 # satn bcd, simple=base, value=init, error=ignore
 
 

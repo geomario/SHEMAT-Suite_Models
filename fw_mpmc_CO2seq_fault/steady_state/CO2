@@ -12,7 +12,7 @@ Leaky Well 1
 1e-8
 
 # radial
-.TRUE.
+.FALSE.
 
 # active pres, satn
 # PROPS=CO2seq
@@ -83,7 +83,7 @@ s_wr, hbc, tbc, cbc, ebc, snbc, tp, sbc (24 values)
 500*10.0D0
 
 # satn init
-500*-5.5280048153331429E-002
+500*0.0
 
 # temp init
 500*45.0
