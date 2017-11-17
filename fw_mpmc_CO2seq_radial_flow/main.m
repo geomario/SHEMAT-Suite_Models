@@ -1,5 +1,5 @@
 clear all
-%close all
+close all
 mesh=load('mesh.csv');
 
 x=mesh(end-434:end,2);
