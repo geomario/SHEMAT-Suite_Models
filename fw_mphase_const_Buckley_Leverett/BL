@@ -1,0 +1,84 @@
+!==========>>>>> INFO
+# title
+Multi-Phase test model 1
+# linfo
+1 1 1 1
+# runmode
+0
+
+# active : pres , satn
+# props=const
+# USER=none
+# file output : vtk
+
+!==========>>>>> MESH
+# grid
+100 1 1
+
+# delx
+100*0.1
+# dely
+1*4.0
+# delz
+1*4.0
+
+# timestep control
+1
+1.0 1.0 1.0 0.0
+
+# variable step size
+1
+1.0 .1 86400. 86400. 2
+!==========>>>>> NONLINEAR SOLVER
+
+# nlsolve
+50 0
+!==========>>>>> FLOW
+# lsolvef (linear solver control)
+1.0d-30 48 5000
+# nliterf (nonlinear iteration control)
+1.0d-3 1.0
+!==========>>>>> TEMPERATURE
+# lsolvet (linear solver control)
+1.d-20 64 500
+
+# nlitert (nonlinear iteration control)
+1.0d-05 0.5
+
+# pres bcn , records=1, bctp=0
+1 1 1 9D-8
+# pres bcd, simple=right, value=init, error=ignore
+# satn bcd, simple=right, value=init, error=ignore
+
+!==========>>>>> UNIT DESCRIPTION
+# uindex
+1600*1
+# units
+.2 1.d0 1.d0 1.D-13 1.0d-10 1.d0 1.d0 2.0 0.000000D-6 2.06d6 1 0.01 1.e-9 2 0.0d4 0. 0.
+
+!==========>>>>> INITIAL VALUES
+# pres init
+1600*1
+# satn init
+1*0.0 99*1.0
+# temp init
+1600*40
+
+!==========>>>>> GENERAL
+# grav
+0
+# rhocm
+2650.d0 1.0d-40 0.00000 0.00000
+# fluid props
+1000.0 0.0d-8 4218.0d0 0.65d0 1.0d-3 0.02d0
+# gas props
+1.E3 1.E-3
+
+# output times , records=7
+0.0
+10.
+100.
+1000.
+10000.
+43200.0
+86400.0
