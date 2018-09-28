@@ -42,7 +42,7 @@ figure(3)
 hold on
 plot(x,xCO2w,color);
 xlabel('Elevation [m]')
-ylabel('x^{CO2}_w [?]');
+ylabel('x^{CO2}_w [kg CO2 per total kg]');
 title('CO2 dissolved in water');
 axis([0 500 0 0.1]);
 stil;
@@ -52,7 +52,7 @@ figure(4)
 hold on
 semilogy(x,xH20n,color);
 xlabel('Elevation [m]')
-ylabel('x^{H2O}_n [?]');
+ylabel('x^{H2O}_n [kg H2O per total kg]');
 title('H2O dissolved in gas');
 axis([0 500 0 1]);
 stil;
@@ -103,7 +103,9 @@ plot(pres_shem/1e6,x,'k');
 ylabel('Elevation [m]')
 xlabel('Pressure [MPa]');
 title('Pressure');
+legend('TOUGH2', 'SHEMAT-Suite');
 stil;
+print('-dpng','-r600','1_Pressure.png')
 
 % Saturation plot
 figure(2)
@@ -113,18 +115,24 @@ xlabel('Elevation [m]')
 ylabel('Saturation [-]');
 title('CO2 Saturation');
 axis([0 500 0 1]);
+legend('TOUGH2', 'SHEMAT-Suite');
 stil;
+print('-dpng','-r600','2_Saturation.png')
 
 % Dissolved CO2 in water plot
 figure(3)
 hold on
 plot(x,cCO2_shem,'k');
 axis([0 500 0 0.1]);
+legend('TOUGH2', 'SHEMAT-Suite');
 stil;
+print('-dpng','-r600','3_xCO2w.png')
 
 % Dissolved H2O in gas plot
 figure(4)
 hold on
 semilogy(x,cH2O_shem,'k');
 axis([0 500 0 1]);
+legend('TOUGH2', 'SHEMAT-Suite');
 stil;
+print('-dpng','-r600','4_yH2On.png')
