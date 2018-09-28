@@ -41,10 +41,8 @@
 
 ### Export an environment var
 export A_ENV_VAR=10
-#PETSC_DIR=/home/hb111949/Code/petsc-3.5.4
-PETSC_DIR=/home/hb111949/Code/petsc-3.7.5
-#PETSC_ARCH=arch-linux2-c
-PETSC_ARCH=arch-linux2-c-opt
+PETSC_DIR=/work/hb111949/Code/petsc-3.9.0
+PETSC_ARCH=gnu_openmpi
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/hb111949/Code/shemat_suite/hdf5/lib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PETSC_DIR/$PETSC_ARCH/lib
 
