@@ -75,7 +75,7 @@ Leaky Well 1
 !por, a_kx, a_ky, kz, comp, a_lx, a_ly, lz, q, rc, df, ec, lc, bcl, bcpd, s_nr,
 s_wr, hbc, tbc, cbc, ebc, snbc, tp, sbc (24 values)
 # units 
-.35D0  1.d0 1.d0 1.D-13    1.0d-10  1.d0 1.d0 0.0D0  0.D-6 2.650d6 5.0E0 3.D-9 2D-10 2.0 0.0 0.05 0.3 0.0 0.0
+.35D0  1.d0 1.d0 1.D-13    1.0d-10  1.d0 1.d0 0.0D0  0.D-6 2.650d6 5.0E0 3.D-9 2D-10 2.0 0.0 0.05 0.3 0.0 2.0D-9
 !.35D0  1.d0 1.d0 1.D-13    1.0d-10  1.d0 1.d0 0.0D0  0.D-6 2.650d6 5.0E0 3.D-9 2D-10 2.0 0.0 0.05 0.3
 
 # uindex
