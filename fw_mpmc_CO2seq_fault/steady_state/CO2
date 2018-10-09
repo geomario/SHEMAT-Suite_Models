@@ -14,6 +14,9 @@ Leaky Well 1
 # radial
 .FALSE.
 
+# twopinit
+.FALSE.
+
 # active pres, satn
 # PROPS=CO2seq
 # USER=none
@@ -40,7 +43,7 @@ Leaky Well 1
 
 # variable step size
 1
-1.0e-8 1.0e-10 8.64e7 1.0e9  3
+100.0d0 1.0e-10 8.64e7 1.0e7  3
 !delt_start delt_min delt_max t_end delt_double
 
 !==========>>>>>  NONLINEAR SOLVER
@@ -64,29 +67,18 @@ Leaky Well 1
 # pres bcd, simple=top, value=init, error=ignore
 # satn bcd, simple=top, value=init, error=ignore
 
-!# pres bcd, simple=base, value=init, error=ignore                                                                                    
-!# satn bcd, simple=base, value=init, error=ignore
+!# pres bcd, simple=base, value=init, error=ignore                                                           !# satn bcd, simple=base, value=init, error=ignore
 
 
 !==========>>>>>   UNIT DESCRIPTION
 !por, a_kx, a_ky, kz, comp, a_lx, a_ly, lz, q, rc, df, ec, lc, bcl, bcpd, s_nr,
 s_wr, hbc, tbc, cbc, ebc, snbc, tp, sbc (24 values)
 # units 
-.35D0  1.d0 1.d0 1.D-13    1.0d-10  1.d0 1.d0 0.0D0  0.D-6 2.650d6 5.0E0 3.D-9 2D-10 2.0 0.0 0.05 0.3 0.0 0.0
+.35D0  1.d0 1.d0 1.D-13    1.0d-10  1.d0 1.d0 0.0D0  0.D-6 2.650d6 5.0E0 3.D-9 2D-10 2.0 0.0 0.05 0.3 0.0 2.0D-9
 !.35D0  1.d0 1.d0 1.D-13    1.0d-10  1.d0 1.d0 0.0D0  0.D-6 2.650d6 5.0E0 3.D-9 2D-10 2.0 0.0 0.05 0.3
 
 # uindex
 500*1
-
-!==========>>>>>   INITIAL VALUES 
-# pres init
-500*10.0D0
-
-# satn init
-500*0.0
-
-# temp init
-500*45.0
 
 !==========>>>>>   GENERAL 
 # grav
@@ -104,3 +96,13 @@ s_wr, hbc, tbc, cbc, ebc, snbc, tp, sbc (24 values)
    2e7
    1e8
    1e9
+
+!==========>>>>>   INITIAL VALUES 
+# temp init
+500*45.0D0
+
+# pres init
+500*10.0d0
+# satn init
+0.0
+499*0.0
