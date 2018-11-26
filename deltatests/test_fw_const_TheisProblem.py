@@ -26,4 +26,10 @@ def local_suite():
     return local_suite
 
 
+def local_run():
+    runner = unittest.TextTestRunner(verbosity=2)
+    runner.run(local_suite())
 
+
+if __name__ == "__main__":
+    local_run()
