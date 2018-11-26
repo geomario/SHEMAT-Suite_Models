@@ -6,6 +6,38 @@ from pskf.tools.plot import plotfunctions as pf
 
 class Tests_fw_const_TheisProblem(unittest.TestCase):
 
+    def test_uindex_equal(self):
+
+        uindex_array_desired = pf.my_vtk_to_numpy(
+            pf.my_vtk('../fw_const_TheisProblem/result',
+                      'THEIS_final.vtk',
+                      'uindex')
+            )
+        uindex_array_actual = pf.my_vtk_to_numpy(
+            pf.my_vtk('../fw_const_TheisProblem',
+                      'THEIS_final.vtk',
+                      'uindex')
+            )
+
+        npt.assert_allclose(uindex_array_actual, uindex_array_desired,
+                            rtol=1e-5)
+
+    def test_por_equal(self):
+
+        por_array_desired = pf.my_vtk_to_numpy(
+            pf.my_vtk('../fw_const_TheisProblem/result',
+                      'THEIS_final.vtk',
+                      'por')
+            )
+        por_array_actual = pf.my_vtk_to_numpy(
+            pf.my_vtk('../fw_const_TheisProblem',
+                      'THEIS_final.vtk',
+                      'por')
+            )
+
+        npt.assert_allclose(por_array_actual, por_array_desired,
+                            rtol=1e-5)
+
     def test_head_equal(self):
 
         head_array_desired = pf.my_vtk_to_numpy(
@@ -19,7 +51,89 @@ class Tests_fw_const_TheisProblem(unittest.TestCase):
                       'head')
             )
 
-        npt.assert_allclose(head_array_actual, head_array_desired, rtol=1e-5)
+        npt.assert_allclose(head_array_actual, head_array_desired,
+                            rtol=1e-5)
+
+    def test_pres_equal(self):
+
+        pres_array_desired = pf.my_vtk_to_numpy(
+            pf.my_vtk('../fw_const_TheisProblem/result',
+                      'THEIS_final.vtk',
+                      'pres')
+            )
+        pres_array_actual = pf.my_vtk_to_numpy(
+            pf.my_vtk('../fw_const_TheisProblem',
+                      'THEIS_final.vtk',
+                      'pres')
+            )
+
+        npt.assert_allclose(pres_array_actual, pres_array_desired,
+                            rtol=1e-5)
+
+    def test_kx_equal(self):
+
+        kx_array_desired = pf.my_vtk_to_numpy(
+            pf.my_vtk('../fw_const_TheisProblem/result',
+                      'THEIS_final.vtk',
+                      'kx')
+            )
+        kx_array_actual = pf.my_vtk_to_numpy(
+            pf.my_vtk('../fw_const_TheisProblem',
+                      'THEIS_final.vtk',
+                      'kx')
+            )
+
+        npt.assert_allclose(kx_array_actual, kx_array_desired,
+                            rtol=1e-5)
+
+    def test_ky_equal(self):
+
+        ky_array_desired = pf.my_vtk_to_numpy(
+            pf.my_vtk('../fw_const_TheisProblem/result',
+                      'THEIS_final.vtk',
+                      'ky')
+            )
+        ky_array_actual = pf.my_vtk_to_numpy(
+            pf.my_vtk('../fw_const_TheisProblem',
+                      'THEIS_final.vtk',
+                      'ky')
+            )
+
+        npt.assert_allclose(ky_array_actual, ky_array_desired,
+                            rtol=1e-5)
+
+    def test_kz_equal(self):
+
+        kz_array_desired = pf.my_vtk_to_numpy(
+            pf.my_vtk('../fw_const_TheisProblem/result',
+                      'THEIS_final.vtk',
+                      'kz')
+            )
+        kz_array_actual = pf.my_vtk_to_numpy(
+            pf.my_vtk('../fw_const_TheisProblem',
+                      'THEIS_final.vtk',
+                      'kz')
+            )
+
+        npt.assert_allclose(kz_array_actual, kz_array_desired,
+                            rtol=1e-5)
+
+    def test_rhof_equal(self):
+
+        rhof_array_desired = pf.my_vtk_to_numpy(
+            pf.my_vtk('../fw_const_TheisProblem/result',
+                      'THEIS_final.vtk',
+                      'rhof')
+            )
+        rhof_array_actual = pf.my_vtk_to_numpy(
+            pf.my_vtk('../fw_const_TheisProblem',
+                      'THEIS_final.vtk',
+                      'rhof')
+            )
+
+        npt.assert_allclose(rhof_array_actual, rhof_array_desired,
+                            rtol=1e-5)
+
 
 def local_suite():
     local_suite = unittest.makeSuite(Tests_fw_const_TheisProblem,
