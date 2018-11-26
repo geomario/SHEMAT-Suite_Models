@@ -20,7 +20,10 @@ class Tests_fw_const_TheisProblem(unittest.TestCase):
 
         npt.assert_allclose(head_array_actual, head_array_desired, rtol=1e-5)
 
+def local_suite():
+    local_suite = unittest.makeSuite(Tests_fw_const_TheisProblem,
+                                     prefix='test')
+    return local_suite
 
-def suite():
-    suite = unittest.makeSuite(Tests_fw_const_TheisProblem, 'test')
-    return suite
+
+
