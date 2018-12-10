@@ -1,7 +1,16 @@
 import unittest
 import numpy.testing as npt
 
-from pskf.tools.plot import plotfunctions as pf
+try:
+    from pskf.tools.plot import plotfunctions as pf
+except ImportError:
+    raise ImportError(
+        'No module named pskf.tools.plot.plotfunctions. \n\n'
+        + 'Solution: '
+        + 'Download pyshemkf form https://github.com/jjokella/pyshemkf and add'
+        + ' the path /path-to-pyshemkf/pyshemkf/site-packages to the'
+        + ' PYTHONPATH.'
+        )
 
 
 class Tests_fw_const_TheisProblem(unittest.TestCase):
