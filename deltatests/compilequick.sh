@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-# Compile shemat_suite executable from model directory
+# Compile SHEMAT-Suite executable and copy it to model_dir
 
 #------------------------------------------------------------------
 #-----------------------Variables ---------------------------------

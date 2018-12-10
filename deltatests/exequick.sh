@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-# Run SHEMAT-Suite executable in model directory
+# Run SHEMAT-Suite executable from deltatests_dir in model_dir
 
 #------------------------------------------------------------------
 #-----------------------Variables ---------------------------------
