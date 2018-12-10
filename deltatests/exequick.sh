@@ -50,6 +50,7 @@ then
     echo "   exe_name"
     echo ${exe_name}
     echo "   does not exist."
+    popd
     exit 1
 fi
 

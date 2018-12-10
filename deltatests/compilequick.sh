@@ -48,6 +48,7 @@ then
     echo ""
     echo "------------------------------------"
     echo "compilequick.sh: Compilation aborted"
+    popd
     exit 1
 fi
 
