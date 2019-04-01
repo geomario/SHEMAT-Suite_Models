@@ -24,23 +24,24 @@ runtime.
 
 ## deltatests ##
 
-In the directory `deltatests`, there are routines to easily test
-`SHEMAT-Suite` output from new executables against the archived output
-in the `SHEMAT-Suite_Models` directories.
+In the directory `deltatests`, there are routines for testing
+`SHEMAT-Suite` output from new executables against archived output in
+the `result` folder of the Modles directories (example:
+`SHEMAT-Suite_Models/fw_const_TheisProblem/result`).
 
-To use the routines, go into `deltatests` and apply a number of
-commands.
+To use the routines, go into `deltatests`.  Check the specifications
+in `compilequick.sh` and `exequick.sh` at the beginning of the
+scripts. Then, run the following commands.
 
 	cd ~/SHEMAT-Suite_Models/deltatests
 	./compilequick.sh
 	./exequick.sh
 	python runSHEMATtest.py
 
-Check in `compilequick.sh` and `exequick.sh` that the right
-specifications are given at the beginning of the scripts.
+### Adding new deltatests ###
 
-To add new tests, look at `test_fw_const_TheisProblem.py` and add a
-new analogous file for another `SHEMAT-Suite_Model` directory. This
+To add new tests, look at `test_fw_const_TheisProblem.py` and add an
+analogous python file for the new `SHEMAT-Suite_Model` directory. This
 should be possible by copying and changing some directory
 specifications. Finally, add an `import` statement and an `addTest`
 command in `runSHEMATtest.py`.
