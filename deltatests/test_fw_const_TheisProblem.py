@@ -7,7 +7,7 @@ except ImportError:
     raise ImportError(
         'No module named pskf.tools.plot.plotfunctions. \n\n'
         + 'Solution: '
-        + 'Download pyshemkf form https://github.com/jjokella/pyshemkf and add'
+        + 'Download pyshemkf from https://github.com/jjokella/pyshemkf and add'
         + ' the path /path-to-pyshemkf/pyshemkf/site-packages to the'
         + ' PYTHONPATH.'
         )
