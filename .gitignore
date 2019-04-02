@@ -1,4 +1,1 @@
 *.pyc
-deltatests/compilequick.out
-deltatests/compilequick_run.sh
-*.tgz
