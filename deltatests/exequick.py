@@ -9,7 +9,8 @@ import subprocess
 from pskf.tools.run import runmodule as rm
 import unittest
 
-sys.path.append(os.environ['HOME'] + '/SHEMAT-Suite_Models/deltatests')
+sys.path.append(os.environ['HOME'] +
+                '/SHEMAT-Suite_Models/deltatests/site-packages/')
 
 import runSHEMATtest
 
