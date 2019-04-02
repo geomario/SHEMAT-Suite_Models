@@ -2,4 +2,3 @@
 deltatests/compilequick.out
 deltatests/compilequick_run.sh
 *.tgz
-**/output_*.txt
