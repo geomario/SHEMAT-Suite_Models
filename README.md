@@ -4,7 +4,7 @@ may serve as a benchmark test in the future.
 
 Naming convention:
 
-`runmode_props-module_Description`
+`runmode_propsmodule_description`
 
 
 Examples: 
@@ -16,10 +16,13 @@ Examples:
 
 Every Model folder should contain a `/doc` folder, which describes how
 to compile and run the model. And a `/results` folder which collects
-the output results.  A short description of the model can also be put
-in the `/doc` folder. This should contain a small note about the
-runtime needed and the number of processes used to obtain this
-runtime.
+the output results. Please also include an empty `/test` folder. This
+folder will be used in the automated testing.
+
+A short description of the model can also be put in the `/doc`
+folder. This should contain a small note about the runtime needed and
+the number of processes used to obtain this runtime. Please include
+the hash of the git commit of the compiled source code.
 
 
 ## deltatests ##
@@ -29,14 +32,22 @@ In the directory `deltatests`, there are routines for testing
 the `result` folder of the Modles directories (example:
 `SHEMAT-Suite_Models/fw_const_TheisProblem/result`).
 
-To use the routines, go into `deltatests`.  Check the specifications
-in `compilequick.sh` and `exequick.sh` at the beginning of the
+To use the routines, change directory to
+`SHEMAT-Suite_Models/deltatests`.  Check the specifications in
+`compilequick.sh` and `exequick.py` at the beginning of the
 scripts. Then, run the following commands.
 
-	cd ~/SHEMAT-Suite_Models/deltatests
-	./compilequick.sh
-	./exequick.sh
-	python runSHEMATtest.py
+``` shell
+./compilequick.sh
+python exequick.py
+python runSHEMATtest.py
+```
+
+After `./compilequick.sh`, check that the `SHEMAT-Suite`-executable of
+your choice was generated in `SHEMAT-Suite_Models/deltatests`.
+
+After `python exequick.py`, check that output has been generated in
+`SHEMAT-Suite_Models/runmode_propsmodule_description`.
 
 ### Adding new deltatests ###
 
