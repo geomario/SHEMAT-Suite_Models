@@ -1,1 +1,0 @@
- SHEMAT knows: enkf_output exists

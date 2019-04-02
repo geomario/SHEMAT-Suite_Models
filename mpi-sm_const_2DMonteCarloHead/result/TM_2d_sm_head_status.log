@@ -1,7 +1,0 @@
-% Shemat-Suite version: Shem-FW/AD/SM 7.50 (Smarty)                                                     
-%          build: Di 8. Nov 16:13:54 CET 2016             
-%   build command line: make sm mpi noomp hdf PROPS=const HDF5_LIB=/usr/local_rwth/sw/HDF5/1.8.16/gcc-openmpi/lib/ HDF5_MOD=/usr/local_rwth/sw/HDF5/1.8.16/gcc-openmpi/include/ COMPTYPE=ling64                                                                                         
-%        Project: "TM_2d_sm_head"
-%
-% <time step> <cum time>
-%    <iteration> <delta head> <delta temp> (<delta conc> ...)

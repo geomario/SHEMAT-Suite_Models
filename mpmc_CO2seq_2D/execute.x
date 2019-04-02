@@ -1,1 +1,0 @@
-$MPIEXEC -n $1 shem_fw64gnu_CO2seq.x -snes_monitor -snes_linesearch_monitor -snes_type newtonls -snes_linesearch_type l2 -ksp_max_it 100 -snes_stol 1e-3 -snes_rtol 1e-7 -snes_atol 1e-7 -ksp_type preonly -ksp_rtol 1e-20 -ksp_monitor -pc_type lu -da_refine_y 1 -pc_factor_mat_solver_package mumps -snes_max_it 10 -snes_monitor
