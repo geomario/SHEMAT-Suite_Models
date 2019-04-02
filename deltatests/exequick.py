@@ -2,10 +2,16 @@
 Run SHEMAT-Suite executable from deltatests_dir in model_dir
 '''
 import os
+import sys
 import exceptions
 import shutil
 import subprocess
 from pskf.tools.run import runmodule as rm
+import unittest
+
+sys.path.append(os.environ['HOME'] + '/SHEMAT-Suite_Models/deltatests')
+
+import runSHEMATtest
 
 ###############################################################################
 #                                    Input                                    #
@@ -32,7 +38,7 @@ is_exec = True
 
 model_name = "TheisProblem"
 
-use_batch_script = True
+use_batch_script = False
 job_script = "job.sh"
 
 # deltatests_dir
@@ -45,6 +51,9 @@ model_dir = (shemat_suite_models_dir + "/" + shem_type_name + "_" + props + "_"
 # exe_name
 exe_name = ("shem_" + shem_type_name + compiler_name + "_" + props + "_" +
             git_branch + ".x")
+
+# Testing input
+is_test = True
 
 ###############################################################################
 #                               Existence checks                              #
@@ -157,3 +166,11 @@ if is_exec:
             outfile=subprocess.PIPE,
             wait=True,
             errout=True)
+
+###############################################################################
+#                                   Testing                                   #
+###############################################################################
+if is_test:
+
+    runner = unittest.TextTestRunner(verbosity=2)
+    runner.run(runSHEMATtest.full_suite())
