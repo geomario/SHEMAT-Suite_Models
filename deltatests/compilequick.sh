@@ -1,22 +1,22 @@
 #!/bin/zsh
 
-# Compile SHEMAT-Suite executable and copy it to model_dir
+# Compile SHEMAT-Suite executable and copy it to deltatests_dir
 
 #------------------------------------------------------------------
 #-----------------------Variables ---------------------------------
 #------------------------------------------------------------------
-model_dir="${HOME}/SHEMAT-Suite_Models/deltatests"
-make_dir="${HOME}/SHEMAT-Suite"
+deltatests_dir="{deltatests_dir_in}"         # "${HOME}/SHEMAT-Suite_Models/deltatests"
+make_dir="{make_dir_in}"                     # "${HOME}/SHEMAT-Suite"
 
-shem_type="fw"			# "sm", "fw"
-shem_type_name="fw"	# "sm_sgsim", "fw"
+shem_type="{shem_type_in}"			# "sm", "fw"
+shem_type_name="{shem_type_name_in}"	# "sm_sgsim", "fw"
 
-props="const"
+props="{props_in}"
 
-compiler="ling64"	       # "ling64","lini64"
-compiler_name="64gnu"	       # "64gnu","64int"
+compiler="{compiler_in}"	       # "ling64","lini64"
+compiler_name="{compiler_name_in}"	       # "64gnu","64int"
 
-flags="omp noplt vtk nohdf -j16" # Flags: "omp","debug","noplt","novtk","nohdf"
+flags="{flags_in}" # Flags: "omp","debug","noplt","novtk","nohdf"
 
 #Make-directory existence check
 if [ ! -d ${make_dir} ]
@@ -31,7 +31,17 @@ fi
 pushd ${make_dir}
 
 # Get git branch name
-git_branch=$(git rev-parse --abbrev-ref HEAD)
+git_branch="{git_branch_in}"
+
+if [ ${git_branch} = $(git rev-parse --abbrev-ref HEAD) ]
+then
+    echo "   SHEMAT-Suite repository in branch"
+    echo ${git_branch}
+else
+    echo "   SHEMAT-Suite repository not in branch"
+    echo ${git_branch}
+    exit 1
+fi
 
 #New executable name
 new_exe_name="shem_${shem_type_name}${compiler_name}_${props}_${git_branch}.x"
@@ -56,14 +66,14 @@ fi
 rename shem_${shem_type_name}${compiler_name}_${props}.x ${new_exe_name} shem_${shem_type_name}${compiler_name}_${props}.x
 
 #Move executable
-mv ${new_exe_name} ${model_dir}
+mv ${new_exe_name} ${deltatests_dir}
 
 # Clean make-directory
 gmake clean
 
 # Create and move tgz Backup
 gmake tgz
-mv *.tgz ${model_dir}
+mv *.tgz ${deltatests_dir}
 
 # Echo paths
 echo "--------------------------------------------------------"
