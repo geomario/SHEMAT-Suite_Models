@@ -71,6 +71,9 @@ if not os.path.isdir(make_dir):
 ###############################################################################
 if is_comp:
 
+    print('Start compiling')
+    print('--------------- \n')
+
     # Prepare compilequick.sh
     f = open(deltatests_dir + '/' + 'compilequick.sh', 'r')
     fcontent = f.read()
@@ -130,6 +133,10 @@ if not os.path.isfile(deltatests_dir + "/" + job_script):
 #                                  Execution                                  #
 ###############################################################################
 if is_exec:
+
+    print('Start executing')
+    print('--------------- \n')
+
     # Copy executable and job_script
     shutil.copyfile(deltatests_dir + "/" + exe_name,
                     model_dir + "/" + exe_name)
@@ -172,6 +179,9 @@ if is_exec:
 #                                   Testing                                   #
 ###############################################################################
 if is_test:
+
+    print('Start testing')
+    print('------------- \n')
 
     runner = unittest.TextTestRunner(verbosity=2)
     runner.run(runSHEMATtest.full_suite())
