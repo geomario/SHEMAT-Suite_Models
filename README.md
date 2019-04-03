@@ -33,26 +33,19 @@ the `result` folder of the Modles directories (example:
 `SHEMAT-Suite_Models/fw_const_TheisProblem/result`).
 
 To use the routines, change directory to
-`SHEMAT-Suite_Models/deltatests`.  Check the specifications in
-`compilequick.sh` and `exequick.py` at the beginning of the
-scripts. Then, run the following commands.
+`SHEMAT-Suite_Models/deltatests`.  Check the specifications at the
+beginning of the script `runSHEMATtest.ipy`. Then, execute the IPyton
+script, for example by entering the following command .
 
 ``` shell
-./compilequick.sh
-python exequick.py
-python runSHEMATtest.py
+python runSHEMATtest.ipy
 ```
-
-After `./compilequick.sh`, check that the `SHEMAT-Suite`-executable of
-your choice was generated in `SHEMAT-Suite_Models/deltatests`.
-
-After `python exequick.py`, check that output has been generated in
-`SHEMAT-Suite_Models/runmode_propsmodule_description`.
 
 ### Adding new deltatests ###
 
-To add new tests, look at `deltatests/test_fw_const_TheisProblem.py`
-and add an analogous python file for the new `SHEMAT-Suite_Model`
-directory. This should be possible by copying and changing some
-directory specifications. Finally, add an `import` statement and an
-`addTest` command in `runSHEMATtest.py`.
+To add new tests, look at
+`deltatests/site-packages/test_fw_const_TheisProblem.py` and add an
+analogous python file for the new `SHEMAT-Suite_Model` directory. This
+should be possible by copying and changing some directory
+specifications. Finally, add an `import` statement and an `addTest`
+command in `SHEMATtest.py`.
