@@ -2,6 +2,7 @@
 Run SHEMAT-Suite executable from deltatests_dir in model_dir
 '''
 import os
+import time
 import exceptions
 import shutil
 import subprocess
@@ -72,6 +73,8 @@ if not os.path.isdir(make_dir):
 ###############################################################################
 if is_comp:
 
+    t00 = time.time()
+
     print('Start compiling')
     print('--------------- \n')
 
@@ -120,6 +123,10 @@ if is_comp:
         errout=True)
     comp_out_file.close()
 
+    t01 = time.time()
+    print('Done compiling, Compiled in: ' + str(t01 - t00) + ',  ' +
+          time.asctime(time.localtime(time.time())) + '\n\n')
+
 ###############################################################################
 #                               Existence checks                              #
 ###############################################################################
@@ -134,6 +141,8 @@ if not os.path.isfile(deltatests_dir + "/" + job_script):
 #                                  Execution                                  #
 ###############################################################################
 if is_exec:
+
+    t00 = time.time()
 
     print('Start executing')
     print('--------------- \n')
@@ -176,6 +185,9 @@ if is_exec:
             wait=True,
             errout=True)
 
+    t01 = time.time()
+    print('Done executing, Executed in: ' + str(t01 - t00) + ',  ' +
+          time.asctime(time.localtime(time.time())) + '\n\n')
 ###############################################################################
 #                                   Testing                                   #
 ###############################################################################
