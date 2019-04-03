@@ -2,17 +2,18 @@
 Run SHEMAT-Suite executable from deltatests_dir in model_dir
 '''
 import os
-import sys
 import exceptions
 import shutil
 import subprocess
 from pskf.tools.run import runmodule as rm
 import unittest
-
-sys.path.append(os.environ['HOME'] +
-                '/SHEMAT-Suite_Models/deltatests/site-packages/')
-
-import runSHEMATtest
+try:
+    import runSHEMATtest
+except ImportError:
+    raise ImportError('No module named runSHEMATtest. \n\n' + 'Solution: ' +
+                      ' Add the path /path-to-SHEMAT-Suite_Models/' +
+                      'SHEMAT-Suite_Models/deltatests/site-packages to the' +
+                      ' PYTHONPATH.')
 
 ###############################################################################
 #                                    Input                                    #
