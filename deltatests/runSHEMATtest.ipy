@@ -9,9 +9,16 @@ import subprocess
 from pskf.tools.run import runmodule as rm
 import unittest
 try:
-    import runSHEMATtest
+    import SHEMATtest
 except ImportError:
-    raise ImportError('No module named runSHEMATtest. \n\n' + 'Solution: ' +
+    raise ImportError('No module named SHEMATtest. \n\n' + 'Solution: ' +
+                      ' Add the path /path-to-SHEMAT-Suite_Models/' +
+                      'SHEMAT-Suite_Models/deltatests/site-packages to the' +
+                      ' PYTHONPATH.')
+try:
+    import SHEMATtest_dirs as std
+except ImportError:
+    raise ImportError('No module named SHEMATtest_dirs. \n\n' + 'Solution: ' +
                       ' Add the path /path-to-SHEMAT-Suite_Models/' +
                       'SHEMAT-Suite_Models/deltatests/site-packages to the' +
                       ' PYTHONPATH.')
@@ -19,7 +26,8 @@ except ImportError:
 ###############################################################################
 #                                    Input                                    #
 ###############################################################################
-shemat_suite_models_dir = os.environ['HOME'] + "/SHEMAT-Suite_Models"
+std.shemat_suite_models_dir = (
+    os.environ['HOME'] + "/SHEMAT-Suite_Models")
 
 # Compilation input (compare compilequick.sh)
 is_comp = True
@@ -45,10 +53,10 @@ use_batch_script = False
 job_script = "job.sh"
 
 # deltatests_dir
-deltatests_dir = shemat_suite_models_dir + "/deltatests"
+deltatests_dir = std.shemat_suite_models_dir + "/deltatests"
 
 # model_dir
-model_dir = (shemat_suite_models_dir + "/" + shem_type_name + "_" + props + "_"
+model_dir = (std.shemat_suite_models_dir + "/" + shem_type_name + "_" + props + "_"
              + model_name)
 
 # exe_name
@@ -197,4 +205,4 @@ if is_test:
     print('------------- \n')
 
     runner = unittest.TextTestRunner(verbosity=2)
-    runner.run(runSHEMATtest.full_suite())
+    runner.run(SHEMATtest.full_suite())
