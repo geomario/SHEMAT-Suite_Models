@@ -33,10 +33,10 @@ except ImportError:
 try:
     import SHEMATtest_input as sti
 except ImportError:
-    raise ImportError(
-        'No module named SHEMATtest_input. \n\n' + 'Solution: ' +
-        ' Add the path /path-to-SHEMAT-Suite_Models/' +
-        'SHEMAT-Suite_Models/deltatests/site-packages to the' + ' PYTHONPATH.')
+    raise ImportError('No module named SHEMATtest_input. \n\n' + 'Solution: ' +
+                      ' Add the path /path-to-SHEMAT-Suite_Models/' +
+                      'SHEMAT-Suite_Models/deltatests/site-packages to the' +
+                      ' PYTHONPATH.')
 
 ###############################################################################
 #                                    Input                                    #
@@ -51,150 +51,152 @@ is_exec = True
 # Testing input
 is_test = True
 
-test_model = "fw_const_TheisProblem"
+test_models = [
+    "fw_const_TheisProblem",
+]
 
-###############################################################################
-#                               Test Model Input                              #
-###############################################################################
-shem_type = sti.shem_type[test_model]
-shem_type_name = sti.shem_type_name[test_model]
-compiler = sti.compiler[test_model]
-compiler_name = sti.compiler_name[test_model]
-props = sti.props[test_model]
+for test_model in test_models:
+    ###########################################################################
+    #                             Test Model input                            #
+    ###########################################################################
+    shem_type = sti.shem_type[test_model]
+    shem_type_name = sti.shem_type_name[test_model]
+    compiler = sti.compiler[test_model]
+    compiler_name = sti.compiler_name[test_model]
+    props = sti.props[test_model]
 
-flags = sti.flags[test_model]
-git_branch = sti.git_branch[test_model]
+    flags = sti.flags[test_model]
+    git_branch = sti.git_branch[test_model]
 
-model_name = sti.model_name[test_model]
+    model_name = sti.model_name[test_model]
 
-use_batch_script = sti.use_batch_script[test_model]
-job_script = sti.job_script[test_model]
+    use_batch_script = sti.use_batch_script[test_model]
+    job_script = sti.job_script[test_model]
 
-###############################################################################
-#                                 Directories                                 #
-###############################################################################
+    ###########################################################################
+    #                                 Directories                             #
+    ###########################################################################
+    # SHEMAT-Suite_Models dir
+    std.shemat_suite_models_dir = (os.environ['HOME'] + "/SHEMAT-Suite_Models")
 
-# SHEMAT-Suite_Models dir
-std.shemat_suite_models_dir = (os.environ['HOME'] + "/SHEMAT-Suite_Models")
+    # SHEMAT-Suite dir
+    make_dir = os.environ['HOME'] + "/SHEMAT-Suite"
 
-# SHEMAT-Suite dir
-make_dir = os.environ['HOME'] + "/SHEMAT-Suite"
+    # deltatests_dir
+    deltatests_dir = std.shemat_suite_models_dir + "/deltatests"
 
-# deltatests_dir
-deltatests_dir = std.shemat_suite_models_dir + "/deltatests"
+    # model_dir
+    model_dir = (std.shemat_suite_models_dir + "/" + shem_type_name + "_" +
+                 props + "_" + model_name)
 
-# model_dir
-model_dir = (std.shemat_suite_models_dir + "/" + shem_type_name + "_" + props +
-             "_" + model_name)
+    # exe_name
+    exe_name = ("shem_" + shem_type_name + compiler_name + "_" + props + "_" +
+                git_branch + ".x")
 
-# exe_name
-exe_name = ("shem_" + shem_type_name + compiler_name + "_" + props + "_" +
-            git_branch + ".x")
-
-###############################################################################
-#                               Existence checks                              #
-###############################################################################
-if not os.path.isdir(deltatests_dir):
-    raise exceptions.RuntimeError("Directory not found: " + deltatests_dir)
-if not os.path.isdir(model_dir):
-    raise exceptions.RuntimeError("Directory not found: " + model_dir)
-if not os.path.isdir(make_dir):
-    raise exceptions.RuntimeError("Directory not found: " + make_dir)
+    ###########################################################################
+    #                               Existence checks                          #
+    ###########################################################################
+    if not os.path.isdir(deltatests_dir):
+        raise exceptions.RuntimeError("Directory not found: " + deltatests_dir)
+    if not os.path.isdir(model_dir):
+        raise exceptions.RuntimeError("Directory not found: " + model_dir)
+    if not os.path.isdir(make_dir):
+        raise exceptions.RuntimeError("Directory not found: " + make_dir)
 
 ###############################################################################
 #                                 Compilation                                 #
 ###############################################################################
-if is_comp:
+    if is_comp:
 
-    t00 = time.time()
+        t00 = time.time()
 
-    print('Start compiling')
-    print('--------------- \n')
+        print('Start compiling')
+        print('--------------- \n')
 
-    stf.compilequick(
-        deltatests_dir,
-        make_dir,
-        shem_type,
-        shem_type_name,
-        compiler,
-        compiler_name,
-        props,
-        flags,
-        git_branch,
-    )
+        stf.compilequick(
+            deltatests_dir,
+            make_dir,
+            shem_type,
+            shem_type_name,
+            compiler,
+            compiler_name,
+            props,
+            flags,
+            git_branch,
+        )
 
-    t01 = time.time()
-    print('Done compiling, Compiled in: ' + str(t01 - t00) + ',  ' +
-          time.asctime(time.localtime(time.time())) + '\n\n')
+        t01 = time.time()
+        print('Done compiling, Compiled in: ' + str(t01 - t00) + ',  ' +
+              time.asctime(time.localtime(time.time())) + '\n\n')
 
 ###############################################################################
 #                               Existence checks                              #
 ###############################################################################
-if not os.path.isfile(deltatests_dir + "/" + exe_name):
-    raise exceptions.RuntimeError("File not found: " + deltatests_dir +
-                                  "/" + exe_name)
-if not os.path.isfile(deltatests_dir + "/" + job_script):
-    raise exceptions.RuntimeError("File not found: " + deltatests_dir +
-                                  "/" + job_script)
+    if not os.path.isfile(deltatests_dir + "/" + exe_name):
+        raise exceptions.RuntimeError("File not found: " + deltatests_dir +
+                                      "/" + exe_name)
+    if not os.path.isfile(deltatests_dir + "/" + job_script):
+        raise exceptions.RuntimeError("File not found: " + deltatests_dir +
+                                      "/" + job_script)
 
 ###############################################################################
 #                                  Execution                                  #
 ###############################################################################
-if is_exec:
+    if is_exec:
 
-    t00 = time.time()
+        t00 = time.time()
 
-    print('Start executing')
-    print('--------------- \n')
+        print('Start executing')
+        print('--------------- \n')
 
-    # Copy executable and job_script
-    shutil.copyfile(deltatests_dir + "/" + exe_name,
-                    model_dir + "/" + exe_name)
+        # Copy executable and job_script
+        shutil.copyfile(deltatests_dir + "/" + exe_name,
+                        model_dir + "/" + exe_name)
 
-    # Change file permission
-    os.chmod(model_dir + '/' + exe_name, 0770)
+        # Change file permission
+        os.chmod(model_dir + '/' + exe_name, 0770)
 
-    # Prepare job_script
-    if use_batch_script:
-        f = open(deltatests_dir + '/' + 'job.sh', 'r')
-        fcontent = f.read()
-        f.close()
+        # Prepare job_script
+        if use_batch_script:
+            f = open(deltatests_dir + '/' + 'job.sh', 'r')
+            fcontent = f.read()
+            f.close()
 
-        fcontentwrite = fcontent.format(
-            shem_type_name=shem_type_name,
-            props=props,
-            model_name=model_name,
-            exe_name=exe_name)
+            fcontentwrite = fcontent.format(
+                shem_type_name=shem_type_name,
+                props=props,
+                model_name=model_name,
+                exe_name=exe_name)
 
-        fnew = open(model_dir + '/' + 'job.sh', 'w')
-        fnew.write(fcontentwrite)
-        fnew.close()
+            fnew = open(model_dir + '/' + 'job.sh', 'w')
+            fnew.write(fcontentwrite)
+            fnew.close()
 
-    # Run executable
-    if use_batch_script:
-        rm.run_script(
-            model_dir, ['sbatch', job_script],
-            outfile=subprocess.PIPE,
-            wait=True,
-            errout=True)
-    else:
-        rm.run_script(
-            model_dir,
-            './' + exe_name,
-            outfile=subprocess.PIPE,
-            wait=True,
-            errout=True)
+        # Run executable
+        if use_batch_script:
+            rm.run_script(
+                model_dir, ['sbatch', job_script],
+                outfile=subprocess.PIPE,
+                wait=True,
+                errout=True)
+        else:
+            rm.run_script(
+                model_dir,
+                './' + exe_name,
+                outfile=subprocess.PIPE,
+                wait=True,
+                errout=True)
 
-    t01 = time.time()
-    print('Done executing, Executed in: ' + str(t01 - t00) + ',  ' +
-          time.asctime(time.localtime(time.time())) + '\n\n')
+        t01 = time.time()
+        print('Done executing, Executed in: ' + str(t01 - t00) + ',  ' +
+              time.asctime(time.localtime(time.time())) + '\n\n')
 ###############################################################################
 #                                   Testing                                   #
 ###############################################################################
-if is_test:
+    if is_test:
 
-    print('Start testing')
-    print('------------- \n')
+        print('Start testing')
+        print('------------- \n')
 
-    runner = unittest.TextTestRunner(verbosity=2)
-    runner.run(SHEMATtest.full_suite())
+        runner = unittest.TextTestRunner(verbosity=2)
+        runner.run(SHEMATtest.full_suite())
