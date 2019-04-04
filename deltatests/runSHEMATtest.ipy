@@ -30,33 +30,55 @@ except ImportError:
                       'SHEMAT-Suite_Models/deltatests/site-packages to the' +
                       ' PYTHONPATH.')
 
+try:
+    import SHEMATtest_input as sti
+except ImportError:
+    raise ImportError(
+        'No module named SHEMATtest_input. \n\n' + 'Solution: ' +
+        ' Add the path /path-to-SHEMAT-Suite_Models/' +
+        'SHEMAT-Suite_Models/deltatests/site-packages to the' + ' PYTHONPATH.')
+
 ###############################################################################
 #                                    Input                                    #
 ###############################################################################
-std.shemat_suite_models_dir = (os.environ['HOME'] + "/SHEMAT-Suite_Models")
 
 # Compilation input (compare compilequick.sh)
 is_comp = True
 
-make_dir = os.environ['HOME'] + "/SHEMAT-Suite"
-
-shem_type = "fw"  # "sm", "fw"
-shem_type_name = "fw"  # "sm_sgsim", "fw"
-compiler = "ling64"  # "ling64", "lini64"
-compiler_name = "64gnu"  # "64gnu","64int"
-props = "const"  # "const", "bas", "basc"
-
-# Flags: "omp","debug","noplt","novtk","nohdf"
-flags = "omp noplt vtk nohdf -j16"
-git_branch = "master-porosity"
-
 # Execution input
 is_exec = True
 
-model_name = "TheisProblem"
+# Testing input
+is_test = True
 
-use_batch_script = False
-job_script = "job.sh"
+test_model = "fw_const_TheisProblem"
+
+###############################################################################
+#                               Test Model Input                              #
+###############################################################################
+shem_type = sti.shem_type[test_model]
+shem_type_name = sti.shem_type_name[test_model]
+compiler = sti.compiler[test_model]
+compiler_name = sti.compiler_name[test_model]
+props = sti.props[test_model]
+
+flags = sti.flags[test_model]
+git_branch = sti.git_branch[test_model]
+
+model_name = sti.model_name[test_model]
+
+use_batch_script = sti.use_batch_script[test_model]
+job_script = sti.job_script[test_model]
+
+###############################################################################
+#                                 Directories                                 #
+###############################################################################
+
+# SHEMAT-Suite_Models dir
+std.shemat_suite_models_dir = (os.environ['HOME'] + "/SHEMAT-Suite_Models")
+
+# SHEMAT-Suite dir
+make_dir = os.environ['HOME'] + "/SHEMAT-Suite"
 
 # deltatests_dir
 deltatests_dir = std.shemat_suite_models_dir + "/deltatests"
@@ -68,9 +90,6 @@ model_dir = (std.shemat_suite_models_dir + "/" + shem_type_name + "_" + props +
 # exe_name
 exe_name = ("shem_" + shem_type_name + compiler_name + "_" + props + "_" +
             git_branch + ".x")
-
-# Testing input
-is_test = True
 
 ###############################################################################
 #                               Existence checks                              #
@@ -112,10 +131,10 @@ if is_comp:
 #                               Existence checks                              #
 ###############################################################################
 if not os.path.isfile(deltatests_dir + "/" + exe_name):
-    raise exceptions.RuntimeError("Directory not found: " + deltatests_dir +
+    raise exceptions.RuntimeError("File not found: " + deltatests_dir +
                                   "/" + exe_name)
 if not os.path.isfile(deltatests_dir + "/" + job_script):
-    raise exceptions.RuntimeError("Directory not found: " + deltatests_dir +
+    raise exceptions.RuntimeError("File not found: " + deltatests_dir +
                                   "/" + job_script)
 
 ###############################################################################
