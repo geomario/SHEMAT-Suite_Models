@@ -8,13 +8,13 @@ import shutil
 import subprocess
 from pskf.tools.run import runmodule as rm
 import unittest
-try:
-    import SHEMATtest
-except ImportError:
-    raise ImportError('No module named SHEMATtest. \n\n' + 'Solution: ' +
-                      ' Add the path /path-to-SHEMAT-Suite_Models/' +
-                      'SHEMAT-Suite_Models/deltatests/site-packages to the' +
-                      ' PYTHONPATH.')
+# try:
+#     import SHEMATtest
+# except ImportError:
+#     raise ImportError('No module named SHEMATtest. \n\n' + 'Solution: ' +
+#                       ' Add the path /path-to-SHEMAT-Suite_Models/' +
+#                       'SHEMAT-Suite_Models/deltatests/site-packages to the' +
+#                       ' PYTHONPATH.')
 try:
     import SHEMATtest_dirs as std
 except ImportError:
@@ -52,13 +52,15 @@ is_exec = True
 is_test = True
 
 test_models = [
-    "fw_const_TheisProblem",
+    # "fw_const_TheisProblem",
+    "fw_basc_SaltFlow",
 ]
 
 for test_model in test_models:
-    ###########################################################################
-    #                             Test Model input                            #
-    ###########################################################################
+
+    #######################################################################
+    #                         Test Model input                            #
+    #######################################################################
     shem_type = sti.shem_type[test_model]
     shem_type_name = sti.shem_type_name[test_model]
     compiler = sti.compiler[test_model]
@@ -73,35 +75,40 @@ for test_model in test_models:
     use_batch_script = sti.use_batch_script[test_model]
     job_script = sti.job_script[test_model]
 
-    ###########################################################################
-    #                                 Directories                             #
-    ###########################################################################
-    # SHEMAT-Suite_Models dir
-    std.shemat_suite_models_dir = (os.environ['HOME'] + "/SHEMAT-Suite_Models")
+    testing_suite = sti.testing_suite[test_model]
 
-    # SHEMAT-Suite dir
-    make_dir = os.environ['HOME'] + "/SHEMAT-Suite"
+    if is_comp or is_exec:
+        #######################################################################
+        #                             Directories                             #
+        #######################################################################
+        # SHEMAT-Suite_Models dir
+        std.shemat_suite_models_dir = (
+            os.environ['HOME'] + "/SHEMAT-Suite_Models")
 
-    # deltatests_dir
-    deltatests_dir = std.shemat_suite_models_dir + "/deltatests"
+        # SHEMAT-Suite dir
+        make_dir = os.environ['HOME'] + "/SHEMAT-Suite"
 
-    # model_dir
-    model_dir = (std.shemat_suite_models_dir + "/" + shem_type_name + "_" +
-                 props + "_" + model_name)
+        # deltatests_dir
+        deltatests_dir = std.shemat_suite_models_dir + "/deltatests"
 
-    # exe_name
-    exe_name = ("shem_" + shem_type_name + compiler_name + "_" + props + "_" +
-                git_branch + ".x")
+        # model_dir
+        model_dir = (std.shemat_suite_models_dir + "/" + shem_type_name + "_" +
+                     props + "_" + model_name)
 
-    ###########################################################################
-    #                               Existence checks                          #
-    ###########################################################################
-    if not os.path.isdir(deltatests_dir):
-        raise exceptions.RuntimeError("Directory not found: " + deltatests_dir)
-    if not os.path.isdir(model_dir):
-        raise exceptions.RuntimeError("Directory not found: " + model_dir)
-    if not os.path.isdir(make_dir):
-        raise exceptions.RuntimeError("Directory not found: " + make_dir)
+        # exe_name
+        exe_name = ("shem_" + shem_type_name + compiler_name + "_" + props +
+                    "_" + git_branch + ".x")
+
+        #######################################################################
+        #                           Existence checks                          #
+        #######################################################################
+        if not os.path.isdir(deltatests_dir):
+            raise exceptions.RuntimeError("Directory not found: " +
+                                          deltatests_dir)
+        if not os.path.isdir(model_dir):
+            raise exceptions.RuntimeError("Directory not found: " + model_dir)
+        if not os.path.isdir(make_dir):
+            raise exceptions.RuntimeError("Directory not found: " + make_dir)
 
 ###############################################################################
 #                                 Compilation                                 #
@@ -132,12 +139,13 @@ for test_model in test_models:
 ###############################################################################
 #                               Existence checks                              #
 ###############################################################################
-    if not os.path.isfile(deltatests_dir + "/" + exe_name):
-        raise exceptions.RuntimeError("File not found: " + deltatests_dir +
-                                      "/" + exe_name)
-    if not os.path.isfile(deltatests_dir + "/" + job_script):
-        raise exceptions.RuntimeError("File not found: " + deltatests_dir +
-                                      "/" + job_script)
+    if is_exec:
+        if not os.path.isfile(deltatests_dir + "/" + exe_name):
+            raise exceptions.RuntimeError("File not found: " + deltatests_dir +
+                                          "/" + exe_name)
+        if not os.path.isfile(deltatests_dir + "/" + job_script):
+            raise exceptions.RuntimeError("File not found: " + deltatests_dir +
+                                          "/" + job_script)
 
 ###############################################################################
 #                                  Execution                                  #
@@ -199,4 +207,4 @@ for test_model in test_models:
         print('------------- \n')
 
         runner = unittest.TextTestRunner(verbosity=2)
-        runner.run(SHEMATtest.full_suite())
+        runner.run(testing_suite)
