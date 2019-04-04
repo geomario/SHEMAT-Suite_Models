@@ -22,12 +22,18 @@ except ImportError:
                       ' Add the path /path-to-SHEMAT-Suite_Models/' +
                       'SHEMAT-Suite_Models/deltatests/site-packages to the' +
                       ' PYTHONPATH.')
+try:
+    import SHEMATtest_funcs as stf
+except ImportError:
+    raise ImportError('No module named SHEMATtest_funcs. \n\n' + 'Solution: ' +
+                      ' Add the path /path-to-SHEMAT-Suite_Models/' +
+                      'SHEMAT-Suite_Models/deltatests/site-packages to the' +
+                      ' PYTHONPATH.')
 
 ###############################################################################
 #                                    Input                                    #
 ###############################################################################
-std.shemat_suite_models_dir = (
-    os.environ['HOME'] + "/SHEMAT-Suite_Models")
+std.shemat_suite_models_dir = (os.environ['HOME'] + "/SHEMAT-Suite_Models")
 
 # Compilation input (compare compilequick.sh)
 is_comp = True
@@ -56,8 +62,8 @@ job_script = "job.sh"
 deltatests_dir = std.shemat_suite_models_dir + "/deltatests"
 
 # model_dir
-model_dir = (std.shemat_suite_models_dir + "/" + shem_type_name + "_" + props + "_"
-             + model_name)
+model_dir = (std.shemat_suite_models_dir + "/" + shem_type_name + "_" + props +
+             "_" + model_name)
 
 # exe_name
 exe_name = ("shem_" + shem_type_name + compiler_name + "_" + props + "_" +
@@ -86,50 +92,17 @@ if is_comp:
     print('Start compiling')
     print('--------------- \n')
 
-    # Prepare compilequick.sh
-    f = open(deltatests_dir + '/' + 'compilequick.sh', 'r')
-    fcontent = f.read()
-    f.close()
-
-    fcontentwrite = fcontent.format(
-        deltatests_dir_in=deltatests_dir,
-        make_dir_in=make_dir,
-        shem_type_in=shem_type,
-        shem_type_name_in=shem_type_name,
-        compiler_in=compiler,
-        compiler_name_in=compiler_name,
-        props_in=props,
-        flags_in=flags,
-        git_branch_in=git_branch,
-        HOME='{HOME}',
-        make_dir='{make_dir}',
-        compiler_name='{compiler_name}',
-        props='{props}',
-        git_branch='{git_branch}',
-        shem_type='{shem_type}',
-        compiler='{compiler}',
-        flags='{flags}',
-        shem_type_name='{shem_type_name}',
-        new_exe_name='{new_exe_name}',
-        deltatests_dir='{deltatests_dir}',
-    )
-
-    fnew = open(deltatests_dir + '/' + 'compilequick_run.sh', 'w')
-    fnew.write(fcontentwrite)
-    fnew.close()
-
-    # Change file permission
-    os.chmod(deltatests_dir + '/' + 'compilequick_run.sh', 0770)
-
-    # Run compilequick_run.sh
-    comp_out_file = open(deltatests_dir + '/' + 'compilequick.out', 'w')
-    rm.run_script(
+    stf.compilequick(
         deltatests_dir,
-        './' + 'compilequick_run.sh',
-        outfile=comp_out_file,
-        wait=True,
-        errout=True)
-    comp_out_file.close()
+        make_dir,
+        shem_type,
+        shem_type_name,
+        compiler,
+        compiler_name,
+        props,
+        flags,
+        git_branch,
+    )
 
     t01 = time.time()
     print('Done compiling, Compiled in: ' + str(t01 - t00) + ',  ' +
