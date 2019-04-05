@@ -1,0 +1,38 @@
+                  Parameters for SGSIM
+                  ********************
+
+START OF PARAMETERS:
+datafl.dat	              \file with data: unconditional simulation without data file
+1  2  0  4  0  0              \  columns for X,Y,Z,vr,wt,sec.var.
+-20       -5                  \  trimming limits
+1                             \transform the data (0=no, 1=yes)
+sgsim.trn                     \  file for output trans table
+1                             \  consider ref. dist (0=no, 1=yes)
+logk_Festgestein.dat          \  file with ref. dist distribution
+1  0                          \  columns for vr and wt
+-13.34    -10.                  \  zmin,zmax(tail extrapolation)
+1       1                     \  lower tail option, parameter: linear interpolation to the lower limit zmin in back-transformation
+1       1                     \  upper tail option, parameter: linear interpolation to the upper limit zmax in back-transformation
+0                             \  debugging level: 0,1,2,3
+sgsim.dbg                     \  file for debugging output
+sgsim.out                     \  file for simulation output
+1                             \  number of realizations to generate
+362     0.0     10.0          \  nx,xmn,xsiz
+287     0.0     10.0          \  ny,ymn,ysiz
+1       0.0     20.0          \  nz,zmn,zsiz
+39251                         \  random number seed, start: 38243, +120 +120 +120 +192 +216 +240
+0     8                       \  ndmin ndmax: min and max original data for sim
+12                            \  maximum number of simulated nodes to use
+1                             \  assign data to nodes (0=no, 1=yes): 1=data are relocated to grid nodes, spiral search, ndmin nd ndmax are not considered
+0     3                       \  multiple grid search (0=no, 1=yes),num: 0=no multiple grid simulation, num not considered, standard spiral search is used
+0                             \  maximum data per octant (0=not used)
+575.0  300.0  110.0            \  maximum search radii (hmax,hmin,vert)
+ 135.0   0.0   355.0             \  angles for search ellipsoid
+0     0.6   1.0               \  ktype: 0=SK,1=OK,2=LVM,3=EXDR,4=COLC: 0= simple kriging, other parameters are not needed
+nofile.dat                    \  file with LVM, EXDR, or COLC variable: not needed
+4                             \  column for secondary variable: not needed
+2    0.                      \  nst, nugget effect
+3    0.7  135.0   0.0   355.0 \  it(1:spherical, 2:exponential; 3:gaussian),cc,ang1,ang2,ang3
+           575.0  300.0 110.0    \  a_hmax, a_hmin, a_vert
+2    0.3  135.0   0.0   355.0
+           575.0  300.0 110.0

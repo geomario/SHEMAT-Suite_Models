@@ -1,0 +1,65 @@
+!#==========>>>>> INFO
+# title
+MCtest
+# linfo
+4*1
+# runmode
+0
+# simulate
+4
+
+!# sample
+!1
+
+!#==========>>>>> MESH
+# grid
+120 120 1
+# delx
+120*5.
+# dely
+120*5.
+# delz
+1*20.
+
+# PROPS=const
+# USER=none
+# file output: vtk
+# active head 
+
+# timestep control
+0
+1.0 1.0 1.0 0.0
+
+# nlsolve
+50 0
+
+# lsolvef (linear solver control)
+1.d-14 64 500
+# nliterf (nonlinear iteration control)
+1.0d-10 1.
+
+# head bcd, simple=right, bcindex=1
+# head bcd, simple=left, bcindex=2
+# bcunits, records=2
+1 19.9 head
+2 12.9 head
+
+# temp init
+14400*10.
+# head init
+14400*20.
+
+# parameter group, records=1
+1 parfile=sgsimk.par
+1 4 log
+
+# standard deviation
+0. 0. 0. 2.302585093e+000 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0.
+
+# units
+0.1 1.d0 1.d0 1.e-11 1.e-9 1.d0 1.d0 3.35 0.0e-06 2300000. 5.d0 0.d0 0.d0
+# split units, records=1
+1
+# uindex
+14400*1
+

@@ -1,0 +1,184 @@
+
+   checking input definitions:
+     from file "SHEMAT_MC_MPI"
+
+   checking input definitions:
+     from file "SHEMAT_MC_MPI"
+  
+   reading model input parameter:
+     from file "SHEMAT_MC_MPI"
+  
+  
+   reading model input parameter:
+     from file "SHEMAT_MC_MPI"
+  
+  [R] : title
+  [R] : runmode
+     >>> forward modeling
+  [R] : linfo
+  [R] : simulate =     2
+  [I] : realisations=     2
+  [R] : [i0, j0, k0] = [ 362, 287,   1]
+  [R] : nonlinear solver parameter
+  [I] : fixed relxation factor assumed
+  [R] : output suffix: .h5:[X], .plt:[ ], .vtk:[X], .txt:[ ]
+  [R] : title
+  [R] : runmode
+     >>> forward modeling
+  [R] : linfo
+  [R] : simulate =     2
+  [I] : realisations=     2
+  [R] : [i0, j0, k0] = [ 362, 287,   1]
+  [R] : nonlinear solver parameter
+  [I] : fixed relxation factor assumed
+  [R] : output suffix: .h5:[X], .plt:[ ], .vtk:[X], .txt:[ ]
+  
+   reading flow parameters
+  
+  [R] : flow linear solver (control=  64)
+  [R] : flow nonlinear iteration tolerance
+  [I] : flow nonlinear relaxation factor
+  
+  <D> : no temperature [disabled]
+  
+  
+  <D> : no transport [disabled]
+  
+  
+  <D> : no electric potential [disabled]
+  
+  
+  <D> : grav =   0.9810E+01
+  
+   reading flow parameters
+  
+  [R] : flow linear solver (control=  64)
+  [R] : flow nonlinear iteration tolerance
+  [I] : flow nonlinear relaxation factor
+  
+  <D> : no temperature [disabled]
+  
+  
+  <D> : no transport [disabled]
+  
+  
+  <D> : no electric potential [disabled]
+  
+  
+  <D> : grav =   0.9810E+01
+  <D> : no fluid heat production
+  [R] : rref, reference density =   0.1000E+04
+  <D> : tref, reference temperature =   0.2000E+02
+  <D> : fixed rhocm, defined by unit
+  
+   reading zone parameter 
+  
+  <D> : no fluid heat production
+  [R] : rref, reference density =   0.1000E+04
+  <D> : tref, reference temperature =   0.2000E+02
+  <D> : fixed rhocm, defined by unit
+  
+   reading zone parameter 
+  
+  [R] : "uindex" - unit index number, unit-cell assignment
+  [I] : approx. speedup for the full solver :   1.00
+  
+  [R] : "uindex" - unit index number, unit-cell assignment
+  [I] : approx. speedup for the full solver :   1.00
+  
+  [R] : "units" - unit (rock) properties
+  
+   reading/preprocessing arrays
+  
+  [R] : delx
+  [R] : dely
+  [R] : delz
+  
+   reading initial values 
+  
+  [R] : "units" - unit (rock) properties
+  
+   reading/preprocessing arrays
+  
+  [R] : delx
+  [R] : dely
+  [R] : delz
+  
+   reading initial values 
+  
+
+error: no array "head" on    the file "PV2d_stat_init_final.h5" !!!
+*** May be an old "phi" style file, then change it to "head" ! ***
+ -> try to find "phi" ...
+
+error: can not read the array "head" on the file "PV2d_stat_init_final.h5" !
+   open HDF5 file: PV2d_stat_init_final.h5
+  [R] : head, in [m]
+  [R] : temp, in [degree Celsius]
+  [R] : pres, in [MPa]
+  
+   reading boundary conditions 
+  
+  [R] : head bcn, direction=none , records=   289, bcmy=  0.1000E+19, (offset=     1)
+             2 BC's ignored (SIMPLE mode)
+  [R] : head bcd, simple=front, (size=   362), bcmy=  0.1000E+19, error=ignore, (offset=   288)
+  [R] : head bcd, simple=back , (size=   362), bcmy=  0.1000E+19, error=ignore, (offset=   650)
+  [R] : head bcn, direction=none , records=     1, bcmy=  0.1000E+19, bctp=   1, (offset=  1012)
+  
+      dependency matrix [time depended boundary condition]:
+        |BCunit| bctp:       1   |
+        |    0 |       Hn        |
+  
+  <D> : property limitations
+  
+   reading external file control
+  
+
+   reading time input parameter:
+     from file "SHEMAT_MC_MPI"
+
+  [R] : timestep control
+  [R] : tunit =          0.10000000E+01
+  [R] : tstart =          0.00000000E+00
+  <D> : tshift=          0.00000000E+00
+  <D> : titer =      0
+
+  [R] : Variable time stepping: 
+    Starting step size:   0.8640E+04
+    Minimum  step size:   0.8640E+04
+    Maximum  step size:   0.1728E+06
+    Maximum  simulation time:   0.8640E+06
+    Doubling time:      10
+
+  [R] : BC time periods, records=   1 (max index =   1)
+  [R] : monitoring points, records=  13, data orientation= 0
+  [R] : output times, records=   0
+
+
+
+   reading simul parameter
+
+  <D> : no sample average approximation
+  [R] : parameter groups, records=  1
+  [R] : standard deviation
+  <D> : bc standard deviation !
+  
+      activity matrix (param.-unit - group):
+        |    unit  por a_kx a_ky   kz comp a_lx a_ly   lz    q   rc   df   ec   lc  bcl bcpd s_nr s_wr |
+        |       1                   1                                               
+                  |
+        |       2                                                                   
+                  |
+  
+      activity matrix (param.-unit - lin/log):
+        |    unit  por a_kx a_ky   kz comp a_lx a_ly   lz    q   rc   df   ec   lc  bcl bcpd s_nr s_wr |
+        |       1                 log                                               
+                  |
+        |       2                                                                   
+                  |
+
+
+   reading ENKF parameter
+
+  <D> : no ENKF postcomputing
+  <D> : number of ENKF global assimilation iterations = 1

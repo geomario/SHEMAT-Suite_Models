@@ -1,0 +1,101 @@
++ [[ -n '' ]]
++ global_bashenv=1
++ . /usr/local_host/etc/init_modules.sh
+++ typeset -fx module
++ module load LIBRARIES
++ case "X`/usr/bin/whoami 2>/dev/null || /usr/ucb/whoami 2>/dev/null`" in
+++ /usr/bin/whoami
++ typeset modulecmd=modulecmd.tcl
+++ tclsh /usr/local_rwth/modules/src/modulecmd.tcl sh autoinit
++ typeset 'a=. /tmp/modulescript_207851_0'
++ '[' 0 -ne 0 -o 'X. /tmp/modulescript_207851_0' = X ']'
++ eval . /tmp/modulescript_207851_0
+++ . /tmp/modulescript_207851_0
++++ /bin/rm -f /tmp/modulescript_207851_0
++++ MODULEPATH_modshare=/usr/local_rwth/modules/modulefiles/linux/x86-64/DEVELOP:1:/usr/local_rwth/modules/modulefiles/GLOBAL:2
++++ export MODULEPATH_modshare
++++ MODULESHOME=/usr/local_rwth/modules/src
++++ export MODULESHOME
++++ MODULEPATH=/usr/local_rwth/modules/modulefiles/linux/x86-64/DEVELOP:/usr/local_rwth/modules/modulefiles/GLOBAL
++++ export MODULEPATH
++ module load LIBRARIES
+++ /usr/bin/tclsh /usr/local_rwth/modules/src/modulecmd.tcl sh load LIBRARIES
+(OK) Loading LIBRARIES environment
++ eval . /tmp/modulescript_207854_0
+++ . /tmp/modulescript_207854_0
++++ /bin/rm -f /tmp/modulescript_207854_0
++++ _LMFILES__modshare=/usr/local_rwth/modules/modulefiles/GLOBAL/DEVELOP:1:/usr/local_rwth/modules/modulefiles/linux/x86-64/DEVELOP/intel/19.0:1:/usr/local_rwth/modules/modulefiles/GLOBAL/LIBRARIES:1:/usr/local_rwth/modules/modulefiles/linux/x86-64/DEVELOP/intelmpi/2018:1
++++ export _LMFILES__modshare
++++ LOADEDMODULES_modshare=intelmpi/2018:1:LIBRARIES:1:intel/19.0:1:DEVELOP:1
++++ export LOADEDMODULES_modshare
++++ MODULEPATH_modshare=/usr/local_rwth/modules/modulefiles/linux/x86-64/DEVELOP:1:/usr/local_rwth/modules/modulefiles/linux/x86-64/LIBRARIES:1:/usr/local_rwth/modules/modulefiles/GLOBAL:2
++++ export MODULEPATH_modshare
++++ _LMFILES_=/usr/local_rwth/modules/modulefiles/GLOBAL/DEVELOP:/usr/local_rwth/modules/modulefiles/linux/x86-64/DEVELOP/intel/19.0:/usr/local_rwth/modules/modulefiles/linux/x86-64/DEVELOP/intelmpi/2018:/usr/local_rwth/modules/modulefiles/GLOBAL/LIBRARIES
++++ export _LMFILES_
++++ LOADEDMODULES=DEVELOP:intel/19.0:intelmpi/2018:LIBRARIES
++++ export LOADEDMODULES
++++ MODULEPATH=/usr/local_rwth/modules/modulefiles/linux/x86-64/LIBRARIES:/usr/local_rwth/modules/modulefiles/linux/x86-64/DEVELOP:/usr/local_rwth/modules/modulefiles/GLOBAL
++++ export MODULEPATH
++ module load hdf5
+++ /usr/bin/tclsh /usr/local_rwth/modules/src/modulecmd.tcl sh load hdf5
+(OK) Loading hdf5 1.10.4
++ eval . /tmp/modulescript_207857_0
+++ . /tmp/modulescript_207857_0
++++ /bin/rm -f /tmp/modulescript_207857_0
++++ LD_LIBRARY_PATH=/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274/lib:/opt/intel/impi/2018.4.274/compilers_and_libraries/linux/mpi/lib64:/opt/intel/impi/2018.4.274/compilers_and_libraries/linux/mpi/lib:/opt/intel/Compiler/19.0/1.144/rwthlnk/daal/lib/intel64_lin:/opt/intel/Compiler/19.0/1.144/rwthlnk/daal/lib/ia32_lin:/opt/intel/Compiler/19.0/1.144/rwthlnk/ipp/lib/intel64_lin:/opt/intel/Compiler/19.0/1.144/rwthlnk/ipp/lib/ia32_lin:/opt/intel/Compiler/19.0/1.144/rwthlnk/mkl/lib/intel64_lin:/opt/intel/Compiler/19.0/1.144/rwthlnk/mkl/lib/ia32_lin:/opt/intel/Compiler/19.0/1.144/rwthlnk/tbb/lib/intel64_lin/gcc4.7:/opt/intel/Compiler/19.0/1.144/rwthlnk/tbb/lib/ia32_lin/gcc4.7:/opt/intel/Compiler/19.0/1.144/rwthlnk/compiler/lib/intel64_lin:/opt/intel/Compiler/19.0/1.144/rwthlnk/compiler/lib/ia32_lin
++++ export LD_LIBRARY_PATH
++++ _LIST_FLAGS_HDF5_LINKER='{-L/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274/lib -lhdf5_fortran -lhdf5hl_fortran}'
++++ export _LIST_FLAGS_HDF5_LINKER
++++ _LMFILES_=/usr/local_rwth/modules/modulefiles/GLOBAL/DEVELOP:/usr/local_rwth/modules/modulefiles/linux/x86-64/DEVELOP/intel/19.0:/usr/local_rwth/modules/modulefiles/linux/x86-64/DEVELOP/intelmpi/2018:/usr/local_rwth/modules/modulefiles/GLOBAL/LIBRARIES:/usr/local_rwth/modules/modulefiles/linux/x86-64/LIBRARIES/hdf5/1.10.4
++++ export _LMFILES_
++++ LOADEDMODULES=DEVELOP:intel/19.0:intelmpi/2018:LIBRARIES:hdf5/1.10.4
++++ export LOADEDMODULES
++++ _LIST_FLAGS_HDF5_RPATH=-Wl,-rpath=/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274/lib
++++ export _LIST_FLAGS_HDF5_RPATH
++++ _LIST__INTERNAL_FLAGS_HDF5_INCLUDE=HDF5
++++ export _LIST__INTERNAL_FLAGS_HDF5_INCLUDE
++++ FLAGS_MATH_RPATH='-Wl,-rpath=/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274/lib  -Wl,-rpath=/opt/intel/Compiler/19.0/1.144/rwthlnk/mkl/lib/intel64_lin -Wl,-rpath=/opt/intel/Compiler/19.0/1.144/rwthlnk/mkl/lib/ia32_lin  '
++++ export FLAGS_MATH_RPATH
++++ _LIST__INTERNAL_FLAGS_HDF5_LINKER=HDF5
++++ export _LIST__INTERNAL_FLAGS_HDF5_LINKER
++++ _INTERNAL_FLAGS_HDF5_RPATH=HDF5
++++ export _INTERNAL_FLAGS_HDF5_RPATH
++++ FLAGS_HDF5_LINKER='-L/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274/lib -lhdf5_fortran -lhdf5hl_fortran'
++++ export FLAGS_HDF5_LINKER
++++ _LIST_FLAGS_HDF5_INCLUDE=-I/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274/include
++++ export _LIST_FLAGS_HDF5_INCLUDE
++++ FLAGS_HDF5_RPATH=-Wl,-rpath=/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274/lib
++++ export FLAGS_HDF5_RPATH
++++ FLAGS_MATH_INCLUDE='-I/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274/include -I/opt/intel/Compiler/19.0/1.144/rwthlnk/mkl/include -I/opt/intel/Compiler/19.0/1.144/rwthlnk/mkl/include/fftw -I/opt/intel/Compiler/19.0/1.144/rwthlnk/mkl/include/intel64/lp64 -I/opt/intel/Compiler/19.0/1.144/rwthlnk/mkl/include/ia32 -I/opt/intel/Compiler/19.0/1.144/rwthlnk/mkl/include/intel64/lp64 '
++++ export FLAGS_MATH_INCLUDE
++++ _INTERNAL_FLAGS_HDF5_INCLUDE=HDF5
++++ export _INTERNAL_FLAGS_HDF5_INCLUDE
++++ HDF5_ROOT=/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274
++++ export HDF5_ROOT
++++ LD_LIBRARY_PATH_modshare=/opt/intel/Compiler/19.0/1.144/rwthlnk/tbb/lib/ia32_lin/gcc4.7:1:/opt/intel/impi/2018.4.274/compilers_and_libraries/linux/mpi/lib64:1:/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274/lib:1:/opt/intel/Compiler/19.0/1.144/rwthlnk/ipp/lib/intel64_lin:1:/opt/intel/Compiler/19.0/1.144/rwthlnk/compiler/lib/ia32_lin:1:/opt/intel/Compiler/19.0/1.144/rwthlnk/mkl/lib/intel64_lin:2:/opt/intel/Compiler/19.0/1.144/rwthlnk/tbb/lib/intel64_lin/gcc4.7:1:/opt/intel/Compiler/19.0/1.144/rwthlnk/mkl/lib/ia32_lin:2:/opt/intel/impi/2018.4.274/compilers_and_libraries/linux/mpi/lib:1:/opt/intel/Compiler/19.0/1.144/rwthlnk/ipp/lib/ia32_lin:1:/opt/intel/Compiler/19.0/1.144/rwthlnk/daal/lib/intel64_lin:1:/opt/intel/Compiler/19.0/1.144/rwthlnk/compiler/lib/intel64_lin:1:/opt/intel/Compiler/19.0/1.144/rwthlnk/daal/lib/ia32_lin:1
++++ export LD_LIBRARY_PATH_modshare
++++ FLAGS_MATH_LINKER='-L/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274/lib -lhdf5_fortran -lhdf5hl_fortran -mkl=sequential '
++++ export FLAGS_MATH_LINKER
++++ _INTERNAL_FLAGS_HDF5_LINKER=HDF5
++++ export _INTERNAL_FLAGS_HDF5_LINKER
++++ FLAGS_RPATH='-Wl,-rpath=/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274/lib -Wl,-rpath=/opt/intel/Compiler/19.0/1.144/rwthlnk/compiler/lib/intel64_lin -Wl,-rpath=/opt/intel/Compiler/19.0/1.144/rwthlnk/compiler/lib/ia32_lin -Wl,-rpath=/opt/intel/Compiler/19.0/1.144/rwthlnk/mkl/lib/intel64_lin  -Wl,-rpath=/opt/intel/Compiler/19.0/1.144/rwthlnk/mkl/lib/ia32_lin '
++++ export FLAGS_RPATH
++++ _LMFILES__modshare=/usr/local_rwth/modules/modulefiles/linux/x86-64/LIBRARIES/hdf5/1.10.4:1:/usr/local_rwth/modules/modulefiles/GLOBAL/DEVELOP:1:/usr/local_rwth/modules/modulefiles/linux/x86-64/DEVELOP/intel/19.0:1:/usr/local_rwth/modules/modulefiles/GLOBAL/LIBRARIES:1:/usr/local_rwth/modules/modulefiles/linux/x86-64/DEVELOP/intelmpi/2018:1
++++ export _LMFILES__modshare
++++ LOADEDMODULES_modshare=hdf5/1.10.4:1:intelmpi/2018:1:LIBRARIES:1:intel/19.0:1:DEVELOP:1
++++ export LOADEDMODULES_modshare
++++ HDFVIEW_HOME=/usr/local_rwth/sw/HDF5/1.10.4/HDFView
++++ export HDFVIEW_HOME
++++ PATH=/usr/local_rwth/sw/HDF5/1.10.4/HDFView/bin:/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274/bin:/opt/intel/impi/2018.4.274/compilers_and_libraries/linux/mpi/bin64:/opt/intel/Compiler/19.0/1.144/rwthlnk/bin/intel64:/opt/slurm/bin:/usr/local_host/bin:/usr/local_host/sbin:/usr/local_rwth/bin:/usr/local_rwth/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/bin:/usr/local/sbin:.
++++ export PATH
++++ _LIST__INTERNAL_FLAGS_HDF5_RPATH=HDF5
++++ export _LIST__INTERNAL_FLAGS_HDF5_RPATH
++++ FLAGS_HDF5_INCLUDE=-I/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274/include
++++ export FLAGS_HDF5_INCLUDE
++++ HDF5_HOME=/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274
++++ export HDF5_HOME
++++ PATH_modshare=/usr/local_host/bin:1:/usr/bin:1:/opt/intel/impi/2018.4.274/compilers_and_libraries/linux/mpi/bin64:1:/opt/intel/Compiler/19.0/1.144/rwthlnk/bin/intel64:1:/usr/local_host/sbin:1:/usr/local/bin:1:/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274/bin:1:/bin:1:/usr/local_rwth/sbin:1:/usr/local_rwth/sw/HDF5/1.10.4/HDFView/bin:1:/sbin:1:/opt/slurm/bin:1:/usr/sbin:1:/usr/local/sbin:1:.:1:/usr/local_rwth/bin:1
++++ export PATH_modshare
++ export LD_LIBRARY_PATH=/usr/local_rwth/sw/HDF5/1.10.4/gcc_4.8.5-intelmpi_2018.4.274/lib:/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274/lib:/opt/intel/impi/2018.4.274/compilers_and_libraries/linux/mpi/lib64:/opt/intel/impi/2018.4.274/compilers_and_libraries/linux/mpi/lib:/opt/intel/Compiler/19.0/1.144/rwthlnk/daal/lib/intel64_lin:/opt/intel/Compiler/19.0/1.144/rwthlnk/daal/lib/ia32_lin:/opt/intel/Compiler/19.0/1.144/rwthlnk/ipp/lib/intel64_lin:/opt/intel/Compiler/19.0/1.144/rwthlnk/ipp/lib/ia32_lin:/opt/intel/Compiler/19.0/1.144/rwthlnk/mkl/lib/intel64_lin:/opt/intel/Compiler/19.0/1.144/rwthlnk/mkl/lib/ia32_lin:/opt/intel/Compiler/19.0/1.144/rwthlnk/tbb/lib/intel64_lin/gcc4.7:/opt/intel/Compiler/19.0/1.144/rwthlnk/tbb/lib/ia32_lin/gcc4.7:/opt/intel/Compiler/19.0/1.144/rwthlnk/compiler/lib/intel64_lin:/opt/intel/Compiler/19.0/1.144/rwthlnk/compiler/lib/ia32_lin
++ LD_LIBRARY_PATH=/usr/local_rwth/sw/HDF5/1.10.4/gcc_4.8.5-intelmpi_2018.4.274/lib:/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274/lib:/opt/intel/impi/2018.4.274/compilers_and_libraries/linux/mpi/lib64:/opt/intel/impi/2018.4.274/compilers_and_libraries/linux/mpi/lib:/opt/intel/Compiler/19.0/1.144/rwthlnk/daal/lib/intel64_lin:/opt/intel/Compiler/19.0/1.144/rwthlnk/daal/lib/ia32_lin:/opt/intel/Compiler/19.0/1.144/rwthlnk/ipp/lib/intel64_lin:/opt/intel/Compiler/19.0/1.144/rwthlnk/ipp/lib/ia32_lin:/opt/intel/Compiler/19.0/1.144/rwthlnk/mkl/lib/intel64_lin:/opt/intel/Compiler/19.0/1.144/rwthlnk/mkl/lib/ia32_lin:/opt/intel/Compiler/19.0/1.144/rwthlnk/tbb/lib/intel64_lin/gcc4.7:/opt/intel/Compiler/19.0/1.144/rwthlnk/tbb/lib/ia32_lin/gcc4.7:/opt/intel/Compiler/19.0/1.144/rwthlnk/compiler/lib/intel64_lin:/opt/intel/Compiler/19.0/1.144/rwthlnk/compiler/lib/ia32_lin
++ ./shem_fw64gnu_bas.x -tsolve 8 -tsample 1
