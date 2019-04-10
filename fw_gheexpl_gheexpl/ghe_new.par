@@ -1,0 +1,39 @@
+# nghe
+1 
+
+# nghe_np
+1 
+
+# ghetype 
+2
+
+# pipe_values
+0.0131 0.016 0.09 0.076 0.4 2.0 100  
+# Bei coax: Radius Innenrohr (innen), Radius Innenrohr (auﬂen), Radius Auﬂenrohr (innen), Radius Auﬂenrohr (auﬂen), Bohrlochradius, WLF Innenrohr, WLF Auﬂenrohr, WLF Hinterf¸llung, Tiefe (bei mehreren Abschnitten diese Zeile mehrmals)
+# Bei doppel U (ghtyp = 2): Radius Rohr (innen), Radius Rohr (auﬂen), "shank space", Borhlochradius, WLF Rohr, WLF Hinterf¸llung, Tiefe
+
+# pipe_position
+9 7  # Lage der Sonde(n) im Gitter
+
+# fluid_type
+33   # Fluid Typ
+
+
+
+# Beschreibung
+#
+# nghe
+# anzahl zu simulierende sonden
+#
+#
+#
+# ghetyp: 
+# 1 einfach u rohr sonde
+# 2 doppel u rohr sonde
+# 3 koaxial
+
+#
+#
+#
+#
+#
