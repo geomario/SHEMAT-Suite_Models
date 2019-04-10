@@ -18,7 +18,7 @@ As any other SHEMAT Suite model, in order to simulate GHEs there are some input 
   [324b04e0]: https://ggewiki.eonerc.rwth-aachen.de/index.php?title=GHE-Module_for_heat_exchanger_simulations&action=edit&redlink=1 "GHE-Module-SHEMAT-Suite"
   [c74de83a]: https://ggewiki.eonerc.rwth-aachen.de/index.php/Compilation "Compilation GHE"
 
-## Brief explanation
+## Brief explanation and example
 ### 1. Compile the source code
 To simulate specifically GHE within SHEMAT, it has to be set within the command line the specific PROPS and USER in order to get the executable already compiled and ready for simulate.
 
@@ -31,7 +31,9 @@ Other parameters are already explained in the wiki page from the SHEMAT-SUITE wi
 ```linux
 gmake fw COMPTYPE=ling64 PROPS=gheexpl USER=gheexpl hdf HDF5_LIB=$HDF5_ROOT/lib HDF5_MOD=$HDF5_ROOT/include -j 12
 ```
-
+![modules load](/images/2019/04/modules.gif)
+### 2. GHE parameter file (ghe_new.par)
+There is t
 
 
 
