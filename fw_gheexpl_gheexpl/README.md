@@ -1,5 +1,5 @@
 [![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/RWTH_Logo_3.svg/320px-RWTH_Logo_3.svg.png)](http://www.rwth-aachen.de/cms/~a/root/?lidx=1)
-# Single Groundsource Heat Exhcanger model for SHEMAT-Suite
+# Single Ground source Heat Exchanger model for SHEMAT-Suite
 
 Description for a basic numerical simulation for a groundsource heat exchanger (GHE) in SHEMAT-Suite. File requirements, data requirements and general procedure.
 
@@ -31,14 +31,31 @@ Other parameters are already explained in the wiki page from the SHEMAT-SUITE wi
 ```linux
 gmake fw COMPTYPE=ling64 PROPS=gheexpl USER=gheexpl hdf HDF5_LIB=$HDF5_ROOT/lib HDF5_MOD=$HDF5_ROOT/include -j 12
 ```
-![modules load](Suite_Models\fw_gheexpl_gheexpl\Result\GIF\modules.gif)
+##Modules load
+![modules load](./Result/GIF/modules.gif)
+
+##Compilation
+
+You can find the executable within the main folder.
 
 ### 2. GHE parameter file (ghe_new.par)
-There is t
+
+There is a file in this folder as well with the parameters for the parameters of the BHE at EON building.
+
+### 3.GHE initial conditions (ghe_ini_new.ini)
+The file in this folder called ghe_ini_new.ini, contains the desired output parameters for our model.
+This file is extensible described in the wiki [WIKI GGE](https://ggewiki.eonerc.rwth-aachen.de/index.php/GHE-Module_for_heat_exchanger_simulations#HAPPY_SIMULATION), in which you can understad what is the meaning of each flag. As the previous file, this example is set with the GHE from EON building.
+
+## 4.Classic SHEMAT input file
+
+As was mentioned before, this model is based on EONERC single BHE. The parameters set for this model are exactly for one of the 41 GHE of the area. The file called "Sondenfeld_ERC_suite_einzelsonde"
 
 
 ## Usage
 
+Having all the requiered files in the same folder, you just have to proceed to simulate within SHEMAT. It is important to mention, the need for additional files described in the wiki that you can find also here. The description is as well possible to find it within the wiki [WIKI GGE](https://ggewiki.eonerc.rwth-aachen.de/index.php/GHE-Module_for_heat_exchanger_simulations#HAPPY_SIMULATION).
+
+##Runing in SHEMAT
 
 ## License
 [MIT](https://opensource.org/licenses/MIT)
