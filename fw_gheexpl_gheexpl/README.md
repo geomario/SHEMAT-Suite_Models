@@ -34,7 +34,7 @@ gmake fw COMPTYPE=ling64 PROPS=gheexpl USER=gheexpl hdf HDF5_LIB=$HDF5_ROOT/lib 
 ##Modules load
 ![modules load](./Result/GIF/modules.gif)
 
-##Compilation
+## Compilation
 
 You can find the executable within the main folder.
 
@@ -55,7 +55,7 @@ As was mentioned before, this model is based on EONERC single BHE. The parameter
 
 Having all the requiered files in the same folder, you just have to proceed to simulate within SHEMAT. It is important to mention, the need for additional files described in the wiki that you can find also here. The description is as well possible to find it within the wiki [WIKI GGE](https://ggewiki.eonerc.rwth-aachen.de/index.php/GHE-Module_for_heat_exchanger_simulations#HAPPY_SIMULATION).
 
-##Runing in SHEMAT
+## Running in SHEMAT
 
 ## License
 [MIT](https://opensource.org/licenses/MIT)
