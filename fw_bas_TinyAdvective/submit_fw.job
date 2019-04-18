@@ -1,0 +1,20 @@
+#!/bin/bash -x
+#SBATCH --job-name=test_adv
+##SBATCH --mail-user=jbruckmann@eonerc.rwth-aachen.de
+##SBATCH --mail-type=ALL
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+##SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=1
+#SBATCH --time=00:05:00
+#SBATCH --output=out.txt
+#SBATCH --error=err.txt
+
+module load LIBRARIES
+module load hdf5/1.8.21
+
+export LD_LIBRARY_PATH=/usr/local_rwth/sw/HDF5/1.8.21/gcc_4.8.5-intelmpi_2018.4.274/lib:$LD_LIBRARY_PATH
+
+##/usr/local_rwth/sw/HDF5/1.10.4/gcc_4.8.5-intelmpi_2018.4.274/lib:$LD_LIBRARY_PATH
+
+ ./shem_fw_bas.x  -tsolve 1 -tsample 1
