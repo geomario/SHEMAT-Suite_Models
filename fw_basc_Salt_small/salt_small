@@ -1,4 +1,4 @@
-#==========>>>>> INFO
+!==========>>>>> INFO
 # title
 salt                                                                                                                      
 # linfo
@@ -6,7 +6,7 @@ salt
 # runmode
 0
 
-#==========>>>>> MESH
+!==========>>>>> MESH
 # grid
 10 1 10
 # delx
