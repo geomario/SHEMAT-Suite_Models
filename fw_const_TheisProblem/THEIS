@@ -47,25 +47,6 @@ theis
 # timestep control
 0
 
-!1.0 1.0 1.0 0.0
-
-! # tunit
-! 86400
-
-! # tstart									!**starting time for transient simulation**!
-! 0.
-
-! # time periods, records=1
-! 0.0	3.5	10000 lin
-
-! # bc time periods, records=0    						!**boundary condition time periods**!
-! 1 1
-! 5. 0.0 1.0 off
-
-! # variable step size								!**automatic time step procedure**!
-! 0										!** 0: inactive  1: active**!
-! 0.5 0.1 2. 8. 10								!** delt_start delt_min delt_max t_end delt_double**!
-
 ! # =====>>>>>-----------------------------------------------------<<<<<===== # !
 ! # =====>>>>>   SOLVER CONTROL                                    <<<<<===== # !
 ! # =====>>>>>-----------------------------------------------------<<<<<===== # !
@@ -80,27 +61,6 @@ theis
 
 # nliterf (nonlinear iteration control)
 1.0d-10 1.0d0
-
-! # =====>>>>>   SOLVER HEAT
-
-! # lsolvet (linear solver control)
-! 1.d-10 64 500
-
-! # nlitert (nonlinear iteration control)
-! 1.0d-10 1.
-
-! # =====>>>>>   SOLVER TRANSPORT
-
-! # lsolvec (linear solver control)
-! 1.d-10 64 500
-
-! # nliterc (nonlinear iteration control)
-! 1.0d-10 1.
-
-! # =====>>>>>   SOLVER EPOT
-
-! # lsolvee
-! 1.0d-14 64 500
 
 ! # =====>>>>>-----------------------------------------------------<<<<<===== # !
 ! # =====>>>>>   BOUNDARY CONDITIONS                               <<<<<===== # !
@@ -118,26 +78,6 @@ theis
 # head bcd, simple=right, value=init
 # head bcd, simple=back, value=init
 
-! # *** # head bcn, records=1, direction=0 , bctp=1                       *** # !
-! # *** # 69 69 1 -0.00064 0                                              *** # !
-
-! # =====>>>>>   BC TEMPERATURE
-
-! # ************************************************************************* # !
-! # *** # temp bcd,  			                                  *** # !
-! # *** # temp bcn,  			                                  *** # !
-! # ************************************************************************* # !
-
-! # =====>>>>>   BC CONCENTRATION
-
-! # ************************************************************************* # !
-! # *** # conc bcd,  			                                  *** # !
-! # *** # conc bcn,  			                                  *** # !
-! # ************************************************************************* # !
-
-! # bcunits, records=0
-! 1   3.2d-6  head		! recharge
-
 
 ! # =====>>>>>-----------------------------------------------------<<<<<===== # !
 ! # =====>>>>>   INITIAL VALUES                                    <<<<<===== # !
@@ -153,9 +93,6 @@ theis
 # temp init
 4761*20.0d0
 
-! # tracer0001 init
-! 4761*0.
-
 ! # =====>>>>>-----------------------------------------------------<<<<<===== # !
 ! # =====>>>>>   PROPERTIES                                        <<<<<===== # !
 ! # =====>>>>>-----------------------------------------------------<<<<<===== # !
@@ -163,15 +100,6 @@ theis
 ! # =====>>>>>   FLUID
 # fluid props
 1000.0d0 5.0D-8 4218.0d0 0.65d0 1.0D-3 0.02d0  		 				!***rhof compf cpf lamf visf sigmaf***!
-
-! # rref
-! 1000.
-
-! # =====>>>>>   TRACER
-! # ntrans
-! 0 0
-! # transpar
-! 0.5d-8 58.443
 
 ! # =====>>>>>   ROCKS/UNITS
 ! # ************************************************************************* # !
@@ -197,22 +125,3 @@ theis
 ! # =====>>>>>-----------------------------------------------------<<<<<===== # !
 
 # file output: vtk
-
-! # output times, records=9
-! 0.35
-! 0.7
-! 1.05
-! 1.4
-! 1.75
-! 2.1
-! 2.45
-! 2.8
-! 3.15
-
-! # borehole logs, records=0
-! 25 15 pumping_well							!**location of steady state log output**!
-! 15 15 obs_well										!**i j**!
-
-! # monitor, records=2							!**monitor points for transient parameter output**!
-! 33 1 1 1
-! 33 32 1 1										!**i j k 1**!
