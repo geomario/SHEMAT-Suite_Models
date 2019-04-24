@@ -1,4 +1,4 @@
-#==========>>>>> INFO
+!==========>>>>> INFO
 # title
 salt                                                                                                                      
 # linfo
@@ -6,7 +6,7 @@ salt
 # runmode
 0
 
-#==========>>>>> MESH
+!==========>>>>> MESH
 # grid
 10 1 10
 # delx
@@ -36,16 +36,6 @@ salt
 0.0	   1   2 lin
 1	   10 5 lin
 
-!# variable step size
-!1
-!0.1 0.1 5 10 6
-
-
-!# output times, records=2
-!10
-!100
-
-
 !==========>>>>> NONLINEAR SOLVER
 # nlsolve
 50 0
@@ -55,12 +45,6 @@ salt
 1.d-14 67 500
 # nliterf (nonlinear iteration control)
 1.0d-10 1.
-!# head bcd, simple=top, value=init
-!# head bcd, simple=right, value=init
-!# head bcd, simple=right, value=init
-!# head bcd, simple=front, value=init
-!# head bcd, simple=back, value=init
-
 
 !==========>>>>>  TRACER			!der Tracer stellt in diesem Fall Salzwasser dar (NaCl)
 # lsolvec (linear solver control)
@@ -69,8 +53,6 @@ salt
 1.0d-10 1.0
 # nliterc (nonlinear iteration control)
 1.0d-8
-!#conc bcd, simple=top, bcindex=1, species=1
-!#conc bcd, simple=base, value=init, species=1
 
 # ntrans
 1 0						!Anzahl der Tracer=1	Reaktivität=aus
@@ -80,8 +62,8 @@ salt
 # rref
 998.0
 
-!# bcunits, records=1
-!1  5.d0   conc
+!==========>>>>> BOUNDARY CONDITIONS
+! No boundary conditions specified -> no-flow at all boundaries
 
 
 !==========>>>>> INITIAL VALUES
