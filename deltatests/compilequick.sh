@@ -68,7 +68,20 @@ rename shem_${shem_type_name}${compiler_name}_${props}.x shem_${new_exe_suffix}.
 # Move executable
 mv shem_${new_exe_suffix}.x ${deltatests_dir}
 
+# Move Makefile.flags, version.inc
+mv Makefile.flags ${deltatests_dir}
+mv version.inc ${deltatests_dir}
+
+# Rename Makefile.flags, version.inc
+popd
+rename Makefile.flags Makefile_${new_exe_suffix}.flags Makefile.flags
+rename version.inc version_${new_exe_suffix}.inc version.inc
+
+# File with RWTH cluster module configuration
+module list -t 2> module_${new_exe_suffix}.inc
+
 # Clean make-directory
+pushd ${make_dir}
 gmake clean
 
 # Create and move tgz Backup
