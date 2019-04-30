@@ -43,8 +43,8 @@ else
     exit 1
 fi
 
-#New executable name
-new_exe_name="shem_${shem_type_name}${compiler_name}_${props}_${git_branch}.x"
+#New executable suffix
+new_exe_suffix="${shem_type_name}${compiler_name}_${props}_${git_branch}"
 
 #Clean make-directory
 gmake clean
@@ -62,11 +62,11 @@ then
     exit 1
 fi
 
-#Rename executable
-rename shem_${shem_type_name}${compiler_name}_${props}.x ${new_exe_name} shem_${shem_type_name}${compiler_name}_${props}.x
+# Rename executable
+rename shem_${shem_type_name}${compiler_name}_${props}.x shem_${new_exe_suffix}.x shem_${shem_type_name}${compiler_name}_${props}.x
 
-#Move executable
-mv ${new_exe_name} ${deltatests_dir}
+# Move executable
+mv shem_${new_exe_suffix}.x ${deltatests_dir}
 
 # Clean make-directory
 gmake clean
