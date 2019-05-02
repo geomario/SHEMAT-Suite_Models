@@ -1,3 +1,5 @@
+# SHEMAT-Suite_Models #
+
 Here we collect `SHEMAT-Suite` input files including results. These
 may serve as a benchmark test in the future.
 
@@ -7,7 +9,7 @@ Naming convention:
 `runmode_propsmodule_description`
 
 
-Examples: 
+Examples:
 
 `fw_bas_2D-Heat-Transfer`\
 `fw_mphase_const_2D-CO2-injection`\
@@ -15,14 +17,26 @@ Examples:
 
 
 Every Model folder should contain a `/doc` folder, which describes how
-to compile and run the model. And a `/results` folder which collects
-the output results. Please also include an empty `/test` folder. This
-folder will be used in the automated testing.
+to compile and run the model. And a `/result` folder which collects
+the output results.
 
-A short description of the model can also be put in the `/doc`
-folder. This should contain a small note about the runtime needed and
-the number of processes used to obtain this runtime. Please include
-the hash of the git commit of the compiled source code.
+## doc ##
+
+### Model description ###
+
+A short description of the model should also be put in the `/doc`
+folder. This should first include a short explanation of the physics
+behind the model. It can also contain a small note about the runtime
+needed and the number of processes used to obtain this runtime.
+
+### Compilation documentation ##
+
+Please include the hash of the git commit of the compiled source code.
+
+Otherwise follow the [Best
+Practices](https://ggewiki.eonerc.rwth-aachen.de/index.php/Compilation#Compilation:_Best_Practices)
+from our Wiki and put the corresponding files (`version.inc`,
+`Makefile.flags`, the zipped source code) in the `/result/` path.
 
 
 ## deltatests ##
