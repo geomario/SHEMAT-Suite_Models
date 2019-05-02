@@ -66,10 +66,23 @@ command in `SHEMATtest.py`.
 
 ## Matrix of models against features ##
 
-|                                 | Modes | `fw` | `sm` | `ad` | `dd` | `fl` | Props | `const` | `bas` | `basc` | `gheexpl` | `kola` | Variables | `head` | `temp` | `conc` | `head/temp` | `head/conc` | `head/temp/conc` |
-|:-------------------------------:|:-----:|:----:|:----:|:----:|:----:|:----:|:-----:|:-------:|:-----:|:------:|:---------:|:------:|:---------:|:------:|:------:|:------:|:-----------:|:-----------:|:----------------:|
-| `ad_const_TemperatureInversion` |       |      |      | x    |      |      |       | x       |       |        |           |        |           |        |        |        | x           |             |                  |
-| `fw_basc_SaltFlow`              |       | x    |      |      |      |      |       |         |       | x      |           |        |           |        |        |        |             | x           |                  |
-| `fw_basc_Salt_small`            |       | x    |      |      |      |      |       |         |       | x      |           |        |           |        |        |        |             | x           |                  |
-| `fw_const_TheisProblem`         |       | x    |      |      |      |      |       | x       |       |        |           |        |           | x      |        |        |             |             |                  |
+| **Modes**                       | `fw` | `sm` | `ad` | `dd` | `fl` |
+|:-------------------------------:|:----:|:----:|:----:|:----:|:----:|
+| `ad_const_TemperatureInversion` |      |      | x    |      |      |
+| `fw_basc_SaltFlow`              | x    |      |      |      |      |
+| `fw_basc_Salt_small`            | x    |      |      |      |      |
+| `fw_const_TheisProblem`         | x    |      |      |      |      |
 
+| **Props**                       | `const` | `bas` | `basc` | `gheexpl` | `kola` |
+|:-------------------------------:|:-------:|:-----:|:------:|:---------:|:------:|
+| `ad_const_TemperatureInversion` | x       |       |        |           |        |
+| `fw_basc_SaltFlow`              |         |       | x      |           |        |
+| `fw_basc_Salt_small`            |         |       | x      |           |        |
+| `fw_const_TheisProblem`         | x       |       |        |           |        |
+
+| **Variables**                   | `head` | `temp` | `conc` | `head/temp` | `head/conc` | `head/temp/conc` |
+|:-------------------------------:|:------:|:------:|:------:|:-----------:|:-----------:|:----------------:|
+| `ad_const_TemperatureInversion` |        |        |        | x           |             |                  |
+| `fw_basc_SaltFlow`              |        |        |        |             | x           |                  |
+| `fw_basc_Salt_small`            |        |        |        |             | x           |                  |
+| `fw_const_TheisProblem`         | x      |        |        |             |             |                  |
