@@ -94,7 +94,7 @@ command in `SHEMATtest.py`.
 | `fw_basc_Salt_small`            |      | x    |      |
 | `fw_const_TheisProblem`         |      | x    |      |
 
-| **Grid**                        | `Steady State` | `Transient` |
+| **Time**                        | `Steady State` | `Transient` |
 |:-------------------------------:|:--------------:|-------------|
 | `ad_const_TemperatureInversion` | x              |             |
 | `fw_basc_SaltFlow`              |                | x           |
