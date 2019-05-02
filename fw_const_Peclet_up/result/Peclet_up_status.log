@@ -1,0 +1,8 @@
+% Shemat-Suite version: Shem-FW/AD/SM 7.50 (Smarty)                                                     
+%          build: Do 25. Apr 14:43:57 CEST 2019           
+%   build command line: gmake fw noomp PROPS=const COMPTYPE=ling64                                                                                                                                                                                                                      
+%        Project: "Peclet_up"
+%
+%    <iteration> <delta head> <delta temp> (<delta conc> ...)
+          1  0.99497487E+01  0.19994641E+02
+          2  0.00000000E+00  0.00000000E+00
