@@ -86,3 +86,34 @@ command in `SHEMATtest.py`.
 | `fw_basc_SaltFlow`              |        |        |        |             | x           |                  |
 | `fw_basc_Salt_small`            |        |        |        |             | x           |                  |
 | `fw_const_TheisProblem`         | x      |        |        |             |             |                  |
+
+| **Grid**                        | `1D` | `2D` | `3D` |
+|:-------------------------------:|:----:|------|:----:|
+| `ad_const_TemperatureInversion` |      | x    |      |
+| `fw_basc_SaltFlow`              |      | x    |      |
+| `fw_basc_Salt_small`            |      | x    |      |
+| `fw_const_TheisProblem`         |      | x    |      |
+
+| **Grid**                        | `Steady State` | `Transient` |
+|:-------------------------------:|:--------------:|-------------|
+| `ad_const_TemperatureInversion` | x              |             |
+| `fw_basc_SaltFlow`              |                | x           |
+| `fw_basc_Salt_small`            |                | x           |
+| `fw_const_TheisProblem`         | x              |             |
+
+| **Inversion**                   | `Deterministic Inversion` | `EnKF` |
+|:-------------------------------:|:-------------------------:|:------:|
+| `ad_const_TemperatureInversion` |                           |        |
+| `fw_basc_SaltFlow`              |                           |        |
+| `fw_basc_Salt_small`            |                           |        |
+| `fw_const_TheisProblem`         |                           |        |
+
+| **Cluster architecture**        | `openmp` | `mpi` | `Slurm Job` |
+|:-------------------------------:|:--------:|:-----:|:-----------:|
+| `ad_const_TemperatureInversion` |          |       |             |
+| `fw_basc_SaltFlow`              |          |       |             |
+| `fw_basc_Salt_small`            |          |       |             |
+| `fw_const_TheisProblem`         |          |       |             |
+
+
+Possibly: Solver
