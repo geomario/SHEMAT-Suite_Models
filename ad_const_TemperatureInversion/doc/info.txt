@@ -1,0 +1,10 @@
+Testmodel for deterministic inversion (AD mode)
+
+* 2D flow and heat transport model
+* geology simplified from Perth basin
+* layered structure with permeable fault 
+* Temperature data are inverted to determine permeability of unit 5
+* model by Jan Niederau
+* contact person: Johanna Bruckmann
+
+See file Documentation_od_Perth_inputs.doc for more information.
