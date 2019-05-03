@@ -3,6 +3,7 @@
 Here we collect `SHEMAT-Suite` input files including results. These
 may serve as a benchmark test in the future.
 
+**Exactly one input file per model directory!**
 
 Naming convention:
 
