@@ -5,7 +5,6 @@ import os
 import time
 import exceptions
 import shutil
-import subprocess
 from pskf.tools.run import runmodule as rm
 import unittest
 # try:
@@ -181,14 +180,20 @@ for test_model in test_models:
         if use_batch_script:
             rm.run_script(
                 model_dir, ['sbatch', job_script],
-                outfile=subprocess.PIPE,
+                outfile=open(
+                    'stdout_' + shem_type_name + compiler_name + "_" + props +
+                    "_" + git_branch + '.txt', 'w'),
                 wait=True,
                 errout=True)
         else:
+            print(model_dir)
+            print('./' + exe_name)
             rm.run_script(
                 model_dir,
                 './' + exe_name,
-                outfile=subprocess.PIPE,
+                outfile=open(
+                    'stdout_' + shem_type_name + compiler_name + "_" + props +
+                    "_" + git_branch + '.txt', 'w'),
                 wait=True,
                 errout=True)
 
