@@ -104,7 +104,7 @@ command in `SHEMATtest.py`.
 
 | **Inversion**                   | `Deterministic Inversion` | `EnKF` |
 |:-------------------------------:|:-------------------------:|:------:|
-| `ad_const_TemperatureInversion` |                           |        |
+| `ad_const_TemperatureInversion` | x                         |        |
 | `fw_basc_SaltFlow`              |                           |        |
 | `fw_basc_Salt_small`            |                           |        |
 | `fw_const_TheisProblem`         |                           |        |
@@ -117,4 +117,5 @@ command in `SHEMATtest.py`.
 | `fw_const_TheisProblem`         |          |       |             |
 
 
-Possibly: Solver
+Possibly: Solver, Physical Problems (maybe better a list), possibly
+every single input
