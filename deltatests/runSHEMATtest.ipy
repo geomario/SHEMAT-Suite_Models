@@ -42,19 +42,20 @@ except ImportError:
 ###############################################################################
 
 # Compilation input (compare compilequick.sh)
-is_comp = True
+is_comp = False
 git_branch = "master"
 
 # Execution input
-is_exec = True
+is_exec = False
 
 # Testing input
-is_test = True
+is_test = False
 
 test_models = [
     # "fw_const_TheisProblem",
     # "fw_basc_SaltFlow",
     # "fw_basc_SaltFlow_small",
+    # "ad_const_TemperatureInversion",
 ]
 
 ###############################################################################
