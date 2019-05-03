@@ -81,16 +81,6 @@ for test_model in test_models:
         #######################################################################
         #                             Directories                             #
         #######################################################################
-        # SHEMAT-Suite_Models dir
-        std.shemat_suite_models_dir = (
-            os.environ['HOME'] + "/SHEMAT-Suite_Models")
-
-        # SHEMAT-Suite dir
-        make_dir = os.environ['HOME'] + "/SHEMAT-Suite"
-
-        # deltatests_dir
-        deltatests_dir = std.shemat_suite_models_dir + "/deltatests"
-
         # model_dir
         model_dir = (std.shemat_suite_models_dir + "/" + shem_type_name + "_" +
                      props + "_" + model_name)
@@ -102,13 +92,14 @@ for test_model in test_models:
         #######################################################################
         #                           Existence checks                          #
         #######################################################################
-        if not os.path.isdir(deltatests_dir):
+        if not os.path.isdir(std.deltatests_dir):
             raise exceptions.RuntimeError("Directory not found: " +
-                                          deltatests_dir)
+                                          std.deltatests_dir)
         if not os.path.isdir(model_dir):
             raise exceptions.RuntimeError("Directory not found: " + model_dir)
-        if not os.path.isdir(make_dir):
-            raise exceptions.RuntimeError("Directory not found: " + make_dir)
+        if not os.path.isdir(std.make_dir):
+            raise exceptions.RuntimeError("Directory not found: " +
+                                          std.make_dir)
 
 ###############################################################################
 #                                 Compilation                                 #
@@ -121,8 +112,8 @@ for test_model in test_models:
         print('--------------- \n')
 
         stf.compilequick(
-            deltatests_dir,
-            make_dir,
+            std.deltatests_dir,
+            std.make_dir,
             shem_type,
             shem_type_name,
             compiler,
@@ -140,12 +131,12 @@ for test_model in test_models:
 #                               Existence checks                              #
 ###############################################################################
     if is_exec:
-        if not os.path.isfile(deltatests_dir + "/" + exe_name):
-            raise exceptions.RuntimeError("File not found: " + deltatests_dir +
-                                          "/" + exe_name)
-        if not os.path.isfile(deltatests_dir + "/" + job_script):
-            raise exceptions.RuntimeError("File not found: " + deltatests_dir +
-                                          "/" + job_script)
+        if not os.path.isfile(std.deltatests_dir + "/" + exe_name):
+            raise exceptions.RuntimeError("File not found: " +
+                                          std.deltatests_dir + "/" + exe_name)
+        if not os.path.isfile(std.deltatests_dir + "/" + job_script):
+            raise exceptions.RuntimeError(
+                "File not found: " + std.deltatests_dir + "/" + job_script)
 
 ###############################################################################
 #                                  Execution                                  #
@@ -158,7 +149,7 @@ for test_model in test_models:
         print('--------------- \n')
 
         # Copy executable and job_script
-        shutil.copyfile(deltatests_dir + "/" + exe_name,
+        shutil.copyfile(std.deltatests_dir + "/" + exe_name,
                         model_dir + "/" + exe_name)
 
         # Change file permission
@@ -166,7 +157,7 @@ for test_model in test_models:
 
         # Prepare job_script
         if use_batch_script:
-            f = open(deltatests_dir + '/' + 'job.sh', 'r')
+            f = open(std.deltatests_dir + '/' + 'job.sh', 'r')
             fcontent = f.read()
             f.close()
 
