@@ -44,6 +44,7 @@ except ImportError:
 
 # Compilation input (compare compilequick.sh)
 is_comp = True
+git_branch = "master"
 
 # Execution input
 is_exec = True
@@ -52,8 +53,8 @@ is_exec = True
 is_test = True
 
 test_models = [
-    # "fw_const_TheisProblem",
-    "fw_basc_SaltFlow",
+    "fw_const_TheisProblem",
+    # "fw_basc_SaltFlow",
 ]
 
 for test_model in test_models:
@@ -68,7 +69,6 @@ for test_model in test_models:
     props = sti.props[test_model]
 
     flags = sti.flags[test_model]
-    git_branch = sti.git_branch[test_model]
 
     model_name = sti.model_name[test_model]
 
