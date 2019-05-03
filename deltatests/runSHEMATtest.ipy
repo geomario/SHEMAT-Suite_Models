@@ -53,7 +53,8 @@ is_test = True
 
 test_models = [
     "fw_const_TheisProblem",
-    # "fw_basc_SaltFlow",
+    "fw_basc_SaltFlow",
+    "fw_basc_SaltFlow_small",
 ]
 
 for test_model in test_models:
