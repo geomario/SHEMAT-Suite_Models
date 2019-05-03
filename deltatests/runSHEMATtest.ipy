@@ -43,19 +43,19 @@ except ImportError:
 
 # Compilation input (compare compilequick.sh)
 is_comp = False
-git_branch = "master"
+git_branch = "cmake"
 
 # Execution input
 is_exec = False
 
 # Testing input
-is_test = False
+is_test = True
 
 test_models = [
     # "fw_const_TheisProblem",
     # "fw_basc_SaltFlow",
     # "fw_basc_SaltFlow_small",
-    # "ad_const_TemperatureInversion",
+    "ad_const_TemperatureInversion",  # only in branch 'cmake'
 ]
 
 ###############################################################################
