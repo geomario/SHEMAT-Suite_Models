@@ -57,6 +57,9 @@ test_models = [
     "fw_basc_SaltFlow_small",
 ]
 
+###############################################################################
+#                            Loop over test models                            #
+###############################################################################
 for test_model in test_models:
 
     print('!----------------------------- ')
@@ -65,9 +68,6 @@ for test_model in test_models:
     print('!----------------------------- ')
     print('!----------------------------- \n')
 
-    #######################################################################
-    #                         Test Model input                            #
-    #######################################################################
     shem_type = sti.shem_type[test_model]
     shem_type_name = sti.shem_type_name[test_model]
     compiler = sti.compiler[test_model]
