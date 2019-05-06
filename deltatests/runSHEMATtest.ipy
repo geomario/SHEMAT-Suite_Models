@@ -78,6 +78,8 @@ for test_model in test_models:
 
     flags = sti.flags[test_model]
 
+    module_load = sti.module_load[test_model]
+
     model_name = sti.model_name[test_model]
 
     use_batch_script = sti.use_batch_script[test_model]
@@ -128,6 +130,7 @@ for test_model in test_models:
             compiler_name,
             props,
             flags,
+            module_load,
             git_branch,
         )
 
