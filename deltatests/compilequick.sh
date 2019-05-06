@@ -50,7 +50,7 @@ new_exe_suffix="${shem_type_name}${compiler_name}_${props}_${git_branch}"
 gmake cleanall
 
 #Compilation command 
-gmake ${shem_type} COMPTYPE=${compiler} PROPS=${props} ${flags}
+gmake ${shem_type} COMPTYPE=${compiler} PROPS=${props} HDF5_MOD=$HDF5_ROOT/include/ HDF5_LIB=$HDF5_ROOT/lib/ ${flags}
 
 # Catch compilation errors
 if [ $? -ge 1 ];
