@@ -85,8 +85,8 @@ pushd ${make_dir}
 gmake cleanall
 
 # Create and move tgz Backup
-gmake tgz
-mv *.tgz ${deltatests_dir}
+# gmake tgz
+# mv *.tgz ${deltatests_dir}
 
 # Echo paths
 echo "--------------------------------------------------------"
