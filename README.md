@@ -123,6 +123,14 @@ command in `SHEMATtest.py`.
 | `fw_const_TheisProblem`         |          |       |             |
 | `fw_bas_TinyAdvective`          |          |       |             |
 
+| **Comparison method**           | `previous simulation` | `analytical solution` |
+|:-------------------------------:|:---------------------:|:---------------------:|
+| `ad_const_TemperatureInversion` | x                     |                       |
+| `fw_basc_SaltFlow`              | x                     |                       |
+| `fw_basc_Salt_small`            | x                     |                       |
+| `fw_const_TheisProblem`         | x                     |                       |
+| `fw_bas_TinyAdvective`          | x                     |                       |
+
 
 Possibly: Solver, Physical Problems (maybe better a list), possibly
 every single input
