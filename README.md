@@ -73,6 +73,7 @@ command in `SHEMATtest.py`.
 | `fw_basc_SaltFlow`              | x    |      |      |      |      |
 | `fw_basc_Salt_small`            | x    |      |      |      |      |
 | `fw_const_TheisProblem`         | x    |      |      |      |      |
+| `fw_bas_TinyAdvective`          | x    |      |      |      |      |
 
 | **Props**                       | `const` | `bas` | `basc` | `gheexpl` | `kola` |
 |:-------------------------------:|:-------:|:-----:|:------:|:---------:|:------:|
@@ -80,6 +81,7 @@ command in `SHEMATtest.py`.
 | `fw_basc_SaltFlow`              |         |       | x      |           |        |
 | `fw_basc_Salt_small`            |         |       | x      |           |        |
 | `fw_const_TheisProblem`         | x       |       |        |           |        |
+| `fw_bas_TinyAdvective`          |         | x     |        |           |        |
 
 | **Variables**                   | `head` | `temp` | `conc` | `head/temp` | `head/conc` | `head/temp/conc` |
 |:-------------------------------:|:------:|:------:|:------:|:-----------:|:-----------:|:----------------:|
@@ -87,6 +89,7 @@ command in `SHEMATtest.py`.
 | `fw_basc_SaltFlow`              |        |        |        |             | x           |                  |
 | `fw_basc_Salt_small`            |        |        |        |             | x           |                  |
 | `fw_const_TheisProblem`         | x      |        |        |             |             |                  |
+| `fw_bas_TinyAdvective`          |        |        |        | x           |             |                  |
 
 | **Grid**                        | `1D` | `2D` | `3D` |
 |:-------------------------------:|:----:|------|:----:|
@@ -94,6 +97,7 @@ command in `SHEMATtest.py`.
 | `fw_basc_SaltFlow`              |      | x    |      |
 | `fw_basc_Salt_small`            |      | x    |      |
 | `fw_const_TheisProblem`         |      | x    |      |
+| `fw_bas_TinyAdvective`          |      | x    |      |
 
 | **Time**                        | `Steady State` | `Transient` |
 |:-------------------------------:|:--------------:|-------------|
@@ -101,6 +105,7 @@ command in `SHEMATtest.py`.
 | `fw_basc_SaltFlow`              |                | x           |
 | `fw_basc_Salt_small`            |                | x           |
 | `fw_const_TheisProblem`         | x              |             |
+| `fw_bas_TinyAdvective`          | x              |             |
 
 | **Inversion**                   | `Deterministic Inversion` | `EnKF` |
 |:-------------------------------:|:-------------------------:|:------:|
@@ -108,6 +113,7 @@ command in `SHEMATtest.py`.
 | `fw_basc_SaltFlow`              |                           |        |
 | `fw_basc_Salt_small`            |                           |        |
 | `fw_const_TheisProblem`         |                           |        |
+| `fw_bas_TinyAdvective`          |                           |        |
 
 | **Cluster architecture**        | `openmp` | `mpi` | `Slurm Job` |
 |:-------------------------------:|:--------:|:-----:|:-----------:|
@@ -115,6 +121,7 @@ command in `SHEMATtest.py`.
 | `fw_basc_SaltFlow`              |          |       |             |
 | `fw_basc_Salt_small`            |          |       |             |
 | `fw_const_TheisProblem`         |          |       |             |
+| `fw_bas_TinyAdvective`          |          |       |             |
 
 
 Possibly: Solver, Physical Problems (maybe better a list), possibly
