@@ -27,6 +27,15 @@
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
+
+# Module configuration (for debugging, remove 2> /dev/null)
+module purge 2> /dev/null
+module load {module0} 2> /dev/null
+module load {module1} 2> /dev/null
+module load {module2} 2> /dev/null
+module load {module3} 2> /dev/null
+module load {module4} 2> /dev/null
+
 ### Execute application
 chmod 770 {exe_name}
 
