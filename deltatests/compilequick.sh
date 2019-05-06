@@ -30,6 +30,14 @@ fi
 # Go to make_dir
 pushd ${make_dir}
 
+# Module configuration (for debugging, remove 2> /dev/null)
+module purge 2> /dev/null
+module load {module0} 2> /dev/null
+module load {module1} 2> /dev/null
+module load {module2} 2> /dev/null
+module load {module3} 2> /dev/null
+module load {module4} 2> /dev/null
+
 # Get git branch name
 git_branch="{git_branch_in}"
 
