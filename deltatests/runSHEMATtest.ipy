@@ -5,7 +5,6 @@ import os
 import time
 import exceptions
 import shutil
-import subprocess
 from pskf.tools.run import runmodule as rm
 import unittest
 # try:
@@ -43,24 +42,33 @@ except ImportError:
 ###############################################################################
 
 # Compilation input (compare compilequick.sh)
-is_comp = True
+is_comp = False
+git_branch = "master"
 
 # Execution input
-is_exec = True
+is_exec = False
 
 # Testing input
-is_test = True
+is_test = False
 
 test_models = [
     # "fw_const_TheisProblem",
-    "fw_basc_SaltFlow",
+    # "fw_basc_SaltFlow",
+    # "fw_basc_SaltFlow_small",
+    # "ad_const_TemperatureInversion",  # only in branch 'cmake'
 ]
 
+###############################################################################
+#                            Loop over test models                            #
+###############################################################################
 for test_model in test_models:
 
-    #######################################################################
-    #                         Test Model input                            #
-    #######################################################################
+    print('!----------------------------- ')
+    print('!----------------------------- ')
+    print('!  TESTMODEL: ' + test_model)
+    print('!----------------------------- ')
+    print('!----------------------------- \n')
+
     shem_type = sti.shem_type[test_model]
     shem_type_name = sti.shem_type_name[test_model]
     compiler = sti.compiler[test_model]
@@ -68,7 +76,6 @@ for test_model in test_models:
     props = sti.props[test_model]
 
     flags = sti.flags[test_model]
-    git_branch = sti.git_branch[test_model]
 
     model_name = sti.model_name[test_model]
 
@@ -81,16 +88,6 @@ for test_model in test_models:
         #######################################################################
         #                             Directories                             #
         #######################################################################
-        # SHEMAT-Suite_Models dir
-        std.shemat_suite_models_dir = (
-            os.environ['HOME'] + "/SHEMAT-Suite_Models")
-
-        # SHEMAT-Suite dir
-        make_dir = os.environ['HOME'] + "/SHEMAT-Suite"
-
-        # deltatests_dir
-        deltatests_dir = std.shemat_suite_models_dir + "/deltatests"
-
         # model_dir
         model_dir = (std.shemat_suite_models_dir + "/" + shem_type_name + "_" +
                      props + "_" + model_name)
@@ -102,13 +99,14 @@ for test_model in test_models:
         #######################################################################
         #                           Existence checks                          #
         #######################################################################
-        if not os.path.isdir(deltatests_dir):
+        if not os.path.isdir(std.deltatests_dir):
             raise exceptions.RuntimeError("Directory not found: " +
-                                          deltatests_dir)
+                                          std.deltatests_dir)
         if not os.path.isdir(model_dir):
             raise exceptions.RuntimeError("Directory not found: " + model_dir)
-        if not os.path.isdir(make_dir):
-            raise exceptions.RuntimeError("Directory not found: " + make_dir)
+        if not os.path.isdir(std.make_dir):
+            raise exceptions.RuntimeError("Directory not found: " +
+                                          std.make_dir)
 
 ###############################################################################
 #                                 Compilation                                 #
@@ -121,8 +119,8 @@ for test_model in test_models:
         print('--------------- \n')
 
         stf.compilequick(
-            deltatests_dir,
-            make_dir,
+            std.deltatests_dir,
+            std.make_dir,
             shem_type,
             shem_type_name,
             compiler,
@@ -140,12 +138,12 @@ for test_model in test_models:
 #                               Existence checks                              #
 ###############################################################################
     if is_exec:
-        if not os.path.isfile(deltatests_dir + "/" + exe_name):
-            raise exceptions.RuntimeError("File not found: " + deltatests_dir +
-                                          "/" + exe_name)
-        if not os.path.isfile(deltatests_dir + "/" + job_script):
-            raise exceptions.RuntimeError("File not found: " + deltatests_dir +
-                                          "/" + job_script)
+        if not os.path.isfile(std.deltatests_dir + "/" + exe_name):
+            raise exceptions.RuntimeError("File not found: " +
+                                          std.deltatests_dir + "/" + exe_name)
+        if not os.path.isfile(std.deltatests_dir + "/" + job_script):
+            raise exceptions.RuntimeError(
+                "File not found: " + std.deltatests_dir + "/" + job_script)
 
 ###############################################################################
 #                                  Execution                                  #
@@ -158,7 +156,7 @@ for test_model in test_models:
         print('--------------- \n')
 
         # Copy executable and job_script
-        shutil.copyfile(deltatests_dir + "/" + exe_name,
+        shutil.copyfile(std.deltatests_dir + "/" + exe_name,
                         model_dir + "/" + exe_name)
 
         # Change file permission
@@ -166,7 +164,7 @@ for test_model in test_models:
 
         # Prepare job_script
         if use_batch_script:
-            f = open(deltatests_dir + '/' + 'job.sh', 'r')
+            f = open(std.deltatests_dir + '/' + 'job.sh', 'r')
             fcontent = f.read()
             f.close()
 
@@ -184,14 +182,20 @@ for test_model in test_models:
         if use_batch_script:
             rm.run_script(
                 model_dir, ['sbatch', job_script],
-                outfile=subprocess.PIPE,
+                outfile=open(
+                    'stdout_' + shem_type_name + compiler_name + "_" + props +
+                    "_" + git_branch + '.txt', 'w'),
                 wait=True,
                 errout=True)
         else:
+            print(model_dir)
+            print('./' + exe_name)
             rm.run_script(
                 model_dir,
                 './' + exe_name,
-                outfile=subprocess.PIPE,
+                outfile=open(
+                    'stdout_' + shem_type_name + compiler_name + "_" + props +
+                    "_" + git_branch + '.txt', 'w'),
                 wait=True,
                 errout=True)
 
