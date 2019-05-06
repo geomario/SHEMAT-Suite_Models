@@ -115,20 +115,20 @@ command in `SHEMATtest.py`.
 | `fw_const_TheisProblem`         |                           |        |
 | `fw_bas_TinyAdvective`          |                           |        |
 
-| **Cluster architecture**        | `openmp` | `mpi` | `Slurm Job` |
-|:-------------------------------:|:--------:|:-----:|:-----------:|
-| `ad_const_TemperatureInversion` |          |       |             |
-| `fw_basc_SaltFlow`              |          |       |             |
-| `fw_basc_Salt_small`            |          |       |             |
-| `fw_const_TheisProblem`         |          |       |             |
-| `fw_bas_TinyAdvective`          |          |       |             |
+| **Cluster architecture**        | `simple` | `openmp` | `mpi` | `Slurm Job` |
+|:-------------------------------:|:--------:|:--------:|:-----:|:-----------:|
+| `ad_const_TemperatureInversion` | x        |          |       |             |
+| `fw_basc_SaltFlow`              | x        |          |       |             |
+| `fw_basc_Salt_small`            | x        |          |       |             |
+| `fw_const_TheisProblem`         | x        |          |       |             |
+| `fw_bas_TinyAdvective`          | x        |          |       |             |
 
 | **Comparison method**           | `previous simulation` | `analytical solution` |
 |:-------------------------------:|:---------------------:|:---------------------:|
 | `ad_const_TemperatureInversion` | x                     |                       |
 | `fw_basc_SaltFlow`              | x                     |                       |
 | `fw_basc_Salt_small`            | x                     |                       |
-| `fw_const_TheisProblem`         | x                     |                       |
+| `fw_const_TheisProblem`         | x                     | (x)                   |
 | `fw_bas_TinyAdvective`          | x                     |                       |
 
 
