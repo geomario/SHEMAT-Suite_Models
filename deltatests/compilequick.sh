@@ -47,7 +47,7 @@ fi
 new_exe_suffix="${shem_type_name}${compiler_name}_${props}_${git_branch}"
 
 #Clean make-directory
-gmake clean
+gmake cleanall
 
 #Compilation command 
 gmake ${shem_type} COMPTYPE=${compiler} PROPS=${props} ${flags}
@@ -82,7 +82,7 @@ module list -t 2> module_${new_exe_suffix}.inc
 
 # Clean make-directory
 pushd ${make_dir}
-gmake clean
+gmake cleanall
 
 # Create and move tgz Backup
 gmake tgz
