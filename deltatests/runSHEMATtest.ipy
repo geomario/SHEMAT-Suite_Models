@@ -42,14 +42,14 @@ except ImportError:
 ###############################################################################
 
 # Compilation input (compare compilequick.sh)
-is_comp = False
+is_comp = True
 git_branch = "master"
 
 # Execution input
-is_exec = False
+is_exec = True
 
 # Testing input
-is_test = False
+is_test = True
 
 test_models = [
     # "fw_const_TheisProblem",
@@ -57,6 +57,7 @@ test_models = [
     # "fw_basc_SaltFlow_small",
     # "ad_const_TemperatureInversion",  # only in branch 'cmake'
     # "fw_bas_TinyAdvective",
+    # "fw_const_Peclet_down",
 ]
 
 ###############################################################################

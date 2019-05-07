@@ -24,7 +24,7 @@ vertical inversion temperature + flow down
 # nlsolve
 50  0
 
-# file output: vtk
+# file output: vtk hdf
 
 !===========>> flow
 # lsolvef  (linear solver control)
