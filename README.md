@@ -74,6 +74,7 @@ command in `SHEMATtest.py`.
 | `fw_basc_Salt_small`            | x    |      |      |      |      |
 | `fw_const_TheisProblem`         | x    |      |      |      |      |
 | `fw_bas_TinyAdvective`          | x    |      |      |      |      |
+| `fw_const_Peclet_down`          | x    |      |      |      |      |
 
 | **Props**                       | `const` | `bas` | `basc` | `gheexpl` | `kola` |
 |:-------------------------------:|:-------:|:-----:|:------:|:---------:|:------:|
@@ -82,6 +83,7 @@ command in `SHEMATtest.py`.
 | `fw_basc_Salt_small`            |         |       | x      |           |        |
 | `fw_const_TheisProblem`         | x       |       |        |           |        |
 | `fw_bas_TinyAdvective`          |         | x     |        |           |        |
+| `fw_const_Peclet_down`          | x       |       |        |           |        |
 
 | **Variables**                   | `head` | `temp` | `conc` | `head/temp` | `head/conc` | `head/temp/conc` |
 |:-------------------------------:|:------:|:------:|:------:|:-----------:|:-----------:|:----------------:|
@@ -90,6 +92,7 @@ command in `SHEMATtest.py`.
 | `fw_basc_Salt_small`            |        |        |        |             | x           |                  |
 | `fw_const_TheisProblem`         | x      |        |        |             |             |                  |
 | `fw_bas_TinyAdvective`          |        |        |        | x           |             |                  |
+| `fw_const_Peclet_down`          |        |        |        | x           |             |                  |
 
 | **Grid**                        | `1D` | `2D` | `3D` |
 |:-------------------------------:|:----:|------|:----:|
@@ -98,6 +101,10 @@ command in `SHEMATtest.py`.
 | `fw_basc_Salt_small`            |      | x    |      |
 | `fw_const_TheisProblem`         |      | x    |      |
 | `fw_bas_TinyAdvective`          |      | x    |      |
+| `fw_const_Peclet_down`          | (x)  | x    |      |
+
+**(x)**: quasi-dimension, only effects in this number of dimensions
+
 
 | **Time**                        | `Steady State` | `Transient` |
 |:-------------------------------:|:--------------:|-------------|
@@ -106,6 +113,7 @@ command in `SHEMATtest.py`.
 | `fw_basc_Salt_small`            |                | x           |
 | `fw_const_TheisProblem`         | x              |             |
 | `fw_bas_TinyAdvective`          | x              |             |
+| `fw_const_Peclet_down`          | x              |             |
 
 | **Inversion**                   | `Deterministic Inversion` | `EnKF` |
 |:-------------------------------:|:-------------------------:|:------:|
@@ -114,6 +122,7 @@ command in `SHEMATtest.py`.
 | `fw_basc_Salt_small`            |                           |        |
 | `fw_const_TheisProblem`         |                           |        |
 | `fw_bas_TinyAdvective`          |                           |        |
+| `fw_const_Peclet_down`          |                           |        |
 
 | **Cluster architecture**        | `simple` | `openmp` | `mpi` | `Slurm Job` |
 |:-------------------------------:|:--------:|:--------:|:-----:|:-----------:|
@@ -122,6 +131,7 @@ command in `SHEMATtest.py`.
 | `fw_basc_Salt_small`            | x        |          |       |             |
 | `fw_const_TheisProblem`         | x        |          |       |             |
 | `fw_bas_TinyAdvective`          | x        |          |       |             |
+| `fw_const_Peclet_down`          | x        |          |       |             |
 
 | **Comparison method**           | `previous simulation` | `analytical solution` |
 |:-------------------------------:|:---------------------:|:---------------------:|
@@ -130,6 +140,7 @@ command in `SHEMATtest.py`.
 | `fw_basc_Salt_small`            | x                     |                       |
 | `fw_const_TheisProblem`         | x                     | (x)                   |
 | `fw_bas_TinyAdvective`          | x                     |                       |
+| `fw_const_Peclet_down`          | x                     | (x)                   |
 
 
 Possibly: Solver, Physical Problems (maybe better a list), possibly
