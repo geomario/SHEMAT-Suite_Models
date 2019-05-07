@@ -1,13 +1,16 @@
+# SHEMAT-Suite_Models #
+
 Here we collect `SHEMAT-Suite` input files including results. These
 may serve as a benchmark test in the future.
 
+**Exactly one input file per model directory!**
 
 Naming convention:
 
 `runmode_propsmodule_description`
 
 
-Examples: 
+Examples:
 
 `fw_bas_2D-Heat-Transfer`\
 `fw_mphase_const_2D-CO2-injection`\
@@ -15,14 +18,26 @@ Examples:
 
 
 Every Model folder should contain a `/doc` folder, which describes how
-to compile and run the model. And a `/results` folder which collects
-the output results. Please also include an empty `/test` folder. This
-folder will be used in the automated testing.
+to compile and run the model. And a `/result` folder which collects
+the output results.
 
-A short description of the model can also be put in the `/doc`
-folder. This should contain a small note about the runtime needed and
-the number of processes used to obtain this runtime. Please include
-the hash of the git commit of the compiled source code.
+## doc ##
+
+### Model description ###
+
+A short description of the model should also be put in the `/doc`
+folder. This should first include a short explanation of the physics
+behind the model. It can also contain a small note about the runtime
+needed and the number of processes used to obtain this runtime.
+
+### Compilation documentation ##
+
+Please include the hash of the git commit of the compiled source code.
+
+Otherwise follow the [Best
+Practices](https://ggewiki.eonerc.rwth-aachen.de/index.php/Compilation#Compilation:_Best_Practices)
+from our Wiki and put the corresponding files (`version.inc`,
+`Makefile.flags`, the zipped source code) in the `/result/` path.
 
 
 ## deltatests ##
@@ -49,3 +64,73 @@ analogous python file for the new `SHEMAT-Suite_Model` directory. This
 should be possible by copying and changing some directory
 specifications. Finally, add an `import` statement and an `addTest`
 command in `SHEMATtest.py`.
+
+## Matrix of models against features ##
+
+| **Modes**                       | `fw` | `sm` | `ad` | `dd` | `fl` |
+|:-------------------------------:|:----:|:----:|:----:|:----:|:----:|
+| `ad_const_TemperatureInversion` |      |      | x    |      |      |
+| `fw_basc_SaltFlow`              | x    |      |      |      |      |
+| `fw_basc_Salt_small`            | x    |      |      |      |      |
+| `fw_const_TheisProblem`         | x    |      |      |      |      |
+| `fw_bas_TinyAdvective`          | x    |      |      |      |      |
+
+| **Props**                       | `const` | `bas` | `basc` | `gheexpl` | `kola` |
+|:-------------------------------:|:-------:|:-----:|:------:|:---------:|:------:|
+| `ad_const_TemperatureInversion` | x       |       |        |           |        |
+| `fw_basc_SaltFlow`              |         |       | x      |           |        |
+| `fw_basc_Salt_small`            |         |       | x      |           |        |
+| `fw_const_TheisProblem`         | x       |       |        |           |        |
+| `fw_bas_TinyAdvective`          |         | x     |        |           |        |
+
+| **Variables**                   | `head` | `temp` | `conc` | `head/temp` | `head/conc` | `head/temp/conc` |
+|:-------------------------------:|:------:|:------:|:------:|:-----------:|:-----------:|:----------------:|
+| `ad_const_TemperatureInversion` |        |        |        | x           |             |                  |
+| `fw_basc_SaltFlow`              |        |        |        |             | x           |                  |
+| `fw_basc_Salt_small`            |        |        |        |             | x           |                  |
+| `fw_const_TheisProblem`         | x      |        |        |             |             |                  |
+| `fw_bas_TinyAdvective`          |        |        |        | x           |             |                  |
+
+| **Grid**                        | `1D` | `2D` | `3D` |
+|:-------------------------------:|:----:|------|:----:|
+| `ad_const_TemperatureInversion` |      | x    |      |
+| `fw_basc_SaltFlow`              |      | x    |      |
+| `fw_basc_Salt_small`            |      | x    |      |
+| `fw_const_TheisProblem`         |      | x    |      |
+| `fw_bas_TinyAdvective`          |      | x    |      |
+
+| **Time**                        | `Steady State` | `Transient` |
+|:-------------------------------:|:--------------:|-------------|
+| `ad_const_TemperatureInversion` | x              |             |
+| `fw_basc_SaltFlow`              |                | x           |
+| `fw_basc_Salt_small`            |                | x           |
+| `fw_const_TheisProblem`         | x              |             |
+| `fw_bas_TinyAdvective`          | x              |             |
+
+| **Inversion**                   | `Deterministic Inversion` | `EnKF` |
+|:-------------------------------:|:-------------------------:|:------:|
+| `ad_const_TemperatureInversion` | x                         |        |
+| `fw_basc_SaltFlow`              |                           |        |
+| `fw_basc_Salt_small`            |                           |        |
+| `fw_const_TheisProblem`         |                           |        |
+| `fw_bas_TinyAdvective`          |                           |        |
+
+| **Cluster architecture**        | `simple` | `openmp` | `mpi` | `Slurm Job` |
+|:-------------------------------:|:--------:|:--------:|:-----:|:-----------:|
+| `ad_const_TemperatureInversion` | x        |          |       |             |
+| `fw_basc_SaltFlow`              | x        |          |       |             |
+| `fw_basc_Salt_small`            | x        |          |       |             |
+| `fw_const_TheisProblem`         | x        |          |       |             |
+| `fw_bas_TinyAdvective`          | x        |          |       |             |
+
+| **Comparison method**           | `previous simulation` | `analytical solution` |
+|:-------------------------------:|:---------------------:|:---------------------:|
+| `ad_const_TemperatureInversion` | x                     |                       |
+| `fw_basc_SaltFlow`              | x                     |                       |
+| `fw_basc_Salt_small`            | x                     |                       |
+| `fw_const_TheisProblem`         | x                     | (x)                   |
+| `fw_bas_TinyAdvective`          | x                     |                       |
+
+
+Possibly: Solver, Physical Problems (maybe better a list), possibly
+every single input

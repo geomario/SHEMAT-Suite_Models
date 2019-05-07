@@ -1,0 +1,421 @@
+  
+ ======================================
+ 7.50 (Smarty)                                                                   
+ ======================================
+  
+  
+  
+  *** NEW MODEL 
+
+   checking input definitions:
+     from file "oed_inv"
+  
+   reading model input parameter:
+     from file "oed_inv"
+  
+  [R] : title
+  [R] : runmode
+     >>> inverse modeling (extra steady state)
+  <D> : free=0, confined flow !
+  [R] : linfo
+  [R] : samples =     1
+  [R] : command line OpenMP thread configuration (  1x  8 threads)
+  [I] : OpenMP parallelisation enabled (  1x  8 threads)
+  [R] : [i0, j0, k0] = [ 200,   1,  60]
+  [R] : nonlinear solver parameter
+  [I] : fixed relxation factor assumed
+  [R] : output suffix: .h5:[X], .plt:[X], .vtk:[X], .txt:[ ]
+  
+   reading flow parameters
+  
+  [R] : flow linear solver (control=  67)
+  [R] : flow nonlinear iteration tolerance
+  [I] : flow nonlinear relaxation factor
+  
+   reading heat transport parameters
+  
+  [R] : temperature linear solver (control=  67)
+  [R] : temperature nonlinear iteration tolerance
+  [I] : temperature nonlinear relaxation factor
+  
+  <D> : no transport [disabled]
+  
+  
+  <D> : no electric potential [disabled]
+  
+  
+  <D> : grav =   0.9810E+01
+  <D> : no fluid heat production
+  <D> : rref, reference density =   0.9980E+03
+  <D> : tref, reference temperature =   0.2000E+02
+  <D> : fixed rhocm, defined by unit
+  
+   reading zone parameter 
+  
+  [R] : "uindex" - unit index number, unit-cell assignment
+  [I] : approx. speedup for the full solver :   3.33
+  
+  [R] : "units" - unit (rock) properties
+  
+   reading/preprocessing arrays
+  
+  [R] : delx
+  [R] : dely
+  [R] : delz
+  
+   reading initial values 
+  
+   open HDF5 file: oed_perth_init_final.h5
+  [R] : head, in [m]
+   open HDF5 file: oed_perth_init_final.h5
+  [R] : temp, in [degree Celsius]
+  [R] : pres, in [MPa]
+  
+   reading boundary conditions 
+  
+  [R] : head bcd, simple=right, (size=    60), bcmy=  0.1000E+19, error=ignore, (offset=     1)
+  [R] : head bcd, simple=left , (size=    60), bcmy=  0.1000E+19, bcindex=   1, error=ignore, (offset=    61)
+  [R] : temp bcd, simple=top  , (size=   200), bcmy=  0.1000E+19, bcindex=   1, error=ignore, (offset=   121)
+  [R] : temp bcn, simple=base , (size=   200), bcmy=  0.1000E+19, bcindex=   2, error=ignore, (offset=   321)
+             2 BC's ignored (SIMPLE mode)
+  [R] : temp bcd, simple=left , (size=    60), bcmy=  0.1000E+19, error=ignore, (offset=   519)
+             2 BC's ignored (SIMPLE mode)
+  [R] : temp bcd, simple=right, (size=    60), bcmy=  0.1000E+19, error=ignore, (offset=   577)
+  
+  [R] : bc unit properties, records=      3
+  <D> : property limitations
+  [R] : No default Darcy velocity - head active!
+  
+   reading external file control
+  
+
+   reading time input parameter:
+     from file "oed_inv"
+
+  [R] : Steady state !
+  <D> : tunit =          0.10000000E+01 !
+  <D> : tstart=          0.00000000E+00
+  <D> : tshift=          0.00000000E+00
+  <D> : titer =      0
+  <D> : no monitoring points !
+  <D> : no output times !
+
+
+
+   reading observed data
+     from file "oed_inv"
+
+  [R] : observed data nodes, records=    39
+  [I] : data and data node adresses, records=     39
+
+   reading inverse parameter
+
+  [R] : inversion parameters
+  <D> : no regularisation parameter !
+  [R] : variances apriori
+  <D> : bc variances apriori !
+  <D> : unit properties apriori !
+  <D> : bc unit properties apriori !
+  [R] : property map (on/off)
+  [R] : unit map (on/off)
+  <D> : uniform weights for properties used !
+  <D> : uniform weights for boundary conditions !
+  
+      optimization matrix [properties]:
+        | unit  por a_kx a_ky   kz comp a_lx a_ly   lz    q   rc   df   ec   lc  bcl bcpd s_nr s_wr |
+        |    1                                                                                      |
+        |    2                                                                                      |
+        |    3                                                                                      |
+        |    4                                                                                      |
+        |    5                 log                                                                  |
+        |    6                                                                                      |
+  
+      optimization matrix [boundary condition]:
+        | BCunit Flow Temp Conc Epot SatN |
+        |      1                          |
+        |      2                          |
+
+ Allocating ad arrays
+  [W] : "oed_inv_status.log"
+  
+   reading constant fluid properties:
+     from file "oed_inv"
+  
+  [D] : constant fluid properties assumed
+  
+     fluid properties: 
+        rhof       compf         cpf        lamf        visf      (sigmaf)
+  0.9980E+03  0.5000E-07  0.4218E+04  0.6500E+00  0.1000E-02  0.2000E-01
+  
+  [?] : WARNING: overwrite "rref" with constant "rhof"
+  [D] : constant gas properties assumed
+  
+  non-wetting properties: 
+        rhon        visn
+  0.6717E+03  0.5310E-04
+  
+ 
+  [I] : memory:      13.295 MByte data
+ 
+  nrm2(R) = 0.1755308731823D-17 (direct)
+  nrm2(R) = 0.1540617553905D-13 (direct)
+  [I] : iter_nl =     1, difmaxh =  0.49789868E+01, difmaxt =  0.43445038E+02
+  nrm2(R) = 0.1755308731823D-17 (direct)
+  nrm2(R) = 0.1540617553905D-13 (direct)
+  [I] : iter_nl =     2, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+                              ===> leaving nonlinear iteration
+ Time for forward_iter:  0.360000014    
+  ... calculate (lin/log) values
+  objective function,     value=  0.39677981E+02
+  objective function, iteration=               1
+   data     =   0.7935596201274885E+02  0.2284152907415402E+00
+   parameter=   0.0000000000000000E+00
+  [W] : Data to "oed_inv_1.dat"
+  [W] : Parameter to "oed_inv_P_1.dat"
+  [W] : Parameter information to "oed_inv_parameter.h5"
+ 
+ 
+ *** Inverse iteration number            1  ***
+  [W] : HDF5 to "oed_inv_1.h5"
+  [W] : Tecplot to "oed_inv_1.plt"
+  [W] : VTK to "oed_inv_1.vtk"
+  [W] : Data to "oed_inv_1.dat"
+  [W] : Parameter to "oed_inv_P_1.dat"
+  [W] : Parameter information to "oed_inv_parameter.h5"
+ full Jacobi compute
+  Seeding:   kz_unit0000005, component=  4/17, unit=     5/    6
+  nrm2(R) = 0.1755308731823D-17 (direct)
+  nrm2(R) = 0.1540617553905D-13 (direct)
+  [I] : iter_nl =     1, difmaxh =  0.49789868E+01, difmaxt =  0.43445038E+02
+  nrm2(R) = 0.1755308731823D-17 (direct)
+  nrm2(R) = 0.1540617553905D-13 (direct)
+  [I] : iter_nl =     2, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  nrm2(R) = 0.1214481857490D-24 (direct)
+  nrm2(R) = 0.9625893793250D-17 (direct)
+  [I] : iter_nl =     1, difmaxh =  0.74542804E-02, difmaxt = -0.40429499E+00
+  nrm2(R) = 0.1214481857490D-24 (direct)
+  nrm2(R) = 0.9625893793250D-17 (direct)
+  [I] : iter_nl =     2, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : HDF5 Jacobian to "oed_inv_out_J_1.h5", seeding=   1, sample=   1
+ Time for full jocobi:  0.838999987    
+  [W] : temp-JacW to "oed_inv_JWtemp_1.plt"
+  ... calculate (lin/log) values
+  [W] : "oed_inv_status-inv.log"
+  ... calculate bayes step
+   PLU: nrm2(R) 0.00000E+00 rel= 0.00000E+00
+  [I] : nrm2(p_k-p_(k+1)):   5.9632860040325060     
+  [I] : end bayes step
+warning: (+) cut   kz_unit0000005= -0.29933606E+02 to  -0.28834994E+02 !
+  ... calculate (exp) values
+  nrm2(R) = 0.1971761754749D-17 (direct)
+  nrm2(R) = 0.1567619549163D-13 (direct)
+  [I] : iter_nl =     1, difmaxh =  0.49789869E+01, difmaxt =  0.43310812E+02
+  nrm2(R) = 0.1971761754749D-17 (direct)
+  nrm2(R) = 0.1567619549163D-13 (direct)
+  [I] : iter_nl =     2, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+                              ===> leaving nonlinear iteration
+  ... calculate (exp) values
+  relaxation:  0.10000000E+01, objective function:  0.39677981E+02->  0.32128018E+02, iteration: 1
+  [W] : "oed_inv_status-inv.log"
+  objective function, iteration=               1
+   data     =   0.6422250902673694E+02  0.2054844807094938E+00
+   parameter=   0.3352636002257180E-01
+  ... calculate (lin/log) values
+ rms_data=   8.0138947476702569       >   3.9000000000000003E-003
+ Time for inv_step:   0.386000007    
+ Time for loop:    1.89900005    
+ 
+ 
+ *** Inverse iteration number            2  ***
+  [W] : HDF5 to "oed_inv_2.h5"
+  [W] : Tecplot to "oed_inv_2.plt"
+  [W] : VTK to "oed_inv_2.vtk"
+  [W] : Data to "oed_inv_2.dat"
+  [W] : Parameter to "oed_inv_P_2.dat"
+  [W] : Parameter information to "oed_inv_parameter.h5"
+ full Jacobi compute
+  Seeding:   kz_unit0000005, component=  4/17, unit=     5/    6
+  nrm2(R) = 0.1971761754749D-17 (direct)
+  nrm2(R) = 0.1567619549163D-13 (direct)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  nrm2(R) = 0.1228318941364D-24 (direct)
+  nrm2(R) = 0.2485995892074D-16 (direct)
+  [I] : iter_nl =     1, difmaxh =  0.25392708E-02, difmaxt = -0.12157451E+01
+  nrm2(R) = 0.1228318941364D-24 (direct)
+  nrm2(R) = 0.2485995892074D-16 (direct)
+  [I] : iter_nl =     2, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : HDF5 Jacobian to "oed_inv_out_J_2.h5", seeding=   1, sample=   1
+ Time for full jocobi:  0.634000003    
+  [W] : temp-JacW to "oed_inv_JWtemp_2.plt"
+  ... calculate (lin/log) values
+  ... calculate bayes step
+   PLU: nrm2(R) 0.00000E+00 rel= 0.00000E+00
+  [I] : nrm2(p_k-p_(k+1)):   1.7198524176404488     
+  [I] : end bayes step
+warning: (+) cut   kz_unit0000005= -0.28834994E+02 to  -0.27736382E+02 !
+  ... calculate (exp) values
+  nrm2(R) = 0.2069652108717D-17 (direct)
+  nrm2(R) = 0.1597184799404D-13 (direct)
+  [I] : iter_nl =     1, difmaxh =  0.16990275E-02, difmaxt = -0.23107195E+01
+  nrm2(R) = 0.2069652108717D-17 (direct)
+  nrm2(R) = 0.1597184799404D-13 (direct)
+  [I] : iter_nl =     2, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+                              ===> leaving nonlinear iteration
+  ... calculate (exp) values
+  relaxation:  0.10000000E+01, objective function:  0.32128018E+02->  0.24146466E+02, iteration: 1
+  [W] : "oed_inv_status-inv.log"
+  objective function, iteration=               2
+   data     =   0.4815882644751265E+02  0.1779398993741755E+00
+   parameter=   0.1341054400902872E+00
+  ... calculate (lin/log) values
+ rms_data=   6.9396560755928425       >   3.9000000000000003E-003
+ Time for inv_step:   0.386999995    
+ Time for loop:    1.63999999    
+ 
+ 
+ *** Inverse iteration number            3  ***
+  [W] : HDF5 to "oed_inv_3.h5"
+  [W] : Tecplot to "oed_inv_3.plt"
+  [W] : VTK to "oed_inv_3.vtk"
+  [W] : Data to "oed_inv_3.dat"
+  [W] : Parameter to "oed_inv_P_3.dat"
+  [W] : Parameter information to "oed_inv_parameter.h5"
+ full Jacobi compute
+  Seeding:   kz_unit0000005, component=  4/17, unit=     5/    6
+  nrm2(R) = 0.2069652108717D-17 (direct)
+  nrm2(R) = 0.1597184799404D-13 (direct)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  nrm2(R) = 0.1241725241054D-24 (direct)
+  nrm2(R) = 0.7671851608826D-16 (direct)
+  [I] : iter_nl =     1, difmaxh =  0.85261660E-03, difmaxt = -0.32605587E+01
+  nrm2(R) = 0.1241725241054D-24 (direct)
+  nrm2(R) = 0.7671851608826D-16 (direct)
+  [I] : iter_nl =     2, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : HDF5 Jacobian to "oed_inv_out_J_3.h5", seeding=   1, sample=   1
+ Time for full jocobi:  0.589999974    
+  [W] : temp-JacW to "oed_inv_JWtemp_3.plt"
+  ... calculate (lin/log) values
+  ... calculate bayes step
+   PLU: nrm2(R) 0.00000E+00 rel= 0.00000E+00
+  [I] : nrm2(p_k-p_(k+1)):   5.0545988007504282E-002
+  [I] : end bayes step
+  ... calculate (exp) values
+  nrm2(R) = 0.1882652744051D-17 (direct)
+  nrm2(R) = 0.1584565793440D-13 (direct)
+  [I] : iter_nl =     1, difmaxh =  0.42028670E-04, difmaxt = -0.16784041E+00
+  nrm2(R) = 0.1882652744051D-17 (direct)
+  nrm2(R) = 0.1584565793440D-13 (direct)
+  [I] : iter_nl =     2, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+                              ===> leaving nonlinear iteration
+  ... calculate (exp) values
+  relaxation:  0.10000000E+01, objective function:  0.24146466E+02->  0.24122035E+02, iteration: 1
+  [W] : "oed_inv_status-inv.log"
+  objective function, iteration=               3
+   data     =   0.4810372397414669E+02  0.1778380724033852E+00
+   parameter=   0.1403464587340458E+00
+  ... calculate (lin/log) values
+ rms_data=   6.9356848237320223       >   3.9000000000000003E-003
+ Time for inv_step:   0.361999989    
+ Time for loop:    1.63699996    
+ 
+ 
+ *** Inverse iteration number            4  ***
+  [W] : HDF5 to "oed_inv_4.h5"
+  [W] : Tecplot to "oed_inv_4.plt"
+  [W] : VTK to "oed_inv_4.vtk"
+  [W] : Data to "oed_inv_4.dat"
+  [W] : Parameter to "oed_inv_P_4.dat"
+  [W] : Parameter information to "oed_inv_parameter.h5"
+ full Jacobi compute
+  Seeding:   kz_unit0000005, component=  4/17, unit=     5/    6
+  nrm2(R) = 0.1882652744051D-17 (direct)
+  nrm2(R) = 0.1584565793440D-13 (direct)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  nrm2(R) = 0.1219688711087D-24 (direct)
+  nrm2(R) = 0.7784958552037D-16 (direct)
+  [I] : iter_nl =     1, difmaxh =  0.81073692E-03, difmaxt = -0.33801401E+01
+  nrm2(R) = 0.1219688711087D-24 (direct)
+  nrm2(R) = 0.7784958552037D-16 (direct)
+  [I] : iter_nl =     2, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : HDF5 Jacobian to "oed_inv_out_J_4.h5", seeding=   1, sample=   1
+ Time for full jocobi:  0.651000023    
+  [W] : temp-JacW to "oed_inv_JWtemp_4.plt"
+  ... calculate (lin/log) values
+  ... calculate bayes step
+   PLU: nrm2(R) 0.00000E+00 rel= 0.00000E+00
+  [I] : nrm2(p_k-p_(k+1)):   6.5227427956882468E-003
+  [I] : end bayes step
+  ... calculate (exp) values
+  nrm2(R) = 0.1818637867474D-17 (direct)
+  nrm2(R) = 0.1593961404731D-13 (direct)
+  [I] : iter_nl =     1, difmaxh = -0.53060826E-05, difmaxt =  0.21997938E-01
+  nrm2(R) = 0.1818637867474D-17 (direct)
+  nrm2(R) = 0.1593961404731D-13 (direct)
+  [I] : iter_nl =     2, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+                              ===> leaving nonlinear iteration
+  ... calculate (exp) values
+  relaxation:  0.10000000E+01, objective function:  0.24122035E+02->  0.24121599E+02, iteration: 1
+  [W] : "oed_inv_status-inv.log"
+  objective function, iteration=               4
+   data     =   0.4810366537952629E+02  0.1778379640920461E+00
+   parameter=   0.1395331056132309E+00
+  ... calculate (lin/log) values
+ rms_data=   6.9356805995897970       >   3.9000000000000003E-003
+ Time for inv_step:   0.344000012    
+ Time for loop:    1.67299998    
+ 
+ 
+ *** Inverse iteration number            5  ***
+  [W] : HDF5 to "oed_inv_5.h5"
+  [W] : Tecplot to "oed_inv_5.plt"
+  [W] : VTK to "oed_inv_5.vtk"
+  [W] : Data to "oed_inv_5.dat"
+  [W] : Parameter to "oed_inv_P_5.dat"
+  [W] : Parameter information to "oed_inv_parameter.h5"
+ full Jacobi compute
+  Seeding:   kz_unit0000005, component=  4/17, unit=     5/    6
+  nrm2(R) = 0.1818637867474D-17 (direct)
+  nrm2(R) = 0.1593961404731D-13 (direct)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  nrm2(R) = 0.1230262790891D-24 (direct)
+  nrm2(R) = 0.7343540137951D-16 (direct)
+  [I] : iter_nl =     1, difmaxh =  0.81602589E-03, difmaxt = -0.33648486E+01
+  nrm2(R) = 0.1230262790891D-24 (direct)
+  nrm2(R) = 0.7343540137951D-16 (direct)
+  [I] : iter_nl =     2, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : HDF5 Jacobian to "oed_inv_out_J_5.h5", seeding=   1, sample=   1
+ Time for full jocobi:  0.648999989    
+  [W] : temp-JacW to "oed_inv_JWtemp_5.plt"
+  ... calculate (lin/log) values
+  ... calculate bayes step
+   PLU: nrm2(R) 0.00000E+00 rel= 0.00000E+00
+  [I] : nrm2(p_k-p_(k+1)):   7.4921174483555896E-004
+  [I] : end bayes step
+  ... calculate (exp) values
+  nrm2(R) = 0.1829655190651D-17 (direct)
+  nrm2(R) = 0.1554000290362D-13 (direct)
+  [I] : iter_nl =     1, difmaxh =  0.61047695E-06, difmaxt = -0.25216317E-02
+  nrm2(R) = 0.1829655190651D-17 (direct)
+  nrm2(R) = 0.1554000290362D-13 (direct)
+  [I] : iter_nl =     2, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+                              ===> leaving nonlinear iteration
+  ... calculate (exp) values
+  relaxation:  0.10000000E+01, objective function:  0.24121599E+02->  0.24121594E+02, iteration: 1
+  [W] : "oed_inv_status-inv.log"
+  objective function, iteration=               5
+   data     =   0.4810356068038215E+02  0.1778377705569732E+00
+   parameter=   0.1396264083827232E+00
+  data rms   0.177837770557E+00 reached at max number of iterations,      5
+  ... calculate (lin/log) values
+  [W] : HDF5 to "oed_inv_final.h5"
+  [W] : Tecplot to "oed_inv_final.plt"
+  [W] : VTK to "oed_inv_final.vtk"
+  [W] : Data to "oed_inv_final.dat"
+  [W] : Parameter to "oed_inv_P_final.dat"
+  [W] : Parameter information to "oed_inv_parameter.h5"
+  [W] : HDF5-Inverse to "oed_inv_J_5.h5"
+ Deallocated Memory, remaining    4.1438674926757812       MB
+ Cleared allocated memory for AD memory usage is now    416.00000000000000       Byte
+  [W] : "oed_inv_status.log"
+ total cpu time:    0: 9.88 min
+ RUN O.K.

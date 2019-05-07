@@ -30,6 +30,14 @@ fi
 # Go to make_dir
 pushd ${make_dir}
 
+# Module configuration (for debugging, remove 2> /dev/null)
+module purge 2> /dev/null
+module load {module0} 2> /dev/null
+module load {module1} 2> /dev/null
+module load {module2} 2> /dev/null
+module load {module3} 2> /dev/null
+module load {module4} 2> /dev/null
+
 # Get git branch name
 git_branch="{git_branch_in}"
 
@@ -43,14 +51,14 @@ else
     exit 1
 fi
 
-#New executable name
-new_exe_name="shem_${shem_type_name}${compiler_name}_${props}_${git_branch}.x"
+#New executable suffix
+new_exe_suffix="${shem_type_name}${compiler_name}_${props}_${git_branch}"
 
 #Clean make-directory
-gmake clean
+gmake cleanall
 
 #Compilation command 
-gmake ${shem_type} COMPTYPE=${compiler} PROPS=${props} ${flags}
+gmake ${shem_type} COMPTYPE=${compiler} PROPS=${props} HDF5_MOD=$HDF5_ROOT/include/ HDF5_LIB=$HDF5_ROOT/lib/ ${flags}
 
 # Catch compilation errors
 if [ $? -ge 1 ];
@@ -62,18 +70,31 @@ then
     exit 1
 fi
 
-#Rename executable
-rename shem_${shem_type_name}${compiler_name}_${props}.x ${new_exe_name} shem_${shem_type_name}${compiler_name}_${props}.x
+# Rename executable
+rename shem_${shem_type_name}${compiler_name}_${props}.x shem_${new_exe_suffix}.x shem_${shem_type_name}${compiler_name}_${props}.x
 
-#Move executable
-mv ${new_exe_name} ${deltatests_dir}
+# Move executable
+mv shem_${new_exe_suffix}.x ${deltatests_dir}
+
+# Move Makefile.flags, version.inc
+mv Makefile.flags ${deltatests_dir}
+mv version.inc ${deltatests_dir}
+
+# Rename Makefile.flags, version.inc
+popd
+rename Makefile.flags Makefile_${new_exe_suffix}.flags Makefile.flags
+rename version.inc version_${new_exe_suffix}.inc version.inc
+
+# File with RWTH cluster module configuration
+module list -t 2> module_${new_exe_suffix}.inc
 
 # Clean make-directory
-gmake clean
+pushd ${make_dir}
+gmake cleanall
 
 # Create and move tgz Backup
-gmake tgz
-mv *.tgz ${deltatests_dir}
+# gmake tgz
+# mv *.tgz ${deltatests_dir}
 
 # Echo paths
 echo "--------------------------------------------------------"

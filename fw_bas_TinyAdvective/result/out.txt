@@ -1,0 +1,410 @@
+  
+ ======================================
+ 7.50 (Smarty)                                                                   
+ ======================================
+  
+  
+  
+  *** NEW MODEL 
+
+   checking input definitions:
+     from file "tiny_adv_init"
+  
+   reading model input parameter:
+     from file "tiny_adv_init"
+  
+  [R] : title
+  [R] : runmode
+     >>> forward modeling
+  <D> : free=0, confined flow !
+  [R] : linfo
+  [R] : command line OpenMP thread configuration (  1x  1 threads)
+  [R] : [i0, j0, k0] = [   8,   1,   4]
+  [R] : nonlinear solver parameter
+  [I] : fixed relxation factor assumed
+  [R] : output suffix: .h5:[X], .plt:[ ], .vtk:[X], .txt:[ ]
+  
+  <D> : no flow [disabled]
+  
+  
+   reading heat transport parameters
+  
+  [R] : temperature linear solver (control=  64)
+  [R] : temperature nonlinear iteration tolerance
+  [I] : temperature nonlinear relaxation factor
+  
+  <D> : no transport [disabled]
+  
+  
+  <D> : no electric potential [disabled]
+  
+  
+  <D> : grav =   0.9810E+01
+  <D> : no fluid heat production
+  [R] : rref, reference density =   0.9980E+03
+  <D> : tref, reference temperature =   0.2000E+02
+  <D> : fixed rhocm, defined by unit
+  
+   reading zone parameter 
+  
+  [R] : "uindex" - unit index number, unit-cell assignment
+  [I] : approx. speedup for the full solver :   1.00
+  
+  [I] : ... alloc_arrays
+  [R] : "units" - unit (rock) properties
+  unit properties:     por        a_kx        a_ky          kz        comp        a_lx        a_ly          lz           q          rc          df          ec          lc         bcl        bcpd        s_nr        s_wr     unit#
+                    0.2500E+00  0.1000E+01  0.1000E+01  0.1000E-12  0.1000E-09  0.1000E+01  0.1000E+01  0.2900E+01  0.1000E-19  0.2060E+07  0.1000E+01  0.1000E-09  0.0000E+00  0.2000E+01  0.1000E+04  0.5000E-01  0.2000E+00     1
+  
+   reading/preprocessing arrays
+  
+  [R] : delx
+  [R] : dely
+  [R] : delz
+  
+   reading initial values 
+  
+  [R] : head, in [m]
+  [R] : temp, in [degree Celsius]
+  [R] : pres, in [MPa]
+  
+   reading boundary conditions 
+  
+  [R] : temp bcd, simple=top  , (size=     8), bcmy=  0.1000E+19, error=ignore, (offset=     1)
+  [R] : temp bcd, simple=base , (size=     8), bcmy=  0.1000E+19, error=ignore, (offset=     9)
+  
+  <D> : property limitations
+  [R] : Zero default Darcy velocity -  no # velocity!
+  
+   reading external file control
+  
+
+   reading time input parameter:
+     from file "tiny_adv_init"
+
+  <D> : Steady state !
+  <D> : tunit =          0.10000000E+01 !
+  <D> : tstart=          0.00000000E+00
+  <D> : tshift=          0.00000000E+00
+  <D> : titer =      0
+  <D> : no monitoring points !
+  <D> : no output times !
+
+
+  [W] : "tiny_adv_init_status.log"
+  ... forward_init
+  ... pressure (init=0)
+  ... user_init (REINJECTION)
+  ... pressure (init=0)
+ 
+  [I] : memory:       0.029 MByte data
+ 
+  ... forward(picard)
+ Calculate difmaxf from loc_nltolf =    1.0000000000000001E-030
+ difmaxf =    1.0000000000000001E-021
+ Testing convergence with difmaxf =    1.0000000000000001E-021
+ ENOUGH =    1.0000000000000001E-021
+ Testing    1.0000000000000001E-021 for convergence in range    1.0000000000000001E-030
+  ... init: history[1]
+ ENOUGH =    10.000000000000000     
+ Testing    10.000000000000000      for convergence in range    1.0000000000000000E-008
+  ... init: history[2]
+  ... calc_user
+  ... pressure (init=1)
+  ... calc_temp
+  ... tcoef
+  ... solve(temp)
+  ilu precondition
+  nrm2(R) = 0.2730548850246D-01,  nrm2[r] = 0.2730548850246D-01,  nrm2[r] = 0.2936783908481D-03,  nrm2[r] = 0.6469578014162D-05,  nrm2[r] = 0.4979251466444D-07,  nrm2[r] = 0.8393955777088D-09,  nrm2[r] = 0.1160261431256D-10,  nrm2(R) = 0.3202275858500D-14 ,    1 threads used, Number of Iterations:     6 (BiCGStab)
+  ... check_change
+   nl iteration rms = 0.74514E+00,  difmax = 0.13329E+01, [    8,    1,    2]
+ ENOUGH =    1.3329447006914137     
+ Testing    1.3329447006914137      for convergence in range    1.0000000000000000E-008
+  [I] : iter_nl =     1, difmaxh =  0.10000000E-20, difmaxt =  0.13329447E+01
+  [W] : "tiny_adv_init_status.log"
+  ... setting total salinity
+  ... calc_user
+  ... pressure (init=1)
+  ... calc_temp
+  ... tcoef
+  ... solve(temp)
+  ilu precondition
+  nrm2(R) = 0.5486608462988D-05,  nrm2[r] = 0.5486608462988D-05,  nrm2[r] = 0.8285323561566D-07,  nrm2[r] = 0.4466312757240D-09,  nrm2[r] = 0.1779899231615D-10,  nrm2(R) = 0.9054185119100D-12 ,    1 threads used, Number of Iterations:     4 (BiCGStab)
+  ... check_change
+   nl iteration rms = 0.96900E-04,  difmax =-0.19380E-03, [    1,    1,    3]
+ ENOUGH =   -1.9380065754504017E-004
+ Testing    1.9380065754504017E-004 for convergence in range    1.0000000000000000E-008
+  [I] : iter_nl =     2, difmaxh =  0.10000000E-20, difmaxt = -0.19380066E-03
+  [W] : "tiny_adv_init_status.log"
+  ... setting total salinity
+  ... calc_user
+  ... pressure (init=1)
+  ... calc_temp
+  ... tcoef
+  ... solve(temp)
+  ilu precondition
+  nrm2(R) = 0.6794530877766D-09,  nrm2[r] = 0.6794530877766D-09,  nrm2[r] = 0.7740371478112D-11,  nrm2(R) = 0.4440143717069D-12 ,    1 threads used, Number of Iterations:     2 (BiCGStab)
+  ... check_change
+   nl iteration rms = 0.21008E-07,  difmax =-0.37617E-07, [    2,    1,    2]
+ ENOUGH =   -3.7617194692529665E-008
+ Testing    3.7617194692529665E-008 for convergence in range    1.0000000000000000E-008
+  [I] : iter_nl =     3, difmaxh =  0.10000000E-20, difmaxt = -0.37617195E-07
+  [W] : "tiny_adv_init_status.log"
+  ... setting total salinity
+  ... calc_user
+  ... pressure (init=1)
+  ... calc_temp
+  ... tcoef
+  ... solve(temp)
+  ilu precondition
+  nrm2(R) = 0.4508235514934D-12 ,    1 threads used, Number of Iterations:     1 (BiCGStab)
+  ... check_change
+   nl iteration rms = 0.00000E+00,  difmax = 0.00000E+00, [    1,    1,    1]
+ ENOUGH =    0.0000000000000000     
+ Testing    0.0000000000000000      for convergence in range    1.0000000000000000E-008
+ Simple case converged:  T
+  [I] : iter_nl =     4, difmaxh =  0.10000000E-20, difmaxt =  0.00000000E+00
+  [W] : "tiny_adv_init_status.log"
+  ... setting total salinity
+ delt_count -1518114695 delt_double           0 iter_nlold          10
+  [W] : HDF5 to "tiny_adv_init_final.h5"
+  [W] : VTK to "tiny_adv_init_final.vtk"
+  [W] : Borehole logs to "tiny_adv_init_final_log3.dat"
+  [W] : Borehole logs to "tiny_adv_init_final_log4.dat"
+  [W] : Borehole logs to "tiny_adv_init_final_log5.dat"
+  [W] : Borehole logs to "tiny_adv_init_final_log6.dat"
+  [I] : ... dealloc_arrays
+ Deallocated Memory, remaining    7.6293945312500000E-006  MB
+  
+  [I] : ... dealloc_data
+  
+  
+  
+  *** NEW MODEL 
+
+   checking input definitions:
+     from file "tiny_adv"
+  
+   reading model input parameter:
+     from file "tiny_adv"
+  
+  [R] : title
+  [R] : runmode
+     >>> forward modeling
+  <D> : free=0, confined flow !
+  [R] : linfo
+  [R] : command line OpenMP thread configuration (  1x  1 threads)
+  [R] : [i0, j0, k0] = [   8,   1,   4]
+  [R] : nonlinear solver parameter
+  [I] : fixed relxation factor assumed
+  [R] : output suffix: .h5:[X], .plt:[ ], .vtk:[X], .txt:[ ]
+  
+   reading flow parameters
+  
+  [R] : flow linear solver (control=  64)
+  [R] : flow nonlinear iteration tolerance
+  [I] : flow nonlinear relaxation factor
+  
+   reading heat transport parameters
+  
+  [R] : temperature linear solver (control=  64)
+  [R] : temperature nonlinear iteration tolerance
+  [I] : temperature nonlinear relaxation factor
+  
+  <D> : no transport [disabled]
+  
+  
+  <D> : no electric potential [disabled]
+  
+  
+  <D> : grav =   0.9810E+01
+  <D> : no fluid heat production
+  [R] : rref, reference density =   0.9980E+03
+  <D> : tref, reference temperature =   0.2000E+02
+  <D> : fixed rhocm, defined by unit
+  
+   reading zone parameter 
+  
+  [R] : "uindex" - unit index number, unit-cell assignment
+  [I] : approx. speedup for the full solver :   1.00
+  
+  [I] : ... alloc_arrays
+  [R] : "units" - unit (rock) properties
+  unit properties:     por        a_kx        a_ky          kz        comp        a_lx        a_ly          lz           q          rc          df          ec          lc         bcl        bcpd        s_nr        s_wr     unit#
+                    0.2500E+00  0.1000E+01  0.1000E+01  0.1000E-11  0.1000E-09  0.1000E+01  0.1000E+01  0.2900E+01  0.1000E-19  0.2060E+07  0.1000E+01  0.1000E-09  0.0000E+00  0.2000E+01  0.1000E+04  0.5000E-01  0.2000E+00     1
+  
+   reading/preprocessing arrays
+  
+  [R] : delx
+  [R] : dely
+  [R] : delz
+  
+   reading initial values 
+  
+  [R] : head, in [m]
+   open HDF5 file: tiny_adv_init_final.h5
+  [R] : temp, in [degree Celsius]
+  [R] : pres, in [MPa]
+  
+   reading boundary conditions 
+  
+  [R] : head bcd, simple=top  , (size=     8), bcmy=  0.1000E+19, error=ignore, (offset=     1)
+  [R] : temp bcd, simple=top  , (size=     8), bcmy=  0.1000E+19, error=ignore, (offset=     9)
+  [R] : temp bcd, simple=base , (size=     8), bcmy=  0.1000E+19, error=ignore, (offset=    17)
+  
+  <D> : property limitations
+  [R] : Zero default Darcy velocity -  no # velocity!
+  
+   reading external file control
+  
+
+   reading time input parameter:
+     from file "tiny_adv"
+
+  <D> : Steady state !
+  <D> : tunit =          0.10000000E+01 !
+  <D> : tstart=          0.00000000E+00
+  <D> : tshift=          0.00000000E+00
+  <D> : titer =      0
+  <D> : no monitoring points !
+  <D> : no output times !
+
+
+  [W] : "tiny_adv_status.log"
+  ... forward_init
+  ... pressure (init=0)
+  ... user_init (REINJECTION)
+  ... pressure (init=0)
+ 
+  [I] : memory:       0.030 MByte data
+ 
+  ... forward(picard)
+ Calculate difmaxf from loc_nltolf =    9.9999999999999995E-007
+ difmaxf =    1000.0000000000000     
+ Testing convergence with difmaxf =    1000.0000000000000     
+ ENOUGH =    1000.0000000000000     
+ Testing    1000.0000000000000      for convergence in range    9.9999999999999995E-007
+  ... init: history[1]
+ ENOUGH =    100000.00000000000     
+ Testing    100000.00000000000      for convergence in range    1.0000000000000000E-004
+  ... init: history[2]
+  ... calc_user
+  ... pressure (init=1)
+  ... calc_head
+  ... fcoef
+  ... solve(head)
+  ilu precondition
+  nrm2(R) = 0.1477141153234D-01,  nrm2[r] = 0.1477141153234D-01,  nrm2[r] = 0.3012925966362D-02,  nrm2[r] = 0.6592787205746D-02,  nrm2[r] = 0.6888275774377D-04,  nrm2[r] = 0.1575291623193D-05,  nrm2[r] = 0.5861383047935D-07,  nrm2[r] = 0.5963705569733D-09,  nrm2(R) = 0.2839436010490D-10 ,    1 threads used, Number of Iterations:     7 (BiCGStab)
+ Compare difmaxfold and difmaxf:    1000.0000000000000       -    1000.0000000000000     
+ Check change with difmaxf =    1000.0000000000000     
+  ... check_change
+   nl iteration rms = 0.44666E+00,  difmax =-0.72729E+00, [    6,    1,    3]
+ difmaxf after check_change:  -0.72728651662321919     
+ ENOUGH =  -0.72728651662321919     
+ Testing   0.72728651662321919      for convergence in range    9.9999999999999995E-007
+  ... calc_temp
+  ... tcoef
+  ... solve(temp)
+  ilu precondition
+  nrm2(R) = 0.1243046155242D-01,  nrm2[r] = 0.1243046155242D-01,  nrm2[r] = 0.4666444160061D-03,  nrm2[r] = 0.8589632962934D-06,  nrm2(R) = 0.2870088047341D-08 ,    1 threads used, Number of Iterations:     3 (BiCGStab)
+  ... check_change
+   nl iteration rms = 0.26865E+00,  difmax =-0.72950E+00, [    1,    1,    2]
+ ENOUGH =  -0.72949831519996522     
+ Testing   0.72949831519996522      for convergence in range    1.0000000000000000E-004
+  [I] : iter_nl =     1, difmaxh = -0.72728652E+00, difmaxt = -0.72949832E+00
+  [W] : "tiny_adv_status.log"
+  ... setting total salinity
+  ... calc_user
+  ... pressure (init=1)
+  ... calc_head
+  ... fcoef
+  ... solve(head)
+  ilu precondition
+  nrm2(R) = 0.2945342863506D-04,  nrm2[r] = 0.2945342863506D-04,  nrm2[r] = 0.1040907306618D-04,  nrm2[r] = 0.4390150884530D-05,  nrm2[r] = 0.1102643380945D-06,  nrm2[r] = 0.5841729116843D-08,  nrm2(R) = 0.1757158346276D-09 ,    1 threads used, Number of Iterations:     5 (BiCGStab)
+ Compare difmaxfold and difmaxf:  -0.72728651662321919       -  -0.72728651662321919     
+ Check change with difmaxf =  -0.72728651662321919     
+  ... check_change
+   nl iteration rms = 0.81628E-03,  difmax =-0.12680E-02, [    4,    1,    2]
+ difmaxf after check_change:   -1.2680261388222647E-003
+ ENOUGH =   -1.2680261388222647E-003
+ Testing    1.2680261388222647E-003 for convergence in range    9.9999999999999995E-007
+  ... calc_temp
+  ... tcoef
+  ... solve(temp)
+  ilu precondition
+  nrm2(R) = 0.4052101306544D-04,  nrm2[r] = 0.4052101306544D-04,  nrm2[r] = 0.7267357397877D-06,  nrm2(R) = 0.1969636019739D-08 ,    1 threads used, Number of Iterations:     2 (BiCGStab)
+  ... check_change
+   nl iteration rms = 0.86503E-03,  difmax = 0.28604E-02, [    1,    1,    2]
+ ENOUGH =    2.8604173021662405E-003
+ Testing    2.8604173021662405E-003 for convergence in range    1.0000000000000000E-004
+  [I] : iter_nl =     2, difmaxh = -0.12680261E-02, difmaxt =  0.28604173E-02
+  [W] : "tiny_adv_status.log"
+  ... setting total salinity
+  ... calc_user
+  ... pressure (init=1)
+  ... calc_head
+  ... fcoef
+  ... solve(head)
+  ilu precondition
+  nrm2(R) = 0.8759714927758D-07,  nrm2[r] = 0.8759714927758D-07,  nrm2[r] = 0.1737663682848D-07,  nrm2[r] = 0.3148451745497D-07,  nrm2[r] = 0.2717119753078D-09,  nrm2(R) = 0.1466246718831D-10 ,    1 threads used, Number of Iterations:     4 (BiCGStab)
+ Compare difmaxfold and difmaxf:   -1.2680261388222647E-003  -   -1.2680261388222647E-003
+ Check change with difmaxf =   -1.2680261388222647E-003
+  ... check_change
+   nl iteration rms = 0.14220E-05,  difmax = 0.24182E-05, [    4,    1,    2]
+ difmaxf after check_change:    2.4182201006084370E-006
+ ENOUGH =    2.4182201006084370E-006
+ Testing    2.4182201006084370E-006 for convergence in range    9.9999999999999995E-007
+  ... calc_temp
+  ... tcoef
+  ... solve(temp)
+  ilu precondition
+  nrm2(R) = 0.1667965569712D-06 ,    1 threads used, Number of Iterations:     1 (BiCGStab)
+  ... check_change
+   nl iteration rms = 0.00000E+00,  difmax = 0.00000E+00, [    1,    1,    1]
+ ENOUGH =    0.0000000000000000     
+ Testing    0.0000000000000000      for convergence in range    1.0000000000000000E-004
+ Simple case converged:  T
+  [I] : iter_nl =     3, difmaxh =  0.24182201E-05, difmaxt =  0.00000000E+00
+  [W] : "tiny_adv_status.log"
+  ... setting total salinity
+  ... calc_user
+  ... pressure (init=1)
+  ... calc_head
+  ... fcoef
+  ... solve(head)
+  ilu precondition
+  nrm2(R) = 0.1475056279483D-10 ,    1 threads used, Number of Iterations:     1 (BiCGStab)
+ Compare difmaxfold and difmaxf:    2.4182201006084370E-006  -    2.4182201006084370E-006
+ Check change with difmaxf =    2.4182201006084370E-006
+  ... check_change
+   nl iteration rms = 0.00000E+00,  difmax = 0.00000E+00, [    1,    1,    1]
+ difmaxf after check_change:    0.0000000000000000     
+ ENOUGH =    0.0000000000000000     
+ Testing    0.0000000000000000      for convergence in range    9.9999999999999995E-007
+ Simple case converged:  T
+  ... calc_temp
+  ... tcoef
+  ... solve(temp)
+  ilu precondition
+  nrm2(R) = 0.1668055540443D-06 ,    1 threads used, Number of Iterations:     1 (BiCGStab)
+  ... check_change
+   nl iteration rms = 0.00000E+00,  difmax = 0.00000E+00, [    1,    1,    1]
+ ENOUGH =    0.0000000000000000     
+ Testing    0.0000000000000000      for convergence in range    1.0000000000000000E-004
+ Simple case converged:  T
+  [I] : iter_nl =     4, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "tiny_adv_status.log"
+  ... setting total salinity
+ delt_count -1518114871 delt_double           0 iter_nlold          25
+  [W] : HDF5 to "tiny_adv_final.h5"
+  [W] : VTK to "tiny_adv_final.vtk"
+  [W] : Borehole logs to "tiny_adv_final_adv_log3.dat"
+  [W] : Borehole logs to "tiny_adv_final_adv_log4.dat"
+  [W] : Borehole logs to "tiny_adv_final_adv_log5.dat"
+  [W] : Borehole logs to "tiny_adv_final_adv_log6.dat"
+  [I] : ... dealloc_arrays
+ Deallocated Memory, remaining    7.6293945312500000E-006  MB
+  
+  [I] : ... dealloc_data
+  
+ total cpu time:    0: 3.42 min
+ RUN O.K.
