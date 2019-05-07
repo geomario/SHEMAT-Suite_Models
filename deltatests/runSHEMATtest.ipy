@@ -164,7 +164,7 @@ for test_model in test_models:
                         model_dir + "/" + exe_name)
 
         # Prepare job_script
-        f = open(std.deltatests_dir + '/' + 'job.sh', 'r')
+        f = open(std.deltatests_dir + '/' + job_script, 'r')
         fcontent = f.read()
         f.close()
 
