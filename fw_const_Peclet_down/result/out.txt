@@ -21,7 +21,7 @@
   [R] : [i0, j0, k0] = [   3,   1, 200]
   [R] : nonlinear solver parameter
   [I] : fixed relxation factor assumed
-  [R] : output suffix: .h5:[ ], .plt:[ ], .vtk:[X], .txt:[ ]
+  [R] : output suffix: .h5:[X], .plt:[ ], .vtk:[X], .txt:[ ]
   
    reading flow parameters
   
@@ -131,7 +131,8 @@
   PLU:            0 errors was found.
   damax(R) = 0.4840573387366D-13, nrm2(R) 0.2186013199749D-12
   [I] : iter_nl =     2, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : HDF5 to "Peclet_down_final.h5"
   [W] : VTK to "Peclet_down_final.vtk"
  Deallocated Memory, remaining    7.6293945312500000E-006  MB
- total cpu time:    0: 0.04 min
+ total cpu time:    0: 0.06 min
  RUN O.K.

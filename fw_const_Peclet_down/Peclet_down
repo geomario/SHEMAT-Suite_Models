@@ -22,15 +22,15 @@ vertical inversion temperature + flow down
 200*5. 
 
 # nlsolve
-50  0
+100  0
 
 # file output: vtk hdf
 
 !===========>> flow
 # lsolvef  (linear solver control)
-1.d-15  67  20
+1.d-15  67  50
 # nliterf (nonlinear iteration control)
-1.0d-4 0.5
+1.0d-10 0.5
 
 
 # head bcd, simple=top   !(flow boundary conditions)
@@ -42,7 +42,7 @@ vertical inversion temperature + flow down
 # lsolvet  (linear solver control)
 1.d-15  67  800
 # nlitert(nonlinear iteration control)
-1.0d-04 0.5
+1.0d-10 0.5
 
 # temp bcd, simple=top	!(temperature boundary conditions)
 3*10.d0
