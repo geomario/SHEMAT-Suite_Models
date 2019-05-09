@@ -58,6 +58,7 @@ test_models = [
     # "ad_const_TemperatureInversion",  # only in branch 'cmake'
     # "fw_bas_TinyAdvective",
     # "fw_const_Peclet_down",
+    # "fw_const_Peclet_up",
 ]
 
 ###############################################################################
