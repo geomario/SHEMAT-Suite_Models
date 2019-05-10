@@ -62,9 +62,12 @@ then
     echo "   SHEMAT-Suite repository in branch"
     echo ${git_branch}
 else
-    echo "   SHEMAT-Suite repository not in branch"
+    echo "   SHEMAT-Suite repository not yet in branch"
     echo ${git_branch}
-    exit 1
+    git checkout ${git_branch}
+    gmake dep
+    echo "   SHEMAT-Suite repository in branch"
+    echo ${git_branch}
 fi
 
 #New executable suffix
