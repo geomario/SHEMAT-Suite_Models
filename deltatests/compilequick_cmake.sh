@@ -100,8 +100,8 @@ gmake clean
 
 # Create and move tgz Backup
 popd
-gmake tgz
-mv *.tgz ${deltatests_dir}
+# gmake tgz
+# mv *.tgz ${deltatests_dir}
 rm -rf build_${props}
 
 # Echo paths
