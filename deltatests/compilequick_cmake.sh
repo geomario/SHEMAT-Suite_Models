@@ -30,6 +30,14 @@ fi
 # Go to make_dir
 pushd ${make_dir}
 
+# Module configuration (for debugging, remove 2> /dev/null)
+module purge 2> /dev/null
+module load {module0} 2> /dev/null
+module load {module1} 2> /dev/null
+module load {module2} 2> /dev/null
+module load {module3} 2> /dev/null
+module load {module4} 2> /dev/null
+
 # Get git branch name
 git_branch="{git_branch_in}"
 
@@ -47,9 +55,6 @@ fi
 new_exe_suffix="${shem_type_name}${compiler_name}_${props}_${git_branch}"
 
 #Clean make-directory
-module switch intel gcc
-module load LIBRARIES
-module load hdf5
 mkdir build_${props}
 pushd build_${props}
 cmake ..
