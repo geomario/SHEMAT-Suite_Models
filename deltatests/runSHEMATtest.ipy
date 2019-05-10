@@ -55,7 +55,7 @@ test_models = [
     # "fw_const_TheisProblem",
     # "fw_basc_SaltFlow",
     # "fw_basc_SaltFlow_small",
-    # "ad_const_TemperatureInversion",  # only in branch 'cmake'
+    # "ad_const_TemperatureInversion",  # changes automatically to branch 'cmake'
     # "fw_bas_TinyAdvective",
     # "fw_const_Peclet_down",
     # "fw_const_Peclet_up",
