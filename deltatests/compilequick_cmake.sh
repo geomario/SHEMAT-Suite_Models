@@ -41,6 +41,22 @@ module load {module4} 2> /dev/null
 # Get git branch name
 git_branch="{git_branch_in}"
 
+# git diff --exit-code --quiet
+# if [ $? -ge 1 ];
+# then
+#     echo "   Unstaged changes in Git repository! Please remove."
+#     echo "   Branch: ${git_branch}"
+#     exit 1
+# fi
+
+# git diff --cached --exit-code --quiet
+# if [ $? -ge 1 ];
+# then
+#     echo "   Staged changes in Git repository! Please remove."
+#     echo "   Branch: ${git_branch}"
+#     exit 1
+# fi
+
 if [ ${git_branch} = $(git rev-parse --abbrev-ref HEAD) ]
 then
     echo "   SHEMAT-Suite repository in branch"
