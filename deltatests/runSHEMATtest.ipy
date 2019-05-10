@@ -183,7 +183,7 @@ for test_model in test_models:
             module2=module_load[2],
             module3=module_load[3],
             module4=module_load[4],
-            )
+        )
 
         fnew = open(model_dir + '/' + job_script, 'w')
         fnew.write(fcontentwrite)
