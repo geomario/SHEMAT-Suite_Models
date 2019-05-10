@@ -89,6 +89,9 @@ for test_model in test_models:
 
     testing_suite = sti.testing_suite[test_model]
 
+    git_branch = (git_branch if not sti.git_branch[test_model] else
+                  sti.git_branch[test_model])
+
     if is_comp or is_exec:
         #######################################################################
         #                             Directories                             #
