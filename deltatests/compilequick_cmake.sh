@@ -27,9 +27,6 @@ then
     exit 1
 fi
 
-# File with RWTH cluster module configuration
-module list -t 2> module_${new_exe_suffix}.inc
-
 # Go to make_dir
 pushd ${make_dir}
 
@@ -87,6 +84,9 @@ popd
 popd
 # rename Makefile.flags Makefile_${new_exe_suffix}.flags Makefile.flags
 rename version.inc version_${new_exe_suffix}.inc version.inc
+
+# File with RWTH cluster module configuration
+module list -t 2> module_${new_exe_suffix}.inc
 
 # Clean make-directory
 pushd ${make_dir}
