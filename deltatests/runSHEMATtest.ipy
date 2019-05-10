@@ -7,13 +7,6 @@ import exceptions
 import shutil
 from pskf.tools.run import runmodule as rm
 import unittest
-# try:
-#     import SHEMATtest
-# except ImportError:
-#     raise ImportError('No module named SHEMATtest. \n\n' + 'Solution: ' +
-#                       ' Add the path /path-to-SHEMAT-Suite_Models/' +
-#                       'SHEMAT-Suite_Models/deltatests/site-packages to the' +
-#                       ' PYTHONPATH.')
 try:
     import SHEMATtest_dirs as std
 except ImportError:
