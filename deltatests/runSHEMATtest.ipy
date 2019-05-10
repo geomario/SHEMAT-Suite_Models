@@ -5,8 +5,15 @@ import os
 import time
 import exceptions
 import shutil
-from pskf.tools.run import runmodule as rm
 import unittest
+try:
+    from pskf.tools.run import runmodule as rm
+except ImportError:
+    raise ImportError(
+        'No module named pskf.tools.run.runmodule. \n\n' + 'Solution: ' +
+        'Download pyshemkf from https://github.com/jjokella/pyshemkf and add' +
+        ' the path /path-to-pyshemkf/pyshemkf/site-packages to the' +
+        ' PYTHONPATH.')
 try:
     import SHEMATtest_dirs as std
 except ImportError:
