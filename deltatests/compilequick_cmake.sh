@@ -116,9 +116,13 @@ module list -t 2> module_${new_exe_suffix}.inc
 pushd ${make_dir}
 pushd build_${props}
 gmake clean
+popd
+
+# Clean SHEMAT-Suite git repository
+git clean -f
+git checkout -- .
 
 # Create and move tgz Backup
-popd
 # gmake tgz
 # mv *.tgz ${model_dir}
 rm -r build_${props}
