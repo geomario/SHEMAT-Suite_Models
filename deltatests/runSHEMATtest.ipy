@@ -78,7 +78,7 @@ for test_model in test_models:
     compiler_name = sti.compiler_name[test_model]
     props = sti.props[test_model]
 
-    flags = sti.flags[test_model]
+    flags_dict = sti.flags_dict[test_model]
 
     module_load = sti.module_load[test_model]
 
@@ -134,7 +134,7 @@ for test_model in test_models:
             compiler,
             compiler_name,
             props,
-            flags,
+            flags_dict,
             module_load,
             git_branch,
         )

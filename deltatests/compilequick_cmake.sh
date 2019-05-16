@@ -76,10 +76,10 @@ new_exe_suffix="${shem_type_name}${compiler_name}_${props}_${git_branch}"
 #Clean make-directory
 mkdir build_${props}
 pushd build_${props}
-cmake ..
+cmake -DPROPS=${props} ${flags} ..
 
 #Compilation command 
-gmake ${shem_type} COMPTYPE=${compiler} PROPS=${props} ${flags}
+gmake ${shem_type} -j16
 
 # Catch compilation errors
 if [ $? -ge 1 ];
