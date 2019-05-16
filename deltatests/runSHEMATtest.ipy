@@ -1,10 +1,11 @@
 '''
 Run SHEMAT-Suite executable from deltatests_dir in model_dir
 '''
+import exceptions
 import os
 import time
-import exceptions
 import unittest
+
 try:
     from pskf.tools.run import runmodule as rm
 except ImportError:
