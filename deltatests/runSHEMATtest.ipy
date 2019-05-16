@@ -127,7 +127,7 @@ for test_model in test_models:
         print('--------------- \n')
 
         stf.compilequick(
-            std.deltatests_dir,
+            model_dir,
             std.make_dir,
             shem_type,
             shem_type_name,
@@ -147,7 +147,7 @@ for test_model in test_models:
 #                               Existence checks                              #
 ###############################################################################
     if is_exec:
-        if not os.path.isfile(std.deltatests_dir + "/" + exe_name):
+        if not os.path.isfile(model_dir + "/" + exe_name):
             raise exceptions.RuntimeError("File not found: " +
                                           std.deltatests_dir + "/" + exe_name)
         if not os.path.isfile(std.deltatests_dir + "/" + job_script):
@@ -163,10 +163,6 @@ for test_model in test_models:
 
         print('Start executing')
         print('--------------- \n')
-
-        # Copy executable and job_script
-        shutil.copyfile(std.deltatests_dir + "/" + exe_name,
-                        model_dir + "/" + exe_name)
 
         # Prepare job_script
         f = open(std.deltatests_dir + '/' + job_script, 'r')
