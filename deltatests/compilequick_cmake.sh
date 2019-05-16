@@ -92,7 +92,7 @@ then
 fi
 
 # Rename executable
-rename shem_${shem_type_name}_${props}.x shem_${new_exe_suffix}.x shem_${shem_type_name}_${props}.x
+rename shem_${shem_type_name}${compiler_name}_${props}.x shem_${new_exe_suffix}.x shem_${shem_type_name}${compiler_name}_${props}.x
 
 # Move executable
 mv shem_${new_exe_suffix}.x ${model_dir}
