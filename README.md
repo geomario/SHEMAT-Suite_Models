@@ -150,7 +150,7 @@ command in `SHEMATtest.py`.
 | `fw_const_Peclet_down`          | x        |          |       |             |
 | `fw_const_Peclet_up`            | x        |          |       |             |
 
-| **Comparison method**           | `previous simulation` | `analytical solution` |
+| **Verification method**         | `previous simulation` | `analytical solution` |
 |:-------------------------------:|:---------------------:|:---------------------:|
 | `ad_const_TemperatureInversion` | x                     |                       |
 | `fw_basc_SaltFlow`              | x                     |                       |
