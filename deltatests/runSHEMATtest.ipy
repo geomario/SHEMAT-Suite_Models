@@ -4,7 +4,6 @@ Run SHEMAT-Suite executable from deltatests_dir in model_dir
 import os
 import time
 import exceptions
-import shutil
 import unittest
 try:
     from pskf.tools.run import runmodule as rm
