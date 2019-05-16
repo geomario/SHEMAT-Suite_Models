@@ -77,15 +77,15 @@ command in `SHEMATtest.py`.
 | `fw_const_Peclet_down`          | vertical temperature profile influenced by vertical flow (down)    |
 | `fw_const_Peclet_up`            | vertical temperature profile influenced by vertical flow (up)      |
 
-| **Modes**                       | `fw` | `sm` | `ad` | `dd` | `fl` |
-|:-------------------------------:|:----:|:----:|:----:|:----:|:----:|
-| `ad_const_TemperatureInversion` |      |      | x    |      |      |
-| `fw_basc_SaltFlow`              | x    |      |      |      |      |
-| `fw_basc_Salt_small`            | x    |      |      |      |      |
-| `fw_const_TheisProblem`         | x    |      |      |      |      |
-| `fw_bas_TinyAdvective`          | x    |      |      |      |      |
-| `fw_const_Peclet_down`          | x    |      |      |      |      |
-| `fw_const_Peclet_up`            | x    |      |      |      |      |
+| **Modes**                       | `fw` | `sm` | `ad` |
+|:-------------------------------:|:----:|:----:|:----:|
+| `ad_const_TemperatureInversion` |      |      | x    |
+| `fw_basc_SaltFlow`              | x    |      |      |
+| `fw_basc_Salt_small`            | x    |      |      |
+| `fw_const_TheisProblem`         | x    |      |      |
+| `fw_bas_TinyAdvective`          | x    |      |      |
+| `fw_const_Peclet_down`          | x    |      |      |
+| `fw_const_Peclet_up`            | x    |      |      |
 
 | **Props**                       | `const` | `bas` | `basc` | `gheexpl` | `kola` |
 |:-------------------------------:|:-------:|:-----:|:------:|:---------:|:------:|
