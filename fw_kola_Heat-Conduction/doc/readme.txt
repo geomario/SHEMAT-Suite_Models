@@ -1,6 +1,5 @@
-
 #####################################################################
-# Documentation Testmodel Convective Heat Transport with Permafrost #
+# Documentation Testmodel Conductive Heat Transport with Permafrost #
 #####################################################################
 
  * 2D model with 200x1x40=8000 cells
