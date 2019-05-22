@@ -7,10 +7,10 @@ clc
 close all
 
 % Read in data file
-conc      = dlmread('col_tracer1_bmSim6.txt');
-tracer    = dlmread('col_tracer1_bmSim6.txt');
-head      = dlmread('col_head_bmSim6.txt');
-data      = dlmread('henry_final_bmSim6_vectors.txt');
+conc      = dlmread('henry_salinity.txt');
+tracer    = dlmread('henry_salinity.txt');
+head      = dlmread('henry_head.txt');
+data      = dlmread('henry_velocity_field.txt');
 u = data(1:end,1);
 v = data(1:end,2);
 w = data(1:end,3);
@@ -92,7 +92,7 @@ cb1.Label.String = '\fontsize{12} Hydraulic Head(m)';
 
 
 %% TRACER
-saline=dlmread('salinity_scale.txt');
+% saline=dlmread('salinity_scale.txt');
 init_trac = 0.61;
 t         = max(tracer);
 tracer    = (tracer(1:end)/t)*100;
@@ -105,7 +105,7 @@ ax4 = axes;
 [C2,h2] = contourf(x,z,val_conc);
 h2.LevelList=[0 10 20 30 40 50 60 70 80 90];
 clabel(C2,'manual','Color','red','LabelSpacing',1500,'FontSize',20)
-colormap(saline)
+% colormap(parula)
 % colormap(flipud(colormap))
 
 %caxis([0 0.1])
@@ -133,7 +133,7 @@ text(1.94,1.05,'v','FontSize',14)
 
 
 %% Compare Results
-sol = dlmread('analytic_sol.txt');
+sol = dlmread('analytic_sol_simpson-and-clement-2004.txt');
 sol = [sol(1:end,1)/100,sol(:,2:end)];
 sol_z = sol(:,1);
 % retrieve shemat results
