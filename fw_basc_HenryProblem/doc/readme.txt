@@ -2,10 +2,8 @@ Model info: In the Henry saltwater intrusion problem, saltwater is coming into t
 
 In the comparison repository the files "henry_head.txt", "henry_salinity.txt", "henry_velocity_field.txt" and "henry_XYZ.txt" are used in the plot_velocity.m. These are the results of the computation, out of the henry_final.vtk. "analytic_sol_simpson-and-clement-2004.txt" is also used in the matlab script.
 
-#not compilated yet!!!
-#Compilation on RWTH Cluster:
-#module switch intel gcc
-#make fw nohdf PROPS=basc COMPTYPE=ling64 -j 8
+Compilation on RWTH Cluster:
+make fw hdf PROPS=basc HDF5_LIB=/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274/lib/ HDF5_MOD=/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274/include/ COMPTYPE=lini64 
 
 Execution:
 ./shem_fw64int_basc.x -tsolve 4
