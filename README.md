@@ -67,15 +67,25 @@ command in `SHEMATtest.py`.
 
 ## Matrix of models against features ##
 
-| **Modes**                       | `fw` | `sm` | `ad` | `dd` | `fl` |
-|:-------------------------------:|:----:|:----:|:----:|:----:|:----:|
-| `ad_const_TemperatureInversion` |      |      | x    |      |      |
-| `fw_basc_SaltFlow`              | x    |      |      |      |      |
-| `fw_basc_Salt_small`            | x    |      |      |      |      |
-| `fw_const_TheisProblem`         | x    |      |      |      |      |
-| `fw_bas_TinyAdvective`          | x    |      |      |      |      |
-| `fw_const_Peclet_down`          | x    |      |      |      |      |
-| `fw_const_Peclet_up`            | x    |      |      |      |      |
+| **Models**                      | **Small description**                                              |
+|:-------------------------------:|:------------------------------------------------------------------:|
+| `ad_const_TemperatureInversion` | Testmodel for deterministic inversion (AD mode)                    |
+| `fw_basc_SaltFlow`              | Model Info: Simple 2D transient model for flow and salt transport. |
+| `fw_basc_Salt_small`            | Smaller version of the SaltFlow model                              |
+| `fw_const_TheisProblem`         | 2D steady state model of a pumping test                            |
+| `fw_bas_TinyAdvective`          | Testmodel for Advective Heat Transport                             |
+| `fw_const_Peclet_down`          | vertical temperature profile influenced by vertical flow (down)    |
+| `fw_const_Peclet_up`            | vertical temperature profile influenced by vertical flow (up)      |
+
+| **Modes**                       | `fw` | `sm` | `ad` |
+|:-------------------------------:|:----:|:----:|:----:|
+| `ad_const_TemperatureInversion` |      |      | x    |
+| `fw_basc_SaltFlow`              | x    |      |      |
+| `fw_basc_Salt_small`            | x    |      |      |
+| `fw_const_TheisProblem`         | x    |      |      |
+| `fw_bas_TinyAdvective`          | x    |      |      |
+| `fw_const_Peclet_down`          | x    |      |      |
+| `fw_const_Peclet_up`            | x    |      |      |
 
 | **Props**                       | `const` | `bas` | `basc` | `gheexpl` | `kola` |
 |:-------------------------------:|:-------:|:-----:|:------:|:---------:|:------:|
@@ -130,7 +140,7 @@ command in `SHEMATtest.py`.
 | `fw_const_Peclet_down`          |                           |        |
 | `fw_const_Peclet_up`            |                           |        |
 
-| **Cluster architecture**        | `simple` | `openmp` | `mpi` | `Slurm Job` |
+| **Cluster architecture**        | `serial` | `openmp` | `mpi` | `Slurm Job` |
 |:-------------------------------:|:--------:|:--------:|:-----:|:-----------:|
 | `ad_const_TemperatureInversion` | x        |          |       |             |
 | `fw_basc_SaltFlow`              | x        |          |       |             |
@@ -140,7 +150,7 @@ command in `SHEMATtest.py`.
 | `fw_const_Peclet_down`          | x        |          |       |             |
 | `fw_const_Peclet_up`            | x        |          |       |             |
 
-| **Comparison method**           | `previous simulation` | `analytical solution` |
+| **Verification method**         | `previous simulation` | `analytical solution` |
 |:-------------------------------:|:---------------------:|:---------------------:|
 | `ad_const_TemperatureInversion` | x                     |                       |
 | `fw_basc_SaltFlow`              | x                     |                       |
