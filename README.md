@@ -76,6 +76,7 @@ command in `SHEMATtest.py`.
 | `fw_bas_TinyAdvective`          | Testmodel for Advective Heat Transport                             |
 | `fw_const_Peclet_down`          | vertical temperature profile influenced by vertical flow (down)    |
 | `fw_const_Peclet_up`            | vertical temperature profile influenced by vertical flow (up)      |
+| `fw_basc_HenryProblem`          | 2D Henry Problem: concentration entering flow regime               |
 
 | **Modes**                       | `fw` | `sm` | `ad` |
 |:-------------------------------:|:----:|:----:|:----:|
@@ -86,6 +87,7 @@ command in `SHEMATtest.py`.
 | `fw_bas_TinyAdvective`          | x    |      |      |
 | `fw_const_Peclet_down`          | x    |      |      |
 | `fw_const_Peclet_up`            | x    |      |      |
+| `fw_basc_HenryProblem`          | x    |      |      |
 
 | **Props**                       | `const` | `bas` | `basc` | `gheexpl` | `kola` |
 |:-------------------------------:|:-------:|:-----:|:------:|:---------:|:------:|
@@ -96,6 +98,7 @@ command in `SHEMATtest.py`.
 | `fw_bas_TinyAdvective`          |         | x     |        |           |        |
 | `fw_const_Peclet_down`          | x       |       |        |           |        |
 | `fw_const_Peclet_up`            | x       |       |        |           |        |
+| `fw_basc_HenryProblem`          |         |       | x      |           |        |
 
 | **Variables**                   | `head` | `temp` | `conc` | `head/temp` | `head/conc` | `head/temp/conc` |
 |:-------------------------------:|:------:|:------:|:------:|:-----------:|:-----------:|:----------------:|
@@ -106,6 +109,7 @@ command in `SHEMATtest.py`.
 | `fw_bas_TinyAdvective`          |        |        |        | x           |             |                  |
 | `fw_const_Peclet_down`          |        |        |        | x           |             |                  |
 | `fw_const_Peclet_up`            |        |        |        | x           |             |                  |
+| `fw_basc_HenryProblem`          |        |        |        |             | x           |                  |
 
 | **Grid**                        | `1D` | `2D` | `3D` |
 |:-------------------------------:|:----:|------|:----:|
@@ -116,6 +120,7 @@ command in `SHEMATtest.py`.
 | `fw_bas_TinyAdvective`          |      | x    |      |
 | `fw_const_Peclet_down`          | (x)  | x    |      |
 | `fw_const_Peclet_up`            | (x)  | x    |      |
+| `fw_basc_HenryProblem`          |      | x    |      |
 
 **(x)**: quasi-dimension, only effects in this number of dimensions
 
@@ -129,6 +134,7 @@ command in `SHEMATtest.py`.
 | `fw_bas_TinyAdvective`          | x              |             |
 | `fw_const_Peclet_down`          | x              |             |
 | `fw_const_Peclet_up`            | x              |             |
+| `fw_basc_HenryProblem`          | x              |             |
 
 | **Inversion**                   | `Deterministic Inversion` | `EnKF` |
 |:-------------------------------:|:-------------------------:|:------:|
@@ -139,6 +145,7 @@ command in `SHEMATtest.py`.
 | `fw_bas_TinyAdvective`          |                           |        |
 | `fw_const_Peclet_down`          |                           |        |
 | `fw_const_Peclet_up`            |                           |        |
+| `fw_basc_HenryProblem`          |                           |        |
 
 | **Cluster architecture**        | `serial` | `openmp` | `mpi` | `Slurm Job` |
 |:-------------------------------:|:--------:|:--------:|:-----:|:-----------:|
@@ -149,16 +156,18 @@ command in `SHEMATtest.py`.
 | `fw_bas_TinyAdvective`          | x        |          |       |             |
 | `fw_const_Peclet_down`          | x        |          |       |             |
 | `fw_const_Peclet_up`            | x        |          |       |             |
+| `fw_basc_HenryProblem`          | x        |          |       |             |
 
-| **Verification method**         | `previous simulation` | `analytical solution` |
-|:-------------------------------:|:---------------------:|:---------------------:|
-| `ad_const_TemperatureInversion` | x                     |                       |
-| `fw_basc_SaltFlow`              | x                     |                       |
-| `fw_basc_Salt_small`            | x                     |                       |
-| `fw_const_TheisProblem`         | x                     | (x)                   |
-| `fw_bas_TinyAdvective`          | x                     |                       |
-| `fw_const_Peclet_down`          | x                     | (x)                   |
-| `fw_const_Peclet_up`            | x                     | (x)                   |
+| **Verification method**         | `previous simulation` | `analytical solution` | `semi-analytical solution` |
+|:-------------------------------:|:---------------------:|:---------------------:|:--------------------------:|
+| `ad_const_TemperatureInversion` | x                     |                       |                            |
+| `fw_basc_SaltFlow`              | x                     |                       |                            |
+| `fw_basc_Salt_small`            | x                     |                       |                            |
+| `fw_const_TheisProblem`         | x                     | (x)                   |                            |
+| `fw_bas_TinyAdvective`          | x                     |                       |                            |
+| `fw_const_Peclet_down`          | x                     | (x)                   |                            |
+| `fw_const_Peclet_up`            | x                     | (x)                   |                            |
+| `fw_basc_HenryProblem`          | x                     |                       | x                          |
 
 
 Possibly: Solver, Physical Problems (maybe better a list), possibly
