@@ -19,7 +19,7 @@ henry
 # PROPS=basc
 # USER = none
 
-# file output: vtk
+# file output: hdf
 
 
 # active head trac
