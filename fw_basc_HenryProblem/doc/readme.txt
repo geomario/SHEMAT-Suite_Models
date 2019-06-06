@@ -11,9 +11,14 @@ henry_final.vtk. "analytic_sol_simpson-and-clement-2004.txt" is also
 used in the matlab script.
 
 Compilation on RWTH Cluster:
-make fw hdf PROPS=basc HDF5_LIB=/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274/lib/ HDF5_MOD=/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274/include/ COMPTYPE=lini64 
+gmake fw hdf noomp PROPS=basc HDF5_MOD=/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274/include/ HDF5_LIB=/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274/lib/ COMPTYPE=lini64
+
+Compilation outputs
+Makefile_fw64int_basc_master_individual.flags
+module_fw64int_basc_master_individual.inc
+version_fw64int_basc_master_individual.inc
 
 Execution:
-./shem_fw64int_basc.x -tsolve 4
+./shem_fw64int_basc_master_individual.x
 
-total cpu time:    0: 3.46 min
+total cpu time:    0: 4.13 min

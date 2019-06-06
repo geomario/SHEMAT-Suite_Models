@@ -21,8 +21,6 @@ warning: ignore line      9: "#==========>>>>> MESH"
      >>> forward modeling
   <D> : free=0, confined flow !
   [R] : linfo
-  [R] : command line OpenMP thread configuration (  ?x  4 threads)
-  [I] : OpenMP parallelisation enabled (  1x  4 threads)
   [R] : [i0, j0, k0] = [ 100,   1,  50]
   [R] : nonlinear solver parameter
   [I] : fixed relxation factor assumed
@@ -56,7 +54,7 @@ warning: ignore line      9: "#==========>>>>> MESH"
    reading zone parameter 
   
   [R] : "uindex" - unit index number, unit-cell assignment
-  [I] : approx. speedup for the full solver :   1.50
+  [I] : approx. speedup for the full solver :   1.00
   
   [R] : "units" - unit (rock) properties
   
@@ -110,178 +108,178 @@ warning: ignore line      9: "#==========>>>>> MESH"
  
   [W] : "henry_status.log"
  
-  [I] : memory:       4.071 MByte data
+  [I] : memory:       3.467 MByte data
  
   nrm2(R) = 0.5313233550535D-13 (direct)
-  nrm2(R) = 0.5646292815578D-15 (direct)
+  nrm2(R) = 0.5594235095770D-15 (direct)
   [I] : iter_nl =     1, difmaxh =  0.23202101E-01, difmaxt =  0.10000000E-20
-        difmaxc[*] =  0.60999941E+00
-  nrm2(R) = 0.5364123144640D-13 (direct)
-  nrm2(R) = 0.4731327983871D-15 (direct)
-  [I] : iter_nl =     2, difmaxh =  0.60166045E-02, difmaxt =  0.10000000E-20
-        difmaxc[*] = -0.21505051E+00
-  nrm2(R) = 0.5410433103155D-13 (direct)
-  nrm2(R) = 0.4836040474863D-15 (direct)
-  [I] : iter_nl =     3, difmaxh =  0.16064009E-02, difmaxt =  0.10000000E-20
-        difmaxc[*] =  0.92546133E-01
-  nrm2(R) = 0.5374367997746D-13 (direct)
-  nrm2(R) = 0.5096946819400D-15 (direct)
-  [I] : iter_nl =     4, difmaxh = -0.85062574E-03, difmaxt =  0.10000000E-20
-        difmaxc[*] =  0.67424192E-01
-  nrm2(R) = 0.5190432718846D-13 (direct)
-  nrm2(R) = 0.4810584878859D-15 (direct)
-  [I] : iter_nl =     5, difmaxh =  0.67830057E-03, difmaxt =  0.10000000E-20
-        difmaxc[*] = -0.36146556E-01
-  nrm2(R) = 0.5199458033108D-13 (direct)
-  nrm2(R) = 0.4895547913751D-15 (direct)
-  [I] : iter_nl =     6, difmaxh = -0.37402464E-03, difmaxt =  0.10000000E-20
-        difmaxc[*] =  0.20518014E-01
-  nrm2(R) = 0.5235778884286D-13 (direct)
-  nrm2(R) = 0.4901663071537D-15 (direct)
-  [I] : iter_nl =     7, difmaxh =  0.19975856E-03, difmaxt =  0.10000000E-20
-        difmaxc[*] = -0.11269264E-01
-  nrm2(R) = 0.5351036343254D-13 (direct)
-  nrm2(R) = 0.4946125449727D-15 (direct)
-  [I] : iter_nl =     8, difmaxh = -0.88140749E-04, difmaxt =  0.10000000E-20
-        difmaxc[*] = -0.60085121E-02
-  nrm2(R) = 0.5236686021290D-13 (direct)
-  nrm2(R) = 0.4860689658480D-15 (direct)
-  [I] : iter_nl =     9, difmaxh = -0.51896214E-04, difmaxt =  0.10000000E-20
-        difmaxc[*] =  0.39884622E-02
-  nrm2(R) = 0.5278024783231D-13 (direct)
-  nrm2(R) = 0.4892674357874D-15 (direct)
-  [I] : iter_nl =    10, difmaxh =  0.37884597E-04, difmaxt =  0.10000000E-20
-        difmaxc[*] = -0.23493859E-02
-  nrm2(R) = 0.5300698777934D-13 (direct)
-  nrm2(R) = 0.4847333916693D-15 (direct)
-  [I] : iter_nl =    11, difmaxh = -0.23921270E-04, difmaxt =  0.10000000E-20
-        difmaxc[*] =  0.13105905E-02
-  nrm2(R) = 0.5359333543522D-13 (direct)
-  nrm2(R) = 0.4863778557685D-15 (direct)
-  [I] : iter_nl =    12, difmaxh =  0.13716253E-04, difmaxt =  0.10000000E-20
-        difmaxc[*] = -0.72627916E-03
-  nrm2(R) = 0.5184805819733D-13 (direct)
-  nrm2(R) = 0.4823931831056D-15 (direct)
-  [I] : iter_nl =    13, difmaxh = -0.70884495E-05, difmaxt =  0.10000000E-20
-        difmaxc[*] =  0.40318559E-03
-  nrm2(R) = 0.5149515455845D-13 (direct)
-  nrm2(R) = 0.4793347407939D-15 (direct)
-  [I] : iter_nl =    14, difmaxh =  0.31766444E-05, difmaxt =  0.10000000E-20
-        difmaxc[*] =  0.21850838E-03
-  nrm2(R) = 0.5263515973808D-13 (direct)
-  nrm2(R) = 0.4867900670745D-15 (direct)
-  [I] : iter_nl =    15, difmaxh =  0.18851616E-05, difmaxt =  0.10000000E-20
-        difmaxc[*] = -0.14252113E-03
-  nrm2(R) = 0.5326569779663D-13 (direct)
-  nrm2(R) = 0.4945655782828D-15 (direct)
-  [I] : iter_nl =    16, difmaxh = -0.13560005E-05, difmaxt =  0.10000000E-20
-        difmaxc[*] =  0.84434467E-04
-  nrm2(R) = 0.5207869345871D-13 (direct)
-  nrm2(R) = 0.4856691195692D-15 (direct)
-  [I] : iter_nl =    17, difmaxh =  0.85944582E-06, difmaxt =  0.10000000E-20
-        difmaxc[*] = -0.46949278E-04
-  nrm2(R) = 0.5225667782712D-13 (direct)
-  nrm2(R) = 0.4648606915006D-15 (direct)
-  [I] : iter_nl =    18, difmaxh = -0.49142451E-06, difmaxt =  0.10000000E-20
-        difmaxc[*] =  0.26038042E-04
-  nrm2(R) = 0.5293732642713D-13 (direct)
-  nrm2(R) = 0.4883890574755D-15 (direct)
-  [I] : iter_nl =    19, difmaxh =  0.25397020E-06, difmaxt =  0.10000000E-20
-        difmaxc[*] = -0.14451576E-04
-  nrm2(R) = 0.5274981176242D-13 (direct)
-  nrm2(R) = 0.4881007528442D-15 (direct)
-  [I] : iter_nl =    20, difmaxh = -0.11358411E-06, difmaxt =  0.10000000E-20
-        difmaxc[*] = -0.78412144E-05
-  nrm2(R) = 0.5282576020294D-13 (direct)
-  nrm2(R) = 0.4861173800807D-15 (direct)
-  [I] : iter_nl =    21, difmaxh = -0.67716846E-07, difmaxt =  0.10000000E-20
-        difmaxc[*] =  0.51135217E-05
-  nrm2(R) = 0.5312971212615D-13 (direct)
-  nrm2(R) = 0.4750555263052D-15 (direct)
-  [I] : iter_nl =    22, difmaxh =  0.48679192E-07, difmaxt =  0.10000000E-20
-        difmaxc[*] = -0.30271560E-05
-  nrm2(R) = 0.5339126775096D-13 (direct)
-  nrm2(R) = 0.4817997316799D-15 (direct)
-  [I] : iter_nl =    23, difmaxh = -0.30822356E-07, difmaxt =  0.10000000E-20
-        difmaxc[*] =  0.16828590E-05
-  nrm2(R) = 0.5324246677965D-13 (direct)
-  nrm2(R) = 0.4807621700122D-15 (direct)
-  [I] : iter_nl =    24, difmaxh =  0.17615271E-07, difmaxt =  0.10000000E-20
-        difmaxc[*] = -0.93343059E-06
-  nrm2(R) = 0.5311259305438D-13 (direct)
-  nrm2(R) = 0.5051472238076D-15 (direct)
-  [I] : iter_nl =    25, difmaxh = -0.90957198E-08, difmaxt =  0.10000000E-20
-        difmaxc[*] =  0.51805002E-06
-  nrm2(R) = 0.5296263555015D-13 (direct)
-  nrm2(R) = 0.4684657961119D-15 (direct)
-  [I] : iter_nl =    26, difmaxh =  0.40625309E-08, difmaxt =  0.10000000E-20
-        difmaxc[*] =  0.28148582E-06
-  nrm2(R) = 0.5206219700816D-13 (direct)
-  nrm2(R) = 0.4866854819930D-15 (direct)
-  [I] : iter_nl =    27, difmaxh =  0.24331832E-08, difmaxt =  0.10000000E-20
-        difmaxc[*] = -0.18346548E-06
-  nrm2(R) = 0.5304150293695D-13 (direct)
-  nrm2(R) = 0.5078405637358D-15 (direct)
-  [I] : iter_nl =    28, difmaxh = -0.17472775E-08, difmaxt =  0.10000000E-20
-        difmaxc[*] =  0.10853730E-06
-  nrm2(R) = 0.5310486678007D-13 (direct)
-  nrm2(R) = 0.4986517499901D-15 (direct)
-  [I] : iter_nl =    29, difmaxh =  0.11054319E-08, difmaxt =  0.10000000E-20
-        difmaxc[*] = -0.60319182E-07
-  nrm2(R) = 0.5229352533000D-13 (direct)
-  nrm2(R) = 0.5113694453275D-15 (direct)
-  [I] : iter_nl =    30, difmaxh = -0.63140554E-09, difmaxt =  0.10000000E-20
-        difmaxc[*] =  0.33462294E-07
-  nrm2(R) = 0.5317746946277D-13 (direct)
-  nrm2(R) = 0.4887579464984D-15 (direct)
-  [I] : iter_nl =    31, difmaxh =  0.32575664E-09, difmaxt =  0.10000000E-20
-        difmaxc[*] = -0.18570761E-07
-  nrm2(R) = 0.5243398657418D-13 (direct)
-  nrm2(R) = 0.4926580769544D-15 (direct)
-  [I] : iter_nl =    32, difmaxh = -0.14533119E-09, difmaxt =  0.10000000E-20
-        difmaxc[*] = -0.10104152E-07
-  nrm2(R) = 0.5145084367108D-13 (direct)
-  nrm2(R) = 0.4906236761715D-15 (direct)
-  [I] : iter_nl =    33, difmaxh = -0.87416061E-10, difmaxt =  0.10000000E-20
-        difmaxc[*] =  0.65818935E-08
-  nrm2(R) = 0.5280293365601D-13 (direct)
-  nrm2(R) = 0.5009926699957D-15 (direct)
-  [I] : iter_nl =    34, difmaxh =  0.62708280E-10, difmaxt =  0.10000000E-20
-        difmaxc[*] = -0.38910984E-08
-  nrm2(R) = 0.5272709695236D-13 (direct)
-  nrm2(R) = 0.5045099439626D-15 (direct)
-  [I] : iter_nl =    35, difmaxh = -0.39640347E-10, difmaxt =  0.10000000E-20
-        difmaxc[*] =  0.21616720E-08
-  nrm2(R) = 0.5256858735872D-13 (direct)
-  nrm2(R) = 0.4998828985325D-15 (direct)
-  [I] : iter_nl =    36, difmaxh =  0.22624513E-10, difmaxt =  0.10000000E-20
-        difmaxc[*] = -0.11990231E-08
-  nrm2(R) = 0.5263470139197D-13 (direct)
-  nrm2(R) = 0.4899031479197D-15 (direct)
-  [I] : iter_nl =    37, difmaxh = -0.11659021E-10, difmaxt =  0.10000000E-20
-        difmaxc[*] =  0.66530659E-09
-  nrm2(R) = 0.5350698546457D-13 (direct)
-  nrm2(R) = 0.5091306664776D-15 (direct)
-  [I] : iter_nl =    38, difmaxh =  0.51951221E-11, difmaxt =  0.10000000E-20
-        difmaxc[*] =  0.36252845E-09
-  nrm2(R) = 0.5339667404432D-13 (direct)
-  nrm2(R) = 0.4784616513285D-15 (direct)
-  [I] : iter_nl =    39, difmaxh =  0.31387080E-11, difmaxt =  0.10000000E-20
-        difmaxc[*] = -0.23590896E-09
-  nrm2(R) = 0.5224278052315D-13 (direct)
-  nrm2(R) = 0.5037859192162D-15 (direct)
-  [I] : iter_nl =    40, difmaxh = -0.22490863E-11, difmaxt =  0.10000000E-20
-        difmaxc[*] =  0.13953294E-09
-  nrm2(R) = 0.5300401201014D-13 (direct)
-  nrm2(R) = 0.4863332748841D-15 (direct)
-  [I] : iter_nl =    41, difmaxh =  0.14220049E-11, difmaxt =  0.10000000E-20
-        difmaxc[*] = -0.77433338E-10
-  nrm2(R) = 0.5305659840056D-13 (direct)
-  nrm2(R) = 0.4981058786270D-15 (direct)
-  [I] : iter_nl =    42, difmaxh = -0.81106996E-12, difmaxt =  0.10000000E-20
-        difmaxc[*] =  0.43033077E-10
+        difmaxc[*] =  0.60999940E+00
+  nrm2(R) = 0.5285975671777D-13 (direct)
+  nrm2(R) = 0.4757762989965D-15 (direct)
+  [I] : iter_nl =     2, difmaxh =  0.60164945E-02, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.21500893E+00
+  nrm2(R) = 0.5376582446158D-13 (direct)
+  nrm2(R) = 0.4764611297338D-15 (direct)
+  [I] : iter_nl =     3, difmaxh =  0.16056731E-02, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.92507378E-01
+  nrm2(R) = 0.5257054247941D-13 (direct)
+  nrm2(R) = 0.4873617949686D-15 (direct)
+  [I] : iter_nl =     4, difmaxh = -0.85018585E-03, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.67368591E-01
+  nrm2(R) = 0.5236032689528D-13 (direct)
+  nrm2(R) = 0.4865019199689D-15 (direct)
+  [I] : iter_nl =     5, difmaxh =  0.67777497E-03, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.36109555E-01
+  nrm2(R) = 0.5284000084196D-13 (direct)
+  nrm2(R) = 0.5002751550511D-15 (direct)
+  [I] : iter_nl =     6, difmaxh = -0.37368483E-03, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.20492928E-01
+  nrm2(R) = 0.5314068367826D-13 (direct)
+  nrm2(R) = 0.4960079410363D-15 (direct)
+  [I] : iter_nl =     7, difmaxh =  0.19953707E-03, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.11253516E-01
+  nrm2(R) = 0.5270311052833D-13 (direct)
+  nrm2(R) = 0.4877001922134D-15 (direct)
+  [I] : iter_nl =     8, difmaxh = -0.88029624E-04, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.59962929E-02
+  nrm2(R) = 0.5266894197381D-13 (direct)
+  nrm2(R) = 0.4780178691971D-15 (direct)
+  [I] : iter_nl =     9, difmaxh = -0.51790222E-04, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.39796352E-02
+  nrm2(R) = 0.5269763798478D-13 (direct)
+  nrm2(R) = 0.4978240428947D-15 (direct)
+  [I] : iter_nl =    10, difmaxh =  0.37801879E-04, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.23438382E-02
+  nrm2(R) = 0.5261469492892D-13 (direct)
+  nrm2(R) = 0.5009564428327D-15 (direct)
+  [I] : iter_nl =    11, difmaxh = -0.23865718E-04, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.13072061E-02
+  nrm2(R) = 0.5301623964976D-13 (direct)
+  nrm2(R) = 0.4825709167726D-15 (direct)
+  [I] : iter_nl =    12, difmaxh =  0.13682205E-04, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.72427099E-03
+  nrm2(R) = 0.5369851976214D-13 (direct)
+  nrm2(R) = 0.4959401220643D-15 (direct)
+  [I] : iter_nl =    13, difmaxh = -0.70697516E-05, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.40199696E-03
+  nrm2(R) = 0.5266561563912D-13 (direct)
+  nrm2(R) = 0.4880425814209D-15 (direct)
+  [I] : iter_nl =    14, difmaxh =  0.31677830E-05, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.21771476E-03
+  nrm2(R) = 0.5315540226120D-13 (direct)
+  nrm2(R) = 0.4856117586696D-15 (direct)
+  [I] : iter_nl =    15, difmaxh =  0.18782771E-05, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.14198346E-03
+  nrm2(R) = 0.5322802024865D-13 (direct)
+  nrm2(R) = 0.4846856814771D-15 (direct)
+  [I] : iter_nl =    16, difmaxh = -0.13509078E-05, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.84102989E-04
+  nrm2(R) = 0.5297439797336D-13 (direct)
+  nrm2(R) = 0.4950387075811D-15 (direct)
+  [I] : iter_nl =    17, difmaxh =  0.85610279E-06, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.46755139E-04
+  nrm2(R) = 0.5246805418964D-13 (direct)
+  nrm2(R) = 0.5053195811833D-15 (direct)
+  [I] : iter_nl =    18, difmaxh = -0.48944139E-06, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.25925519E-04
+  nrm2(R) = 0.5269421763226D-13 (direct)
+  nrm2(R) = 0.4775402041224D-15 (direct)
+  [I] : iter_nl =    19, difmaxh =  0.25290883E-06, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.14386501E-04
+  nrm2(R) = 0.5312637236838D-13 (direct)
+  nrm2(R) = 0.4933241382404D-15 (direct)
+  [I] : iter_nl =    20, difmaxh = -0.11309503E-06, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.78003791E-05
+  nrm2(R) = 0.5283051260625D-13 (direct)
+  nrm2(R) = 0.4835588245144D-15 (direct)
+  [I] : iter_nl =    21, difmaxh = -0.67361836E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.50862218E-05
+  nrm2(R) = 0.5245088945556D-13 (direct)
+  nrm2(R) = 0.4747126019030D-15 (direct)
+  [I] : iter_nl =    22, difmaxh =  0.48419701E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.30105598E-05
+  nrm2(R) = 0.5294918912545D-13 (direct)
+  nrm2(R) = 0.4943673649145D-15 (direct)
+  [I] : iter_nl =    23, difmaxh = -0.30654354E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.16732894E-05
+  nrm2(R) = 0.5369055467063D-13 (direct)
+  nrm2(R) = 0.4965609798045D-15 (direct)
+  [I] : iter_nl =    24, difmaxh =  0.17516852E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.92794703E-06
+  nrm2(R) = 0.5278526579571D-13 (direct)
+  nrm2(R) = 0.4891944366803D-15 (direct)
+  [I] : iter_nl =    25, difmaxh = -0.90437282E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.51491381E-06
+  nrm2(R) = 0.5231984387618D-13 (direct)
+  nrm2(R) = 0.4767184148158D-15 (direct)
+  [I] : iter_nl =    26, difmaxh =  0.40388613E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.27957666E-06
+  nrm2(R) = 0.5418162557152D-13 (direct)
+  nrm2(R) = 0.4962068554967D-15 (direct)
+  [I] : iter_nl =    27, difmaxh =  0.24165577E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.18219877E-06
+  nrm2(R) = 0.5296489819804D-13 (direct)
+  nrm2(R) = 0.4893798844015D-15 (direct)
+  [I] : iter_nl =    28, difmaxh = -0.17352144E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.10777341E-06
+  nrm2(R) = 0.5265974118613D-13 (direct)
+  nrm2(R) = 0.4893847707319D-15 (direct)
+  [I] : iter_nl =    29, difmaxh =  0.10976794E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.59882545E-07
+  nrm2(R) = 0.5286089278437D-13 (direct)
+  nrm2(R) = 0.4729550384323D-15 (direct)
+  [I] : iter_nl =    30, difmaxh = -0.62689570E-09, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.33213529E-07
+  nrm2(R) = 0.5359607902163D-13 (direct)
+  nrm2(R) = 0.4839454253812D-15 (direct)
+  [I] : iter_nl =    31, difmaxh =  0.32339066E-09, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.18429051E-07
+  nrm2(R) = 0.5296575882518D-13 (direct)
+  nrm2(R) = 0.4874165473228D-15 (direct)
+  [I] : iter_nl =    32, difmaxh = -0.14426004E-09, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.10019658E-07
+  nrm2(R) = 0.5364368603765D-13 (direct)
+  nrm2(R) = 0.4775588012757D-15 (direct)
+  [I] : iter_nl =    33, difmaxh = -0.86676485E-10, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.65256483E-08
+  nrm2(R) = 0.5285871951873D-13 (direct)
+  nrm2(R) = 0.4880169266520D-15 (direct)
+  [I] : iter_nl =    34, difmaxh =  0.62170883E-10, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.38575518E-08
+  nrm2(R) = 0.5387488993326D-13 (direct)
+  nrm2(R) = 0.4716839497872D-15 (direct)
+  [I] : iter_nl =    35, difmaxh = -0.39301545E-10, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.21431190E-08
+  nrm2(R) = 0.5354763516463D-13 (direct)
+  nrm2(R) = 0.4897463048399D-15 (direct)
+  [I] : iter_nl =    36, difmaxh =  0.22436882E-10, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.11888676E-08
+  nrm2(R) = 0.5285341495433D-13 (direct)
+  nrm2(R) = 0.4910429538757D-15 (direct)
+  [I] : iter_nl =    37, difmaxh = -0.11565641E-10, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.65959033E-09
+  nrm2(R) = 0.5386656736202D-13 (direct)
+  nrm2(R) = 0.4898117821697D-15 (direct)
+  [I] : iter_nl =    38, difmaxh =  0.51522987E-11, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.35927175E-09
+  nrm2(R) = 0.5320992047429D-13 (direct)
+  nrm2(R) = 0.4969976027261D-15 (direct)
+  [I] : iter_nl =    39, difmaxh =  0.31115943E-11, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.23380964E-09
+  nrm2(R) = 0.5397117428978D-13 (direct)
+  nrm2(R) = 0.4947153181498D-15 (direct)
+  [I] : iter_nl =    40, difmaxh = -0.22268368E-11, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.13795082E-09
+  nrm2(R) = 0.5278951081739D-13 (direct)
+  nrm2(R) = 0.4936482075175D-15 (direct)
+  [I] : iter_nl =    41, difmaxh =  0.14036237E-11, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.76384843E-10
+  nrm2(R) = 0.5317590149075D-13 (direct)
+  nrm2(R) = 0.4924528445480D-15 (direct)
+  [I] : iter_nl =    42, difmaxh = -0.79786178E-12, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.42172488E-10
   [W] : HDF5 to "henry_final.h5"
   [W] : VTK to "henry_final.vtk"
  Deallocated Memory, remaining   7.629394531250000E-006  MB
- total cpu time:    0: 3.46 min
+ total cpu time:    0: 4.26 min
  RUN O.K.
