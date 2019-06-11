@@ -1,4 +1,4 @@
-Model Info: 1D module for temperature- and massflow
+Model Info: 1D model for temperature- and massflow
 
 vertical temperature profile influenced by vertical flow
 

@@ -36,8 +36,25 @@ gmake cleanall
 # Get git branch name
 git_branch=$(git rev-parse --abbrev-ref HEAD)
 
+# Check source code for changes
+git diff --exit-code --quiet
+if [ $? -ge 1 ];
+then
+    echo "   Unstaged changes in Git repository! Please remove."
+    echo "   Branch: ${git_branch}"
+    exit 1
+fi
+
+git diff --cached --exit-code --quiet
+if [ $? -ge 1 ];
+then
+    echo "   Staged changes in Git repository! Please remove."
+    echo "   Branch: ${git_branch}"
+    exit 1
+fi
+
 #New executable suffix
-new_exe_suffix="${shem_type_name}${compiler_name}_${props}_${git_branch}"
+new_exe_suffix="${shem_type_name}${compiler_name}_${props}_${git_branch}_individual"
 
 #Compilation command
 gmake ${shem_type} COMPTYPE=${compiler} PROPS=${props} HDF5_MOD=$HDF5_ROOT/include/ HDF5_LIB=$HDF5_ROOT/lib/ ${flags}

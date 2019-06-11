@@ -1,19 +1,19 @@
 '''
 Run SHEMAT-Suite executable from deltatests_dir in model_dir
 '''
+import exceptions
 import os
 import time
-import exceptions
-import shutil
-from pskf.tools.run import runmodule as rm
 import unittest
-# try:
-#     import SHEMATtest
-# except ImportError:
-#     raise ImportError('No module named SHEMATtest. \n\n' + 'Solution: ' +
-#                       ' Add the path /path-to-SHEMAT-Suite_Models/' +
-#                       'SHEMAT-Suite_Models/deltatests/site-packages to the' +
-#                       ' PYTHONPATH.')
+
+try:
+    from pskf.tools.run import runmodule as rm
+except ImportError:
+    raise ImportError(
+        'No module named pskf.tools.run.runmodule. \n\n' + 'Solution: ' +
+        'Download pyshemkf from https://github.com/jjokella/pyshemkf and add' +
+        ' the path /path-to-pyshemkf/pyshemkf/site-packages to the' +
+        ' PYTHONPATH.')
 try:
     import SHEMATtest_dirs as std
 except ImportError:
@@ -42,23 +42,25 @@ except ImportError:
 ###############################################################################
 
 # Compilation input (compare compilequick.sh)
-is_comp = True
-git_branch = "master"
+is_comp = False
+git_branch_input = "master"
+compile_backend = 'gcc'  # gcc, intel
 
 # Execution input
-is_exec = True
+is_exec = False
 
 # Testing input
-is_test = True
+is_test = False
 
 test_models = [
     # "fw_const_TheisProblem",
     # "fw_basc_SaltFlow",
     # "fw_basc_SaltFlow_small",
-    # "ad_const_TemperatureInversion",  # only in branch 'cmake'
+    # "ad_const_TemperatureInversion",  # "cmake"
     # "fw_bas_TinyAdvective",
     # "fw_const_Peclet_down",
     # "fw_const_Peclet_up",
+    # "fw_basc_HenryProblem",
 ]
 
 ###############################################################################
@@ -72,15 +74,19 @@ for test_model in test_models:
     print('!----------------------------- ')
     print('!----------------------------- \n')
 
+    print('!----------------------------- ')
+    print('!  Compilation backend: ' + compile_backend)
+    print('!----------------------------- \n')
+
     shem_type = sti.shem_type[test_model]
     shem_type_name = sti.shem_type_name[test_model]
-    compiler = sti.compiler[test_model]
-    compiler_name = sti.compiler_name[test_model]
+    compiler = sti.compiler[test_model][compile_backend]
+    compiler_name = sti.compiler_name[test_model][compile_backend]
     props = sti.props[test_model]
 
-    flags = sti.flags[test_model]
+    flags_dict = sti.flags_dict[test_model]
 
-    module_load = sti.module_load[test_model]
+    module_load = sti.module_load[test_model][compile_backend]
 
     model_name = sti.model_name[test_model]
 
@@ -88,6 +94,9 @@ for test_model in test_models:
     job_script = sti.job_script[test_model]
 
     testing_suite = sti.testing_suite[test_model]
+
+    git_branch = (git_branch_input if not sti.git_branch[test_model] else
+                  sti.git_branch[test_model])
 
     if is_comp or is_exec:
         #######################################################################
@@ -124,14 +133,14 @@ for test_model in test_models:
         print('--------------- \n')
 
         stf.compilequick(
-            std.deltatests_dir,
+            model_dir,
             std.make_dir,
             shem_type,
             shem_type_name,
             compiler,
             compiler_name,
             props,
-            flags,
+            flags_dict,
             module_load,
             git_branch,
         )
@@ -144,7 +153,7 @@ for test_model in test_models:
 #                               Existence checks                              #
 ###############################################################################
     if is_exec:
-        if not os.path.isfile(std.deltatests_dir + "/" + exe_name):
+        if not os.path.isfile(model_dir + "/" + exe_name):
             raise exceptions.RuntimeError("File not found: " +
                                           std.deltatests_dir + "/" + exe_name)
         if not os.path.isfile(std.deltatests_dir + "/" + job_script):
@@ -161,10 +170,6 @@ for test_model in test_models:
         print('Start executing')
         print('--------------- \n')
 
-        # Copy executable and job_script
-        shutil.copyfile(std.deltatests_dir + "/" + exe_name,
-                        model_dir + "/" + exe_name)
-
         # Prepare job_script
         f = open(std.deltatests_dir + '/' + job_script, 'r')
         fcontent = f.read()
@@ -180,7 +185,7 @@ for test_model in test_models:
             module2=module_load[2],
             module3=module_load[3],
             module4=module_load[4],
-            )
+        )
 
         fnew = open(model_dir + '/' + job_script, 'w')
         fnew.write(fcontentwrite)
