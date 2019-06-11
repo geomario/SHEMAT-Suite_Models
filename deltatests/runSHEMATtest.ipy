@@ -55,11 +55,11 @@ test_models = [
     # "fw_const_TheisProblem",
     # "fw_basc_SaltFlow",
     # "fw_basc_SaltFlow_small",
-    # "ad_const_TemperatureInversion",
+    # "ad_const_TemperatureInversion",  # "cmake"
     # "fw_bas_TinyAdvective",
     # "fw_const_Peclet_down",
     # "fw_const_Peclet_up",
-    "fw_basc_HenryProblem",
+    # "fw_basc_HenryProblem",
 ]
 
 ###############################################################################
