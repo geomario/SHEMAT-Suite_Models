@@ -39,7 +39,7 @@
 
 # PROPS=kola
 # USER = none
-# file output: vtk
+# file output: vtk hdf
 # active temp
 
 
