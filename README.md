@@ -77,6 +77,7 @@ command in `SHEMATtest.py`.
 | `fw_const_Peclet_down`          | vertical temperature profile influenced by vertical flow (down)    |
 | `fw_const_Peclet_up`            | vertical temperature profile influenced by vertical flow (up)      |
 | `fw_basc_HenryProblem`          | 2D Henry Problem: concentration entering flow regime               |
+| `fw_kola_HeatConduction2D`      | heat conduction in water/ice mixture                               |
 
 | **Modes**                       | `fw` | `sm` | `ad` |
 |:-------------------------------:|:----:|:----:|:----:|
@@ -88,6 +89,7 @@ command in `SHEMATtest.py`.
 | `fw_const_Peclet_down`          | x    |      |      |
 | `fw_const_Peclet_up`            | x    |      |      |
 | `fw_basc_HenryProblem`          | x    |      |      |
+| `fw_kola_HeatConduction2D`      | x    |      |      |
 
 | **Props**                       | `const` | `bas` | `basc` | `gheexpl` | `kola` |
 |:-------------------------------:|:-------:|:-----:|:------:|:---------:|:------:|
@@ -99,6 +101,7 @@ command in `SHEMATtest.py`.
 | `fw_const_Peclet_down`          | x       |       |        |           |        |
 | `fw_const_Peclet_up`            | x       |       |        |           |        |
 | `fw_basc_HenryProblem`          |         |       | x      |           |        |
+| `fw_kola_HeatConduction2D`      |         |       |        |           | x      |
 
 | **Variables**                   | `head` | `temp` | `conc` | `head/temp` | `head/conc` | `head/temp/conc` |
 |:-------------------------------:|:------:|:------:|:------:|:-----------:|:-----------:|:----------------:|
@@ -110,6 +113,7 @@ command in `SHEMATtest.py`.
 | `fw_const_Peclet_down`          |        |        |        | x           |             |                  |
 | `fw_const_Peclet_up`            |        |        |        | x           |             |                  |
 | `fw_basc_HenryProblem`          |        |        |        |             | x           |                  |
+| `fw_kola_HeatConduction2D`      |        | x      |        |             |             |                  |
 
 | **Grid**                        | `1D` | `2D` | `3D` |
 |:-------------------------------:|:----:|------|:----:|
@@ -121,6 +125,7 @@ command in `SHEMATtest.py`.
 | `fw_const_Peclet_down`          | (x)  | x    |      |
 | `fw_const_Peclet_up`            | (x)  | x    |      |
 | `fw_basc_HenryProblem`          |      | x    |      |
+| `fw_kola_HeatConduction2D`      |      | x    |      |
 
 **(x)**: quasi-dimension, only effects in this number of dimensions
 
@@ -135,6 +140,7 @@ command in `SHEMATtest.py`.
 | `fw_const_Peclet_down`          | x              |             |
 | `fw_const_Peclet_up`            | x              |             |
 | `fw_basc_HenryProblem`          | x              |             |
+| `fw_kola_HeatConduction2D`      | x              |             |
 
 | **Inversion**                   | `Deterministic Inversion` | `EnKF` |
 |:-------------------------------:|:-------------------------:|:------:|
@@ -146,6 +152,7 @@ command in `SHEMATtest.py`.
 | `fw_const_Peclet_down`          |                           |        |
 | `fw_const_Peclet_up`            |                           |        |
 | `fw_basc_HenryProblem`          |                           |        |
+| `fw_kola_HeatConduction2D`      |                           |        |
 
 | **Cluster architecture**        | `serial` | `openmp` | `mpi` | `Slurm Job` |
 |:-------------------------------:|:--------:|:--------:|:-----:|:-----------:|
@@ -157,6 +164,7 @@ command in `SHEMATtest.py`.
 | `fw_const_Peclet_down`          | x        |          |       |             |
 | `fw_const_Peclet_up`            | x        |          |       |             |
 | `fw_basc_HenryProblem`          | x        |          |       |             |
+| `fw_kola_HeatConduction2D`      | x        |          |       |             |
 
 | **Verification method**         | `previous simulation` | `analytical solution` | `semi-analytical solution` |
 |:-------------------------------:|:---------------------:|:---------------------:|:--------------------------:|
@@ -168,6 +176,7 @@ command in `SHEMATtest.py`.
 | `fw_const_Peclet_down`          | x                     | (x)                   |                            |
 | `fw_const_Peclet_up`            | x                     | (x)                   |                            |
 | `fw_basc_HenryProblem`          | x                     |                       | x                          |
+| `fw_kola_HeatConduction2D`      | x                     |                       |                            |
 
 
 Possibly: Solver, Physical Problems (maybe better a list), possibly
