@@ -44,6 +44,7 @@ except ImportError:
 # Compilation input (compare compilequick.sh)
 is_comp = False
 git_branch_input = "master"
+compile_backend = 'gcc'  # gcc, intel
 
 # Execution input
 is_exec = False
@@ -73,15 +74,19 @@ for test_model in test_models:
     print('!----------------------------- ')
     print('!----------------------------- \n')
 
+    print('!----------------------------- ')
+    print('!  Compilation backend: ' + compile_backend)
+    print('!----------------------------- \n')
+
     shem_type = sti.shem_type[test_model]
     shem_type_name = sti.shem_type_name[test_model]
-    compiler = sti.compiler[test_model]
-    compiler_name = sti.compiler_name[test_model]
+    compiler = sti.compiler[test_model][compile_backend]
+    compiler_name = sti.compiler_name[test_model][compile_backend]
     props = sti.props[test_model]
 
     flags_dict = sti.flags_dict[test_model]
 
-    module_load = sti.module_load[test_model]
+    module_load = sti.module_load[test_model][compile_backend]
 
     model_name = sti.model_name[test_model]
 
