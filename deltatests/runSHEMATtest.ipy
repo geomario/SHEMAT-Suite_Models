@@ -104,7 +104,7 @@ for test_model in test_models:
         #                             Directories                             #
         #######################################################################
         # model_dir
-        model_dir = (std.shemat_suite_models_dir + "/" + shem_type_name + "_" +
+        model_dir = (std.shemat_suite_models_dir + "/" + shem_type + "_" +
                      props + "_" + model_name)
 
         # exe_name
