@@ -39,7 +39,7 @@ WAVEREAL_TRUE
 !=========>>>>>        OUTPUT        <<<<<==========!
 !=========>>>>>                      <<<<<==========!
 
-# file output: plt vtk
+# file output: hdf
 ! vtk hdf plt
 
 !# disable output
