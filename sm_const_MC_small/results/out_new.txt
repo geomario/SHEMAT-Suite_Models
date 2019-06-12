@@ -1,0 +1,441 @@
+  
+ ======================================
+ Shem-FW/AD/SM 7.50 (Smarty)                                                    
+  
+ ======================================
+  
+  
+  
+  *** NEW MODEL 
+ 
+   checking input definitions:
+     from file "Synres1"
+  
+   reading model input parameter:
+     from file "Synres1"
+  
+  [R] : title
+  [R] : runmode
+     >>> forward modeling
+  <D> : free=0, confined flow !
+  [R] : linfo
+  [R] : simulate =     4
+  [I] : realisations=     4
+  [I] : cutting sample number (   4) to the number of OpenMP threads (   1) !
+  [R] : [i0, j0, k0] = [ 120, 120,   1]
+  [R] : nonlinear solver parameter
+  [I] : fixed relxation factor assumed
+  [R] : output suffix: .h5:[ ], .plt:[ ], .vtk:[X], .txt:[ ]
+  
+   reading flow parameters
+  
+  [R] : flow linear solver (control=  64)
+  [R] : flow nonlinear iteration tolerance
+  [I] : flow nonlinear relaxation factor
+  
+  <D> : no temperature [disabled]
+  
+  
+  <D> : no transport [disabled]
+  
+  
+  <D> : no electric potential [disabled]
+  
+  
+  <D> : grav =   0.9810E+01
+  <D> : no fluid heat production
+  <D> : rref, reference density =   0.9980E+03
+  <D> : tref, reference temperature =   0.2000E+02
+  <D> : fixed rhocm, defined by unit
+  
+   reading zone parameter 
+  
+  [R] : "uindex" - unit index number, unit-cell assignment
+  [I] : approx. speedup for the full solver :   1.00
+  
+  [R] : "units" - unit (rock) properties
+  
+   reading/preprocessing arrays
+  
+  [R] : delx
+  [R] : dely
+  [R] : delz
+  
+   reading initial values 
+  
+  [R] : head, in [m]
+  [R] : temp, in [degree Celsius]
+  [R] : pres, in [MPa]
+  
+   reading boundary conditions 
+  
+  [R] : head bcd, simple=right, (size=   120), bcmy=  0.1000E+19, bcindex=   1, error=ignore, (offset=     1)
+  [R] : head bcd, simple=left , (size=   120), bcmy=  0.1000E+19, bcindex=   2, error=ignore, (offset=   121)
+  
+  [R] : bc unit properties, records=      2
+  <D> : property limitations
+  [R] : No default Darcy velocity - head active!
+  
+   reading external file control
+  
+ 
+   reading time input parameter:
+     from file "Synres1"
+ 
+  [R] : Steady state !
+  <D> : tunit =          0.10000000E+01 !
+  <D> : tstart=          0.00000000E+00
+  <D> : tshift=          0.00000000E+00
+  <D> : titer =      0
+  <D> : no monitoring points !
+  <D> : no output times !
+ 
+ 
+ 
+   reading simul parameter
+ 
+  <D> : no sample average approximation
+  [R] : parameter groups, records=  1
+  [R] : standard deviation
+  <D> : bc standard deviation !
+  
+      activity matrix (param.-unit - group):
+        |    unit  por a_kx a_ky   kz comp a_lx a_ly   lz    q   rc   df   ec   lc  bcl bcpd s_nr s_wr |
+        |       1                   1                                               
+                  |
+  
+      activity matrix (param.-unit - lin/log):
+        |    unit  por a_kx a_ky   kz comp a_lx a_ly   lz    q   rc   df   ec   lc  bcl bcpd s_nr s_wr |
+        |       1                 log                                               
+                  |
+  
+      activity matrix (bc-unit - group):
+        | BCunit Flow Temp Conc Epot SatN |
+        |      1                          |
+        |      2                          |
+  
+      activity matrix (bc-unit - lin/log):
+        | BCunit Flow Temp Conc Epot SatN |
+        |      1                          |
+        |      2                          |
+ 
+ 
+   reading ENKF parameter
+ 
+  <D> : no ENKF postcomputing
+  <D> : number of ENKF global assimilation iterations = 1
+  
+   reading splitting parameter:
+     from file "Synres1"
+  
+  [I] : splitting for    1 unit(s)
+  [I] : (splitted) units =     14402
+  [W] : "Synres1_status.log"
+  
+   reading constant fluid properties:
+     from file "Synres1"
+  
+  [D] : constant fluid properties assumed
+  
+     fluid properties: 
+        rhof       compf         cpf        lamf        visf      (sigmaf)
+  0.9980E+03  0.5000E-07  0.4218E+04  0.6500E+00  0.1000E-02  0.2000E-01
+  
+  [?] : WARNING: overwrite "rref" with constant "rhof"
+  [D] : constant gas properties assumed
+  
+  non-wetting properties: 
+        rhon        visn
+  0.6717E+03  0.5310E-04
+  
+ 
+  [I] : memory:      25.547 MByte data
+ 
+  
+  
+ ***   ENKF iteration  1 ***
+  
+
+ SGSIM Version: 2.000
+
+  data file = well_frac_data.gslib                    
+ input columns =      1      2      3      4      0      0
+ trimming limits =   -0.1000000E+22   0.1000000E+22
+ transformation flag =       1
+  transformation file = 
+ sgsim.trn                                                                      
+  
+ consider smoothed distribution (1=yes) =       1
+  file with smoothed distribution = logk_normal.dat                         
+ columns =       1       0
+ data limits (tails) =   -0.1300000E+02  -0.1000000E+02
+ lower tail =       1   -0.1300000E+02
+ upper tail =       1   -0.1000000E+02
+  debugging level =            0
+  random number seed =        26800
+ WARNING data file well_frac_data.gslib                     does not exist!
+    - Hope your intention was to create an unconditional simulation
+    - Resetting ndmin, ndmax, and itrans  to 0 
+    - Resetting sstrat to 1 
+ Setting up transformation table
+ Setting up rotation matrices for variogram and search
+ 
+ Working on realization number            1
+   currently on node      1440
+   currently on node      2880
+   currently on node      4320
+   currently on node      5760
+   currently on node      7200
+   currently on node      8640
+   currently on node     10080
+   currently on node     11520
+   currently on node     12960
+   currently on node     14400
+
+ Realization   1: number   =    14400
+                  mean     =      -0.1739 (close to 0.0?)
+                  variance =       1.6262 (close to gammabar(V,V)? approx. 1.0)
+
+
+ SGSIM Version: 2.000 Finished
+
+  [I] : check grid adapting
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    1000   14400       4    1002   0.7262553E-10
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    2000   14400       4    2002   0.1073154E-10
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    3000   14400       4    3002   0.1000000E-09
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    4000   14400       4    4002   0.2342253E-12
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    5000   14400       4    5002   0.1091381E-11
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    6000   14400       4    6002   0.1192266E-10
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    7000   14400       4    7002   0.1065280E-11
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    8000   14400       4    8002   0.1744747E-11
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    9000   14400       4    9002   0.1000000E-09
+    # seed-idx,max idx,seed-comp.,seed-unit,value =   10000   14400       4   10002   0.1000000E-12
+    # seed-idx,max idx,seed-comp.,seed-unit,value =   11000   14400       4   11002   0.6030876E-12
+    # seed-idx,max idx,seed-comp.,seed-unit,value =   12000   14400       4   12002   0.1102277E-11
+    # seed-idx,max idx,seed-comp.,seed-unit,value =   13000   14400       4   13002   0.3096937E-11
+    # seed-idx,max idx,seed-comp.,seed-unit,value =   14000   14400       4   14002   0.1000000E-09
+  [W] : HDF5 to "samples_output/Synres1_E0_init_1.h5"
+  [W] : VTK to "samples_output/Synres1_E0_init_1.vtk"
+  [I] : compute realisation:    1, sample index:   1
+  nrm2(R) = 0.3540106587929D-12 ,    1 threads used, Number of Iterations:   172 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh = -0.70952921E+01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.3540133953957D-12 ,    1 threads used, Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     2, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : Parameter to "samples_output/Synres1_P_1.dat"
+  [W] : Parameter information to "samples_output/Synres1_parameters.h5"
+ in add line           1
+  [W] : HDF5 to "samples_output/Synres1_E0_1.h5"
+  [W] : VTK to "samples_output/Synres1_E0_1.vtk"
+
+ SGSIM Version: 2.000
+
+  data file = well_frac_data.gslib                    
+ input columns =      1      2      3      4      0      0
+ trimming limits =   -0.1000000E+22   0.1000000E+22
+ transformation flag =       1
+  transformation file = 
+ sgsim.trn                                                                      
+  
+ consider smoothed distribution (1=yes) =       1
+  file with smoothed distribution = logk_normal.dat                         
+ columns =       1       0
+ data limits (tails) =   -0.1300000E+02  -0.1000000E+02
+ lower tail =       1   -0.1300000E+02
+ upper tail =       1   -0.1000000E+02
+  debugging level =            0
+  random number seed =        26800
+ WARNING data file well_frac_data.gslib                     does not exist!
+    - Hope your intention was to create an unconditional simulation
+    - Resetting ndmin, ndmax, and itrans  to 0 
+    - Resetting sstrat to 1 
+ Setting up transformation table
+ Setting up rotation matrices for variogram and search
+ 
+ Working on realization number            2
+   currently on node      1440
+   currently on node      2880
+   currently on node      4320
+   currently on node      5760
+   currently on node      7200
+   currently on node      8640
+   currently on node     10080
+   currently on node     11520
+   currently on node     12960
+   currently on node     14400
+
+ Realization   1: number   =    14400
+                  mean     =      -0.5057 (close to 0.0?)
+                  variance =       1.4722 (close to gammabar(V,V)? approx. 1.0)
+
+
+ SGSIM Version: 2.000 Finished
+
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    1000   14400       4    1002   0.1842242E-12
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    2000   14400       4    2002   0.2329723E-11
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    3000   14400       4    3002   0.7842511E-12
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    4000   14400       4    4002   0.1000000E-12
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    5000   14400       4    5002   0.2180588E-12
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    6000   14400       4    6002   0.3635928E-11
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    7000   14400       4    7002   0.2259235E-12
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    8000   14400       4    8002   0.5732732E-11
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    9000   14400       4    9002   0.2114891E-11
+    # seed-idx,max idx,seed-comp.,seed-unit,value =   10000   14400       4   10002   0.9164703E-10
+    # seed-idx,max idx,seed-comp.,seed-unit,value =   11000   14400       4   11002   0.1657248E-10
+    # seed-idx,max idx,seed-comp.,seed-unit,value =   12000   14400       4   12002   0.7072403E-11
+    # seed-idx,max idx,seed-comp.,seed-unit,value =   13000   14400       4   13002   0.5677610E-10
+    # seed-idx,max idx,seed-comp.,seed-unit,value =   14000   14400       4   14002   0.4077501E-10
+  [W] : HDF5 to "samples_output/Synres1_E0_init_2.h5"
+  [W] : VTK to "samples_output/Synres1_E0_init_2.vtk"
+  [I] : compute realisation:    2, sample index:   1
+  nrm2(R) = 0.3213466317221D-12 ,    1 threads used, Number of Iterations:   199 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh = -0.70978017E+01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.3213470177458D-12 ,    1 threads used, Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     2, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : Parameter to "samples_output/Synres1_P_2.dat"
+  [W] : Parameter information to "samples_output/Synres1_parameters.h5"
+ in add line           2
+  [W] : HDF5 to "samples_output/Synres1_E0_2.h5"
+  [W] : VTK to "samples_output/Synres1_E0_2.vtk"
+
+ SGSIM Version: 2.000
+
+  data file = well_frac_data.gslib                    
+ input columns =      1      2      3      4      0      0
+ trimming limits =   -0.1000000E+22   0.1000000E+22
+ transformation flag =       1
+  transformation file = 
+ sgsim.trn                                                                      
+  
+ consider smoothed distribution (1=yes) =       1
+  file with smoothed distribution = logk_normal.dat                         
+ columns =       1       0
+ data limits (tails) =   -0.1300000E+02  -0.1000000E+02
+ lower tail =       1   -0.1300000E+02
+ upper tail =       1   -0.1000000E+02
+  debugging level =            0
+  random number seed =        26800
+ WARNING data file well_frac_data.gslib                     does not exist!
+    - Hope your intention was to create an unconditional simulation
+    - Resetting ndmin, ndmax, and itrans  to 0 
+    - Resetting sstrat to 1 
+ Setting up transformation table
+ Setting up rotation matrices for variogram and search
+ 
+ Working on realization number            3
+   currently on node      1440
+   currently on node      2880
+   currently on node      4320
+   currently on node      5760
+   currently on node      7200
+   currently on node      8640
+   currently on node     10080
+   currently on node     11520
+   currently on node     12960
+   currently on node     14400
+
+ Realization   1: number   =    14400
+                  mean     =       0.3049 (close to 0.0?)
+                  variance =       1.4713 (close to gammabar(V,V)? approx. 1.0)
+
+
+ SGSIM Version: 2.000 Finished
+
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    1000   14400       4    1002   0.1000000E-09
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    2000   14400       4    2002   0.1000000E-09
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    3000   14400       4    3002   0.5791494E-11
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    4000   14400       4    4002   0.1000000E-09
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    5000   14400       4    5002   0.1866308E-10
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    6000   14400       4    6002   0.5747954E-10
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    7000   14400       4    7002   0.1636397E-11
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    8000   14400       4    8002   0.4565942E-11
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    9000   14400       4    9002   0.1000000E-09
+    # seed-idx,max idx,seed-comp.,seed-unit,value =   10000   14400       4   10002   0.7426101E-10
+    # seed-idx,max idx,seed-comp.,seed-unit,value =   11000   14400       4   11002   0.4045025E-10
+    # seed-idx,max idx,seed-comp.,seed-unit,value =   12000   14400       4   12002   0.1000000E-09
+    # seed-idx,max idx,seed-comp.,seed-unit,value =   13000   14400       4   13002   0.1961031E-11
+    # seed-idx,max idx,seed-comp.,seed-unit,value =   14000   14400       4   14002   0.7880985E-10
+  [W] : HDF5 to "samples_output/Synres1_E0_init_3.h5"
+  [W] : VTK to "samples_output/Synres1_E0_init_3.vtk"
+  [I] : compute realisation:    3, sample index:   1
+  nrm2(R) = 0.9310509563166D-12 ,    1 threads used, Number of Iterations:   162 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh = -0.70926682E+01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.9310509040958D-12 ,    1 threads used, Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     2, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : Parameter to "samples_output/Synres1_P_3.dat"
+  [W] : Parameter information to "samples_output/Synres1_parameters.h5"
+ in add line           3
+  [W] : HDF5 to "samples_output/Synres1_E0_3.h5"
+  [W] : VTK to "samples_output/Synres1_E0_3.vtk"
+
+ SGSIM Version: 2.000
+
+  data file = well_frac_data.gslib                    
+ input columns =      1      2      3      4      0      0
+ trimming limits =   -0.1000000E+22   0.1000000E+22
+ transformation flag =       1
+  transformation file = 
+ sgsim.trn                                                                      
+  
+ consider smoothed distribution (1=yes) =       1
+  file with smoothed distribution = logk_normal.dat                         
+ columns =       1       0
+ data limits (tails) =   -0.1300000E+02  -0.1000000E+02
+ lower tail =       1   -0.1300000E+02
+ upper tail =       1   -0.1000000E+02
+  debugging level =            0
+  random number seed =        26800
+ WARNING data file well_frac_data.gslib                     does not exist!
+    - Hope your intention was to create an unconditional simulation
+    - Resetting ndmin, ndmax, and itrans  to 0 
+    - Resetting sstrat to 1 
+ Setting up transformation table
+ Setting up rotation matrices for variogram and search
+ 
+ Working on realization number            4
+   currently on node      1440
+   currently on node      2880
+   currently on node      4320
+   currently on node      5760
+   currently on node      7200
+   currently on node      8640
+   currently on node     10080
+   currently on node     11520
+   currently on node     12960
+   currently on node     14400
+
+ Realization   1: number   =    14400
+                  mean     =      -0.1730 (close to 0.0?)
+                  variance =       1.2876 (close to gammabar(V,V)? approx. 1.0)
+
+
+ SGSIM Version: 2.000 Finished
+
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    1000   14400       4    1002   0.5431225E-11
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    2000   14400       4    2002   0.7533912E-10
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    3000   14400       4    3002   0.1510962E-10
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    4000   14400       4    4002   0.1000000E-09
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    5000   14400       4    5002   0.1435177E-10
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    6000   14400       4    6002   0.1000000E-09
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    7000   14400       4    7002   0.1467456E-11
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    8000   14400       4    8002   0.3796192E-12
+    # seed-idx,max idx,seed-comp.,seed-unit,value =    9000   14400       4    9002   0.1000000E-12
+    # seed-idx,max idx,seed-comp.,seed-unit,value =   10000   14400       4   10002   0.9437827E-11
+    # seed-idx,max idx,seed-comp.,seed-unit,value =   11000   14400       4   11002   0.2007876E-10
+    # seed-idx,max idx,seed-comp.,seed-unit,value =   12000   14400       4   12002   0.2161308E-11
+    # seed-idx,max idx,seed-comp.,seed-unit,value =   13000   14400       4   13002   0.5012991E-11
+    # seed-idx,max idx,seed-comp.,seed-unit,value =   14000   14400       4   14002   0.1277983E-12
+  [W] : HDF5 to "samples_output/Synres1_E0_init_4.h5"
+  [W] : VTK to "samples_output/Synres1_E0_init_4.vtk"
+  [I] : compute realisation:    4, sample index:   1
+  nrm2(R) = 0.3424449733695D-12 ,    1 threads used, Number of Iterations:   194 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh = -0.70961101E+01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.3424438965385D-12 ,    1 threads used, Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     2, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : Parameter to "samples_output/Synres1_P_4.dat"
+  [W] : Parameter information to "samples_output/Synres1_parameters.h5"
+ in add line           4
+  [W] : HDF5 to "samples_output/Synres1_E0_4.h5"
+  [W] : VTK to "samples_output/Synres1_E0_4.vtk"
+ Deallocated Memory, remaining    2.30644226074219       MB
+ total cpu time:    0: 3.49 min
+ RUN O.K.

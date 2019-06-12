@@ -21,6 +21,11 @@ SLURM batch job script: submit.job
 Submit job:
 $ sbatch submit.job
 
+---How to Execute on CLAIX-18, 2:---
+
+New executable (06/2019):
+
+./shem_sm_sgsim64int_const_master_individual.x
 
 ---Additional Information:---
 2-dimensional, steady state model which solves the flow equation.
