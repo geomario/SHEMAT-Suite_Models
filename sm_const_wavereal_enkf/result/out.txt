@@ -1,0 +1,734 @@
+  
+ ======================================
+ Shem-FW/AD/SM 7.50 (Smarty)                                                    
+  
+ ======================================
+  
+  
+  
+  *** NEW MODEL 
+ 
+   checking input definitions:
+     from file "WAVEREAL"
+  
+   reading model input parameter:
+     from file "WAVEREAL"
+  
+  [R] : title
+  [R] : runmode
+     >>> inverse modeling 
+  <D> : free=0, confined flow !
+  [R] : linfo
+  [R] : simulate =    10
+  [I] : realisations=    10(+1)
+  [R] : [i0, j0, k0] = [  31,  31,   1]
+  [R] : nonlinear solver parameter
+  [I] : fixed relxation factor assumed
+  [R] : output suffix: .h5:[ ], .plt:[ ], .vtk:[ ], .txt:[ ]
+  
+   reading flow parameters
+  
+  [R] : flow linear solver (control=  64)
+  [R] : flow nonlinear iteration tolerance
+  [I] : flow nonlinear relaxation factor
+  
+  <D> : no temperature [disabled]
+  
+  
+   reading chemical transport parameters
+  
+  [R] : tracers, reactive components=   1   0
+  [R] : transport linear solver (control=  64)
+  [R] : transport nonlinear iteration tolerance
+  [I] : transport nonlinear relaxation factor
+  
+  <D> : no electric potential [disabled]
+  
+  
+  <D> : grav =   0.9810E+01
+  <D> : no fluid heat production
+  [R] : rref, reference density =   0.9848E+03
+  <D> : tref, reference temperature =   0.2000E+02
+  <D> : fixed rhocm, defined by unit
+  
+   reading zone parameter 
+  
+  [R] : "uindex" - unit index number, unit-cell assignment
+  
+  [R] : "units" - unit (rock) properties
+  
+   reading/preprocessing arrays
+  
+  [R] : delx
+  [R] : dely
+  [R] : delz
+  
+   reading initial values 
+  
+  [R] : head, in [m]
+  [R] : temp, in [degree Celsius]
+  [R] : pres, in [MPa]
+  [R] : tracer0001, in [Mol/l]
+  
+   reading boundary conditions 
+  
+  [R] : head bcd, simple=front, (size=    31), bcmy=  0.1000E+19, bcindex=   2, error=ignore, (offset=     1)
+  [R] : head bcd, simple=back , (size=    31), bcmy=  0.1000E+19, bcindex=   1, error=ignore, (offset=    32)
+  [R] : conc bcd, simple=front, (size=    31), bcmy=  0.1000E+19, species=   1, error=ignore, (offset=    63)
+  [R] : conc bcd, simple=back , (size=    31), bcmy=  0.1000E+19, species=   1, error=ignore, (offset=    94)
+  [R] : bc unit properties, records=      2
+  [R] :      1 diffusion constants and mol masses
+  <D> : property limitations
+  [R] : No default Darcy velocity - head active!
+  
+   reading external file control
+  
+ 
+   reading time input parameter:
+     from file "WAVEREAL"
+ 
+  [R] : timestep control
+  [R] : tunit =          0.51840000E+07
+  <D> : tstart=          0.00000000E+00
+  <D> : tshift=          0.00000000E+00
+  <D> : titer =      0
+  [R] : periods, records=   1
+    time :  0.0000E+00 -   0.2000E+02, #      200, linear
+  <D> : no monitoring points !
+  [R] : output times, records=   0
+ 
+ 
+ 
+   reading simul parameter
+ 
+  <D> : no sample average approximation
+  [R] : parameter groups, records=  1
+  [R] : standard deviation
+  <D> : bc standard deviation !
+ 
+ 
+   reading ENKF parameter
+ 
+  [R] : no ENKF postcomputing
+  [R] : number of ENKF global assimilation iterations =   1
+ 
+   reading observed data
+     from file "WAVEREAL"
+ 
+  <D> : no observed data found, records=0
+  
+   reading splitting parameter:
+     from file "WAVEREAL"
+  
+  [I] : splitting for    1 unit(s)
+  [I] : (splitted) units =       963
+  [W] : "WAVEREAL_status.log"
+  
+   reading constant fluid properties:
+     from file "WAVEREAL"
+  
+  
+  [?] : WARNING: overwrite "rref" with constant "rhof"
+  [D] : constant gas properties assumed
+  
+ 
+  [I] : memory:       9.484 MByte data
+ 
+  
+  
+ ***   ENKF iteration  1 ***
+  
+ [R] : nrobs_int
+ [R] : mode_analysis
+ [R] : truncation
+ [R] : covmodel
+ [R] : clh, clv
+ [R] : rexact
+ [R] : fixsamp
+ [R] : checktrue
+ [R] : varhead_obs, vartemp_obs, varconc_obs, varkz_obs, varlz_obs, varpor_obs
+ [R] : varhead_sys, vartemp_sys, varconc_sys, varkz_sys, varlz_sys, varpor_sys
+ [R] : act_s_h, act_s_t, act_s_c, act_s_kz, act_s_lz, act_s_por
+ [R] : ex_unit
+ [R] : assimod
+ [R] : normobs
+ [R] : assidamp, tracdamp
+ [R] : iassout
+ [R] : err_cov
+ [R] : true_name
+ [R] : true_chem_name
+ TrueWAVEREAL_chem.plt                                                          
+                      
+ [R] : obs_name
+ [R] : iassout_single_start, iassout_single
+ [R] : i_single_out, j_single_out, k_single_out
+ [R] : single_out_variable, single_out_lin_log
+ [R] : normal_score
+ [R] : ref_dist_switch
+ [R] : ref_dist_var, ref_dist_file_name
+ [R] : iassout_cov_ref_start, iassout_cov_ref
+ [R] : switch_cov_ref
+ [R] : i_cov_ref, j_cov_ref, k_cov_ref, ivar_cov_ref
+ [NR] : cov_loc_switch, cov_loc_len,
+ [R] : cell centered
+ [NR] : switch_dc, i_dc, j_dc, k_dc, ivar_dc
+ [R] : dual_enkf_switch
+ [NR]: stoch_bc_switch
+ [R] : general_seed_seed
+ 
+ 
+ ---------- CHECK ENKF INPUT -------
+  [IE] means  Input Error
+  [OK] means OK
+ 
+ 
+  No input error detected
+ 
+
+ SGSIM Version: 2.000
+
+  data file = well_frac_data.gslib                    
+ input columns =      1      2      3      4      0      0
+ trimming limits =   -0.1000000E+22   0.1000000E+22
+ transformation flag =       1
+  transformation file = 
+ sgsim.trn                                                                      
+  
+ consider smoothed distribution (1=yes) =       1
+  file with smoothed distribution = logk_wavereal.dat                       
+ columns =       1       0
+ data limits (tails) =   -0.1600000E+02  -0.8000000E+01
+ lower tail =       1   -0.1600000E+02
+ upper tail =       1   -0.8000000E+01
+  debugging level =            0
+  random number seed =      1111111
+ WARNING data file well_frac_data.gslib                     does not exist!
+    - Hope your intention was to create an unconditional simulation
+    - Resetting ndmin, ndmax, and itrans  to 0 
+    - Resetting sstrat to 1 
+ Setting up transformation table
+ Setting up rotation matrices for variogram and search
+ 
+ Working on realization number            1
+   currently on node        96
+   currently on node       192
+   currently on node       288
+   currently on node       384
+   currently on node       480
+   currently on node       576
+   currently on node       672
+   currently on node       768
+   currently on node       864
+   currently on node       960
+
+ Realization   1: number   =      961
+                  mean     =      -0.8418 (close to 0.0?)
+                  variance =       0.2861 (close to gammabar(V,V)? approx. 1.0)
+
+
+ SGSIM Version: 2.000 Finished
+
+
+ SGSIM Version: 2.000
+
+  data file = well_frac_data.gslib                    
+ input columns =      1      2      3      4      0      0
+ trimming limits =   -0.1000000E+22   0.1000000E+22
+ transformation flag =       1
+  transformation file = 
+ sgsim.trn                                                                      
+  
+ consider smoothed distribution (1=yes) =       1
+  file with smoothed distribution = logk_wavereal.dat                       
+ columns =       1       0
+ data limits (tails) =   -0.1600000E+02  -0.8000000E+01
+ lower tail =       1   -0.1600000E+02
+ upper tail =       1   -0.8000000E+01
+  debugging level =            0
+  random number seed =      1111111
+ WARNING data file well_frac_data.gslib                     does not exist!
+    - Hope your intention was to create an unconditional simulation
+    - Resetting ndmin, ndmax, and itrans  to 0 
+    - Resetting sstrat to 1 
+ Setting up transformation table
+ Setting up rotation matrices for variogram and search
+ 
+ Working on realization number            2
+   currently on node        96
+   currently on node       192
+   currently on node       288
+   currently on node       384
+   currently on node       480
+   currently on node       576
+   currently on node       672
+   currently on node       768
+   currently on node       864
+   currently on node       960
+
+ Realization   1: number   =      961
+                  mean     =      -0.5509 (close to 0.0?)
+                  variance =       0.7562 (close to gammabar(V,V)? approx. 1.0)
+
+
+ SGSIM Version: 2.000 Finished
+
+
+ SGSIM Version: 2.000
+
+  data file = well_frac_data.gslib                    
+ input columns =      1      2      3      4      0      0
+ trimming limits =   -0.1000000E+22   0.1000000E+22
+ transformation flag =       1
+  transformation file = 
+ sgsim.trn                                                                      
+  
+ consider smoothed distribution (1=yes) =       1
+  file with smoothed distribution = logk_wavereal.dat                       
+ columns =       1       0
+ data limits (tails) =   -0.1600000E+02  -0.8000000E+01
+ lower tail =       1   -0.1600000E+02
+ upper tail =       1   -0.8000000E+01
+  debugging level =            0
+  random number seed =      1111111
+ WARNING data file well_frac_data.gslib                     does not exist!
+    - Hope your intention was to create an unconditional simulation
+    - Resetting ndmin, ndmax, and itrans  to 0 
+    - Resetting sstrat to 1 
+ Setting up transformation table
+ Setting up rotation matrices for variogram and search
+ 
+ Working on realization number            3
+   currently on node        96
+   currently on node       192
+   currently on node       288
+   currently on node       384
+   currently on node       480
+   currently on node       576
+   currently on node       672
+   currently on node       768
+   currently on node       864
+   currently on node       960
+
+ Realization   1: number   =      961
+                  mean     =      -0.2332 (close to 0.0?)
+                  variance =       0.5638 (close to gammabar(V,V)? approx. 1.0)
+
+
+ SGSIM Version: 2.000 Finished
+
+
+ SGSIM Version: 2.000
+
+  data file = well_frac_data.gslib                    
+ input columns =      1      2      3      4      0      0
+ trimming limits =   -0.1000000E+22   0.1000000E+22
+ transformation flag =       1
+  transformation file = 
+ sgsim.trn                                                                      
+  
+ consider smoothed distribution (1=yes) =       1
+  file with smoothed distribution = logk_wavereal.dat                       
+ columns =       1       0
+ data limits (tails) =   -0.1600000E+02  -0.8000000E+01
+ lower tail =       1   -0.1600000E+02
+ upper tail =       1   -0.8000000E+01
+  debugging level =            0
+  random number seed =      1111111
+ WARNING data file well_frac_data.gslib                     does not exist!
+    - Hope your intention was to create an unconditional simulation
+    - Resetting ndmin, ndmax, and itrans  to 0 
+    - Resetting sstrat to 1 
+ Setting up transformation table
+ Setting up rotation matrices for variogram and search
+ 
+ Working on realization number            4
+   currently on node        96
+   currently on node       192
+   currently on node       288
+   currently on node       384
+   currently on node       480
+   currently on node       576
+   currently on node       672
+   currently on node       768
+   currently on node       864
+   currently on node       960
+
+ Realization   1: number   =      961
+                  mean     =       0.8516 (close to 0.0?)
+                  variance =       0.7630 (close to gammabar(V,V)? approx. 1.0)
+
+
+ SGSIM Version: 2.000 Finished
+
+
+ SGSIM Version: 2.000
+
+  data file = well_frac_data.gslib                    
+ input columns =      1      2      3      4      0      0
+ trimming limits =   -0.1000000E+22   0.1000000E+22
+ transformation flag =       1
+  transformation file = 
+ sgsim.trn                                                                      
+  
+ consider smoothed distribution (1=yes) =       1
+  file with smoothed distribution = logk_wavereal.dat                       
+ columns =       1       0
+ data limits (tails) =   -0.1600000E+02  -0.8000000E+01
+ lower tail =       1   -0.1600000E+02
+ upper tail =       1   -0.8000000E+01
+  debugging level =            0
+  random number seed =      1111111
+ WARNING data file well_frac_data.gslib                     does not exist!
+    - Hope your intention was to create an unconditional simulation
+    - Resetting ndmin, ndmax, and itrans  to 0 
+    - Resetting sstrat to 1 
+ Setting up transformation table
+ Setting up rotation matrices for variogram and search
+ 
+ Working on realization number            5
+   currently on node        96
+   currently on node       192
+   currently on node       288
+   currently on node       384
+   currently on node       480
+   currently on node       576
+   currently on node       672
+   currently on node       768
+   currently on node       864
+   currently on node       960
+
+ Realization   1: number   =      961
+                  mean     =      -0.9712 (close to 0.0?)
+                  variance =       0.6577 (close to gammabar(V,V)? approx. 1.0)
+
+
+ SGSIM Version: 2.000 Finished
+
+
+ SGSIM Version: 2.000
+
+  data file = well_frac_data.gslib                    
+ input columns =      1      2      3      4      0      0
+ trimming limits =   -0.1000000E+22   0.1000000E+22
+ transformation flag =       1
+  transformation file = 
+ sgsim.trn                                                                      
+  
+ consider smoothed distribution (1=yes) =       1
+  file with smoothed distribution = logk_wavereal.dat                       
+ columns =       1       0
+ data limits (tails) =   -0.1600000E+02  -0.8000000E+01
+ lower tail =       1   -0.1600000E+02
+ upper tail =       1   -0.8000000E+01
+  debugging level =            0
+  random number seed =      1111111
+ WARNING data file well_frac_data.gslib                     does not exist!
+    - Hope your intention was to create an unconditional simulation
+    - Resetting ndmin, ndmax, and itrans  to 0 
+    - Resetting sstrat to 1 
+ Setting up transformation table
+ Setting up rotation matrices for variogram and search
+ 
+ Working on realization number            6
+   currently on node        96
+   currently on node       192
+   currently on node       288
+   currently on node       384
+   currently on node       480
+   currently on node       576
+   currently on node       672
+   currently on node       768
+   currently on node       864
+   currently on node       960
+
+ Realization   1: number   =      961
+                  mean     =       0.5738 (close to 0.0?)
+                  variance =       0.6117 (close to gammabar(V,V)? approx. 1.0)
+
+
+ SGSIM Version: 2.000 Finished
+
+
+ SGSIM Version: 2.000
+
+  data file = well_frac_data.gslib                    
+ input columns =      1      2      3      4      0      0
+ trimming limits =   -0.1000000E+22   0.1000000E+22
+ transformation flag =       1
+  transformation file = 
+ sgsim.trn                                                                      
+  
+ consider smoothed distribution (1=yes) =       1
+  file with smoothed distribution = logk_wavereal.dat                       
+ columns =       1       0
+ data limits (tails) =   -0.1600000E+02  -0.8000000E+01
+ lower tail =       1   -0.1600000E+02
+ upper tail =       1   -0.8000000E+01
+  debugging level =            0
+  random number seed =      1111111
+ WARNING data file well_frac_data.gslib                     does not exist!
+    - Hope your intention was to create an unconditional simulation
+    - Resetting ndmin, ndmax, and itrans  to 0 
+    - Resetting sstrat to 1 
+ Setting up transformation table
+ Setting up rotation matrices for variogram and search
+ 
+ Working on realization number            7
+   currently on node        96
+   currently on node       192
+   currently on node       288
+   currently on node       384
+   currently on node       480
+   currently on node       576
+   currently on node       672
+   currently on node       768
+   currently on node       864
+   currently on node       960
+
+ Realization   1: number   =      961
+                  mean     =      -1.1246 (close to 0.0?)
+                  variance =       0.3776 (close to gammabar(V,V)? approx. 1.0)
+
+
+ SGSIM Version: 2.000 Finished
+
+
+ SGSIM Version: 2.000
+
+  data file = well_frac_data.gslib                    
+ input columns =      1      2      3      4      0      0
+ trimming limits =   -0.1000000E+22   0.1000000E+22
+ transformation flag =       1
+  transformation file = 
+ sgsim.trn                                                                      
+  
+ consider smoothed distribution (1=yes) =       1
+  file with smoothed distribution = logk_wavereal.dat                       
+ columns =       1       0
+ data limits (tails) =   -0.1600000E+02  -0.8000000E+01
+ lower tail =       1   -0.1600000E+02
+ upper tail =       1   -0.8000000E+01
+  debugging level =            0
+  random number seed =      1111111
+ WARNING data file well_frac_data.gslib                     does not exist!
+    - Hope your intention was to create an unconditional simulation
+    - Resetting ndmin, ndmax, and itrans  to 0 
+    - Resetting sstrat to 1 
+ Setting up transformation table
+ Setting up rotation matrices for variogram and search
+ 
+ Working on realization number            8
+   currently on node        96
+   currently on node       192
+   currently on node       288
+   currently on node       384
+   currently on node       480
+   currently on node       576
+   currently on node       672
+   currently on node       768
+   currently on node       864
+   currently on node       960
+
+ Realization   1: number   =      961
+                  mean     =       0.6410 (close to 0.0?)
+                  variance =       0.3535 (close to gammabar(V,V)? approx. 1.0)
+
+
+ SGSIM Version: 2.000 Finished
+
+
+ SGSIM Version: 2.000
+
+  data file = well_frac_data.gslib                    
+ input columns =      1      2      3      4      0      0
+ trimming limits =   -0.1000000E+22   0.1000000E+22
+ transformation flag =       1
+  transformation file = 
+ sgsim.trn                                                                      
+  
+ consider smoothed distribution (1=yes) =       1
+  file with smoothed distribution = logk_wavereal.dat                       
+ columns =       1       0
+ data limits (tails) =   -0.1600000E+02  -0.8000000E+01
+ lower tail =       1   -0.1600000E+02
+ upper tail =       1   -0.8000000E+01
+  debugging level =            0
+  random number seed =      1111111
+ WARNING data file well_frac_data.gslib                     does not exist!
+    - Hope your intention was to create an unconditional simulation
+    - Resetting ndmin, ndmax, and itrans  to 0 
+    - Resetting sstrat to 1 
+ Setting up transformation table
+ Setting up rotation matrices for variogram and search
+ 
+ Working on realization number            9
+   currently on node        96
+   currently on node       192
+   currently on node       288
+   currently on node       384
+   currently on node       480
+   currently on node       576
+   currently on node       672
+   currently on node       768
+   currently on node       864
+   currently on node       960
+
+ Realization   1: number   =      961
+                  mean     =      -1.3704 (close to 0.0?)
+                  variance =       0.7290 (close to gammabar(V,V)? approx. 1.0)
+
+
+ SGSIM Version: 2.000 Finished
+
+
+ SGSIM Version: 2.000
+
+  data file = well_frac_data.gslib                    
+ input columns =      1      2      3      4      0      0
+ trimming limits =   -0.1000000E+22   0.1000000E+22
+ transformation flag =       1
+  transformation file = 
+ sgsim.trn                                                                      
+  
+ consider smoothed distribution (1=yes) =       1
+  file with smoothed distribution = logk_wavereal.dat                       
+ columns =       1       0
+ data limits (tails) =   -0.1600000E+02  -0.8000000E+01
+ lower tail =       1   -0.1600000E+02
+ upper tail =       1   -0.8000000E+01
+  debugging level =            0
+  random number seed =      1111111
+ WARNING data file well_frac_data.gslib                     does not exist!
+    - Hope your intention was to create an unconditional simulation
+    - Resetting ndmin, ndmax, and itrans  to 0 
+    - Resetting sstrat to 1 
+ Setting up transformation table
+ Setting up rotation matrices for variogram and search
+ 
+ Working on realization number           10
+   currently on node        96
+   currently on node       192
+   currently on node       288
+   currently on node       384
+   currently on node       480
+   currently on node       576
+   currently on node       672
+   currently on node       768
+   currently on node       864
+   currently on node       960
+
+ Realization   1: number   =      961
+                  mean     =       0.4005 (close to 0.0?)
+                  variance =       0.3912 (close to gammabar(V,V)? approx. 1.0)
+
+
+ SGSIM Version: 2.000 Finished
+
+  [I] : compute realisation:    1, sample index:   1
+  [I] : compute realisation:    2, sample index:   1
+  [I] : compute realisation:    3, sample index:   1
+  [I] : compute realisation:    4, sample index:   1
+  [I] : compute realisation:    5, sample index:   1
+  [I] : compute realisation:    6, sample index:   1
+  [I] : compute realisation:    7, sample index:   1
+  [I] : compute realisation:    8, sample index:   1
+  [I] : compute realisation:    9, sample index:   1
+  [I] : compute realisation:   10, sample index:   1
+  [I] : compute realisation:    1, sample index:   1
+  [I] : compute realisation:    2, sample index:   1
+  [I] : compute realisation:    3, sample index:   1
+  [I] : compute realisation:    4, sample index:   1
+  [I] : compute realisation:    5, sample index:   1
+  [I] : compute realisation:    6, sample index:   1
+  [I] : compute realisation:    7, sample index:   1
+  [I] : compute realisation:    8, sample index:   1
+  [I] : compute realisation:    9, sample index:   1
+  [I] : compute realisation:   10, sample index:   1
+  [I] : compute realisation:    1, sample index:   1
+  [I] : compute realisation:    2, sample index:   1
+  [I] : compute realisation:    3, sample index:   1
+  [I] : compute realisation:    4, sample index:   1
+  [I] : compute realisation:    5, sample index:   1
+  [I] : compute realisation:    6, sample index:   1
+  [I] : compute realisation:    7, sample index:   1
+  [I] : compute realisation:    8, sample index:   1
+  [I] : compute realisation:    9, sample index:   1
+  [I] : compute realisation:   10, sample index:   1
+  [I] : compute realisation:    1, sample index:   1
+  [I] : compute realisation:    2, sample index:   1
+  [I] : compute realisation:    3, sample index:   1
+  [I] : compute realisation:    4, sample index:   1
+  [I] : compute realisation:    5, sample index:   1
+  [I] : compute realisation:    6, sample index:   1
+  [I] : compute realisation:    7, sample index:   1
+  [I] : compute realisation:    8, sample index:   1
+  [I] : compute realisation:    9, sample index:   1
+  [I] : compute realisation:   10, sample index:   1
+  [I] : compute realisation:    1, sample index:   1
+  [I] : compute realisation:    2, sample index:   1
+  [I] : compute realisation:    3, sample index:   1
+  [I] : compute realisation:    4, sample index:   1
+  [I] : compute realisation:    5, sample index:   1
+  [I] : compute realisation:    6, sample index:   1
+  [I] : compute realisation:    7, sample index:   1
+  [I] : compute realisation:    8, sample index:   1
+  [I] : compute realisation:    9, sample index:   1
+  [I] : compute realisation:   10, sample index:   1
+  [I] : compute realisation:    1, sample index:   1
+  [I] : compute realisation:    2, sample index:   1
+  [I] : compute realisation:    3, sample index:   1
+  [I] : compute realisation:    4, sample index:   1
+  [I] : compute realisation:    5, sample index:   1
+  [I] : compute realisation:    6, sample index:   1
+  [I] : compute realisation:    7, sample index:   1
+  [I] : compute realisation:    8, sample index:   1
+  [I] : compute realisation:    9, sample index:   1
+  [I] : compute realisation:   10, sample index:   1
+  [I] : compute realisation:    1, sample index:   1
+  [I] : compute realisation:    2, sample index:   1
+  [I] : compute realisation:    3, sample index:   1
+  [I] : compute realisation:    4, sample index:   1
+  [I] : compute realisation:    5, sample index:   1
+  [I] : compute realisation:    6, sample index:   1
+  [I] : compute realisation:    7, sample index:   1
+  [I] : compute realisation:    8, sample index:   1
+  [I] : compute realisation:    9, sample index:   1
+  [I] : compute realisation:   10, sample index:   1
+  [I] : compute realisation:    1, sample index:   1
+  [I] : compute realisation:    2, sample index:   1
+  [I] : compute realisation:    3, sample index:   1
+  [I] : compute realisation:    4, sample index:   1
+  [I] : compute realisation:    5, sample index:   1
+  [I] : compute realisation:    6, sample index:   1
+  [I] : compute realisation:    7, sample index:   1
+  [I] : compute realisation:    8, sample index:   1
+  [I] : compute realisation:    9, sample index:   1
+  [I] : compute realisation:   10, sample index:   1
+  [I] : compute realisation:    1, sample index:   1
+  [I] : compute realisation:    2, sample index:   1
+  [I] : compute realisation:    3, sample index:   1
+  [I] : compute realisation:    4, sample index:   1
+  [I] : compute realisation:    5, sample index:   1
+  [I] : compute realisation:    6, sample index:   1
+  [I] : compute realisation:    7, sample index:   1
+  [I] : compute realisation:    8, sample index:   1
+  [I] : compute realisation:    9, sample index:   1
+  [I] : compute realisation:   10, sample index:   1
+  [I] : compute realisation:    1, sample index:   1
+  [I] : compute realisation:    2, sample index:   1
+  [I] : compute realisation:    3, sample index:   1
+  [I] : compute realisation:    4, sample index:   1
+  [I] : compute realisation:    5, sample index:   1
+  [I] : compute realisation:    6, sample index:   1
+  [I] : compute realisation:    7, sample index:   1
+  [I] : compute realisation:    8, sample index:   1
+  [I] : compute realisation:    9, sample index:   1
+  [I] : compute realisation:   10, sample index:   1
+ 
+ ----------------------------------------------------
+ ----- Before observation #            10     -------
+ ----------------------------------------------------
+  [I] : compute (lin/log) mean values
+ Deallocated Memory, remaining   0.153358459472656       MB
+ total cpu time:    0: 5.45 min
+ RUN O.K.
