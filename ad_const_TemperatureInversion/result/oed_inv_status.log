@@ -1,0 +1,9 @@
+% Shemat-Suite version: 7.50 (Smarty)                                                                   
+%          build: 2019-04-03 10:29:16 [UTC]               
+%   build command line: PROPS=const USER=none COMPTYPE=ling64                                                                                                                                                                                                                           
+%        Project: "oed_inv"
+%
+%    <iteration> <delta head> <delta temp> (<delta conc> ...)
+          1  0.49789868E+01  0.43445038E+02
+          2  0.00000000E+00  0.00000000E+00
+% job finished, total cpu time:        0.16 min

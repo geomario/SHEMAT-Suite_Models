@@ -1,0 +1,10 @@
+% Shemat-Suite version: 7.50 (Smarty)                                                                   
+%          build: 2019-04-10 10:47:51 [UTC]               
+%   build command line: PROPS=bas USER=none COMPTYPE=ling64                                                                                                                                                                                                                             
+%        Project: "tiny_adv_init"
+%
+%    <iteration> <delta head> <delta temp> (<delta conc> ...)
+          1  0.10000000E-20  0.13329447E+01
+          2  0.10000000E-20 -0.19380066E-03
+          3  0.10000000E-20 -0.37617195E-07
+          4  0.10000000E-20  0.00000000E+00
