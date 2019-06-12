@@ -63,6 +63,7 @@ test_models = [
     # "fw_basc_HenryProblem",
     # "fw_kola_HeatConduction2D",
     # "sm_const_MC_small",
+    "sm_const_wavereal_true",
 ]
 
 ###############################################################################
