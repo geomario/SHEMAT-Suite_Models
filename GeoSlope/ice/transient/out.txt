@@ -9,8 +9,8 @@
 
    checking input definitions:
      from file "GeoSlope"
-warning: ignore line    103: "# compm"
-warning: ignore line    107: "# tref"
+warning: ignore line     97: "# compm"
+warning: ignore line    101: "# tref"
   
    reading model input parameter:
      from file "GeoSlope"
@@ -71,8 +71,8 @@ warning: ignore line    107: "# tref"
    reading boundary conditions 
   
   [R] : head bcd, simple=top  , (size=    10), bcmy=  0.1000E+19, error=ignore, (offset=     1)
-  [R] : temp bcd, simple=top  , (size=    10), bcmy=  0.1000E+19, error=ignore, (offset=    11)
-  [R] : temp bcn, simple=base , (size=    10), bcmy=  0.1000E+19, error=ignore, (offset=    21)
+  [R] : temp bcn, simple=base , (size=    10), bcmy=  0.1000E+19, error=ignore, (offset=    11)
+  [R] : temp bcd, simple=top  , (size=    10), bcmy=  0.1000E+19, error=ignore, (offset=    21)
   
   <D> : property limitations
   [R] : No default Darcy velocity - head active!
@@ -11107,5 +11107,5 @@ x:    0.106E+03y:  0.000E+00z:  0.106E+06
   [I] : final time step =     1000, simulation time  0.120000E+04
   [W] : VTK to "GeoSlope_final.vtk"
  Deallocated Memory, remaining    7.6293945312500000E-006  MB
- total cpu time:    1: 6.91 min
+ total cpu time:    1: 3.83 min
  RUN O.K.
