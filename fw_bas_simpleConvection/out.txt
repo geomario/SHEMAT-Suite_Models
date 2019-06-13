@@ -96,14 +96,14 @@
   <D> : tshift=          0.00000000E+00
   <D> : titer =      0
   [R] : periods, records=   1
-    time :  0.0000E+00 -   0.1000E+03, #       10, linear
+    time :  0.0000E+00 -   0.1000E+03, #      100, linear
   <D> : no monitoring points !
   [R] : output times, records=   6
  
  
   [W] : "convection_simple_status.log"
  
-  [I] : memory:       0.744 MByte data
+  [I] : memory:       0.745 MByte data
  
   nrm2(R) = 0.3104173963555D-11 , Number of Iterations:    10 (BiCGStab)
   nrm2(R) = 0.9133640190343D-05 , Number of Iterations:     3 (BiCGStab)
@@ -117,5 +117,5 @@
   [W] : HDF5 to "convection_simple_final.h5"
   [W] : VTK to "convection_simple_final.vtk"
  Deallocated Memory, remaining   1.111602783203125E-002  MB
- total cpu time:    0: 0.28 min
+ total cpu time:    0: 0.29 min
  RUN O.K.
