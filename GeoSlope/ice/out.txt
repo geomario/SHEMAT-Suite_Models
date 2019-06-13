@@ -1,0 +1,77 @@
+  
+ ======================================
+ Shem-FW/AD/SM 7.50 (Smarty)                                                     
+ ======================================
+  
+  
+  
+  *** NEW MODEL 
+
+   checking input definitions:
+     from file "GeoSlope"
+warning: ignore line    104: "# compm"
+warning: ignore line    108: "# tref"
+  
+   reading model input parameter:
+     from file "GeoSlope"
+  
+  [R] : title
+  [R] : runmode
+     >>> forward modeling
+  <D> : free=0, confined flow !
+  [R] : linfo
+  [R] : [i0, j0, k0] = [  10,   1, 500]
+  [R] : nonlinear solver parameter
+  [I] : fixed relxation factor assumed
+  [R] : output suffix: .h5:[ ], .plt:[ ], .vtk:[X], .txt:[ ]
+  
+   reading flow parameters
+  
+  [R] : flow linear solver (control=  64)
+  [R] : flow nonlinear iteration tolerance
+  [I] : flow nonlinear relaxation factor
+  
+   reading heat transport parameters
+  
+  [R] : temperature linear solver (control=  64)
+  [R] : temperature nonlinear iteration tolerance
+  [I] : temperature nonlinear relaxation factor
+  
+  <D> : no transport [disabled]
+  
+  
+  <D> : no electric potential [disabled]
+  
+  
+  [R] : grav  0.9807E+01 (>1.0d-30)
+  <D> : no fluid heat production
+  [R] : rref, reference density =   0.9980E+03
+  <D> : tref, reference temperature =   0.2000E+02
+  [R] : rhom, rock heat capacity model
+  
+   reading zone parameter 
+  
+  [R] : "uindex" - unit index number, unit-cell assignment
+  [I] : approx. speedup for the full solver :   1.00
+  
+  [R] : "units" - unit (rock) properties
+  
+   reading/preprocessing arrays
+  
+  [R] : delx
+  [R] : dely
+  [R] : delz
+  
+   reading initial values 
+  
+  [R] : head, in [m]
+  [R] : temp, in [degree Celsius]
+  [R] : pres, in [MPa]
+  
+   reading boundary conditions 
+  
+  [R] : head bcd, simple=top  , (size=    10), bcmy=  0.1000E+19, error=ignore, (offset=     1)
+  [R] : temp bcn, simple=base , (size=    10), bcmy=  0.1000E+19, error=ignore, (offset=    11)
+  [R] : temp bcd, simple=top  , (size=    10), bcmy=  0.1000E+19, error=ignore, (offset=    21)
+error: to few values - "simple=?" specified
+   expected: I0*J0*K0 x [bc-value]
