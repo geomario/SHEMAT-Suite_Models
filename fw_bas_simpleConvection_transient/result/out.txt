@@ -90,7 +90,7 @@
    reading time input parameter:
      from file "convection_simple"
  
-  [R] : Steady state !
+  [R] : timestep control
   [R] : tunit =          0.15786000E+08
   <D> : tstart=          0.00000000E+00
   <D> : tshift=          0.00000000E+00
@@ -105,17 +105,1193 @@
  
   [I] : memory:       0.745 MByte data
  
-  nrm2(R) = 0.3104173963555D-11 , Number of Iterations:    10 (BiCGStab)
-  nrm2(R) = 0.9133640190343D-05 , Number of Iterations:     3 (BiCGStab)
-  [I] : iter_nl =     1, difmaxh = -0.42139440E-02, difmaxt =  0.34910712E+00
-  nrm2(R) = 0.2785152098746D-11 , Number of Iterations:     8 (BiCGStab)
-  nrm2(R) = 0.9183274284604D-05 , Number of Iterations:     1 (BiCGStab)
-  [I] : iter_nl =     2, difmaxh = -0.55230430E-03, difmaxt =  0.00000000E+00
-  nrm2(R) = 0.2792839322180D-11 , Number of Iterations:     1 (BiCGStab)
-  nrm2(R) = 0.9182579668920D-05 , Number of Iterations:     1 (BiCGStab)
+  
+  >>>> new time step:      1
+  >>>>     cum. time=   0.10000000E+01/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.4186060616712D-11 , Number of Iterations:     9 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.2031184040816D-11 , Number of Iterations:     2 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh = -0.43852237E-02, difmaxt =  0.26039824E-01
+  nrm2(R) = 0.5041426796881D-11 , Number of Iterations:     2 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.1914877100466D-06 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     2, difmaxh = -0.12411182E-04, difmaxt =  0.00000000E+00
+  nrm2(R) = 0.5040945900452D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.1914793776492D-06 , Number of Iterations:     1 (BiCGStab)
   [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : HDF5 to "convection_simple_time_out_1.h5"
+  [W] : VTK to "convection_simple_time_out_1.vtk"
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:      2
+  >>>>     cum. time=   0.20000000E+01/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.5981216682733D-11 , Number of Iterations:     6 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.1819563406478D-11 , Number of Iterations:     2 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.26869694E-03, difmaxt =  0.22548274E-01
+  nrm2(R) = 0.9227214903274D-11 , Number of Iterations:     2 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.3192238829595D-06 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     2, difmaxh = -0.12268247E-04, difmaxt =  0.00000000E+00
+  nrm2(R) = 0.9227688699785D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.3192460854407D-06 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : HDF5 to "convection_simple_time_out_2.h5"
+  [W] : VTK to "convection_simple_time_out_2.vtk"
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:      3
+  >>>>     cum. time=   0.30000000E+01/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1045734602980D-11 , Number of Iterations:     5 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.1789720433826D-11 , Number of Iterations:     2 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.55803863E-04, difmaxt =  0.19788040E-01
+  nrm2(R) = 0.6658988400154D-11 , Number of Iterations:     2 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.1805459168493D-06 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     2, difmaxh = -0.11018587E-04, difmaxt =  0.00000000E+00
+  nrm2(R) = 0.6658553356795D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.1805328401950D-06 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:      4
+  >>>>     cum. time=   0.40000000E+01/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.2581917147768D-11 , Number of Iterations:     3 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.1655739332191D-11 , Number of Iterations:     2 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.11721202E-04, difmaxt =  0.17509708E-01
+  nrm2(R) = 0.7504251951274D-11 , Number of Iterations:     3 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.2682832408588D-06 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     2, difmaxh = -0.10123164E-04, difmaxt =  0.00000000E+00
+  nrm2(R) = 0.7504671772681D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.2682962085685D-06 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:      5
+  >>>>     cum. time=   0.50000000E+01/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.7670171445123D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.1483902213408D-11 , Number of Iterations:     2 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.15586271E-01
+  nrm2(R) = 0.3689272282677D-11 , Number of Iterations:     3 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.3013010156236D-06 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     2, difmaxh = -0.11236731E-04, difmaxt =  0.00000000E+00
+  nrm2(R) = 0.3688636351981D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.3012826172088D-06 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : HDF5 to "convection_simple_time_out_3.h5"
+  [W] : VTK to "convection_simple_time_out_3.vtk"
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:      6
+  >>>>     cum. time=   0.60000000E+01/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.3434617148418D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.1323596275676D-11 , Number of Iterations:     2 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.13982394E-01
+  nrm2(R) = 0.1395709242044D-11 , Number of Iterations:     2 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.1342344854758D-06 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     2, difmaxh = -0.99092576E-05, difmaxt =  0.00000000E+00
+  nrm2(R) = 0.1396176661319D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.1342540822544D-06 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:      7
+  >>>>     cum. time=   0.70000000E+01/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:      8
+  >>>>     cum. time=   0.80000000E+01/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:      9
+  >>>>     cum. time=   0.90000000E+01/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     10
+  >>>>     cum. time=   0.10000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     11
+  >>>>     cum. time=   0.11000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     12
+  >>>>     cum. time=   0.12000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     13
+  >>>>     cum. time=   0.13000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     14
+  >>>>     cum. time=   0.14000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     15
+  >>>>     cum. time=   0.15000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     16
+  >>>>     cum. time=   0.16000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     17
+  >>>>     cum. time=   0.17000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     18
+  >>>>     cum. time=   0.18000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     19
+  >>>>     cum. time=   0.19000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     20
+  >>>>     cum. time=   0.20000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : HDF5 to "convection_simple_time_out_4.h5"
+  [W] : VTK to "convection_simple_time_out_4.vtk"
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     21
+  >>>>     cum. time=   0.21000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     22
+  >>>>     cum. time=   0.22000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     23
+  >>>>     cum. time=   0.23000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     24
+  >>>>     cum. time=   0.24000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     25
+  >>>>     cum. time=   0.25000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     26
+  >>>>     cum. time=   0.26000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     27
+  >>>>     cum. time=   0.27000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     28
+  >>>>     cum. time=   0.28000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     29
+  >>>>     cum. time=   0.29000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     30
+  >>>>     cum. time=   0.30000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     31
+  >>>>     cum. time=   0.31000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     32
+  >>>>     cum. time=   0.32000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     33
+  >>>>     cum. time=   0.33000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     34
+  >>>>     cum. time=   0.34000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     35
+  >>>>     cum. time=   0.35000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     36
+  >>>>     cum. time=   0.36000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     37
+  >>>>     cum. time=   0.37000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     38
+  >>>>     cum. time=   0.38000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     39
+  >>>>     cum. time=   0.39000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     40
+  >>>>     cum. time=   0.40000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     41
+  >>>>     cum. time=   0.41000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     42
+  >>>>     cum. time=   0.42000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     43
+  >>>>     cum. time=   0.43000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     44
+  >>>>     cum. time=   0.44000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     45
+  >>>>     cum. time=   0.45000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     46
+  >>>>     cum. time=   0.46000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     47
+  >>>>     cum. time=   0.47000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     48
+  >>>>     cum. time=   0.48000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     49
+  >>>>     cum. time=   0.49000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     50
+  >>>>     cum. time=   0.50000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : HDF5 to "convection_simple_time_out_5.h5"
+  [W] : VTK to "convection_simple_time_out_5.vtk"
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     51
+  >>>>     cum. time=   0.51000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     52
+  >>>>     cum. time=   0.52000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     53
+  >>>>     cum. time=   0.53000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     54
+  >>>>     cum. time=   0.54000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     55
+  >>>>     cum. time=   0.55000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     56
+  >>>>     cum. time=   0.56000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     57
+  >>>>     cum. time=   0.57000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     58
+  >>>>     cum. time=   0.58000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     59
+  >>>>     cum. time=   0.59000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     60
+  >>>>     cum. time=   0.60000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     61
+  >>>>     cum. time=   0.61000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     62
+  >>>>     cum. time=   0.62000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     63
+  >>>>     cum. time=   0.63000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     64
+  >>>>     cum. time=   0.64000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     65
+  >>>>     cum. time=   0.65000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     66
+  >>>>     cum. time=   0.66000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     67
+  >>>>     cum. time=   0.67000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     68
+  >>>>     cum. time=   0.68000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     69
+  >>>>     cum. time=   0.69000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     70
+  >>>>     cum. time=   0.70000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     71
+  >>>>     cum. time=   0.71000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     72
+  >>>>     cum. time=   0.72000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     73
+  >>>>     cum. time=   0.73000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     74
+  >>>>     cum. time=   0.74000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     75
+  >>>>     cum. time=   0.75000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     76
+  >>>>     cum. time=   0.76000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     77
+  >>>>     cum. time=   0.77000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     78
+  >>>>     cum. time=   0.78000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     79
+  >>>>     cum. time=   0.79000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     80
+  >>>>     cum. time=   0.80000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     81
+  >>>>     cum. time=   0.81000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     82
+  >>>>     cum. time=   0.82000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     83
+  >>>>     cum. time=   0.83000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     84
+  >>>>     cum. time=   0.84000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     85
+  >>>>     cum. time=   0.85000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     86
+  >>>>     cum. time=   0.86000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     87
+  >>>>     cum. time=   0.87000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     88
+  >>>>     cum. time=   0.88000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     89
+  >>>>     cum. time=   0.89000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     90
+  >>>>     cum. time=   0.90000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     91
+  >>>>     cum. time=   0.91000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     92
+  >>>>     cum. time=   0.92000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     93
+  >>>>     cum. time=   0.93000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     94
+  >>>>     cum. time=   0.94000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     95
+  >>>>     cum. time=   0.95000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     96
+  >>>>     cum. time=   0.96000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     97
+  >>>>     cum. time=   0.97000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     98
+  >>>>     cum. time=   0.98000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:     99
+  >>>>     cum. time=   0.99000000E+02/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : "convection_simple_status.log"
+  
+  >>>> new time step:    100
+  >>>>     cum. time=   0.10000000E+03/  0.10000000E+03
+  >>>>     time step=   0.10000000E+01
+  nrm2(R) = 0.1699148325683D-11 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.124E+02y:  0.124E+02z:  0.124E+02
+ 
+  nrm2(R) = 0.9966729341228D-04 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : HDF5 to "convection_simple_time_out_6.h5"
+  [W] : VTK to "convection_simple_time_out_6.vtk"
+  [W] : "convection_simple_status.log"
+  [I] : final time step =      100, simulation time  0.100000E+03
   [W] : HDF5 to "convection_simple_final.h5"
   [W] : VTK to "convection_simple_final.vtk"
  Deallocated Memory, remaining   1.111602783203125E-002  MB
- total cpu time:    0: 0.29 min
+ total cpu time:    0: 1.03 min
  RUN O.K.

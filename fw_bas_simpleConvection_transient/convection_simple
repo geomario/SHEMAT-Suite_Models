@@ -35,7 +35,7 @@ convection_simple
 
 !#TIME STEP
 # timestep control
-0
+1
 1.0 1.0 1.0 0.0 
 
 # tunit 
