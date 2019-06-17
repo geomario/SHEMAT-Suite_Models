@@ -230,5 +230,8 @@ for test_model in test_models:
         print('Start testing')
         print('------------- \n')
 
+        # Set result dir and check existence
+        std.result_dir = sti.result_dirs[test_model][compile_backend]
+
         runner = unittest.TextTestRunner(verbosity=2)
         runner.run(testing_suite)
