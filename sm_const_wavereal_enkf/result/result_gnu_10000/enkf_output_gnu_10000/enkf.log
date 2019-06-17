@@ -1,0 +1,64 @@
+
+ Enkf input:
+ ----------
+ nrobs_int           1
+ mode_analysis           11
+ truncation   0.94999999999999996     
+covmodel                        diagonal
+ clh, clv    300.00000000000000        50.000000000000000     
+ rexact  T
+ fixsamp  T
+ checktrue  T
+ obsvar(1), obsvar(2), obsvar(3), obsvar(4), obsvar(5), obsvar(6)   0.0000000000000000        0.0000000000000000        5.0000000000000002E-005   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ sysvar(1), sysvar(2), sysvar(3), sysvar(4), sysvar(5), sysvar(6)   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ act_s            1           0           1           1           0           0
+ ex_unit           0
+assimod            sequ                
+normobs             T
+ assidamp, tracdamp    0.0000000000000000        1.0000000000000000     
+ iassout            1
+err_cov             F
+ TrueWAVEREAL.plt                                                                                    
+ TrueWAVEREAL_chem.plt                                                                               
+ observations_WAVEREAL.dat                                                                           
+ iassout_single_start, iassout_single            1           1
+ num_single_out            0
+ ns_switch F
+ ns_backfactor   3.0000000000000000     
+ num_ref_dist            0
+ ref_dist_switch true 
+ iassout_cov_ref_start, iassout_cov_ref            1           1
+ num_cov_ref            0
+ switch_cov_ref false 
+ cov_loc_switch  F
+ cov_loc_lens     150.00000000000000        150.00000000000000        150.00000000000000     
+ cell_centered  T
+ dual_enkf_switch  F
+ num_stoch_bc            0
+ stoch_bc_switch false
+ general_seed_switch  T
+ general_seed_seed           50          75
+ hybrid_switch true
+ hybrid_alpha   0.50000000000000000     
+ assimstp_switch  F
+ vtk_out_enkf  T
+ vtk_out_stddev  T
+ vtk_out_resid  T
+ vtk_out_covs  F
+ vtk_out_realisations  T
+ num_out_realisations            2
+ obs_standard_out false
+ enkf_log_out  F
+ ana_mat_out  F
+ comp_real_out  F
+ iterative_switch  F
+ iterative_nrobs_int            1
+ iterative_doubleupdate  F
+ pres_vel_switch false
+ tempdiff_switch false
+ tcon_switch false
+ num_pp           51
+ pp_switch  F
+ pp_get_out get
+ pp_ivar            4
+ compute_mean  F
