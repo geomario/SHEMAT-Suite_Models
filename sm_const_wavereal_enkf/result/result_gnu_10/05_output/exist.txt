@@ -1,0 +1,1 @@
+ SHEMAT knows: 05_output exists
