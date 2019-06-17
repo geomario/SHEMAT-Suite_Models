@@ -65,6 +65,7 @@ test_models = [
     # "sm_const_MC_small",
     # "sm_const_wavereal_true",
     # "sm_const_wavereal_enkf",
+    # "fw_bas_simpleConvection",
 ]
 
 ###############################################################################
