@@ -1,0 +1,7 @@
+% Shemat-Suite version: Shem-FW/AD/SM 7.50 (Smarty)                                                     
+%          build: Mon Jun 17 11:42:17 CEST 2019           
+%   build command line: gmake sm nohdf noomp PROPS=const HDF5_MOD=/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274/include/ HDF5_LIB=/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274/lib/ COMPTYPE=lini64                                        
+%        Project: "WAVEREAL"
+%
+% <time step> <cum time>
+%    <iteration> <delta head> <delta temp> (<delta conc> ...)

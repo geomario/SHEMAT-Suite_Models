@@ -79,6 +79,8 @@ command in `SHEMATtest.py`.
 | `fw_basc_HenryProblem`          | 2D Henry Problem: concentration entering flow regime               |
 | `fw_kola_HeatConduction2D`      | heat conduction in water/ice mixture                               |
 | `sm_const_MC_small`             | steady state flow for four random permeability realizations        |
+| `sm_const_wavereal_true`        | 2D concentration flow through SGSim-generated permeability field   |
+| `sm_const_wavereal_enkf`        | Single EnKF-update based on 2D concentration                           |
 
 | **Modes**                       | `fw` | `sm` | `ad` |
 |:-------------------------------:|:----:|:----:|:----:|
@@ -92,6 +94,8 @@ command in `SHEMATtest.py`.
 | `fw_basc_HenryProblem`          | x    |      |      |
 | `fw_kola_HeatConduction2D`      | x    |      |      |
 | `sm_const_MC_small`             |      | x    |      |
+| `sm_const_wavereal_true`        |      | x    |      |
+| `sm_const_wavereal_enkf`        |      | x    |      |
 
 | **Props**                       | `const` | `bas` | `basc` | `gheexpl` | `kola` |
 |:-------------------------------:|:-------:|:-----:|:------:|:---------:|:------:|
@@ -105,6 +109,8 @@ command in `SHEMATtest.py`.
 | `fw_basc_HenryProblem`          |         |       | x      |           |        |
 | `fw_kola_HeatConduction2D`      |         |       |        |           | x      |
 | `sm_const_MC_small`             | x       |       |        |           |        |
+| `sm_const_wavereal_true`        | x       |       |        |           |        |
+| `sm_const_wavereal_enkf`        | x       |       |        |           |        |
 
 | **Variables**                   | `head` | `temp` | `conc` | `head/temp` | `head/conc` | `head/temp/conc` |
 |:-------------------------------:|:------:|:------:|:------:|:-----------:|:-----------:|:----------------:|
@@ -118,6 +124,8 @@ command in `SHEMATtest.py`.
 | `fw_basc_HenryProblem`          |        |        |        |             | x           |                  |
 | `fw_kola_HeatConduction2D`      |        | x      |        |             |             |                  |
 | `sm_const_MC_small`             | x      |        |        |             |             |                  |
+| `sm_const_wavereal_true`        |        |        |        |             | x           |                  |
+| `sm_const_wavereal_enkf`        |        |        |        |             | x           |                  |
 
 | **Grid**                        | `1D` | `2D` | `3D` |
 |:-------------------------------:|:----:|------|:----:|
@@ -131,6 +139,8 @@ command in `SHEMATtest.py`.
 | `fw_basc_HenryProblem`          |      | x    |      |
 | `fw_kola_HeatConduction2D`      |      | x    |      |
 | `sm_const_MC_small`             |      | x    |      |
+| `sm_const_wavereal_true`        |      | x    |      |
+| `sm_const_wavereal_enkf`        |      | x    |      |
 
 **(x)**: quasi-dimension, only effects in this number of dimensions
 
@@ -147,6 +157,8 @@ command in `SHEMATtest.py`.
 | `fw_basc_HenryProblem`          | x              |             |
 | `fw_kola_HeatConduction2D`      | x              |             |
 | `sm_const_MC_small`             | x              |             |
+| `sm_const_wavereal_true`        |                | x           |
+| `sm_const_wavereal_enkf`        |                | x           |
 
 | **Inversion**                   | `Deterministic Inversion` | `EnKF` |
 |:-------------------------------:|:-------------------------:|:------:|
@@ -160,6 +172,8 @@ command in `SHEMATtest.py`.
 | `fw_basc_HenryProblem`          |                           |        |
 | `fw_kola_HeatConduction2D`      |                           |        |
 | `sm_const_MC_small`             |                           |        |
+| `sm_const_wavereal_true`        |                           |        |
+| `sm_const_wavereal_enkf`        |                           | x      |
 
 | **Cluster architecture**        | `serial` | `openmp` | `mpi` | `Slurm Job` |
 |:-------------------------------:|:--------:|:--------:|:-----:|:-----------:|
@@ -172,7 +186,8 @@ command in `SHEMATtest.py`.
 | `fw_const_Peclet_up`            | x        |          |       |             |
 | `fw_basc_HenryProblem`          | x        |          |       |             |
 | `fw_kola_HeatConduction2D`      | x        |          |       |             |
-| `sm_const_MC_small`             | x        |          |       |             |
+| `sm_const_wavereal_true`        | x        |          |       |             |
+| `sm_const_wavereal_enkf`        | x        |          |       |             |
 
 | **Verification method**         | `previous simulation` | `analytical solution` | `semi-analytical solution` |
 |:-------------------------------:|:---------------------:|:---------------------:|:--------------------------:|
@@ -186,6 +201,8 @@ command in `SHEMATtest.py`.
 | `fw_basc_HenryProblem`          | x                     |                       | x                          |
 | `fw_kola_HeatConduction2D`      | x                     |                       |                            |
 | `sm_const_MC_small`             | x                     |                       |                            |
+| `sm_const_wavereal_true`        | x                     |                       |                            |
+| `sm_const_wavereal_enkf`        | x                     |                       |                            |
 
 
 Possibly: Solver, Physical Problems (maybe better a list), possibly
