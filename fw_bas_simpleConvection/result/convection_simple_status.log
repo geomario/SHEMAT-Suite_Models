@@ -1,5 +1,5 @@
 % Shemat-Suite version: Shem-FW/AD/SM 7.50 (Smarty)                                                     
-%          build: Do 16. Mai 15:57:37 CEST 2019           
+%          build: Mon Jun 17 16:15:18 CEST 2019           
 %   build command line: gmake fw hdf noomp PROPS=bas HDF5_MOD=/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274/include/ HDF5_LIB=/usr/local_rwth/sw/HDF5/1.10.4/intel_19.0.1.144-intelmpi_2018.4.274/lib/ COMPTYPE=lini64                                            
 %        Project: "convection_simple"
 %

@@ -117,5 +117,5 @@
   [W] : HDF5 to "convection_simple_final.h5"
   [W] : VTK to "convection_simple_final.vtk"
  Deallocated Memory, remaining   1.111602783203125E-002  MB
- total cpu time:    0: 0.29 min
+ total cpu time:    0: 0.32 min
  RUN O.K.
