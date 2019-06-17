@@ -24,7 +24,7 @@ the output results.
 ## Current number of testmodels in benchmark ##
 
 ```
-==============>>>>>>>>>>>>>>    12    <<<<<<<<<<<<<<==============
+==============>>>>>>>>>>>>>>    13    <<<<<<<<<<<<<<==============
 ```
 
 ## doc ##
@@ -86,7 +86,8 @@ command in `SHEMATtest.py`.
 | `fw_kola_HeatConduction2D`      | heat conduction in water/ice mixture                               |
 | `sm_const_MC_small`             | steady state flow for four random permeability realizations        |
 | `sm_const_wavereal_true`        | 2D concentration flow through SGSim-generated permeability field   |
-| `sm_const_wavereal_enkf`        | Single EnKF-update based on 2D concentration                           |
+| `sm_const_wavereal_enkf`        | Single EnKF-update based on 2D concentration                       |
+| `fw_bas_simpleConvection`       | Steady-state of simple temperature boundary condition              |
 
 | **Modes**                       | `fw` | `sm` | `ad` |
 |:-------------------------------:|:----:|:----:|:----:|
@@ -102,6 +103,7 @@ command in `SHEMATtest.py`.
 | `sm_const_MC_small`             |      | x    |      |
 | `sm_const_wavereal_true`        |      | x    |      |
 | `sm_const_wavereal_enkf`        |      | x    |      |
+| `fw_bas_simpleConvection`       | x    |      |      |
 
 | **Props**                       | `const` | `bas` | `basc` | `gheexpl` | `kola` |
 |:-------------------------------:|:-------:|:-----:|:------:|:---------:|:------:|
@@ -117,6 +119,7 @@ command in `SHEMATtest.py`.
 | `sm_const_MC_small`             | x       |       |        |           |        |
 | `sm_const_wavereal_true`        | x       |       |        |           |        |
 | `sm_const_wavereal_enkf`        | x       |       |        |           |        |
+| `fw_bas_simpleConvection`       |         | x     |        |           |        |
 
 | **Variables**                   | `head` | `temp` | `conc` | `head/temp` | `head/conc` | `head/temp/conc` |
 |:-------------------------------:|:------:|:------:|:------:|:-----------:|:-----------:|:----------------:|
@@ -132,6 +135,7 @@ command in `SHEMATtest.py`.
 | `sm_const_MC_small`             | x      |        |        |             |             |                  |
 | `sm_const_wavereal_true`        |        |        |        |             | x           |                  |
 | `sm_const_wavereal_enkf`        |        |        |        |             | x           |                  |
+| `fw_bas_simpleConvection`       |        |        |        | x           |             |                  |
 
 | **Grid**                        | `1D` | `2D` | `3D` |
 |:-------------------------------:|:----:|------|:----:|
@@ -147,6 +151,7 @@ command in `SHEMATtest.py`.
 | `sm_const_MC_small`             |      | x    |      |
 | `sm_const_wavereal_true`        |      | x    |      |
 | `sm_const_wavereal_enkf`        |      | x    |      |
+| `fw_bas_simpleConvection`       |      |      | x    |
 
 **(x)**: quasi-dimension, only effects in this number of dimensions
 
@@ -165,6 +170,7 @@ command in `SHEMATtest.py`.
 | `sm_const_MC_small`             | x              |             |
 | `sm_const_wavereal_true`        |                | x           |
 | `sm_const_wavereal_enkf`        |                | x           |
+| `fw_bas_simpleConvection`       | x              |             |
 
 | **Inversion**                   | `Deterministic Inversion` | `EnKF` |
 |:-------------------------------:|:-------------------------:|:------:|
@@ -180,6 +186,7 @@ command in `SHEMATtest.py`.
 | `sm_const_MC_small`             |                           |        |
 | `sm_const_wavereal_true`        |                           |        |
 | `sm_const_wavereal_enkf`        |                           | x      |
+| `fw_bas_simpleConvection`       |                           |        |
 
 | **Cluster architecture**        | `serial` | `openmp` | `mpi` | `Slurm Job` |
 |:-------------------------------:|:--------:|:--------:|:-----:|:-----------:|
@@ -194,6 +201,7 @@ command in `SHEMATtest.py`.
 | `fw_kola_HeatConduction2D`      | x        |          |       |             |
 | `sm_const_wavereal_true`        | x        |          |       |             |
 | `sm_const_wavereal_enkf`        | x        |          |       |             |
+| `fw_bas_simpleConvection`       | x        |          |       |             |
 
 | **Verification method**         | `previous simulation` | `analytical solution` | `semi-analytical solution` |
 |:-------------------------------:|:---------------------:|:---------------------:|:--------------------------:|
@@ -209,6 +217,7 @@ command in `SHEMATtest.py`.
 | `sm_const_MC_small`             | x                     |                       |                            |
 | `sm_const_wavereal_true`        | x                     |                       |                            |
 | `sm_const_wavereal_enkf`        | x                     |                       |                            |
+| `fw_bas_simpleConvection`       | x                     |                       |                            |
 
 
 Possibly: Solver, Physical Problems (maybe better a list), possibly

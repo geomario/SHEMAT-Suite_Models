@@ -1,7 +1,7 @@
 # Model Info: Simple 3D Convection modell, for steady state. #
 
-Problems with transient computation: look description in modell or
-readme of transient modell.
+Problems with transient computation: see description in model or
+readme of transient model.
 
 
 ## Compilation on RWTH Cluster: ##
