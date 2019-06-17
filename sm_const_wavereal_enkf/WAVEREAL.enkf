@@ -34,6 +34,7 @@ comb
 # generalseed
 50 75
 
+! This is the input for master-enkf !
 T 50 75
 
 

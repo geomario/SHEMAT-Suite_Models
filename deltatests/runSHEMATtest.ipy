@@ -64,7 +64,7 @@ test_models = [
     # "fw_kola_HeatConduction2D",
     # "sm_const_MC_small",
     # "sm_const_wavereal_true",
-    "sm_const_wavereal_enkf",
+    # "sm_const_wavereal_enkf",
 ]
 
 ###############################################################################
