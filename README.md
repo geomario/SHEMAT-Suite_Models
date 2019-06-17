@@ -21,7 +21,7 @@ Every Model folder should contain a `/doc` folder, which describes how
 to compile and run the model. And a `/result` folder which collects
 the output results.
 
-# Current number of testmodels in benchmark #
+## Current number of testmodels in benchmark ##
 
 ```
 12
