@@ -9,7 +9,7 @@
 !------------------------------------------!
 
 # nrobs_int
-10
+1
 
 # state vector activity
 1 0 1 1 0 0
@@ -140,7 +140,7 @@ F
 F
 
 # vtk output enkf
-F
+T
 
 # vtk output stddev
 T
@@ -152,7 +152,7 @@ T
 F
 
 # vtk output realisations
-F 10
+T 10
 
 !=========>>>>>                      <<<<<==========!
 !=========>>>>>       OUTPUT         <<<<<==========!
