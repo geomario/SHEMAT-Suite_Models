@@ -5,16 +5,16 @@
 #------------------------------------------------------------------
 #-----------------------Variables ---------------------------------
 #------------------------------------------------------------------
-model_dir="${HOME}/SHEMAT-Suite_Models/fw_const_TheisProblem/"         # "${HOME}/SHEMAT-Suite_Models/fw_const_Example"
+model_dir="${HOME}/SHEMAT-Suite_Models/fw_bas_simpleConvection_transient/"         # "${HOME}/SHEMAT-Suite_Models/fw_const_Example"
 make_dir="${HOME}/SHEMAT-Suite"                     # "${HOME}/SHEMAT-Suite"
 
 shem_type="fw"			# "sm", "fw"
 shem_type_name="fw"	# "sm_sgsim", "fw"
 
-props="const"
+props="bas"
 
-compiler="ling64"	       # "ling64","lini64"
-compiler_name="64gnu"	       # "64gnu","64int"
+compiler="lini64"	       # "ling64","lini64"
+compiler_name="64int"	       # "64gnu","64int"
 
 flags="hdf noomp -j16" # Flags: "omp","debug","noplt","novtk","nohdf"
 

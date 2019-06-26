@@ -42,15 +42,15 @@ except ImportError:
 ###############################################################################
 
 # Compilation input (compare compilequick.sh)
-is_comp = False
+is_comp = True
 git_branch_input = "master"
 compile_backend = 'gcc'  # gcc, intel
 
 # Execution input
-is_exec = False
+is_exec = True
 
 # Testing input
-is_test = False
+is_test = True
 
 test_models = [
     # "fw_const_TheisProblem",
@@ -63,6 +63,10 @@ test_models = [
     # "fw_basc_HenryProblem",
     # "fw_kola_HeatConduction2D",
     # "sm_const_MC_small",
+    # "sm_const_wavereal_true",
+    # "sm_const_wavereal_enkf",
+    # "fw_bas_simpleConvection",
+    # "fw_bas_simpleConvection_transient",
 ]
 
 ###############################################################################
@@ -227,6 +231,9 @@ for test_model in test_models:
 
         print('Start testing')
         print('------------- \n')
+
+        # Set result dir and check existence
+        std.result_dir = sti.result_dirs[test_model][compile_backend]
 
         runner = unittest.TextTestRunner(verbosity=2)
         runner.run(testing_suite)
