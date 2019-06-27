@@ -1,0 +1,8 @@
+% Shemat-Suite version: Shem-FW/AD/SM 7.50 (Smarty)                                                     
+%          build: Do 13. Jun 16:39:46 CEST 2019           
+%   build command line: gmake fw noomp PROPS=ice COMPTYPE=ling64                                                                                                                                                                                                                        
+%        Project: "GeoSlope"
+%
+%    <iteration> <delta head> <delta temp> (<delta conc> ...)
+          1 -0.41498602E-03  0.00000000E+00
+          2  0.00000000E+00  0.00000000E+00
