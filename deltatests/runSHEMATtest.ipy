@@ -67,8 +67,8 @@ test_models = [
     # "sm_const_wavereal_enkf",
     # "fw_bas_simpleConvection",
     # "fw_bas_simpleConvection_transient",
-    "fw_basc_ElderProblem",
-    "fw_basc_ElderProblem_transient",
+    # "fw_basc_ElderProblem",
+    # "fw_basc_ElderProblem_transient",
 ]
 
 ###############################################################################
