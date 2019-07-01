@@ -4,7 +4,7 @@
       parameter (version = "Shem-FW/AD/SM 7.50 (Smarty)")
 !     current date
       character datum*40
-      parameter (datum = "Wed Jun 26 18:37:56 CEST 2019")
+      parameter (datum = "Mon Jul  1 15:43:57 CEST 2019")
 !     build command line
       character makecmd*256
       parameter (makecmd = &

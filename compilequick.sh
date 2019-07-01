@@ -5,13 +5,13 @@
 #------------------------------------------------------------------
 #-----------------------Variables ---------------------------------
 #------------------------------------------------------------------
-model_dir="${HOME}/SHEMAT-Suite_Models/fw_bas_simpleConvection_transient/"         # "${HOME}/SHEMAT-Suite_Models/fw_const_Example"
+model_dir="${HOME}/SHEMAT-Suite_Models/fw_ice_GeoSlope2/"         # "${HOME}/SHEMAT-Suite_Models/fw_const_Example"
 make_dir="${HOME}/SHEMAT-Suite"                     # "${HOME}/SHEMAT-Suite"
 
 shem_type="fw"			# "sm", "fw"
 shem_type_name="fw"	# "sm_sgsim", "fw"
 
-props="bas"
+props="ice"
 
 compiler="lini64"	       # "ling64","lini64"
 compiler_name="64int"	       # "64gnu","64int"

@@ -1,12 +1,13 @@
   
  ======================================
- Shem-FW/AD/SM 7.50 (Smarty)                                                     
+ Shem-FW/AD/SM 7.50 (Smarty)                                                    
+  
  ======================================
   
   
   
   *** NEW MODEL 
-
+ 
    checking input definitions:
      from file "GeoSlope"
 warning: ignore line    104: "# compm"
@@ -84,10 +85,10 @@ warning: ignore line    108: "# tref"
   
    reading external file control
   
-
+ 
    reading time input parameter:
      from file "GeoSlope"
-
+ 
   [R] : Steady state !
   [R] : tunit =          0.86400000E+05
   <D> : tstart=          0.00000000E+00
@@ -98,43 +99,44 @@ warning: ignore line    108: "# tref"
   [R] : BC time periods, records=   1 (max index =   1)
   <D> : no monitoring points !
   [R] : output times, records=   5
-
-
+ 
+ 
   [W] : "GeoSlope_status.log"
  
   [I] : memory:       3.566 MByte data
  
-  nrm2(R) = 0.7995651809920D-08 , Number of Iterations:    14 (BiCGStab)
-  nrm2(R) = 0.4542228160523D-04 , Number of Iterations:     8 (BiCGStab)
-  [I] : iter_nl =     1, difmaxh = -0.41498597E-03, difmaxt =  0.57762155E+01
-  nrm2(R) = 0.4624817353586D-08 , Number of Iterations:     9 (BiCGStab)
-  nrm2(R) = 0.7799693409095D-04 , Number of Iterations:     6 (BiCGStab)
-  [I] : iter_nl =     2, difmaxh = -0.90180550E-04, difmaxt =  0.92694645E+01
-  nrm2(R) = 0.3395339733270D-08 , Number of Iterations:     5 (BiCGStab)
-  nrm2(R) = 0.8801280727422D-05 , Number of Iterations:     4 (BiCGStab)
-  [I] : iter_nl =     3, difmaxh = -0.71780462E-04, difmaxt =  0.11206177E+01
-  nrm2(R) = 0.3568369527945D-08 , Number of Iterations:     3 (BiCGStab)
-  nrm2(R) = 0.1141627679718D-04 , Number of Iterations:     3 (BiCGStab)
-  [I] : iter_nl =     4, difmaxh = -0.41105297E-04, difmaxt =  0.31711177E+00
-  nrm2(R) = 0.3686503618019D-08 , Number of Iterations:     2 (BiCGStab)
-  nrm2(R) = 0.9268074034016D-05 , Number of Iterations:     3 (BiCGStab)
-  [I] : iter_nl =     5, difmaxh = -0.22189293E-04, difmaxt =  0.14539671E+00
-  nrm2(R) = 0.7319500296600D-08 , Number of Iterations:     1 (BiCGStab)
-  nrm2(R) = 0.7459010857008D-05 , Number of Iterations:     3 (BiCGStab)
+  nrm2(R) = 0.7995653894876D-08 , Number of Iterations:    14 (BiCGStab)
+  nrm2(R) = 0.4542228160837D-04 , Number of Iterations:     8 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh = -0.41498603E-03, difmaxt =  0.57762155E+01
+  nrm2(R) = 0.4624812313919D-08 , Number of Iterations:     9 (BiCGStab)
+  nrm2(R) = 0.7799693405608D-04 , Number of Iterations:     6 (BiCGStab)
+  [I] : iter_nl =     2, difmaxh = -0.90180564E-04, difmaxt =  0.92694645E+01
+  nrm2(R) = 0.3395344457549D-08 , Number of Iterations:     5 (BiCGStab)
+  nrm2(R) = 0.8801280789818D-05 , Number of Iterations:     4 (BiCGStab)
+  [I] : iter_nl =     3, difmaxh = -0.71780472E-04, difmaxt =  0.11206177E+01
+  nrm2(R) = 0.3568369926501D-08 , Number of Iterations:     3 (BiCGStab)
+  nrm2(R) = 0.1141627674524D-04 , Number of Iterations:     3 (BiCGStab)
+  [I] : iter_nl =     4, difmaxh = -0.41105298E-04, difmaxt =  0.31711177E+00
+  nrm2(R) = 0.3686504084941D-08 , Number of Iterations:     2 (BiCGStab)
+  nrm2(R) = 0.9268074198559D-05 , Number of Iterations:     3 (BiCGStab)
+  [I] : iter_nl =     5, difmaxh = -0.22189294E-04, difmaxt =  0.14539671E+00
+  nrm2(R) = 0.7319501449622D-08 , Number of Iterations:     1 (BiCGStab)
+  nrm2(R) = 0.7459011060263D-05 , Number of Iterations:     3 (BiCGStab)
   [I] : iter_nl =     6, difmaxh =  0.00000000E+00, difmaxt =  0.58939387E-01
-  nrm2(R) = 0.3161600372072D-08 , Number of Iterations:     2 (BiCGStab)
-  nrm2(R) = 0.5396460483758D-05 , Number of Iterations:     3 (BiCGStab)
-  [I] : iter_nl =     7, difmaxh = -0.89216151E-05, difmaxt =  0.22099875E-01
-  nrm2(R) = 0.3212415902754D-08 , Number of Iterations:     2 (BiCGStab)
-  nrm2(R) = 0.1212073976166D-05 , Number of Iterations:     3 (BiCGStab)
-  [I] : iter_nl =     8, difmaxh = -0.17773334E-04, difmaxt =  0.95939277E-02
-  nrm2(R) = 0.2715641294692D-08 , Number of Iterations:     3 (BiCGStab)
-  nrm2(R) = 0.4029478112138D-05 , Number of Iterations:     2 (BiCGStab)
-  [I] : iter_nl =     9, difmaxh = -0.10622711E-04, difmaxt =  0.38838895E-02
-  nrm2(R) = 0.3485944983208D-08 , Number of Iterations:     1 (BiCGStab)
-  nrm2(R) = 0.1393920066659D-05 , Number of Iterations:     2 (BiCGStab)
-  [I] : iter_nl =    10, difmaxh =  0.00000000E+00, difmaxt =  0.18021451E-02
+  nrm2(R) = 0.3161601333499D-08 , Number of Iterations:     2 (BiCGStab)
+  nrm2(R) = 0.5396460375930D-05 , Number of Iterations:     3 (BiCGStab)
+  [I] : iter_nl =     7, difmaxh = -0.89216144E-05, difmaxt =  0.22099875E-01
+  nrm2(R) = 0.3212417133033D-08 , Number of Iterations:     2 (BiCGStab)
+  nrm2(R) = 0.1212074062645D-05 , Number of Iterations:     3 (BiCGStab)
+  [I] : iter_nl =     8, difmaxh = -0.17773337E-04, difmaxt =  0.95939277E-02
+  nrm2(R) = 0.2715642814918D-08 , Number of Iterations:     3 (BiCGStab)
+  nrm2(R) = 0.4029478731845D-05 , Number of Iterations:     2 (BiCGStab)
+  [I] : iter_nl =     9, difmaxh = -0.10622706E-04, difmaxt =  0.38838895E-02
+  nrm2(R) = 0.3485946426674D-08 , Number of Iterations:     1 (BiCGStab)
+  nrm2(R) = 0.1393920614466D-05 , Number of Iterations:     2 (BiCGStab)
+  [I] : iter_nl =    10, difmaxh =  0.00000000E+00, difmaxt =  0.18021450E-02
+  [W] : HDF5 to "GeoSlope_final.h5"
   [W] : VTK to "GeoSlope_final.vtk"
- Deallocated Memory, remaining    4.0435791015625000E-004  MB
- total cpu time:    0: 0.56 min
+ Deallocated Memory, remaining   4.043579101562500E-004  MB
+ total cpu time:    0: 0.80 min
  RUN O.K.

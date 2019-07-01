@@ -1,12 +1,13 @@
   
  ======================================
- Shem-FW/AD/SM 7.50 (Smarty)                                                     
+ Shem-FW/AD/SM 7.50 (Smarty)                                                    
+  
  ======================================
   
   
   
   *** NEW MODEL 
-
+ 
    checking input definitions:
      from file "GeoSlope"
 warning: ignore line     97: "# compm"
@@ -79,10 +80,10 @@ warning: ignore line    101: "# tref"
   
    reading external file control
   
-
+ 
    reading time input parameter:
      from file "GeoSlope"
-
+ 
   [R] : Steady state !
   [R] : tunit =          0.86400000E+05
   <D> : tstart=          0.00000000E+00
@@ -93,19 +94,20 @@ warning: ignore line    101: "# tref"
   [R] : BC time periods, records=   1 (max index =   1)
   <D> : no monitoring points !
   [R] : output times, records=   5
-
-
+ 
+ 
   [W] : "GeoSlope_status.log"
  
   [I] : memory:       3.467 MByte data
  
-  nrm2(R) = 0.7995653713635D-08 , Number of Iterations:    14 (BiCGStab)
+  nrm2(R) = 0.7995650034546D-08 , Number of Iterations:    14 (BiCGStab)
   nrm2(R) = 0.3328955974914D-05 , Number of Iterations:     1 (BiCGStab)
-  [I] : iter_nl =     1, difmaxh = -0.41498602E-03, difmaxt =  0.00000000E+00
-  nrm2(R) = 0.7995653729060D-08 , Number of Iterations:     1 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh = -0.41498593E-03, difmaxt =  0.00000000E+00
+  nrm2(R) = 0.7995650053437D-08 , Number of Iterations:     1 (BiCGStab)
   nrm2(R) = 0.3328955974914D-05 , Number of Iterations:     1 (BiCGStab)
   [I] : iter_nl =     2, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : HDF5 to "GeoSlope_final.h5"
   [W] : VTK to "GeoSlope_final.vtk"
- Deallocated Memory, remaining    7.6293945312500000E-006  MB
- total cpu time:    0: 0.18 min
+ Deallocated Memory, remaining   7.629394531250000E-006  MB
+ total cpu time:    0: 0.32 min
  RUN O.K.
