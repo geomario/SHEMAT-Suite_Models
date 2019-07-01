@@ -24,7 +24,7 @@ the output results.
 ## Current number of testmodels in benchmark ##
 
 ```
-==============>>>>>>>>>>>>>>    16    <<<<<<<<<<<<<<==============
+==============>>>>>>>>>>>>>>    18    <<<<<<<<<<<<<<==============
 ```
 
 ## doc ##
@@ -91,6 +91,8 @@ command in `SHEMATtest.py`.
 | `fw_bas_simpleConvection_transient` | Transient 3D simulation of simple temperature boundary condition   |
 | `fw_basc_ElderProblem`              | Steady-state of Elder Problem                                      |
 | `fw_basc_ElderProblem_transient`    | First time steps of Elder Problem                                  |
+| `fw_ice_GeoSlope`                   | 2D ice module testmodel                                            |
+| `fw_ice_GeoSlope2`                  | 2D ice module testmodel                                            |
 
 | **Modes**                           | `fw` | `sm` | `ad` |
 |:-----------------------------------:|:----:|:----:|:----:|
@@ -110,25 +112,29 @@ command in `SHEMATtest.py`.
 | `fw_bas_simpleConvection_transient` | x    |      |      |
 | `fw_basc_ElderProblem`              | x    |      |      |
 | `fw_basc_ElderProblem_transient`    | x    |      |      |
+| `fw_ice_GeoSlope`                   | x    |      |      |
+| `fw_ice_GeoSlope2`                  | x    |      |      |
 
-| **Props**                           | `const` | `bas` | `basc` | `gheexpl` | `kola` |
-|:-----------------------------------:|:-------:|:-----:|:------:|:---------:|:------:|
-| `ad_const_TemperatureInversion`     | x       |       |        |           |        |
-| `fw_basc_SaltFlow`                  |         |       | x      |           |        |
-| `fw_basc_Salt_small`                |         |       | x      |           |        |
-| `fw_const_TheisProblem`             | x       |       |        |           |        |
-| `fw_bas_TinyAdvective`              |         | x     |        |           |        |
-| `fw_const_Peclet_down`              | x       |       |        |           |        |
-| `fw_const_Peclet_up`                | x       |       |        |           |        |
-| `fw_basc_HenryProblem`              |         |       | x      |           |        |
-| `fw_kola_HeatConduction2D`          |         |       |        |           | x      |
-| `sm_const_MC_small`                 | x       |       |        |           |        |
-| `sm_const_wavereal_true`            | x       |       |        |           |        |
-| `sm_const_wavereal_enkf`            | x       |       |        |           |        |
-| `fw_bas_simpleConvection`           |         | x     |        |           |        |
-| `fw_bas_simpleConvection_transient` |         | x     |        |           |        |
-| `fw_basc_ElderProblem`              |         |       | x      |           |        |
-| `fw_basc_ElderProblem_transient`    |         |       | x      |           |        |
+| **Props**                           | `const` | `bas` | `basc` | `gheexpl` | `kola` | `ice` |
+|:-----------------------------------:|:-------:|:-----:|:------:|:---------:|:------:|-------|
+| `ad_const_TemperatureInversion`     | x       |       |        |           |        |       |
+| `fw_basc_SaltFlow`                  |         |       | x      |           |        |       |
+| `fw_basc_Salt_small`                |         |       | x      |           |        |       |
+| `fw_const_TheisProblem`             | x       |       |        |           |        |       |
+| `fw_bas_TinyAdvective`              |         | x     |        |           |        |       |
+| `fw_const_Peclet_down`              | x       |       |        |           |        |       |
+| `fw_const_Peclet_up`                | x       |       |        |           |        |       |
+| `fw_basc_HenryProblem`              |         |       | x      |           |        |       |
+| `fw_kola_HeatConduction2D`          |         |       |        |           | x      |       |
+| `sm_const_MC_small`                 | x       |       |        |           |        |       |
+| `sm_const_wavereal_true`            | x       |       |        |           |        |       |
+| `sm_const_wavereal_enkf`            | x       |       |        |           |        |       |
+| `fw_bas_simpleConvection`           |         | x     |        |           |        |       |
+| `fw_bas_simpleConvection_transient` |         | x     |        |           |        |       |
+| `fw_basc_ElderProblem`              |         |       | x      |           |        |       |
+| `fw_basc_ElderProblem_transient`    |         |       | x      |           |        |       |
+| `fw_ice_GeoSlope`                   |         |       |        |           |        | x     |
+| `fw_ice_GeoSlope2`                  |         |       |        |           |        | x     |
 
 | **Variables**                       | `head` | `temp` | `conc` | `head/temp` | `head/conc` | `head/temp/conc` |
 |:-----------------------------------:|:------:|:------:|:------:|:-----------:|:-----------:|:----------------:|
@@ -148,6 +154,8 @@ command in `SHEMATtest.py`.
 | `fw_bas_simpleConvection_transient` |        |        |        | x           |             |                  |
 | `fw_basc_ElderProblem`              |        |        |        |             | x           |                  |
 | `fw_basc_ElderProblem_transient`    |        |        |        |             | x           |                  |
+| `fw_ice_GeoSlope`                   |        |        |        | x           |             |                  |
+| `fw_ice_GeoSlope2`                  |        |        |        | x           |             |                  |
 
 | **Grid**                            | `1D` | `2D` | `3D` |
 |:-----------------------------------:|:----:|------|:----:|
@@ -167,6 +175,8 @@ command in `SHEMATtest.py`.
 | `fw_bas_simpleConvection_transient` |      |      | x    |
 | `fw_basc_ElderProblem`              |      | x    |      |
 | `fw_basc_ElderProblem_transient`    |      | x    |      |
+| `fw_ice_GeoSlope`                   |      | x    |      |
+| `fw_ice_GeoSlope2`                  |      | x    |      |
 
 **(x)**: quasi-dimension, only effects in this number of dimensions
 
@@ -189,6 +199,8 @@ command in `SHEMATtest.py`.
 | `fw_bas_simpleConvection_transient` |                | x           |
 | `fw_basc_ElderProblem`              | x              |             |
 | `fw_basc_ElderProblem_transient`    |                | x           |
+| `fw_ice_GeoSlope`                   | x              |             |
+| `fw_ice_GeoSlope2`                  | x              |             |
 
 | **Inversion**                       | `Deterministic Inversion` | `EnKF` |
 |:-----------------------------------:|:-------------------------:|:------:|
@@ -208,6 +220,8 @@ command in `SHEMATtest.py`.
 | `fw_bas_simpleConvection_transient` |                           |        |
 | `fw_basc_ElderProblem`              |                           |        |
 | `fw_basc_ElderProblem_transient`    |                           |        |
+| `fw_ice_GeoSlope`                   |                           |        |
+| `fw_ice_GeoSlope2`                  |                           |        |
 
 | **Cluster architecture**            | `serial` | `openmp` | `mpi` | `Slurm Job` |
 |:-----------------------------------:|:--------:|:--------:|:-----:|:-----------:|
@@ -226,25 +240,29 @@ command in `SHEMATtest.py`.
 | `fw_bas_simpleConvection_transient` | x        |          |       |             |
 | `fw_basc_ElderProblem`              | x        |          |       |             |
 | `fw_basc_ElderProblem_transient`    | x        |          |       |             |
+| `fw_ice_GeoSlope`                   | x        |          |       |             |
+| `fw_ice_GeoSlope2`                  | x        |          |       |             |
 
-| **Verification method**             | `previous simulation` | `analytical solution`              | `semi-analytical solution` |
-|:-----------------------------------:|:---------------------:|:----------------------------------:|:--------------------------:|
-| `ad_const_TemperatureInversion`     | x                     |                                    |                            |
-| `fw_basc_SaltFlow`                  | x                     |                                    |                            |
-| `fw_basc_Salt_small`                | x                     |                                    |                            |
-| `fw_const_TheisProblem`             | x                     | x, visual                          |                            |
-| `fw_bas_TinyAdvective`              | x                     |                                    |                            |
-| `fw_const_Peclet_down`              | x                     | x, Matlab script                   |                            |
-| `fw_const_Peclet_up`                | x                     | x, Matlab script                   |                            |
-| `fw_basc_HenryProblem`              | x                     |                                    | x, visual                  |
-| `fw_kola_HeatConduction2D`          | x                     |                                    |                            |
-| `sm_const_MC_small`                 | x                     |                                    |                            |
-| `sm_const_wavereal_true`            | x                     |                                    |                            |
-| `sm_const_wavereal_enkf`            | x                     |                                    |                            |
-| `fw_bas_simpleConvection`           | x                     |                                    |                            |
-| `fw_bas_simpleConvection_transient` | x                     |                                    |                            |
-| `fw_basc_ElderProblem`              | x                     | x, larger model in bacheloarthesis |                            |
-| `fw_basc_ElderProblem_transient`    | x                     | x, larger model in bacheloarthesis |                            |
+| **Verification method**             | `previous simulation` | `analytical solution`             | `semi-analytical solution` |
+|:-----------------------------------:|:---------------------:|:---------------------------------:|:--------------------------:|
+| `ad_const_TemperatureInversion`     | x                     |                                   |                            |
+| `fw_basc_SaltFlow`                  | x                     |                                   |                            |
+| `fw_basc_Salt_small`                | x                     |                                   |                            |
+| `fw_const_TheisProblem`             | x                     | x, visual                         |                            |
+| `fw_bas_TinyAdvective`              | x                     |                                   |                            |
+| `fw_const_Peclet_down`              | x                     | x, Matlab script                  |                            |
+| `fw_const_Peclet_up`                | x                     | x, Matlab script                  |                            |
+| `fw_basc_HenryProblem`              | x                     |                                   | x, visual                  |
+| `fw_kola_HeatConduction2D`          | x                     |                                   |                            |
+| `sm_const_MC_small`                 | x                     |                                   |                            |
+| `sm_const_wavereal_true`            | x                     |                                   |                            |
+| `sm_const_wavereal_enkf`            | x                     |                                   |                            |
+| `fw_bas_simpleConvection`           | x                     |                                   |                            |
+| `fw_bas_simpleConvection_transient` | x                     |                                   |                            |
+| `fw_basc_ElderProblem`              | x                     | x, larger model in bachelorthesis |                            |
+| `fw_basc_ElderProblem_transient`    | x                     | x, larger model in bachelorthesis |                            |
+| `fw_ice_GeoSlope`                   | x                     |                                   |                            |
+| `fw_ice_GeoSlope2`                  | x                     |                                   |                            |
 
 
 Possibly: Solver, Physical Problems (maybe better a list), possibly

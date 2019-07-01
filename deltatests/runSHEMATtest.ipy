@@ -69,6 +69,8 @@ test_models = [
     # "fw_bas_simpleConvection_transient",
     # "fw_basc_ElderProblem",
     # "fw_basc_ElderProblem_transient",
+    # "fw_ice_GeoSlope",
+    # "fw_ice_GeoSlope2",
 ]
 
 ###############################################################################

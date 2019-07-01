@@ -1,0 +1,142 @@
+  
+ ======================================
+ Shem-FW/AD/SM 7.50 (Smarty)                                                    
+  
+ ======================================
+  
+  
+  
+  *** NEW MODEL 
+ 
+   checking input definitions:
+     from file "GeoSlope"
+warning: ignore line    104: "# compm"
+warning: ignore line    108: "# tref"
+  
+   reading model input parameter:
+     from file "GeoSlope"
+  
+  [R] : title
+  [R] : runmode
+     >>> forward modeling
+  <D> : free=0, confined flow !
+  [R] : linfo
+  [R] : [i0, j0, k0] = [  10,   1, 500]
+  [R] : nonlinear solver parameter
+  [I] : fixed relxation factor assumed
+  [R] : output suffix: .h5:[ ], .plt:[ ], .vtk:[X], .txt:[ ]
+  
+   reading flow parameters
+  
+  [R] : flow linear solver (control=  64)
+  [R] : flow nonlinear iteration tolerance
+  [I] : flow nonlinear relaxation factor
+  
+   reading heat transport parameters
+  
+  [R] : temperature linear solver (control=  64)
+  [R] : temperature nonlinear iteration tolerance
+  [I] : temperature nonlinear relaxation factor
+  
+  <D> : no transport [disabled]
+  
+  
+  <D> : no electric potential [disabled]
+  
+  
+  [R] : grav  0.9807E+01 (>1.0d-30)
+  <D> : no fluid heat production
+  [R] : rref, reference density =   0.9980E+03
+  <D> : tref, reference temperature =   0.2000E+02
+  [R] : rhom, rock heat capacity model
+  
+   reading zone parameter 
+  
+  [R] : "uindex" - unit index number, unit-cell assignment
+  [I] : approx. speedup for the full solver :   1.00
+  
+  [R] : "units" - unit (rock) properties
+  
+   reading/preprocessing arrays
+  
+  [R] : delx
+  [R] : dely
+  [R] : delz
+  
+   reading initial values 
+  
+  [R] : head, in [m]
+  [R] : temp, in [degree Celsius]
+  [R] : pres, in [MPa]
+  
+   reading boundary conditions 
+  
+  [R] : head bcd, simple=top  , (size=    10), bcmy=  0.1000E+19, error=ignore, (offset=     1)
+  [R] : temp bcd, simple=top  , (size=    10), bcmy=  0.1000E+19, error=ignore, (offset=    11)
+             1 BC's ignored (SIMPLE mode)
+  [R] : temp bcd, simple=left , (size=   500), bcmy=  0.1000E+19, error=ignore, (offset=    20)
+             1 BC's ignored (SIMPLE mode)
+  [R] : temp bcd, simple=right, (size=   500), bcmy=  0.1000E+19, error=ignore, (offset=   519)
+             2 BC's ignored (SIMPLE mode)
+  [R] : temp bcn, simple=base , (size=    10), bcmy=  0.1000E+19, error=ignore, (offset=  1017)
+  
+  <D> : property limitations
+  [R] : No default Darcy velocity - head active!
+  
+   reading external file control
+  
+ 
+   reading time input parameter:
+     from file "GeoSlope"
+ 
+  [R] : Steady state !
+  [R] : tunit =          0.86400000E+05
+  <D> : tstart=          0.00000000E+00
+  <D> : tshift=          0.00000000E+00
+  <D> : titer =      0
+  [R] : periods, records=   1
+    time :  0.0000E+00 -   0.1200E+04, #     1000, linear
+  [R] : BC time periods, records=   1 (max index =   1)
+  <D> : no monitoring points !
+  [R] : output times, records=   5
+ 
+ 
+  [W] : "GeoSlope_status.log"
+ 
+  [I] : memory:       3.566 MByte data
+ 
+  nrm2(R) = 0.7995653894876D-08 , Number of Iterations:    14 (BiCGStab)
+  nrm2(R) = 0.4542228160837D-04 , Number of Iterations:     8 (BiCGStab)
+  [I] : iter_nl =     1, difmaxh = -0.41498603E-03, difmaxt =  0.57762155E+01
+  nrm2(R) = 0.4624812313919D-08 , Number of Iterations:     9 (BiCGStab)
+  nrm2(R) = 0.7799693405608D-04 , Number of Iterations:     6 (BiCGStab)
+  [I] : iter_nl =     2, difmaxh = -0.90180564E-04, difmaxt =  0.92694645E+01
+  nrm2(R) = 0.3395344457549D-08 , Number of Iterations:     5 (BiCGStab)
+  nrm2(R) = 0.8801280789818D-05 , Number of Iterations:     4 (BiCGStab)
+  [I] : iter_nl =     3, difmaxh = -0.71780472E-04, difmaxt =  0.11206177E+01
+  nrm2(R) = 0.3568369926501D-08 , Number of Iterations:     3 (BiCGStab)
+  nrm2(R) = 0.1141627674524D-04 , Number of Iterations:     3 (BiCGStab)
+  [I] : iter_nl =     4, difmaxh = -0.41105298E-04, difmaxt =  0.31711177E+00
+  nrm2(R) = 0.3686504084941D-08 , Number of Iterations:     2 (BiCGStab)
+  nrm2(R) = 0.9268074198559D-05 , Number of Iterations:     3 (BiCGStab)
+  [I] : iter_nl =     5, difmaxh = -0.22189294E-04, difmaxt =  0.14539671E+00
+  nrm2(R) = 0.7319501449622D-08 , Number of Iterations:     1 (BiCGStab)
+  nrm2(R) = 0.7459011060263D-05 , Number of Iterations:     3 (BiCGStab)
+  [I] : iter_nl =     6, difmaxh =  0.00000000E+00, difmaxt =  0.58939387E-01
+  nrm2(R) = 0.3161601333499D-08 , Number of Iterations:     2 (BiCGStab)
+  nrm2(R) = 0.5396460375930D-05 , Number of Iterations:     3 (BiCGStab)
+  [I] : iter_nl =     7, difmaxh = -0.89216144E-05, difmaxt =  0.22099875E-01
+  nrm2(R) = 0.3212417133033D-08 , Number of Iterations:     2 (BiCGStab)
+  nrm2(R) = 0.1212074062645D-05 , Number of Iterations:     3 (BiCGStab)
+  [I] : iter_nl =     8, difmaxh = -0.17773337E-04, difmaxt =  0.95939277E-02
+  nrm2(R) = 0.2715642814918D-08 , Number of Iterations:     3 (BiCGStab)
+  nrm2(R) = 0.4029478731845D-05 , Number of Iterations:     2 (BiCGStab)
+  [I] : iter_nl =     9, difmaxh = -0.10622706E-04, difmaxt =  0.38838895E-02
+  nrm2(R) = 0.3485946426674D-08 , Number of Iterations:     1 (BiCGStab)
+  nrm2(R) = 0.1393920614466D-05 , Number of Iterations:     2 (BiCGStab)
+  [I] : iter_nl =    10, difmaxh =  0.00000000E+00, difmaxt =  0.18021450E-02
+  [W] : HDF5 to "GeoSlope_final.h5"
+  [W] : VTK to "GeoSlope_final.vtk"
+ Deallocated Memory, remaining   4.043579101562500E-004  MB
+ total cpu time:    0: 0.80 min
+ RUN O.K.
