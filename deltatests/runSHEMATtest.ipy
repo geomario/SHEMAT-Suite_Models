@@ -44,7 +44,7 @@ except ImportError:
 # Compilation input (compare compilequick.sh)
 is_comp = True
 git_branch_input = "master"
-compile_backend = 'gcc'  # gcc, intel
+compile_backend = 'intel'  # gcc, intel
 
 # Execution input
 is_exec = True
@@ -67,6 +67,8 @@ test_models = [
     # "sm_const_wavereal_enkf",
     # "fw_bas_simpleConvection",
     # "fw_bas_simpleConvection_transient",
+    # "fw_basc_ElderProblem",
+    # "fw_basc_ElderProblem_transient",
 ]
 
 ###############################################################################
