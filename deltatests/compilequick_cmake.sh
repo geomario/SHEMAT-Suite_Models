@@ -85,8 +85,12 @@ gmake ${shem_type} -j16
 if [ $? -ge 1 ];
 then
     echo ""
+    echo "compilequick_cmake.sh: Command:"
     echo "------------------------------------"
-    echo "compilequick.sh: Compilation aborted"
+    echo "cmake -DPROPS=${props} ${flags} .."
+    echo "gmake ${shem_type} -j16"
+    echo "------------------------------------"
+    echo "compilequick_cmake.sh: Compilation aborted"
     popd
     exit 1
 fi

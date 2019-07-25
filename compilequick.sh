@@ -64,6 +64,9 @@ gmake ${shem_type} COMPTYPE=${compiler} PROPS=${props} HDF5_MOD=$HDF5_ROOT/inclu
 if [ $? -ge 1 ];
 then
     echo ""
+    echo "compilequick.sh: Command:"
+    echo "------------------------------------"
+    echo "gmake ${shem_type} COMPTYPE=${compiler} PROPS=${props} HDF5_MOD=$HDF5_ROOT/include/ HDF5_LIB=$HDF5_ROOT/lib/ ${flags}"
     echo "------------------------------------"
     echo "compilequick.sh: Compilation aborted"
     popd
