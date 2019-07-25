@@ -5,7 +5,7 @@
 #------------------------------------------------------------------
 #-----------------------Variables ---------------------------------
 #------------------------------------------------------------------
-model_dir="${HOME}/SHEMAT-Suite_Models/fw_ice_GeoSlope2/"         # "${HOME}/SHEMAT-Suite_Models/fw_const_Example"
+model_dir="${HOME}/SHEMAT-Suite_Models/fw_const_TheisProblem/"         # "${HOME}/SHEMAT-Suite_Models/fw_const_Example"
 make_dir="${HOME}/SHEMAT-Suite"                     # "${HOME}/SHEMAT-Suite"
 
 shem_type="fw"			# "sm", "fw"
