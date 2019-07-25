@@ -5,19 +5,20 @@
 #------------------------------------------------------------------
 #-----------------------Variables ---------------------------------
 #------------------------------------------------------------------
-model_dir="{model_dir_in}"         # "${HOME}/SHEMAT-Suite_Models/fw_const_Example"
-make_dir="{make_dir_in}"                     # "${HOME}/SHEMAT-Suite"
+model_dir="${HOME}/SHEMAT-Suite_Models/fw_const_TheisProblem/"         # "${HOME}/SHEMAT-Suite_Models/fw_const_Example"
+make_dir="${HOME}/SHEMAT-Suite"                     # "${HOME}/SHEMAT-Suite"
 
-shem_type="{shem_type_in}"			# "sm", "fw"
-shem_type_name="{shem_type_name_in}"	# "sm_sgsim", "fw"
+shem_type="fw"			# "sm", "fw"
+shem_type_name="fw"	# "sm_sgsim", "fw"
 
-props="{props_in}"
+props="const"
 user="none"
 
-compiler="{compiler_in}"	       # "ling64","lini64"
-compiler_name="{compiler_name_in}"	       # "64gnu","64int"
+compiler="lini64"	       # "ling64","lini64"
+compiler_name="64"	       # "64gnu","64int", v3_00 intel: "64"
+compiler_name_new="64int"      # "64gnu","64int"
 
-flags="{flags_in}" # Flags: "omp","debug","noplt","novtk","nohdf"
+flags="debug noomp lapacksrc blassrc -j16" # Flags: "omp","debug","noplt","novtk","nohdf" 
 
 #Make-directory existence check
 if [ ! -d ${make_dir} ]
@@ -31,17 +32,10 @@ fi
 # Go to make_dir
 pushd ${make_dir}
 
-# Module configuration (for debugging, remove 2> /dev/null)
-module purge 2> /dev/null
-module load {module0} 2> /dev/null
-module load {module1} 2> /dev/null
-module load {module2} 2> /dev/null
-module load {module3} 2> /dev/null
-module load {module4} 2> /dev/null
-
 # Get git branch name
-git_branch="{git_branch_in}"
+git_branch=$(git rev-parse --abbrev-ref HEAD)
 
+# Check source code for changes
 git diff --exit-code --quiet
 if [ $? -ge 1 ];
 then
@@ -58,19 +52,6 @@ then
     exit 1
 fi
 
-if [ ${git_branch} = $(git rev-parse --abbrev-ref HEAD) ]
-then
-    echo "   SHEMAT-Suite repository in branch"
-    echo ${git_branch}
-else
-    echo "   SHEMAT-Suite repository not yet in branch"
-    echo ${git_branch}
-    git checkout ${git_branch}
-    gmake dep
-    echo "   SHEMAT-Suite repository in branch"
-    echo ${git_branch}
-fi
-
 # Generate dependency file if necessary
 if [ ! -e Makefile.dep ]
 then
@@ -80,11 +61,14 @@ fi
 #Clean make-directory
 gmake cleanall
 
-#New executable suffix
-new_exe_suffix="${shem_type_name}${compiler_name}_${props}_${git_branch}"
+# Make dependencies and version.inc (mostly needed for old versions of SHEMAT-Suite)
+gmake version.inc
 
-#Compilation command 
-gmake ${shem_type} COMPTYPE=${compiler} PROPS=${props} USER=${user} HDF5_MOD=$HDF5_ROOT/include/ HDF5_LIB=$HDF5_ROOT/lib/ ${flags}
+#New executable suffix
+new_exe_suffix="${shem_type_name}${compiler_name_new}_${props}_${git_branch}_quick"
+
+#Compilation command
+gmake ${shem_type} COMPTYPE=${compiler} PROPS=${props} USER=${none} ${flags}
 
 # Catch compilation errors
 if [ $? -ge 1 ];
@@ -110,7 +94,7 @@ mv Makefile.flags ${model_dir}
 mv version.inc ${model_dir}
 
 # Rename Makefile.flags, version.inc
-popd
+pushd ${model_dir}
 rename Makefile.flags Makefile_${new_exe_suffix}.flags Makefile.flags
 rename version.inc version_${new_exe_suffix}.inc version.inc
 
@@ -118,7 +102,7 @@ rename version.inc version_${new_exe_suffix}.inc version.inc
 module list -t 2> module_${new_exe_suffix}.inc
 
 # Clean make-directory
-pushd ${make_dir}
+popd
 gmake cleanall
 
 # Create and move tgz Backup

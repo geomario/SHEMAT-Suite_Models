@@ -5,19 +5,20 @@
 #------------------------------------------------------------------
 #-----------------------Variables ---------------------------------
 #------------------------------------------------------------------
-model_dir="{model_dir_in}"         # "${HOME}/SHEMAT-Suite_Models/fw_const_Example"
-make_dir="{make_dir_in}"                     # "${HOME}/SHEMAT-Suite"
+model_dir="${HOME}/SHEMAT-Suite_Models/fw_const_TheisProblem/"         # "${HOME}/SHEMAT-Suite_Models/fw_const_Example"
+make_dir="${HOME}/SHEMAT-Suite"                     # "${HOME}/SHEMAT-Suite"
 
-shem_type="{shem_type_in}"			# "sm", "fw"
-shem_type_name="{shem_type_name_in}"	# "sm_sgsim", "fw"
+shem_type="fw"			# "sm", "fw"
+shem_type_name="fw"	# "sm_sgsim", "fw"
 
-props="{props_in}"
+props="const"
 user="none"
 
-compiler="{compiler_in}"	       # "ling64","lini64"
-compiler_name="{compiler_name_in}"	       # "64gnu","64int"
+compiler="lini64"	       # "ling64","lini64"
+compiler_name="64gnu"	       # Currently always gnu for cmake
+compiler_name_new="64int"      # "64gnu","64int"
 
-flags="{flags_in}" # Flags: "omp","debug","noplt","novtk","nohdf"
+flags="-Dhdf=ON -Domp=OFF -j16" # Flags: "-Domp=ON","-Dhdf=ON","-Ddetails=ON"
 
 #Make-directory existence check
 if [ ! -d ${make_dir} ]
@@ -31,44 +32,24 @@ fi
 # Go to make_dir
 pushd ${make_dir}
 
-# Module configuration (for debugging, remove 2> /dev/null)
-module purge 2> /dev/null
-module load {module0} 2> /dev/null
-module load {module1} 2> /dev/null
-module load {module2} 2> /dev/null
-module load {module3} 2> /dev/null
-module load {module4} 2> /dev/null
-
 # Get git branch name
-git_branch="{git_branch_in}"
+git_branch=$(git rev-parse --abbrev-ref HEAD)
 
-# git diff --exit-code --quiet
-# if [ $? -ge 1 ];
-# then
-#     echo "   Unstaged changes in Git repository! Please remove."
-#     echo "   Branch: ${git_branch}"
-#     exit 1
-# fi
-
-# git diff --cached --exit-code --quiet
-# if [ $? -ge 1 ];
-# then
-#     echo "   Staged changes in Git repository! Please remove."
-#     echo "   Branch: ${git_branch}"
-#     exit 1
-# fi
-
-if [ ${git_branch} = $(git rev-parse --abbrev-ref HEAD) ]
+# Check source code for changes
+git diff --exit-code --quiet
+if [ $? -ge 1 ];
 then
-    echo "   SHEMAT-Suite repository in branch"
-    echo ${git_branch}
-else
-    echo "   SHEMAT-Suite repository not yet in branch"
-    echo ${git_branch}
-    git checkout ${git_branch}
-    gmake dep
-    echo "   SHEMAT-Suite repository in branch"
-    echo ${git_branch}
+    echo "   Unstaged changes in Git repository! Please remove."
+    echo "   Branch: ${git_branch}"
+    exit 1
+fi
+
+git diff --cached --exit-code --quiet
+if [ $? -ge 1 ];
+then
+    echo "   Staged changes in Git repository! Please remove."
+    echo "   Branch: ${git_branch}"
+    exit 1
 fi
 
 # Generate dependency file if necessary
@@ -81,7 +62,7 @@ fi
 gmake cleanall
 
 #New executable suffix
-new_exe_suffix="${shem_type_name}${compiler_name}_${props}_${git_branch}"
+new_exe_suffix="${shem_type_name}${compiler_name_new}_${props}_${git_branch}_quick"
 
 #Clean make-directory
 mkdir build_${props}
@@ -106,7 +87,7 @@ then
 fi
 
 # Rename executable
-rename shem_${shem_type_name}64gnu_${props}.x shem_${new_exe_suffix}.x shem_${shem_type_name}64gnu_${props}.x
+rename shem_${shem_type_name}${compiler_name}_${props}.x shem_${new_exe_suffix}.x shem_${shem_type_name}${compiler_name}_${props}.x
 
 # Move executable
 mv shem_${new_exe_suffix}.x ${model_dir}
