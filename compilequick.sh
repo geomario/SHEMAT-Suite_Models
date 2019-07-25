@@ -31,9 +31,6 @@ fi
 # Go to make_dir
 pushd ${make_dir}
 
-#Clean make-directory
-gmake cleanall
-
 # Get git branch name
 git_branch=$(git rev-parse --abbrev-ref HEAD)
 
@@ -53,6 +50,15 @@ then
     echo "   Branch: ${git_branch}"
     exit 1
 fi
+
+# Generate dependency file if necessary
+if [ ! -e Makefile.dep ]
+then
+    gmake dep
+fi
+
+#Clean make-directory
+gmake cleanall
 
 #New executable suffix
 new_exe_suffix="${shem_type_name}${compiler_name_new}_${props}_${git_branch}_individual"

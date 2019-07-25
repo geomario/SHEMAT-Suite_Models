@@ -70,11 +70,17 @@ else
     echo ${git_branch}
 fi
 
-#New executable suffix
-new_exe_suffix="${shem_type_name}${compiler_name}_${props}_${git_branch}"
+# Generate dependency file if necessary
+if [ ! -e Makefile.dep ]
+then
+    gmake dep
+fi
 
 #Clean make-directory
 gmake cleanall
+
+#New executable suffix
+new_exe_suffix="${shem_type_name}${compiler_name}_${props}_${git_branch}"
 
 #Compilation command 
 gmake ${shem_type} COMPTYPE=${compiler} PROPS=${props} HDF5_MOD=$HDF5_ROOT/include/ HDF5_LIB=$HDF5_ROOT/lib/ ${flags}

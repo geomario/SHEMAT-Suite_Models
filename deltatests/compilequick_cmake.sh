@@ -70,6 +70,12 @@ else
     echo ${git_branch}
 fi
 
+# Generate dependency file if necessary
+if [ ! -e Makefile.dep ]
+then
+    gmake dep
+fi
+
 #New executable suffix
 new_exe_suffix="${shem_type_name}${compiler_name}_${props}_${git_branch}"
 
