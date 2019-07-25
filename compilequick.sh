@@ -61,7 +61,7 @@ fi
 gmake cleanall
 
 #New executable suffix
-new_exe_suffix="${shem_type_name}${compiler_name_new}_${props}_${git_branch}_individual"
+new_exe_suffix="${shem_type_name}${compiler_name_new}_${props}_${git_branch}_quick"
 
 #Compilation command
 gmake ${shem_type} COMPTYPE=${compiler} PROPS=${props} HDF5_MOD=$HDF5_ROOT/include/ HDF5_LIB=$HDF5_ROOT/lib/ ${flags}
