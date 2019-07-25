@@ -12,6 +12,7 @@ shem_type="fw"			# "sm", "fw"
 shem_type_name="fw"	# "sm_sgsim", "fw"
 
 props="const"
+user="none"
 
 compiler="lini64"	       # "ling64","lini64"
 compiler_name="64int"	       # "64gnu","64int"
@@ -64,7 +65,7 @@ gmake cleanall
 new_exe_suffix="${shem_type_name}${compiler_name_new}_${props}_${git_branch}_quick"
 
 #Compilation command
-gmake ${shem_type} COMPTYPE=${compiler} PROPS=${props} HDF5_MOD=$HDF5_ROOT/include/ HDF5_LIB=$HDF5_ROOT/lib/ ${flags}
+gmake ${shem_type} COMPTYPE=${compiler} PROPS=${props} USER=${user} HDF5_MOD=$HDF5_ROOT/include/ HDF5_LIB=$HDF5_ROOT/lib/ ${flags}
 
 # Catch compilation errors
 if [ $? -ge 1 ];

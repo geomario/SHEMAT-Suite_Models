@@ -12,6 +12,7 @@ shem_type="{shem_type_in}"			# "sm", "fw"
 shem_type_name="{shem_type_name_in}"	# "sm_sgsim", "fw"
 
 props="{props_in}"
+user="none"
 
 compiler="{compiler_in}"	       # "ling64","lini64"
 compiler_name="{compiler_name_in}"	       # "64gnu","64int"
@@ -82,7 +83,7 @@ new_exe_suffix="${shem_type_name}${compiler_name}_${props}_${git_branch}"
 #Clean make-directory
 mkdir build_${props}
 pushd build_${props}
-cmake -DPROPS=${props} ${flags} ..
+cmake -DPROPS=${props} -DUSER=${user} ${flags} ..
 
 #Compilation command 
 gmake ${shem_type} -j16
