@@ -1,0 +1,78 @@
+import numpy as np
+
+
+def w(u):
+    """
+    Compute well function approximation from Allen(1954) and Hastings(1955)
+    between 0<u<1. Parameters taken from Srivastava(1998).
+
+    Parameters
+    ----------
+    u : float
+        Argument of the well function \frac{r^2 S}{4 \delta z K t}.
+        r: distance from the well
+        S: storage coefficient
+        \delta z: thickness of aquifer
+        K: hydraulich conductivity
+        t: time
+
+    fname : string
+        Name of the file.
+
+    varname: string
+        Name of the variable
+
+    Returns
+    ----------
+    vtk_reader: vtk Reader instance
+        vtk Reader containing information about a vtk-file.
+    """
+    # Parameters
+    a0 = -0.57722
+
+    a1 = -0.99999
+
+    a1 = 0.99999
+
+    a2 = -0.24991
+
+    a3 = 0.05519
+
+    a4 = -0.00976
+
+    a5 = 0.00108
+
+    # Well function
+    w = (np.log(u) + a0 + a1 * u + a2 * u * u + a3 * u * u * u +
+         a4 * u * u * u * u + a5 * u * u * u * u * u)
+
+    return w
+
+
+# From Clauser 2003
+
+# Pumping rate Q in [m3s-1]
+Q = -0.001
+
+# Thickness of aquifer in [m]
+delz = 20
+
+# Hydraulic conductivity in [m1s-1]
+rhof = 1000.0
+g = 9.81
+k = 10**-12
+mu = 1*10**-3
+
+K = rhof*g*k/mu
+
+# Distance from well [m]
+r = 41.953126
+
+# Storage coefficient [-]
+phi = 0.1
+alpha = 10**-8
+beta = 5*10**-8
+S = rhof*g*(alpha + phi * beta) * delz
+
+# Time in [s]
+t = 60*60*24*3.5
