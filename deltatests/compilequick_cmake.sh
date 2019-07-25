@@ -77,6 +77,9 @@ then
     gmake dep
 fi
 
+#Clean make-directory
+gmake cleanall
+
 #New executable suffix
 new_exe_suffix="${shem_type_name}${compiler_name}_${props}_${git_branch}"
 
@@ -108,34 +111,29 @@ rename shem_${shem_type_name}64gnu_${props}.x shem_${new_exe_suffix}.x shem_${sh
 # Move executable
 mv shem_${new_exe_suffix}.x ${model_dir}
 
-# Move Makefile.flags, version.inc
-# mv Makefile.flags ${model_dir}
+# Move CMakeCache.txt, version.inc
+mv CMakeCache.txt ${model_dir}
 pushd generated
 mv version.inc ${model_dir}
 popd
 
-# Rename Makefile.flags, version.inc
-popd
-popd
-# rename Makefile.flags Makefile_${new_exe_suffix}.flags Makefile.flags
+# Rename CMakeCache.txt, version.inc
+pushd ${model_dir}
+rename CMakeCache.txt CMakeCache_${new_exe_suffix}.txt CMakeCache.txt
 rename version.inc version_${new_exe_suffix}.inc version.inc
 
 # File with RWTH cluster module configuration
 module list -t 2> module_${new_exe_suffix}.inc
 
-# Clean make-directory
-pushd ${make_dir}
-pushd build_${props}
-gmake clean
-popd
-
 # Clean SHEMAT-Suite git repository
+popd
 git clean -f
-git checkout -- .
 
 # Create and move tgz Backup
+popd
 # gmake tgz
 # mv *.tgz ${model_dir}
+git checkout -- .
 rm -r build_${props}
 
 # Echo paths
