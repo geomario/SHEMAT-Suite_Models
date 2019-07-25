@@ -11,10 +11,11 @@ make_dir="${HOME}/SHEMAT-Suite"                     # "${HOME}/SHEMAT-Suite"
 shem_type="fw"			# "sm", "fw"
 shem_type_name="fw"	# "sm_sgsim", "fw"
 
-props="ice"
+props="const"
 
 compiler="lini64"	       # "ling64","lini64"
 compiler_name="64int"	       # "64gnu","64int"
+compiler_name_new="64int"      # "64gnu","64int"
 
 flags="hdf noomp -j16" # Flags: "omp","debug","noplt","novtk","nohdf"
 
@@ -54,7 +55,7 @@ then
 fi
 
 #New executable suffix
-new_exe_suffix="${shem_type_name}${compiler_name}_${props}_${git_branch}_individual"
+new_exe_suffix="${shem_type_name}${compiler_name_new}_${props}_${git_branch}_individual"
 
 #Compilation command
 gmake ${shem_type} COMPTYPE=${compiler} PROPS=${props} HDF5_MOD=$HDF5_ROOT/include/ HDF5_LIB=$HDF5_ROOT/lib/ ${flags}
