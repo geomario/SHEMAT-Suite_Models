@@ -1,10 +1,20 @@
 import numpy as np
+import matplotlib.pyplot as plt
+
+import pskf.tools.plot.plotfunctions as pf
+from vtk.util.numpy_support import vtk_to_numpy
 
 
 def w(u):
     """
     Compute well function approximation from Allen(1954) and Hastings(1955)
     between 0<u<1. Parameters taken from Srivastava(1998).
+
+    TODO: Implement u>1 from same source.
+
+    Srivastava, R., & Guzman-Guzman, A., Practical approximations of the
+    well function, Ground Water, 36(5), 844–848 (1998).
+    http://dx.doi.org/10.1111/j.1745-6584.1998.tb02203.x
 
     Parameters
     ----------
@@ -13,19 +23,13 @@ def w(u):
         r: distance from the well
         S: storage coefficient
         \delta z: thickness of aquifer
-        K: hydraulich conductivity
+        K: hydraulic conductivity
         t: time
-
-    fname : string
-        Name of the file.
-
-    varname: string
-        Name of the variable
 
     Returns
     ----------
-    vtk_reader: vtk Reader instance
-        vtk Reader containing information about a vtk-file.
+    w: float
+        Well function for input value u.
     """
     # Parameters
     a0 = -0.57722
@@ -49,7 +53,50 @@ def w(u):
     return w
 
 
-# From Clauser 2003
+def h_theis(r, t, h0, Q, delz, K, S):
+    """
+    Compute the head around a pumping well according to the THEIS model.
+    Source: SHEMAT-Book Clauser2003, section 2.6.1, p.57.
+
+    Parameters
+    ----------
+    r : float
+        Distance from well [m]
+
+    t : float
+        time [s]
+
+    h0 : float
+        Undisturbed head without influence of the pumping well in [m].
+
+    Q : float
+        Pumping rate of the well in [m3s-1]
+
+    delz : float
+        Thickness of aquifer in [m]
+
+    K : float
+       Hydraulic conductivity in [m1s-1]
+
+    S : float
+        Storage coefficient [-]
+
+    Returns
+    ----------
+    h : float
+        head at difference r from pumping well and time t. [m]
+    """
+
+    # Compute input for well function
+    u = r**2 * S / (4 * delz * K * t)
+
+    # Compute new head
+    h = h0 - Q / (4 * np.pi * delz * K) * w(u)
+
+    return h
+
+
+# Input values from SHEMAT Book, Clauser 2003
 
 # Pumping rate Q in [m3s-1]
 Q = -0.001
