@@ -8,7 +8,8 @@ Processing SHEMAT (Clauser 2003) and SHEMAT-Suite show nearly the same
 results. 
 
 For comparison to the analytical solution after Theis see
-Clauser(2003).
+Clauser(2003) and the test model
+`fw_const_Theis_analytical_comparison`.
 
 date: September 2015
 contact person: Johanna Bruckmann
@@ -21,8 +22,10 @@ module switch intel gcc
 make fw nohdf PROPS=const COMPTYPE=ling64 -j 8
 
 Model Execution:
-./shem_fw64gnu_const.x > out.txt
 
+```
+./shem_fw64gnu_const.x > out.txt
+```
 
 ## Citations ##
 
