@@ -74,6 +74,7 @@ test_models = [
     # "fw_const_NeumannBox",
     # "fw_bas_NeumannBox",
     # "fw_basc_NeumannBox",
+    "fw_const_Theis_analytical_comparison",
 ]
 
 ###############################################################################
