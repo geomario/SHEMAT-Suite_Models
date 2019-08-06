@@ -31,24 +31,50 @@ def w(u):
     w: float
         Well function for input value u.
     """
-    # Parameters
-    a0 = -0.57722
 
-    a1 = -0.99999
+    if u <= 1:
+        # Parameters
+        a0 = -0.57722
 
-    a1 = 0.99999
+        a1 = 0.99999
 
-    a2 = -0.24991
+        a2 = -0.24991
 
-    a3 = 0.05519
+        a3 = 0.05519
 
-    a4 = -0.00976
+        a4 = -0.00976
 
-    a5 = 0.00108
+        a5 = 0.00108
 
-    # Well function
-    w = (np.log(u) + a0 + a1 * u + a2 * u * u + a3 * u * u * u +
-         a4 * u * u * u * u + a5 * u * u * u * u * u)
+        # Well function
+        w = -(-np.log(u) + a0 + a1 * u + a2 * u * u + a3 * u * u * u +
+              a4 * u * u * u * u + a5 * u * u * u * u * u)
+    else:
+        # Parameters
+        b0 = 0.2677
+
+        b1 = 8.63476
+
+        b2 = 18.05902
+
+        b3 = 8.57333
+
+        b4 = 1
+
+        c0 = 3.95850
+
+        c1 = 21.09965
+
+        c2 = 25.63296
+
+        c3 = 9.57332
+
+        c4 = 1
+
+        # Well function
+        w = -(1/(u*np.exp(u))
+              * (b0 + b1*u + b2 * u * u + b3 * u * u * u + b4 * u * u * u * u)
+              / (c0 + c1*u + c2 * u * u + c3 * u * u * u + c4 * u * u * u * u))
 
     return w
 
