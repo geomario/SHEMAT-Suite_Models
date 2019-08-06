@@ -12,6 +12,7 @@ shem_type="{shem_type_in}"			# "sm", "fw"
 shem_type_name="{shem_type_name_in}"	# "sm_sgsim", "fw"
 
 props="{props_in}"
+user="none"
 
 compiler="{compiler_in}"	       # "ling64","lini64"
 compiler_name="{compiler_name_in}"	       # "64gnu","64int"
@@ -70,13 +71,22 @@ else
     echo ${git_branch}
 fi
 
+# Generate dependency file if necessary
+if [ ! -e Makefile.dep ]
+then
+    gmake dep
+fi
+
+#Clean make-directory
+gmake cleanall
+
 #New executable suffix
 new_exe_suffix="${shem_type_name}${compiler_name}_${props}_${git_branch}"
 
 #Clean make-directory
 mkdir build_${props}
 pushd build_${props}
-cmake -DPROPS=${props} ${flags} ..
+cmake -DPROPS=${props} -DUSER=${user} ${flags} ..
 
 #Compilation command 
 gmake ${shem_type} -j16
@@ -85,8 +95,12 @@ gmake ${shem_type} -j16
 if [ $? -ge 1 ];
 then
     echo ""
+    echo "compilequick_cmake.sh: Command:"
     echo "------------------------------------"
-    echo "compilequick.sh: Compilation aborted"
+    echo "cmake -DPROPS=${props} ${flags} .."
+    echo "gmake ${shem_type} -j16"
+    echo "------------------------------------"
+    echo "compilequick_cmake.sh: Compilation aborted"
     popd
     exit 1
 fi
@@ -97,34 +111,29 @@ rename shem_${shem_type_name}64gnu_${props}.x shem_${new_exe_suffix}.x shem_${sh
 # Move executable
 mv shem_${new_exe_suffix}.x ${model_dir}
 
-# Move Makefile.flags, version.inc
-# mv Makefile.flags ${model_dir}
+# Move CMakeCache.txt, version.inc
+mv CMakeCache.txt ${model_dir}
 pushd generated
 mv version.inc ${model_dir}
 popd
 
-# Rename Makefile.flags, version.inc
-popd
-popd
-# rename Makefile.flags Makefile_${new_exe_suffix}.flags Makefile.flags
+# Rename CMakeCache.txt, version.inc
+pushd ${model_dir}
+rename CMakeCache.txt CMakeCache_${new_exe_suffix}.txt CMakeCache.txt
 rename version.inc version_${new_exe_suffix}.inc version.inc
 
 # File with RWTH cluster module configuration
 module list -t 2> module_${new_exe_suffix}.inc
 
-# Clean make-directory
-pushd ${make_dir}
-pushd build_${props}
-gmake clean
-popd
-
 # Clean SHEMAT-Suite git repository
+popd
 git clean -f
-git checkout -- .
 
 # Create and move tgz Backup
+popd
 # gmake tgz
 # mv *.tgz ${model_dir}
+git checkout -- .
 rm -r build_${props}
 
 # Echo paths

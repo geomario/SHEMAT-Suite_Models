@@ -1,0 +1,216 @@
+! # =====>>>>>-----------------------------------------------------<<<<<===== # !
+! # =====>>>>>   RUN INFO                                          <<<<<===== # !
+! # =====>>>>>-----------------------------------------------------<<<<<===== # !
+
+# title
+NeumannBox
+                                                                                                              
+# linfo
+1 1 1 0
+
+# runmode
+0
+
+
+# PROPS = basc
+# USER = none
+
+! # =====>>>>>-----------------------------------------------------<<<<<===== # !
+! # =====>>>>>   OUTPUT                                            <<<<<===== # !
+! # =====>>>>>-----------------------------------------------------<<<<<===== # !
+
+# file output: hdf vtk
+
+# output times, records=1
+31557600
+
+# active head 
+
+# borehole logs, records=0		!**location of steady state log output**!
+
+!**monitor points for transient parameter output**! !**i j k 1**!
+# monitor, records=0, new=position		
+!107  75  1 2 	
+
+# data, records=0, pos=index
+!174.5 1.5 107  75 1 1 0  !G1       ! val err i j k type obs 
+
+! # =====>>>>>-----------------------------------------------------<<<<<===== # !
+! # =====>>>>>   GRID                                              <<<<<===== # !
+! # =====>>>>>-----------------------------------------------------<<<<<===== # !
+
+# grid
+55 55 55
+			
+# delx
+55*2
+
+# dely
+55*2
+
+# delz
+55*2
+
+! # =====>>>>>-----------------------------------------------------<<<<<===== # !
+! # =====>>>>>   TIME STEP CONTROL                                 <<<<<===== # !
+! # =====>>>>>-----------------------------------------------------<<<<<===== # !
+! # ************************************************************************* # !
+! # *** timestep control 0: steady state   timestep control 1: transient  *** # !
+! # *** tunit: 31557600 year          				          *** # !
+! # ***           86400 day      				          *** # !
+! # ***            3600 hour         				          *** # !
+! # ***              60 minute        				          *** # !
+! # ***               1 second (default) 				  *** # !
+! # ************************************************************************* # !
+
+# timestep control
+0	 
+1.0 1.0 1.0 0.0 
+
+# tunit
+31557600    	
+
+# tstart									!**starting time for transient simulation**!
+0.
+
+# time periods, records=1
+0.0	100 500	lin	
+
+# bc time periods, records=0    						!**boundary condition time periods**!
+
+# variable step size								!**automatic time step procedure**!
+0										!** 0: inactive  1: active**!
+0.5 0.1 5. 365. 5								!** delt_start delt_min delt_max t_end delt_double**!
+
+! ==========>>>>> NONLINEAR SOLVER
+# nlsolve
+50 0 
+
+! ==========>>>>> FLOW
+# lsolvef (linear solver control)
+1.d-16 64 500
+# nliterf (nonlinear iteration control)
+1.0d-10 1.0
+
+! ==========>>>>>  TRACER			
+# lsolvec (linear solver control)
+1.0d-4 64 500
+# nliterc (nonlinear iteration control)
+1.0d-2 1.0
+
+! ==========>>>>> TEMP
+# lsolvet
+1.0d-10 64 500
+# nlitert 
+1.0d-8 1.0
+
+! # =====>>>>>-----------------------------------------------------<<<<<===== # !
+! # =====>>>>>   BOUNDARY CONDITIONS                               <<<<<===== # ! 
+! # =====>>>>>-----------------------------------------------------<<<<<===== # !
+! # ************************************************************************* # !
+! # *** dirichlet: bcd   neumann: bcn		                          *** # !
+! # *** simple = top/base/back/front/left/right                           *** # !
+! # ************************************************************************* # !
+
+! # =====>>>>>   BC HEAD            
+!# head bcd, simple=top, value=init , error=ignore
+# head bcd, simple=right, value=init, error=ignore
+# head bcd, simple=left ,value=init,  error=ignore
+
+!# head bcd, simple=base, value=init, error=ignore
+!# head bcd, simple=front, value=init, error=ignore
+!# head bcd, simple=back, value=init, error=ignore
+# head bcn, records=1, direction=0, error=ignore
+28 28 28 0.005 0
+
+! # =====>>>>>   BC TEMPERATURE      
+
+! # ************************************************************************* # !
+! # *** # temp bcd,  			                                  *** # !
+! # *** # temp bcn,  			                                  *** # !
+! # ************************************************************************* # !
+# temp bcd, simple=back, value=init, error=ignore
+# temp bcd, simple=front, value=init, error=ignore
+# temp bcd, simple=top, value=init, error=ignore
+# temp bcn, simple=base, bcindex=2, error=ignore
+! # =====>>>>>   BC CONCENTRATION     
+
+! # ************************************************************************* # !
+! # *** # conc bcd,  			                                  *** # !
+! # *** # conc bcn,  			                                  *** # !
+! # ************************************************************************* # !
+# conc bcd, simple=back, bcindex=3, species=1
+
+!# bcunits, records=0		! m amsl + 626 m because SHEMAT model starts at z0=-626 m amsl1   2020.0  head			
+
+
+
+! # =====>>>>>-----------------------------------------------------<<<<<===== # !
+! # =====>>>>>   INITIAL VALUES                                    <<<<<===== # !
+! # =====>>>>>-----------------------------------------------------<<<<<===== # !
+! # ************************************************************************* # !
+! # *** give array with initial values or hdf5 file with initial values:  *** # !
+! # *** # head init, HDF5=initial.h5		                          *** # !	
+! # ************************************************************************* # !
+
+# head init
+166375*110
+
+# temp init
+166375*20
+
+# tracer0001 init, HDF5=init_trac_box.h5
+! # =====>>>>>-----------------------------------------------------<<<<<===== # !
+! # =====>>>>>   PROPERTIES                                      <<<<<===== # !
+! # =====>>>>>-----------------------------------------------------<<<<<===== # !
+
+! # =====>>>>>   FLUID   
+# fluid props
+1000. 5.0D-8 4218.0 0.65 1.0D-3 0.02  		 				!***rhof compf cpf lamf visf sigmaf***!
+
+!# rref
+!1000.
+
+! # =====>>>>>   TRACER   
+# ntrans
+1 0
+# transpar
+1.1d-9 58.443
+
+! # =====>>>>>   ROCKS/UNITS  
+! # ************************************************************************* # !
+! # *** poro | perm-anisotropy in x | perm-anisotropy in y | perm |       *** # !
+! # *** compressilbility | tc-anisotropy in x | tc-anisotropy in y | tc | *** # !
+! # *** heat production | volumetric thermal capacity | dispersivity      *** # !	
+! # *** electrical conductivity | coupling coefficient | Brooks Corey     *** # !
+! # *** - pore size distr. Index | Brooks Corey displacement pressure |   *** # !
+! # *** s_nr | s_wr                                                       *** # !
+! # ************************************************************************* # !
+
+# units
+0.456	1	1	1.0E-11		1.00E-08	1	1	2.9	0	2.438E06	10	0	0	2	1.00E+03	0.5	0.2	! Sandstone (1)
+0.456	1	1	1.0E-11		1.00E-08	1	1	2.9	0	2.438E06	10	0	0	2	1.00E+03	0.5	0.2	! Sandstone (2)
+! 48.5	1	1	7.90E-16	1.00E-06	1	1	1.43	0	4.42E-06	10	0	0	2	1.00E+03	0.5	0.2	! Shale (2)
+! 48.5	1	1	7.90E-16	1.00E-06	1	1	1.43	0	4.42E-06	10	0	0	2	1.00E+03	0.5	0.2	! Shale (3)
+0.575	1	1	1.0E-16		1.00E-06	1	1	1.6	0	1.9E06		10	0	0	2	1.00E+03	0.5	0.2	! Shale (5)
+
+! # =====>>>>>-----------------------------------------------------<<<<<===== # !
+! # =====>>>>>   PARAMETER ESTIMATION                              <<<<<===== # !
+! # =====>>>>>-----------------------------------------------------<<<<<===== # !
+
+
+!# split units, records=1
+!1
+
+! # =====>>>>>-----------------------------------------------------<<<<<===== # !
+! # =====>>>>>   GEOMETRY                                          <<<<<===== # !
+! # =====>>>>>-----------------------------------------------------<<<<<===== # !
+
+# uindex
+166375*2
+
+!108*1 2*2 8*1 2*2 8*1 2*2 8*1 2*2 8*1 2*2 8*1 2*2 8*1 2*2 8*1 2*2 8*1 2*2 8*1 2*2 6*1 4*2 6*1 4*2 6*1 4*2 6*1 4*2 6*1 4*2 6*1 4*2 6*1 4*2 6*1 4*2 6*1 4*2 6*1 4*2 4*1 6*2 4*1 6*2 4*1 6*2 4*1 6*2 4*1 6*2 4*1 6*2 4*1 6*2 4*1 6*2 4*1 6*2 4*1 6*2 2*1 6*2 4*1 6*2 4*1 6*2 4*1 6*2 4*1 6*2 4*1 6*2 4*1 6*2 4*1 6*2 4*1 6*2 4*1 6*2 2*1 6*2 4*1 6*2 4*1 6*2 4*1 6*2 4*1 6*2 4*1 6*2 4*1 6*2 4*1 6*2 4*1 6*2 4*1 6*2 4*1 4*2 6*1 4*2 6*1 4*2 6*1 4*2 6*1 4*2 6*1 4*2 6*1 4*2 6*1 4*2 6*1 4*2 6*1 4*2 6*1 2*2 8*1 2*2 8*1 2*2 8*1 2*2 8*1 2*2 8*1 2*2 8*1 2*2 8*1 2*2 8*1 2*2 8*1 2*2 208*1
+
+
+
+

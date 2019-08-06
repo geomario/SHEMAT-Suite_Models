@@ -24,7 +24,7 @@ the output results.
 ## Current number of testmodels in benchmark ##
 
 ```
-==============>>>>>>>>>>>>>>    18    <<<<<<<<<<<<<<==============
+==============>>>>>>>>>>>>>>    21    <<<<<<<<<<<<<<==============
 ```
 
 ## doc ##
@@ -93,6 +93,9 @@ command in `SHEMATtest.py`.
 | `fw_basc_ElderProblem_transient`    | First time steps of Elder Problem                                  |
 | `fw_ice_GeoSlope`                   | 2D ice module testmodel                                            |
 | `fw_ice_GeoSlope2`                  | 2D ice module testmodel                                            |
+| `fw_const_NeumannBox`               | small 3D internal Neumann boundary condition                       |
+| `fw_bas_NeumannBox`                 | small 3D internal Neumann boundary condition                       |
+| `fw_basc_NeumannBox`                | small 3D internal Neumann boundary condition                       |
 
 | **Modes**                           | `fw` | `sm` | `ad` |
 |:-----------------------------------:|:----:|:----:|:----:|
@@ -114,6 +117,9 @@ command in `SHEMATtest.py`.
 | `fw_basc_ElderProblem_transient`    | x    |      |      |
 | `fw_ice_GeoSlope`                   | x    |      |      |
 | `fw_ice_GeoSlope2`                  | x    |      |      |
+| `fw_const_NeumannBox`               | x    |      |      |
+| `fw_bas_NeumannBox`                 | x    |      |      |
+| `fw_basc_NeumannBox`                | x    |      |      |
 
 | **Props**                           | `const` | `bas` | `basc` | `gheexpl` | `kola` | `ice` |
 |:-----------------------------------:|:-------:|:-----:|:------:|:---------:|:------:|-------|
@@ -135,6 +141,9 @@ command in `SHEMATtest.py`.
 | `fw_basc_ElderProblem_transient`    |         |       | x      |           |        |       |
 | `fw_ice_GeoSlope`                   |         |       |        |           |        | x     |
 | `fw_ice_GeoSlope2`                  |         |       |        |           |        | x     |
+| `fw_const_NeumannBox`               | x       |       |        |           |        |       |
+| `fw_bas_NeumannBox`                 |         | x     |        |           |        |       |
+| `fw_basc_NeumannBox`                |         |       | x      |           |        |       |
 
 | **Variables**                       | `head` | `temp` | `conc` | `head/temp` | `head/conc` | `head/temp/conc` |
 |:-----------------------------------:|:------:|:------:|:------:|:-----------:|:-----------:|:----------------:|
@@ -156,6 +165,9 @@ command in `SHEMATtest.py`.
 | `fw_basc_ElderProblem_transient`    |        |        |        |             | x           |                  |
 | `fw_ice_GeoSlope`                   |        |        |        | x           |             |                  |
 | `fw_ice_GeoSlope2`                  |        |        |        | x           |             |                  |
+| `fw_const_NeumannBox`               | x      |        |        |             |             |                  |
+| `fw_bas_NeumannBox`                 | x      |        |        |             |             |                  |
+| `fw_basc_NeumannBox`                | x      |        |        |             |             |                  |
 
 | **Grid**                            | `1D` | `2D` | `3D` |
 |:-----------------------------------:|:----:|------|:----:|
@@ -177,6 +189,9 @@ command in `SHEMATtest.py`.
 | `fw_basc_ElderProblem_transient`    |      | x    |      |
 | `fw_ice_GeoSlope`                   |      | x    |      |
 | `fw_ice_GeoSlope2`                  |      | x    |      |
+| `fw_const_NeumannBox`               |      |      | x    |
+| `fw_bas_NeumannBox`                 |      |      | x    |
+| `fw_basc_NeumannBox`                |      |      | x    |
 
 **(x)**: quasi-dimension, only effects in this number of dimensions
 
@@ -201,6 +216,9 @@ command in `SHEMATtest.py`.
 | `fw_basc_ElderProblem_transient`    |                | x           |
 | `fw_ice_GeoSlope`                   | x              |             |
 | `fw_ice_GeoSlope2`                  | x              |             |
+| `fw_const_NeumannBox`               | x              |             |
+| `fw_bas_NeumannBox`                 | x              |             |
+| `fw_basc_NeumannBox`                | x              |             |
 
 | **Inversion**                       | `Deterministic Inversion` | `EnKF` |
 |:-----------------------------------:|:-------------------------:|:------:|
@@ -222,6 +240,9 @@ command in `SHEMATtest.py`.
 | `fw_basc_ElderProblem_transient`    |                           |        |
 | `fw_ice_GeoSlope`                   |                           |        |
 | `fw_ice_GeoSlope2`                  |                           |        |
+| `fw_const_NeumannBox`               |                           |        |
+| `fw_bas_NeumannBox`                 |                           |        |
+| `fw_basc_NeumannBox`                |                           |        |
 
 | **Cluster architecture**            | `serial` | `openmp` | `mpi` | `Slurm Job` |
 |:-----------------------------------:|:--------:|:--------:|:-----:|:-----------:|
@@ -242,6 +263,9 @@ command in `SHEMATtest.py`.
 | `fw_basc_ElderProblem_transient`    | x        |          |       |             |
 | `fw_ice_GeoSlope`                   | x        |          |       |             |
 | `fw_ice_GeoSlope2`                  | x        |          |       |             |
+| `fw_const_NeumannBox`               | x        |          |       |             |
+| `fw_bas_NeumannBox`                 | x        |          |       |             |
+| `fw_basc_NeumannBox`                | x        |          |       |             |
 
 | **Verification method**             | `previous simulation` | `analytical solution`             | `semi-analytical solution` |
 |:-----------------------------------:|:---------------------:|:---------------------------------:|:--------------------------:|
@@ -263,6 +287,9 @@ command in `SHEMATtest.py`.
 | `fw_basc_ElderProblem_transient`    | x                     | x, larger model in bachelorthesis |                            |
 | `fw_ice_GeoSlope`                   | x                     |                                   |                            |
 | `fw_ice_GeoSlope2`                  | x                     |                                   |                            |
+| `fw_const_NeumannBox`               | x                     |                                   |                            |
+| `fw_bas_NeumannBox`                 | x                     |                                   |                            |
+| `fw_basc_NeumannBox`                | x                     |                                   |                            |
 
 
 Possibly: Solver, Physical Problems (maybe better a list), possibly

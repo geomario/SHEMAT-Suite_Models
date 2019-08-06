@@ -44,7 +44,7 @@ except ImportError:
 # Compilation input (compare compilequick.sh)
 is_comp = True
 git_branch_input = "master"
-compile_backend = 'intel'  # gcc, intel
+compile_backend = 'gcc'  # gcc, intel
 
 # Execution input
 is_exec = True
@@ -71,6 +71,9 @@ test_models = [
     # "fw_basc_ElderProblem_transient",
     # "fw_ice_GeoSlope",
     # "fw_ice_GeoSlope2",
+    # "fw_const_NeumannBox",
+    # "fw_bas_NeumannBox",
+    # "fw_basc_NeumannBox",
 ]
 
 ###############################################################################

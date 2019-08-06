@@ -1,0 +1,104 @@
+  
+ ======================================
+ Shem-FW/AD/SM 7.50 (Smarty)                                                    
+  
+ ======================================
+  
+  
+  
+  *** NEW MODEL 
+ 
+   checking input definitions:
+     from file "NeumannBox"
+  
+   reading model input parameter:
+     from file "NeumannBox"
+  
+  [R] : title
+  [R] : runmode
+     >>> forward modeling
+  <D> : free=0, confined flow !
+  [R] : linfo
+  [R] : [i0, j0, k0] = [  55,  55,  55]
+  [R] : nonlinear solver parameter
+  [I] : fixed relxation factor assumed
+  [R] : output suffix: .h5:[X], .plt:[ ], .vtk:[X], .txt:[ ]
+  
+   reading flow parameters
+  
+  [R] : flow linear solver (control=  64)
+  [R] : flow nonlinear iteration tolerance
+  [I] : flow nonlinear relaxation factor
+  
+  <D> : no temperature [disabled]
+  
+  
+  <D> : no transport [disabled]
+  
+  
+  <D> : no electric potential [disabled]
+  
+  
+  <D> : grav =   0.9810E+01
+  <D> : no fluid heat production
+  <D> : rref, reference density =   0.9980E+03
+  <D> : tref, reference temperature =   0.2000E+02
+  <D> : fixed rhocm, defined by unit
+  
+   reading zone parameter 
+  
+  [R] : "uindex" - unit index number, unit-cell assignment
+  
+  [R] : "units" - unit (rock) properties
+  
+   reading/preprocessing arrays
+  
+  [R] : delx
+  [R] : dely
+  [R] : delz
+  
+   reading initial values 
+  
+  [R] : head, in [m]
+  [R] : temp, in [degree Celsius]
+  [R] : pres, in [MPa]
+  
+   reading boundary conditions 
+  
+  [R] : head bcd, simple=right, (size=  3025), bcmy=  0.1000E+19, error=ignore, (offset=     1)
+  [R] : head bcd, simple=left , (size=  3025), bcmy=  0.1000E+19, error=ignore, (offset=  3026)
+  [R] : head bcn, direction=none , records=     1, bcmy=  0.1000E+19, error=ignore, (offset=  6051)
+  
+  <D> : property limitations
+  [R] : No default Darcy velocity - head active!
+  
+   reading external file control
+  
+ 
+   reading time input parameter:
+     from file "NeumannBox"
+ 
+  [R] : Steady state !
+  [R] : tunit =          0.31557600E+08
+  [R] : tstart =          0.00000000E+00
+  <D> : tshift=          0.00000000E+00
+  <D> : titer =      0
+  [R] : periods, records=   1
+    time :  0.0000E+00 -   0.1000E+03, #      500, linear
+  [R] : BC time periods, records=   0 (max index =   0)
+  [R] : monitoring points, records=   0, data orientation= 4
+  [R] : output times, records=   1
+ 
+ 
+  [W] : "NeumannBox_status.log"
+ 
+  [I] : memory:     112.605 MByte data
+ 
+  [I] : iter_nl =     1, difmaxh =  0.64346964E+01, difmaxt =  0.10000000E-20
+  [I] : iter_nl =     2, difmaxh = -0.15378650E-03, difmaxt =  0.10000000E-20
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : HDF5 to "NeumannBox_final.h5"
+  [W] : VTK to "NeumannBox_final.vtk"
+ Deallocated Memory, remaining   7.629394531250000E-006  MB
+ total cpu time:    0: 4.24 min
+ RUN O.K.
