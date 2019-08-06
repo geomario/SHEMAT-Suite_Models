@@ -72,9 +72,9 @@ def w(u):
         c4 = 1
 
         # Well function
-        w = -(1/(u*np.exp(u))
-              * (b0 + b1*u + b2 * u * u + b3 * u * u * u + b4 * u * u * u * u)
-              / (c0 + c1*u + c2 * u * u + c3 * u * u * u + c4 * u * u * u * u))
+        w = -(1 / (u * np.exp(u)) * (
+            b0 + b1 * u + b2 * u * u + b3 * u * u * u + b4 * u * u * u * u) /
+              (c0 + c1 * u + c2 * u * u + c3 * u * u * u + c4 * u * u * u * u))
 
     return w
 
@@ -152,26 +152,27 @@ t = 60 * 60 * 24 * 3.5
 
 # Head from vtk
 vtk_reader = pf.my_vtk(
-    '/home/jk125262/SHEMAT-Suite_Models/fw_const_Theis_analytical_comparison/result/',
-    'THEIS_final.vtk', 'head')
+    '/home/jk125262/SHEMAT-Suite_Models/fw_const_Theis_analytical_comparison/'
+    + 'result/', 'THEIS_final.vtk', 'head')
 h_vtk = pf.my_vtk_to_numpy(vtk_reader)
 x = vtk_to_numpy(vtk_reader.GetOutput().GetXCoordinates())
 
-
 # PUMPING RATE vs SHEMAT-Suite Neumann Boundary condition not clear...
-Q = -0.0040                  # Minimaler max der Differenzen
+
+Q = -0.0040  # Minimaler max der Differenzen
 # Q = -0.0040205                  # Minimaler Mean der Differenzen
 # Q = -0.00403
 # Q = -0.001
 
 # Factor 0.15625*20 (for the square meter)
 
-h_ana = [h_theis(rx, t, 20, Q, delz, K, S) for rx in x+0.6]
+h_ana = [h_theis(rx, t, 20, Q, delz, K, S) for rx in x + 0.6]
 u = [rx**2 * S / (4 * delz * K * t) for rx in x]
 
-print(Q, np.max(np.abs(h_vtk[0, 1:]-h_ana[1:])), np.mean(np.abs(h_vtk[0, 1:]-h_ana[1:])))
+print(Q, np.max(np.abs(h_vtk[0, 1:] - h_ana[1:])),
+      np.mean(np.abs(h_vtk[0, 1:] - h_ana[1:])))
 
-plt.plot(x[1:], h_vtk[0, 1:]-h_ana[1:], '-o')
+plt.plot(x[1:], h_vtk[0, 1:] - h_ana[1:], '-o')
 plt.show()
 
 plt.plot(x, np.array(h_vtk[0, :]), '-o')
@@ -179,10 +180,10 @@ plt.plot(x, np.array(h_ana))
 plt.show()
 
 # Logarithmic difference to 20m
-plt.plot(x, np.log10(20-np.array(h_vtk[0, :])), '-o')
-plt.plot(x, np.log10(20-np.array(h_ana)), '-o')
+plt.plot(x, np.log10(20 - np.array(h_vtk[0, :])), '-o')
+plt.plot(x, np.log10(20 - np.array(h_ana)), '-o')
 plt.show()
 
 # Relative error
-plt.plot(x[:], (h_vtk[0, 0:]-h_ana[:])/(20-np.array(h_ana)), '-o')
+plt.plot(x[:], (h_vtk[0, 0:] - h_ana[:]) / (20 - np.array(h_ana)), '-o')
 plt.show()
