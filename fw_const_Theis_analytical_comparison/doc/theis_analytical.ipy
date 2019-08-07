@@ -152,8 +152,9 @@ t = 60 * 60 * 24 * 3.5
 
 # Head from vtk
 vtk_reader = pf.my_vtk(
-    '/home/jk125262/SHEMAT-Suite_Models/fw_const_Theis_analytical_comparison/'
-    + 'result/', 'THEIS_final.vtk', 'head')
+    '/home/jk125262/SHEMAT-Suite_Models/fw_const_Theis_analytical_comparison/',
+    # + 'result/'
+    'THEIS_final.vtk', 'head')
 h_vtk = pf.my_vtk_to_numpy(vtk_reader)
 x = vtk_to_numpy(vtk_reader.GetOutput().GetXCoordinates())
 
