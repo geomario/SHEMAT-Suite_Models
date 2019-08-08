@@ -1,0 +1,133 @@
+!==========>>>>> INFO
+# title
+Theis      
+# linfo
+4*1
+# runmode
+0
+
+# PROPS=const
+# USER=none
+
+# active head 
+!!!temp trac
+!!!# active head trac temp
+
+!==========>>>>> I/O
+# file output vtk
+!AW# file output tec hdf vtk
+!==========>>>>> MESH
+
+# grid
+69 69 20
+# delx
+29*1.0d0 40*10.0d0
+# dely
+29*1.d0 40*10.0d0
+# delz 
+20*1.0d0 
+		
+!==========>>>>> TIME STEP
+# timestep control
+1 
+1.0 1.0 1.0 0.0 
+
+# tunit 
+86400. 
+!one day
+
+# time periods, records=1
+0.0          	3.5   100 lin
+!# output times, records=3
+10
+100
+900
+
+
+!==========>>>>> NONLINEAR SOLVER
+# nlsolve
+50 0
+
+!==========>>>>> FLOW changed some accuracy and 32 to 64
+# lsolvef (linear solver control)
+1.d-10 64 500
+# nliterf (nonlinear iteration control)
+1.0d-10 1.0d0
+!==========>>>>>  TEMPERATURE
+!# lsolvet (linear solver control)
+!1.d-7 64 500
+!# nlitert (nonlinear iteration control)
+!1.0d-2 0.5
+!==========>>>>>  CONCENTRATION
+!# lsolvec (linear solver control)
+!1.d-14 64 500
+!# nliterc (nonlinear iteration control)
+!1.0d-8 0.5
+
+!aw# lsolvef (linear solver control)
+!aw1.d-12  67 500
+!aw# nliterf (nonlinear iteration control)
+!aw1.0d-3 0.5
+!aw# lsolvet (linear solver control)
+!aw1.d-6 64 500
+!aw# nlitert (nonlinear iteration control)
+!aw1.0d-3 0.5
+!aw# lsolvec (linear solver control)
+!aw1.d-14 64 500
+!aw# nliterc (nonlinear iteration control)
+!aw1.0d-8 0.5
+
+# head bcn, records=20, direction=0
+1 1  1 -0.00005 0
+1 1  2 -0.00005 0
+1 1  3 -0.00005 0
+1 1  4 -0.00005 0
+1 1  5 -0.00005 0
+1 1  6 -0.00005 0
+1 1  7 -0.00005 0
+1 1  8 -0.00005 0
+1 1  9 -0.00005 0
+1 1 10 -0.00005 0
+1 1 11 -0.00005 0
+1 1 12 -0.00005 0
+1 1 13 -0.00005 0
+1 1 14 -0.00005 0
+1 1 15 -0.00005 0
+1 1 16 -0.00005 0
+1 1 17 -0.00005 0
+1 1 18 -0.00005 0
+1 1 19 -0.00005 0
+1 1 20 -0.00005 0
+
+!!hinzugefügt!!
+# head bcd, simple=back
+1380*20.d0
+# head bcd, simple=right
+1380*20.d0
+
+!==========>>>>>  INITIAL VALUES 
+# head init
+95220*20.
+# temp init
+95220*20. 
+
+
+!==========>>>>>  GENERAL 
+!# compm
+!1.0d-8
+
+!!hinzugefügt
+# fluid props
+1000.0d0 5.0D-8 4218.0d0 0.65d0 1.0D-3 0.02d0
+
+
+%&&&&# monitor records=3
+60 29 1 1
+60 98 1 1
+60 168 1 1 
+
+!==========>>>>>  UNIT DESCRIPTION !!!added compm!!! changed so that it fits to 2d analytical solution
+# units
+0.1d0  	1.d0 1.d0 1.D-12     1.0d-8 	1.d0 1.d0 3.35d0 0.000000D-6 2.3d6	  10.d0 	  0.0d0 0.0d0	  1 : background
+# uindex
+95220*1 

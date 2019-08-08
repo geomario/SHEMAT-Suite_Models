@@ -1,0 +1,2121 @@
+  
+ ======================================
+ Shem-FW/AD/SM 7.50 (Smarty)                                                    
+  
+ ======================================
+  
+  
+  
+  *** NEW MODEL 
+ 
+   checking input definitions:
+     from file "Theis3D"
+  
+   reading model input parameter:
+     from file "Theis3D"
+  
+  [R] : title
+  [R] : runmode
+     >>> forward modeling
+  <D> : free=0, confined flow !
+  [R] : linfo
+  [R] : [i0, j0, k0] = [  69,  69,  20]
+  [R] : nonlinear solver parameter
+  [I] : fixed relxation factor assumed
+  [R] : output suffix: .h5:[ ], .plt:[ ], .vtk:[X], .txt:[ ]
+  
+   reading flow parameters
+  
+  [R] : flow linear solver (control=  64)
+  [R] : flow nonlinear iteration tolerance
+  [I] : flow nonlinear relaxation factor
+  
+  <D> : no temperature [disabled]
+  
+  
+  <D> : no transport [disabled]
+  
+  
+  <D> : no electric potential [disabled]
+  
+  
+  <D> : grav =   0.9810E+01
+  <D> : no fluid heat production
+  <D> : rref, reference density =   0.9980E+03
+  <D> : tref, reference temperature =   0.2000E+02
+  <D> : fixed rhocm, defined by unit
+  
+   reading zone parameter 
+  
+  [R] : "uindex" - unit index number, unit-cell assignment
+  [I] : approx. speedup for the full solver :   1.00
+  
+  [R] : "units" - unit (rock) properties
+  
+   reading/preprocessing arrays
+  
+  [R] : delx
+  [R] : dely
+  [R] : delz
+  
+   reading initial values 
+  
+  [R] : head, in [m]
+  [R] : temp, in [degree Celsius]
+  [R] : pres, in [MPa]
+  
+   reading boundary conditions 
+  
+  [R] : head bcn, direction=none , records=    20, bcmy=  0.1000E+19, (offset=     1)
+  [R] : head bcd, simple=back , (size=  1380), bcmy=  0.1000E+19, error=ignore, (offset=    21)
+            20 BC's ignored (SIMPLE mode)
+  [R] : head bcd, simple=right, (size=  1380), bcmy=  0.1000E+19, error=ignore, (offset=  1381)
+  
+  <D> : property limitations
+  [R] : No default Darcy velocity - head active!
+  
+   reading external file control
+  
+ 
+   reading time input parameter:
+     from file "Theis3D"
+ 
+  [R] : timestep control
+  [R] : tunit =          0.86400000E+05
+  <D> : tstart=          0.00000000E+00
+  <D> : tshift=          0.00000000E+00
+  <D> : titer =      0
+  [R] : periods, records=   1
+    time :  0.0000E+00 -   0.3500E+01, #      100, linear
+  <D> : no monitoring points !
+  <D> : no output times !
+ 
+ 
+  [W] : "Theis3D_status.log"
+error: rref=  0.9980E+03 not consistent
+You should explicitely define a section "# rref" with a value like   0.9979E+03, calulated range [  0.9978E+03,   0.9979E+03,   0.9979E+03] !!!
+rref set to:  0.9979E+03 (= rmax)
+ 
+  [I] : memory:      64.047 MByte data
+ 
+  
+  >>>> new time step:      1
+  >>>>     cum. time=   0.35000000E-01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.8629208832799D-12 , Number of Iterations:    87 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.10768732E+02, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5464394418010D-12 , Number of Iterations:    42 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.64364029E-03, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5429886053391D-12 , Number of Iterations:     2 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh = -0.23637778E-07, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5429843534915D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     4, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:      2
+  >>>>     cum. time=   0.70000000E-01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.3892994514050D-12 , Number of Iterations:    75 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.16329807E+01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.8445207694578D-12 , Number of Iterations:    38 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.17033014E-03, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7560321186925D-12 , Number of Iterations:     2 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh = -0.12352140E-07, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7560373594315D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     4, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:      3
+  >>>>     cum. time=   0.10500000E+00/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.7205153076444D-12 , Number of Iterations:    72 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.82042268E+00, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.6002193634206D-12 , Number of Iterations:    35 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.92213367E-04, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5936903770017D-12 , Number of Iterations:     2 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh = -0.24946436E-08, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5936952524326D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     4, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:      4
+  >>>>     cum. time=   0.14000000E+00/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.2624733475541D-12 , Number of Iterations:    76 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.54637970E+00, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.6834679306365D-12 , Number of Iterations:    34 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.62474179E-04, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.9357200886740D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:      5
+  >>>>     cum. time=   0.17500000E+00/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.4549232958280D-12 , Number of Iterations:    75 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.40898406E+00, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5403719726861D-12 , Number of Iterations:    35 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.46968720E-04, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7771478961656D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:      6
+  >>>>     cum. time=   0.21000000E+00/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.9107335737159D-12 , Number of Iterations:    70 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.32663104E+00, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7169505956776D-12 , Number of Iterations:    32 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.37548992E-04, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.8414175185989D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:      7
+  >>>>     cum. time=   0.24500000E+00/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.2125502968072D-12 , Number of Iterations:    75 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.27185990E+00, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5416226034421D-12 , Number of Iterations:    33 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.31185517E-04, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.6630518095695D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:      8
+  >>>>     cum. time=   0.28000000E+00/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.9377720001193D-12 , Number of Iterations:    79 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.23283207E+00, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4241519763167D-12 , Number of Iterations:    32 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.26648470E-04, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5641481642434D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:      9
+  >>>>     cum. time=   0.31500000E+00/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.9755130070198D-12 , Number of Iterations:    81 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.20361948E+00, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.6631302554268D-12 , Number of Iterations:    30 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.23252782E-04, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7341637186174D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     10
+  >>>>     cum. time=   0.35000000E+00/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.6439528643499D-12 , Number of Iterations:    81 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.18093307E+00, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.8649744579189D-12 , Number of Iterations:    31 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.20613079E-04, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.9125068521310D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     11
+  >>>>     cum. time=   0.38500000E+00/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.6298790634810D-12 , Number of Iterations:    79 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.16280437E+00, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.2889889595729D-12 , Number of Iterations:    34 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.18488236E-04, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4060047567338D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     12
+  >>>>     cum. time=   0.42000000E+00/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.4118247483209D-12 , Number of Iterations:    76 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.14798400E+00, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.2198386049105D-12 , Number of Iterations:    34 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.16728761E-04, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.3289163257551D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     13
+  >>>>     cum. time=   0.45500000E+00/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.3100504780764D-12 , Number of Iterations:    77 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.13564109E+00, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5921631949393D-12 , Number of Iterations:    29 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.15298141E-04, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.6283150888932D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     14
+  >>>>     cum. time=   0.49000000E+00/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.7869962241080D-12 , Number of Iterations:    75 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.12520167E+00, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4391415814040D-12 , Number of Iterations:    31 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.14083054E-04, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4720717658171D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     15
+  >>>>     cum. time=   0.52500000E+00/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.6813897661408D-12 , Number of Iterations:    74 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.11625644E+00, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7694464746007D-12 , Number of Iterations:    29 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.13058804E-04, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7883885583614D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     16
+  >>>>     cum. time=   0.56000000E+00/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.2105828953043D-12 , Number of Iterations:    74 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.10850571E+00, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.8392468124089D-12 , Number of Iterations:    29 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.12130953E-04, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.8566514211113D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     17
+  >>>>     cum. time=   0.59500000E+00/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.7335888490864D-12 , Number of Iterations:    74 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.10172495E+00, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.8837467582572D-12 , Number of Iterations:    30 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.11360386E-04, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.9171919869351D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     18
+  >>>>     cum. time=   0.63000000E+00/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.4386368270024D-13 , Number of Iterations:    74 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.95742704E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4514456068399D-12 , Number of Iterations:    29 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.10650994E-04, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4886871600214D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     19
+  >>>>     cum. time=   0.66500000E+00/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.2966050302544D-12 , Number of Iterations:    75 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.90425582E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.3698545911016D-12 , Number of Iterations:    29 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.10049035E-04, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4012698522734D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     20
+  >>>>     cum. time=   0.70000000E+00/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.6730923012574D-12 , Number of Iterations:    79 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.85668430E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.9506569927244D-12 , Number of Iterations:    27 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.94957556E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.9427914487046D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     21
+  >>>>     cum. time=   0.73500000E+00/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.7464403670826D-12 , Number of Iterations:    74 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.81387176E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.6835984539085D-12 , Number of Iterations:    29 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.89480325E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7194785342340D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     22
+  >>>>     cum. time=   0.77000000E+00/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.1233858035183D-12 , Number of Iterations:    74 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.77513751E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.3086137646249D-12 , Number of Iterations:    30 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.85039879E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.3413718840642D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     23
+  >>>>     cum. time=   0.80500000E+00/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.4233540651164D-12 , Number of Iterations:    74 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.73992477E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.9888794235835D-12 , Number of Iterations:    25 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.81237712E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.9389548437804D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     24
+  >>>>     cum. time=   0.84000000E+00/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.2268195157706D-12 , Number of Iterations:    74 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.70777410E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.8506317717835D-12 , Number of Iterations:    28 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.77314916E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.8873916607060D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     25
+  >>>>     cum. time=   0.87500000E+00/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.5505585015730D-12 , Number of Iterations:    75 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.67830264E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4425201100466D-12 , Number of Iterations:    28 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.74093928E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4592219306697D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     26
+  >>>>     cum. time=   0.91000000E+00/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.5868980986891D-12 , Number of Iterations:    77 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.65118854E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5874069638663D-12 , Number of Iterations:    28 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.70828984E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.6113754339869D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     27
+  >>>>     cum. time=   0.94500000E+00/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.6666983718404D-12 , Number of Iterations:    75 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.62615990E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5092689338745D-12 , Number of Iterations:    29 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.68059043E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5229148722062D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     28
+  >>>>     cum. time=   0.98000000E+00/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.9336330609667D-12 , Number of Iterations:    79 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.60298459E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.3481317866682D-12 , Number of Iterations:    31 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.65359690E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.3669004157610D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     29
+  >>>>     cum. time=   0.10150000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.1958901782875D-12 , Number of Iterations:    74 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.58146432E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7396391993484D-12 , Number of Iterations:    31 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.62824756E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7454231352604D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     30
+  >>>>     cum. time=   0.10500000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.4383725328400D-12 , Number of Iterations:    75 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.56142763E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.3612552111846D-12 , Number of Iterations:    32 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.60502200E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.3967592304983D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     31
+  >>>>     cum. time=   0.10850000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.9797516990089D-13 , Number of Iterations:    72 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.54272645E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4541345163883D-12 , Number of Iterations:    26 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.58398727E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4573965409381D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     32
+  >>>>     cum. time=   0.11200000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.2135653070050D-12 , Number of Iterations:    72 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.52523122E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5998789855211D-12 , Number of Iterations:    25 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.56484994E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.6043233027149D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     33
+  >>>>     cum. time=   0.11550000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.5934634092101D-12 , Number of Iterations:    72 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.50882896E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.3382375979141D-12 , Number of Iterations:    30 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.54651072E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.3566499413706D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     34
+  >>>>     cum. time=   0.11900000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.1677159355510D-12 , Number of Iterations:    74 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.49342063E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.9700141292510D-12 , Number of Iterations:    27 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.52960408E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.9715832708865D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     35
+  >>>>     cum. time=   0.12250000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.4052867434743D-12 , Number of Iterations:    75 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.47891792E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7300612543642D-12 , Number of Iterations:    30 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.51335278E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7029307569246D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     36
+  >>>>     cum. time=   0.12600000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.5143248820907D-12 , Number of Iterations:    73 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.46524376E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.8870549364402D-12 , Number of Iterations:    25 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.49434974E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.8843344576659D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     37
+  >>>>     cum. time=   0.12950000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.4801948782957D-12 , Number of Iterations:    73 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.45232878E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7261186755594D-12 , Number of Iterations:    25 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.47856176E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7284704298609D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     38
+  >>>>     cum. time=   0.13300000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.9828007170023D-12 , Number of Iterations:    66 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.44011173E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5387606522460D-12 , Number of Iterations:    26 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.46332167E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5433517768666D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     39
+  >>>>     cum. time=   0.13650000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.6653798698584D-12 , Number of Iterations:    74 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.42853704E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5833425730397D-12 , Number of Iterations:    26 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.45138801E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5886943828236D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     40
+  >>>>     cum. time=   0.14000000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.4281406483537D-12 , Number of Iterations:    78 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.41755565E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5023749838562D-12 , Number of Iterations:    27 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.43684422E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5210768907423D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     41
+  >>>>     cum. time=   0.14350000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.1925611993117D-12 , Number of Iterations:    75 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.40712312E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.3968440021148D-12 , Number of Iterations:    26 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.42479406E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.3997483460381D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     42
+  >>>>     cum. time=   0.14700000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.4271487327059D-12 , Number of Iterations:    77 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.39719885E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4894353773034D-12 , Number of Iterations:    28 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.41528211E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5207096215999D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     43
+  >>>>     cum. time=   0.15050000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.5814945164688D-12 , Number of Iterations:    73 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.38774677E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7031339002551D-12 , Number of Iterations:    24 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.40647290E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7037455202476D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     44
+  >>>>     cum. time=   0.15400000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.4560136659154D-12 , Number of Iterations:    75 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.37873387E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4579159656754D-12 , Number of Iterations:    24 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.39554441E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4604652282073D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     45
+  >>>>     cum. time=   0.15750000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.7977758718153D-12 , Number of Iterations:    63 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.37013038E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.8160161932939D-12 , Number of Iterations:    24 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.38584961E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.8148820838705D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     46
+  >>>>     cum. time=   0.16100000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.6826536930884D-12 , Number of Iterations:    75 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.36190838E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.8816307213167D-12 , Number of Iterations:    24 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.37900136E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.8828796898549D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     47
+  >>>>     cum. time=   0.16450000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.8561077408018D-12 , Number of Iterations:    73 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.35404355E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7279590872638D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.36976182E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7275668637026D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     48
+  >>>>     cum. time=   0.16800000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.3369625410598D-12 , Number of Iterations:    73 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.34651305E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5232119128946D-12 , Number of Iterations:    25 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.35997346E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5277111263547D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     49
+  >>>>     cum. time=   0.17150000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.9486816664932D-12 , Number of Iterations:    73 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.33929549E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4886457368000D-12 , Number of Iterations:    25 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.35375006E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4898603414474D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     50
+  >>>>     cum. time=   0.17500000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.2099546940872D-12 , Number of Iterations:    74 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.33237214E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.6611321005643D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.34368656E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.6603596235119D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     51
+  >>>>     cum. time=   0.17850000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.3953576873240D-12 , Number of Iterations:    74 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.32572483E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7734889829218D-12 , Number of Iterations:    25 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.33563282E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7739114038692D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     52
+  >>>>     cum. time=   0.18200000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.3516145748558D-12 , Number of Iterations:    77 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.31933750E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.6978942190598D-12 , Number of Iterations:    26 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.32844612E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7031978824173D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     53
+  >>>>     cum. time=   0.18550000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.5255233941070D-12 , Number of Iterations:    74 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.31319507E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7836685682400D-12 , Number of Iterations:    26 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.32164044E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7892048674995D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     54
+  >>>>     cum. time=   0.18900000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.6764696510528D-12 , Number of Iterations:    76 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.30728360E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7258883391013D-12 , Number of Iterations:    24 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.31628986E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7298101406872D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     55
+  >>>>     cum. time=   0.19250000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.6904094801590D-12 , Number of Iterations:    74 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.30159017E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7232493681629D-12 , Number of Iterations:    26 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.30979385E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7307318559427D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     56
+  >>>>     cum. time=   0.19600000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.9436230594412D-12 , Number of Iterations:    74 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.29610277E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.9647740181553D-12 , Number of Iterations:    24 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.30498958E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.9759813504582D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     57
+  >>>>     cum. time=   0.19950000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.7332846240254D-12 , Number of Iterations:    70 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.29081034E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7250345467084D-12 , Number of Iterations:    25 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.29819337E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7190513697343D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     58
+  >>>>     cum. time=   0.20300000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.6500658873649D-12 , Number of Iterations:    74 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.28570260E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.8220762704628D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.29254134E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.8199947329082D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     59
+  >>>>     cum. time=   0.20650000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.5424575414090D-12 , Number of Iterations:    74 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.28076974E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7184636286956D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.28688563E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7153392001549D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     60
+  >>>>     cum. time=   0.21000000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.5635723310729D-12 , Number of Iterations:    63 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.27600296E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4017860379686D-12 , Number of Iterations:    24 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.28010113E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4038275472306D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     61
+  >>>>     cum. time=   0.21350000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.5327900449047D-12 , Number of Iterations:    64 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.27139370E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7263166664737D-12 , Number of Iterations:    22 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.27548900E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7288337209727D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     62
+  >>>>     cum. time=   0.21700000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.7448306392747D-12 , Number of Iterations:    66 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.26693402E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.6728517550620D-12 , Number of Iterations:    25 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.27070646E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.6799503142445D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     63
+  >>>>     cum. time=   0.22050000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.8081514445210D-12 , Number of Iterations:    75 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.26261670E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7345562349000D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.26803001E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7367987956549D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     64
+  >>>>     cum. time=   0.22400000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.4985981435832D-12 , Number of Iterations:    76 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.25843495E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.8133968188816D-12 , Number of Iterations:    24 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.26369959E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.8100883108719D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     65
+  >>>>     cum. time=   0.22750000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.1921300993825D-12 , Number of Iterations:    74 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.25438224E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.6472891812579D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.25396922E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.6484965799484D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     66
+  >>>>     cum. time=   0.23100000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.3422677278349D-12 , Number of Iterations:    75 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.25045248E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.8059819929980D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.24655121E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.8027699680578D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     67
+  >>>>     cum. time=   0.23450000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.6487309912117D-12 , Number of Iterations:    75 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.24663988E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7460408012842D-12 , Number of Iterations:    24 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.24318995E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7427582948035D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     68
+  >>>>     cum. time=   0.23800000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.3117563436224D-12 , Number of Iterations:    74 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.24293935E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7906641257582D-12 , Number of Iterations:    24 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.23871650E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7877073901838D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     69
+  >>>>     cum. time=   0.24150000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.2433179325289D-12 , Number of Iterations:    74 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.23934560E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5480298743389D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.23431267E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5476992483190D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     70
+  >>>>     cum. time=   0.24500000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.5616744302609D-12 , Number of Iterations:    75 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.23585393E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7829034989694D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.23119892E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7806914945975D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     71
+  >>>>     cum. time=   0.24850000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.2357822433184D-12 , Number of Iterations:    74 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.23245992E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5858450148367D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.22634550E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5914603108473D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     72
+  >>>>     cum. time=   0.25200000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.4654595640930D-12 , Number of Iterations:    65 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.22915937E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5552884218588D-12 , Number of Iterations:    22 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.22192614E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5577006451066D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     73
+  >>>>     cum. time=   0.25550000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.2173908549417D-12 , Number of Iterations:    74 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.22594799E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5013325873386D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.21907599E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5031522201425D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     74
+  >>>>     cum. time=   0.25900000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.8044834562980D-12 , Number of Iterations:    65 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.22282239E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.6174615795838D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.21435884E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.6172014085067D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     75
+  >>>>     cum. time=   0.26250000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.2688480087692D-12 , Number of Iterations:    74 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.21977849E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.6671086478959D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.21286594E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.6705246483501D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     76
+  >>>>     cum. time=   0.26600000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.5035865876653D-12 , Number of Iterations:    65 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.21681348E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.8982686433699D-12 , Number of Iterations:    25 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.20939215E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.8930668550705D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     77
+  >>>>     cum. time=   0.26950000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.2970414115323D-12 , Number of Iterations:    75 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.21392358E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5517845657210D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.20683410E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5548992131730D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     78
+  >>>>     cum. time=   0.27300000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.3502191302706D-12 , Number of Iterations:    66 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.21110636E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4787620312093D-12 , Number of Iterations:    22 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.20287762E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4810177271156D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     79
+  >>>>     cum. time=   0.27650000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.8397462096497D-12 , Number of Iterations:    65 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.20835856E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.9484285039778D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.20008700E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.9446961323985D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     80
+  >>>>     cum. time=   0.28000000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.4014599930194D-12 , Number of Iterations:    75 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.20567709E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5209405919648D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.19844534E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5267384178156D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     81
+  >>>>     cum. time=   0.28350000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.7573024818690D-12 , Number of Iterations:    67 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.20306025E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7528098066104D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.19446708E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.7492482006147D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     82
+  >>>>     cum. time=   0.28700000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.7480334047472D-12 , Number of Iterations:    67 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.20050476E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4659885853515D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.19141054E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4662560873815D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     83
+  >>>>     cum. time=   0.29050000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.5568928275750D-12 , Number of Iterations:    75 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.19800841E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5855462973641D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.19144129E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5865736082835D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     84
+  >>>>     cum. time=   0.29400000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.7662093086027D-12 , Number of Iterations:    60 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.19556941E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4533340887111D-12 , Number of Iterations:    24 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.18710204E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4572842998573D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     85
+  >>>>     cum. time=   0.29750000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.3546958973625D-12 , Number of Iterations:    75 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.19318509E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4953599411035D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.18570965E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4948807115361D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     86
+  >>>>     cum. time=   0.30100000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.7808525174331D-12 , Number of Iterations:    66 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.19085391E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4395042958264D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.18100722E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4435875075731D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     87
+  >>>>     cum. time=   0.30450000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.8379200084172D-12 , Number of Iterations:    67 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.18857352E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4032210364503D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.17872121E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4048793281345D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     88
+  >>>>     cum. time=   0.30800000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.2851492238268D-12 , Number of Iterations:    75 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.18634204E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4336709709790D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.17830095E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4362378617184D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     89
+  >>>>     cum. time=   0.31150000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.4613402013430D-12 , Number of Iterations:    70 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.18415815E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.2589134628420D-12 , Number of Iterations:    24 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.17503328E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.2637463846008D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     90
+  >>>>     cum. time=   0.31500000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.8818849840819D-12 , Number of Iterations:    68 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.18201993E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.2838981544420D-12 , Number of Iterations:    24 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.17188862E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.2910304901855D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     91
+  >>>>     cum. time=   0.31850000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.4208669368859D-12 , Number of Iterations:    77 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.17992545E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5854563922306D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.17240032E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5829127739415D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     92
+  >>>>     cum. time=   0.32200000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.7243013902797D-12 , Number of Iterations:    79 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.17787361E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5933381697180D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.16933345E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5939004346111D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     93
+  >>>>     cum. time=   0.32550000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.2882695857143D-12 , Number of Iterations:    74 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.17586300E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4561264234752D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.16555682E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4576664755075D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     94
+  >>>>     cum. time=   0.32900000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.4025425010421D-12 , Number of Iterations:    71 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.17389211E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4415441026321D-12 , Number of Iterations:    22 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.16197496E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4472815575125D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     95
+  >>>>     cum. time=   0.33250000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.3864640259036D-12 , Number of Iterations:    70 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.17195937E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5387272340489D-12 , Number of Iterations:    22 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.16133280E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5421277955444D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     96
+  >>>>     cum. time=   0.33600000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.1595430475261D-12 , Number of Iterations:    71 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.17006376E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.3550109138366D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.15869103E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.3623324840212D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     97
+  >>>>     cum. time=   0.33950000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.5807059612423D-12 , Number of Iterations:    77 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.16820388E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5543058291662D-12 , Number of Iterations:    24 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.15831863E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.5548909831555D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     98
+  >>>>     cum. time=   0.34300000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.7213746767236D-12 , Number of Iterations:    71 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.16637893E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.8516101037800D-12 , Number of Iterations:    22 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.15355468E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.8562849927126D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:     99
+  >>>>     cum. time=   0.34650000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.4960787986991D-12 , Number of Iterations:    64 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.16458724E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.6089709486301D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.15442134E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.6074217183728D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  
+  >>>> new time step:    100
+  >>>>     cum. time=   0.35000000E+01/  0.35000000E+01
+  >>>>     time step=   0.35000000E-01
+  nrm2(R) = 0.7839148155211D-12 , Number of Iterations:    69 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     1, difmaxh = -0.16282823E-01, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4047736605580D-12 , Number of Iterations:    23 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     2, difmaxh = -0.15059523E-05, difmaxt =  0.10000000E-20
+  nrm2(R) = 0.4125413190424D-12 , Number of Iterations:     1 (BiCGStab)
+!!!: neumann head greater than 1/2 :
+x:    0.300E+03y:  0.300E+03z:  0.300E+03
+ 
+  [I] : iter_nl =     3, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "Theis3D_status.log"
+  [I] : final time step =      100, simulation time  0.350000E+01
+  [W] : HDF5 to "Theis3D_final.h5"
+  [W] : VTK to "Theis3D_final.vtk"
+ Deallocated Memory, remaining   1.991271972656250E-003  MB
+ total cpu time:    1:34.28 min
+ RUN O.K.
