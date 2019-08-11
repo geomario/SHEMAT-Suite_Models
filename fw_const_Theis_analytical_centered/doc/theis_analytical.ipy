@@ -167,7 +167,7 @@ Q = -0.0010  # Minimaler max der Differenzen
 
 # Factor 0.15625*20 (for the square meter)
 
-h_ana = np.array([h_theis(rx-x[5], t, 20, Q, delz, K, S) for rx in x])
+h_ana = np.array([h_theis(np.abs(rx-x[5]), t, 20, Q, delz, K, S) for rx in x])
 u = np.array([rx**2 * S / (4 * delz * K * t) for rx in x])
 
 idxarr = np.arange(69) != 5      # Exclude number 5
