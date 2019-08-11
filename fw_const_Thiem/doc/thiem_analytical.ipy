@@ -1,0 +1,119 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+import pskf.tools.plot.plotfunctions as pf
+from vtk.util.numpy_support import vtk_to_numpy
+
+
+def h_thiem(r, R, Q, delz, K, h0):
+    """
+    Compute the head around a pumping well according to the THIEM model.
+    Source: Batu1998, Aquifer Hydraulics, 3.2.1.
+
+    Parameters
+    ----------
+    r : float
+        Distance from well [m]
+
+    R : float
+        Distance, at which the well has no influence anymore. This is
+        an input and defined by the user. [m]
+
+    Q : float
+        Pumping rate of the well in [m3s-1]
+
+    delz : float
+        Thickness of aquifer in [m]
+
+    K : float
+       Hydraulic conductivity in [m1s-1]
+
+    h0 : float
+        Undisturbed head without influence of the pumping well in [m].
+        By definition h0 = h(R).
+
+    Returns
+    ----------
+    h : float
+        head at difference r from pumping well and time t. [m]
+    """
+
+    # Compute new head
+    h = h0 + Q / (2 * np.pi * delz * K) * np.log(R / r)
+
+    return h
+
+
+# Input values from SHEMAT Book, Clauser 2003
+
+# Pumping rate Q in [m3s-1]
+Q = -0.001
+
+# Thickness of aquifer in [m]
+delz = 20
+
+# Hydraulic conductivity in [m1s-1]
+rhof = 1000.0
+g = 9.81
+k = 10**-12
+mu = 1 * 10**-3
+
+K = rhof * g * k / mu
+
+# # Storage coefficient [-]
+# phi = 0.1
+# alpha = 10**-8
+# beta = 5 * 10**-8
+# S = rhof * g * (alpha + phi * beta) * delz
+
+# # Distance from well [m]
+# r = 41.953126
+
+# Distance of no influence of well [m]
+R = 2530
+
+# Head without well [m]
+h0 = 20
+
+# # Time in [s]
+# t = 60 * 60 * 24 * 3.5
+
+# Head from vtk
+vtk_reader = pf.my_vtk(
+    '/home/jk125262/SHEMAT-Suite_Models/fw_const_Thiem/',
+    # + 'result/'
+    'THIEM_final.vtk', 'head')
+h_vtk = pf.my_vtk_to_numpy(vtk_reader)
+x = vtk_to_numpy(vtk_reader.GetOutput().GetXCoordinates())
+
+# PUMPING RATE vs SHEMAT-Suite Neumann Boundary condition not clear...
+
+# Q = -0.0040  # Minimaler max der Differenzen
+# Q = -0.0040205                  # Minimaler Mean der Differenzen
+# Q = -0.00403
+# Q = -0.001
+
+# Factor 0.15625*20 (for the square meter)
+
+h_ana = np.array([h_thiem(np.abs(rx-x[35]), R, Q, delz, K, h0) for rx in x])
+
+idxarr = np.arange(69) != 35      # Exclude number 35
+
+print(Q, np.max(np.abs(h_vtk[35, idxarr] - h_ana[idxarr])),
+      np.mean(np.abs(h_vtk[35, idxarr] - h_ana[idxarr])))
+
+plt.plot(x[idxarr], h_vtk[35, idxarr] - h_ana[idxarr], '-o')
+plt.show()
+
+plt.plot(x[idxarr], np.array(h_vtk[35, idxarr]), '-o')
+plt.plot(x[idxarr], np.array(h_ana[idxarr]))
+plt.show()
+
+# # Logarithmic difference to 20m
+# plt.plot(x, np.log10(20 - np.array(h_vtk[0, :])), '-o')
+# plt.plot(x, np.log10(20 - np.array(h_ana)), '-o')
+# plt.show()
+
+# # Relative error
+# plt.plot(x[:], (h_vtk[0, 0:] - h_ana[:]) / (20 - np.array(h_ana)), '-o')
+# plt.show()
