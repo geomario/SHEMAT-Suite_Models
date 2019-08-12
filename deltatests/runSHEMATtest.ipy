@@ -44,7 +44,7 @@ except ImportError:
 # Compilation input (compare compilequick.sh)
 is_comp = True
 git_branch_input = "master"
-compile_backend = 'gcc'  # gcc, intel
+compile_backend = 'intel'  # gcc, intel
 
 # Execution input
 is_exec = True
@@ -74,7 +74,9 @@ test_models = [
     # "fw_const_NeumannBox",
     # "fw_bas_NeumannBox",
     # "fw_basc_NeumannBox",
-    "fw_const_Theis_analytical_comparison",
+    # "fw_const_Theis_analytical_comparison",
+    # "fw_const_Theis_analytical_centered",
+    # "fw_const_Thiem",
 ]
 
 ###############################################################################
