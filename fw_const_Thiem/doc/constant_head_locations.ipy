@@ -27,10 +27,12 @@ k_well = 1                      # SHEMAT-numbering, Python-array: -1
 
 head_input = 20.0
 
+R = 530                         # no influence length of well
+
 for i in range(x.size):
     for j in range(y.size):
         d = np.sqrt((x[i] - x[i_well-1])**2 + (y[j] - y[j_well-1])**2)
-        if d > 530 and i > 0 and j > 0 and i < x.size-1 and j < y.size-1:
+        if d > R and i > 0 and j > 0 and i < x.size-1 and j < y.size-1:
             n_records = n_records + 1
             input_string = input_string + (
                 str(i+1) + " " + str(j+1) + " 1 " + str(20.0) + "d0 0\n")
