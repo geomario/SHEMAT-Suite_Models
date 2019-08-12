@@ -246,7 +246,7 @@ plt.show()
 
 plt.plot(np.sqrt((x[idxarrx])**2 + (y[idxarry])**2), (h_vtk[idxarrx, idxarry] - h_ana_diag[idxarry]) / (20 - np.array(h_ana_y[idxarry])), '-o', label='Error normalized by drawdown')
 plt.hlines(np.mean(np.abs((h_vtk[idxarrx, idxarry] - h_ana_diag[idxarrdiag]) / (20 - np.array(h_ana_diag[idxarrdiag])))), y[0], y[-1], label='Mean absolute normalized error')
-plt.hlines(np.mean(np.abs(((h_vtk[idxarrx, idxarry] - h_ana_diag[idxarrdiag]) / (20 - np.array(h_ana_diag[idxarrdiag]))))[7:-7]), y[0], y[-1], label='Mean absolute normalized error excluding first/last 7 entries')
+plt.hlines(np.mean(np.abs(((h_vtk[idxarrx, idxarry] - h_ana_diag[idxarrdiag]) / (20 - np.array(h_ana_diag[idxarrdiag]))))[10:-10]), y[0], y[-1], label='Mean absolute normalized error excluding first/last 10 entries')
 plt.gca().set_title('Thiem: Errors relative to drawdown in diagonal direction', size=20)
 plt.gca().set_ylabel('relative error',
                      fontsize=20,
