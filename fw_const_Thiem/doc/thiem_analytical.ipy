@@ -1,3 +1,5 @@
+import matplotlib as mpl
+from matplotlib import cm            # Colormap commands (cm.get_cmap())
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -70,7 +72,7 @@ K = rhof * g * k / mu
 # r = 41.953126
 
 # Distance of no influence of well [m]
-R = 2530
+R = 530
 
 # Head without well [m]
 h0 = 20
@@ -84,7 +86,20 @@ vtk_reader = pf.my_vtk(
     # + 'result/'
     'THIEM_final.vtk', 'head')
 h_vtk = pf.my_vtk_to_numpy(vtk_reader)
-x = vtk_to_numpy(vtk_reader.GetOutput().GetXCoordinates())
+x = pf.my_vtk_coords(vtk_reader, 'x')
+y = pf.my_vtk_coords(vtk_reader, 'y')
+
+
+fig = plt.figure(1, figsize=[10, 10])
+ax = fig.add_subplot(1, 1, 1)
+im = mpl.image.NonUniformImage(ax,
+                               interpolation="nearest",
+                               cmap=pf.cmap_discretize(cm.viridis, 50))
+im.set_data(x, y, h_vtk)
+ax.images.append(im)
+ax.set_xlim(x[0], x[-1])
+ax.set_ylim(y[0], y[-1])
+plt.show()
 
 # PUMPING RATE vs SHEMAT-Suite Neumann Boundary condition not clear...
 
@@ -95,17 +110,17 @@ x = vtk_to_numpy(vtk_reader.GetOutput().GetXCoordinates())
 
 # Factor 0.15625*20 (for the square meter)
 
-h_ana = np.array([h_thiem(np.abs(rx-x[35]), R, Q, delz, K, h0) for rx in x])
+h_ana = np.array([h_thiem(np.abs(rx-x[34]), R, Q, delz, K, h0) for rx in x])
 
-idxarr = np.arange(69) != 35      # Exclude number 35
+idxarr = np.arange(69) != 34      # Exclude number 35
 
-print(Q, np.max(np.abs(h_vtk[35, idxarr] - h_ana[idxarr])),
-      np.mean(np.abs(h_vtk[35, idxarr] - h_ana[idxarr])))
+print(Q, np.max(np.abs(h_vtk[34, idxarr] - h_ana[idxarr])),
+      np.mean(np.abs(h_vtk[34, idxarr] - h_ana[idxarr])))
 
-plt.plot(x[idxarr], h_vtk[35, idxarr] - h_ana[idxarr], '-o')
+plt.plot(x[idxarr], h_vtk[34, idxarr] - h_ana[idxarr], '-o')
 plt.show()
 
-plt.plot(x[idxarr], np.array(h_vtk[35, idxarr]), '-o')
+plt.plot(x[idxarr], np.array(h_vtk[34, idxarr]), '-o')
 plt.plot(x[idxarr], np.array(h_ana[idxarr]))
 plt.show()
 
