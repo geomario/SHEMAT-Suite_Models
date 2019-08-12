@@ -150,7 +150,7 @@ plt.grid()
 plt.legend(loc=4)
 plt.show()
 
-plt.plot(x[idxarrx], h_vtk[idxarrx, 34] - h_ana[idxarrx], '-o', label='SHEMAT-Suite - analytical')
+plt.plot(x[idxarrx], h_vtk[idxarrx, 34] - h_ana_x[idxarrx], '-o', label='SHEMAT-Suite - analytical')
 plt.gca().set_title('Thiem: Errors in x-direction', size=20)
 plt.gca().set_ylabel('head difference [m]',
                      fontsize=20,
@@ -192,7 +192,7 @@ plt.grid()
 plt.legend(loc=4)
 plt.show()
 
-plt.plot(y[idxarry], h_vtk[34, idxarry] - h_ana[idxarry], '-o', label='SHEMAT-Suite - analytical')
+plt.plot(y[idxarry], h_vtk[34, idxarry] - h_ana_y[idxarry], '-o', label='SHEMAT-Suite - analytical')
 plt.gca().set_title('Thiem: Errors in y-direction', size=20)
 plt.gca().set_ylabel('head difference [m]',
                      fontsize=20,
