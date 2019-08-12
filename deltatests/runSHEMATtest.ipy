@@ -12,20 +12,20 @@ except ImportError:
     raise ImportError(
         'No module named pskf.tools.run.runmodule. \n\n' + 'Solution: ' +
         'Download pyshemkf from https://github.com/jjokella/pyshemkf and add' +
-        ' the path /path-to-pyshemkf/pyshemkf/site-packages to the' +
+        ' the path /<path-to-pyshemkf>/pyshemkf/site-packages to the' +
         ' PYTHONPATH.')
 try:
     import SHEMATtest_dirs as std
 except ImportError:
     raise ImportError('No module named SHEMATtest_dirs. \n\n' + 'Solution: ' +
-                      ' Add the path /path-to-SHEMAT-Suite_Models/' +
+                      ' Add the path /<path-to-SHEMAT-Suite_Models>/' +
                       'SHEMAT-Suite_Models/deltatests/site-packages to the' +
                       ' PYTHONPATH.')
 try:
     import SHEMATtest_funcs as stf
 except ImportError:
     raise ImportError('No module named SHEMATtest_funcs. \n\n' + 'Solution: ' +
-                      ' Add the path /path-to-SHEMAT-Suite_Models/' +
+                      ' Add the path /<path-to-SHEMAT-Suite_Models>/' +
                       'SHEMAT-Suite_Models/deltatests/site-packages to the' +
                       ' PYTHONPATH.')
 
@@ -33,7 +33,7 @@ try:
     import SHEMATtest_input as sti
 except ImportError:
     raise ImportError('No module named SHEMATtest_input. \n\n' + 'Solution: ' +
-                      ' Add the path /path-to-SHEMAT-Suite_Models/' +
+                      ' Add the path /<path-to-SHEMAT-Suite_Models>/' +
                       'SHEMAT-Suite_Models/deltatests/site-packages to the' +
                       ' PYTHONPATH.')
 
