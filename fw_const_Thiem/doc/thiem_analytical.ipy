@@ -1,10 +1,27 @@
 import matplotlib as mpl
-from matplotlib import cm            # Colormap commands (cm.get_cmap())
+from matplotlib import cm  # Colormap commands (cm.get_cmap())
 import numpy as np
 import matplotlib.pyplot as plt
 
-import pskf.tools.plot.plotfunctions as pf
-from vtk.util.numpy_support import vtk_to_numpy
+try:
+    import pskf.tools.plot.plotfunctions as pf
+except ImportError:
+    raise ImportError(
+        'No module named pskf.tools.plot.plotfunctions. \n\n' + 'Solution: ' +
+        'Download pyshemkf from https://github.com/jjokella/pyshemkf and add' +
+        ' the path /<path-to-pyshemkf>/pyshemkf/site-packages to the' +
+        ' PYTHONPATH.')
+
+try:
+    import pskf.scripts.analysis.plot as ap
+except ImportError:
+    raise ImportError(
+        'No module named pskf.tools.plot.plotfunctions. \n\n' + 'Solution: ' +
+        'Download pyshemkf from https://github.com/jjokella/pyshemkf and add' +
+        ' the path /<path-to-pyshemkf>/pyshemkf/site-packages to the' +
+        ' PYTHONPATH.')
+
+# from vtk.util.numpy_support import vtk_to_numpy
 
 
 def h_thiem(r, R, Q, delz, K, h0):
@@ -41,12 +58,15 @@ def h_thiem(r, R, Q, delz, K, h0):
     """
 
     # Compute new head
-    h = h0 + Q / (2 * np.pi * delz * K) * np.log(R / r)
+    if r > 0:
+        h = h0 + Q / (2 * np.pi * delz * K) * np.log(R / r)
+    else:
+        h = np.nan
 
     return h
 
 
-# Input values from SHEMAT Book, Clauser 2003
+# Input values reflecting input file THIEM
 
 # Pumping rate Q in [m3s-1]
 Q = -0.001
@@ -62,73 +82,178 @@ mu = 1 * 10**-3
 
 K = rhof * g * k / mu
 
-# # Storage coefficient [-]
-# phi = 0.1
-# alpha = 10**-8
-# beta = 5 * 10**-8
-# S = rhof * g * (alpha + phi * beta) * delz
-
-# # Distance from well [m]
-# r = 41.953126
-
 # Distance of no influence of well [m]
 R = 530
 
-# Head without well [m]
+# Head without influence of well [m]
 h0 = 20
 
-# # Time in [s]
-# t = 60 * 60 * 24 * 3.5
-
-# Head from vtk
+# Head, x-coordinates, y-coordinates from vtk
 vtk_reader = pf.my_vtk(
     '/home/jk125262/SHEMAT-Suite_Models/fw_const_Thiem/',
     # + 'result/'
-    'THIEM_final.vtk', 'head')
+    'THIEM_final.vtk',
+    'head')
 h_vtk = pf.my_vtk_to_numpy(vtk_reader)
 x = pf.my_vtk_coords(vtk_reader, 'x')
 y = pf.my_vtk_coords(vtk_reader, 'y')
 
+# Analytical formulae
+h_ana_x = np.array(
+    [h_thiem(np.abs(rx - x[34]), R, Q, delz, K, h0) for rx in x])
+h_ana_y = np.array(
+    [h_thiem(np.abs(ry - y[34]), R, Q, delz, K, h0) for ry in y])
+h_ana_diag = np.array([
+    h_thiem(
+        np.sqrt(np.abs(rx - x[34])**2 + np.abs(ry - y[34])**2), R, Q, delz, K,
+        h0) for rx, ry in np.transpose(np.array([x, y]))
+])
 
-fig = plt.figure(1, figsize=[10, 10])
+# Index field excluding the well index
+idxarrx = np.arange(x.size) != 34  # Exclude number 35
+idxarry = np.arange(y.size) != 34  # Exclude number 35
+idxarrdiag = np.arange((x.size + y.size)/2) != 34  # Exclude number 35
+
+# Plot head field
+fig = plt.figure(1, figsize=[15, 10])
 ax = fig.add_subplot(1, 1, 1)
-im = mpl.image.NonUniformImage(ax,
-                               interpolation="nearest",
-                               cmap=pf.cmap_discretize(cm.viridis, 50))
-im.set_data(x, y, h_vtk)
-ax.images.append(im)
-ax.set_xlim(x[0], x[-1])
-ax.set_ylim(y[0], y[-1])
+ap.plot(
+    ax,
+    x,
+    y,
+    x,
+    y,
+    np.transpose(h_vtk),
+    '/home/jk125262/' +
+    'SHEMAT-Suite_Models/fw_const_Thiem/doc/thiem_analytical.pdf',
+    num_cbar=50)
+plt.gca().set_title('Thiem 2D: Head distribution', size=20)
+cb_ax = pf.cb(
+    fig.add_subplot(1, 2, 1),
+    ax,
+    varname='head',
+    varlabels={'head': r'$\mathrm{h}$ [$\mathrm{m}$]'},
+    labelpad=1.02)
 plt.show()
 
-# PUMPING RATE vs SHEMAT-Suite Neumann Boundary condition not clear...
-
-# Q = -0.0040  # Minimaler max der Differenzen
-# Q = -0.0040205                  # Minimaler Mean der Differenzen
-# Q = -0.00403
-# Q = -0.001
-
-# Factor 0.15625*20 (for the square meter)
-
-h_ana = np.array([h_thiem(np.abs(rx-x[34]), R, Q, delz, K, h0) for rx in x])
-
-idxarr = np.arange(69) != 34      # Exclude number 35
-
-print(Q, np.max(np.abs(h_vtk[34, idxarr] - h_ana[idxarr])),
-      np.mean(np.abs(h_vtk[34, idxarr] - h_ana[idxarr])))
-
-plt.plot(x[idxarr], h_vtk[34, idxarr] - h_ana[idxarr], '-o')
+# Plot transect in x-direction
+plt.plot(x[idxarrx], np.array(h_vtk[idxarrx, 34]), 'o', label='SHEMAT-Suite')
+plt.plot(x[idxarrx], np.array(h_ana_x[idxarrx]), label='analytical')
+plt.gca().set_title('Thiem: Transect in x-direction', size=20)
+plt.gca().set_ylabel('Hydraulic head [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.gca().set_xlabel('x [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.grid()
+plt.legend(loc=4)
 plt.show()
 
-plt.plot(x[idxarr], np.array(h_vtk[34, idxarr]), '-o')
-plt.plot(x[idxarr], np.array(h_ana[idxarr]))
+plt.plot(x[idxarrx], h_vtk[idxarrx, 34] - h_ana[idxarrx], '-o', label='SHEMAT-Suite - analytical')
+plt.gca().set_title('Thiem: Errors in x-direction', size=20)
+plt.gca().set_ylabel('head difference [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.gca().set_xlabel('x [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.grid()
+plt.legend(loc=4)
 plt.show()
 
-# # Logarithmic difference to 20m
-# plt.plot(x, np.log10(20 - np.array(h_vtk[0, :])), '-o')
-# plt.plot(x, np.log10(20 - np.array(h_ana)), '-o')
-# plt.show()
+# Error relative to drawdown
+plt.plot(x[idxarrx], (h_vtk[idxarrx, 34] - h_ana_x[idxarrx]) / (20 - np.array(h_ana_x[idxarrx])), '-o', label='Error normalized by drawdown')
+plt.hlines(np.mean(np.abs((h_vtk[idxarrx, 34] - h_ana_x[idxarrx]) / (20 - np.array(h_ana_x[idxarrx])))), x[0], x[-1], label='Mean absolute normalized error')
+plt.hlines(np.mean(np.abs(((h_vtk[idxarrx, 34] - h_ana_x[idxarrx]) / (20 - np.array(h_ana_x[idxarrx]))))[4:-4]), x[0], x[-1], label='Mean absolute normalized error excluding first/last 4 entries')
+plt.gca().set_title('Thiem: Errors relative to drawdown in x-direction', size=20)
+plt.gca().set_ylabel('relative error',
+                     fontsize=20,
+                     labelpad=10)
+plt.gca().set_xlabel('x [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.grid()
+plt.legend(loc=1)
+plt.show()
 
-# # Relative error
-# plt.plot(x[:], (h_vtk[0, 0:] - h_ana[:]) / (20 - np.array(h_ana)), '-o')
-# plt.show()
+
+# Plot transect in y-direction
+plt.plot(y[idxarry], np.array(h_vtk[34, idxarry]), 'o', label='SHEMAT-Suite')
+plt.plot(y[idxarry], np.array(h_ana_y[idxarry]), label='analytical')
+plt.gca().set_title('Thiem: Transect in y-direction', size=20)
+plt.gca().set_ylabel('Hydraulic head [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.gca().set_xlabel('y [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.grid()
+plt.legend(loc=4)
+plt.show()
+
+plt.plot(y[idxarry], h_vtk[34, idxarry] - h_ana[idxarry], '-o', label='SHEMAT-Suite - analytical')
+plt.gca().set_title('Thiem: Errors in y-direction', size=20)
+plt.gca().set_ylabel('head difference [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.gca().set_xlabel('y [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.grid()
+plt.legend(loc=4)
+plt.show()
+
+plt.plot(y[idxarry], (h_vtk[34, idxarry] - h_ana_y[idxarry]) / (20 - np.array(h_ana_y[idxarry])), '-o', label='Error normalized by drawdown')
+plt.hlines(np.mean(np.abs((h_vtk[34, idxarry] - h_ana_y[idxarry]) / (20 - np.array(h_ana_y[idxarry])))), y[0], y[-1], label='Mean absolute normalized error')
+plt.hlines(np.mean(np.abs(((h_vtk[34, idxarry] - h_ana_y[idxarry]) / (20 - np.array(h_ana_y[idxarry]))))[4:-4]), y[0], y[-1], label='Mean absolute normalized error excluding first/last 4 entries')
+plt.gca().set_title('Thiem: Errors relative to drawdown in y-direction', size=20)
+plt.gca().set_ylabel('relative error',
+                     fontsize=20,
+                     labelpad=10)
+plt.gca().set_xlabel('y [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.grid()
+plt.legend(loc=1)
+plt.show()
+
+# Plot transect in diagonal direction
+plt.plot(np.sqrt((x[idxarrx])**2 + (y[idxarry])**2), np.array(h_vtk[idxarrx, idxarry]), '-o')
+plt.plot(np.sqrt((x[idxarrx])**2 + (y[idxarry])**2), np.array(h_ana_diag[idxarrdiag]))
+plt.gca().set_title('Thiem: Transect in diagonal direction', size=20)
+plt.gca().set_ylabel('Hydraulic head [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.gca().set_xlabel(r'$\sqrt{x^2 + y^2}$ [m]',
+                     fontsize=20,
+                     labelpad=0)
+plt.grid()
+plt.legend(loc=4)
+plt.show()
+
+plt.plot(np.sqrt((x[idxarrx])**2 + (y[idxarry])**2), np.array(h_vtk[idxarrx, idxarry]) - h_ana_diag[idxarrdiag], '-o', label='SHEMAT-Suite - analytical')
+plt.gca().set_title('Thiem: Errors in diagonal direction', size=20)
+plt.gca().set_ylabel('head difference [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.gca().set_xlabel(r'$\sqrt{x^2 + y^2}$ [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.grid()
+plt.legend(loc=4)
+plt.show()
+
+plt.plot(np.sqrt((x[idxarrx])**2 + (y[idxarry])**2), (h_vtk[idxarrx, idxarry] - h_ana_diag[idxarry]) / (20 - np.array(h_ana_y[idxarry])), '-o', label='Error normalized by drawdown')
+plt.hlines(np.mean(np.abs((h_vtk[idxarrx, idxarry] - h_ana_diag[idxarrdiag]) / (20 - np.array(h_ana_diag[idxarrdiag])))), y[0], y[-1], label='Mean absolute normalized error')
+plt.hlines(np.mean(np.abs(((h_vtk[idxarrx, idxarry] - h_ana_diag[idxarrdiag]) / (20 - np.array(h_ana_diag[idxarrdiag]))))[7:-7]), y[0], y[-1], label='Mean absolute normalized error excluding first/last 7 entries')
+plt.gca().set_title('Thiem: Errors relative to drawdown in diagonal direction', size=20)
+plt.gca().set_ylabel('relative error',
+                     fontsize=20,
+                     labelpad=10)
+plt.gca().set_xlabel('y [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.grid()
+plt.legend(loc=1)
+plt.show()
