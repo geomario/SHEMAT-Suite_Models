@@ -31,8 +31,9 @@ def w(u):
     w: float
         Well function for input value u.
     """
-
-    if u <= 1:
+    if u <= 0:
+        w = np.nan
+    elif u <= 1:
         # Parameters
         a0 = -0.57722
 
@@ -152,41 +153,149 @@ t = 60 * 60 * 24 * 3.5
 
 # Head from vtk
 vtk_reader = pf.my_vtk(
-    '/home/jk125262/SHEMAT-Suite_Models/fw_const_Theis_analytical_comparison/',
+    '/home/jk125262/SHEMAT-Suite_Models/fw_const_Theis_analytical_centered/',
     # + 'result/',
-    'THEIS_final.vtk', 'head')
+    'THEIS_final.vtk',
+    'head')
 h_vtk = pf.my_vtk_to_numpy(vtk_reader)
-x = vtk_to_numpy(vtk_reader.GetOutput().GetXCoordinates())
+x = pf.my_vtk_coords(vtk_reader, 'x')
+y = pf.my_vtk_coords(vtk_reader, 'y')
 
-# PUMPING RATE vs SHEMAT-Suite Neumann Boundary condition not clear...
+# Analytical formulae
+h_ana_x = np.array(
+    [h_theis(np.abs(rx - x[34]), t, 20, Q, delz, K, S) for rx in x])
+h_ana_y = np.array(
+    [h_theis(np.abs(ry - y[34]), t, 20, Q, delz, K, S) for ry in y])
+h_ana_diag = np.array([
+    h_theis(
+        np.sqrt(np.abs(rx - x[34])**2 + np.abs(ry - y[34])**2), t, 20, Q, delz,
+        K, S) for rx, ry in np.transpose(np.array([x, y]))
+])
 
-Q = -0.0010  # Minimaler max der Differenzen
-# Q = -0.0040205                  # Minimaler Mean der Differenzen
-# Q = -0.00403
-# Q = -0.001
+idxarrx = np.arange(x.size) != 34  # Exclude number 35
+idxarry = np.arange(y.size) != 34  # Exclude number 35
+idxarrdiag = np.arange((x.size + y.size)/2) != 34  # Exclude number 35
 
-# Factor 0.15625*20 (for the square meter)
 
-h_ana = np.array([h_theis(np.abs(rx-x[5]), t, 20, Q, delz, K, S) for rx in x])
-u = np.array([rx**2 * S / (4 * delz * K * t) for rx in x])
 
-idxarr = np.arange(69) != 5      # Exclude number 5
-
-print(Q, np.max(np.abs(h_vtk[5, idxarr] - h_ana[idxarr])),
-      np.mean(np.abs(h_vtk[5, idxarr] - h_ana[idxarr])))
-
-plt.plot(x[idxarr], h_vtk[5, idxarr] - h_ana[idxarr], '-o')
+# Plot transect in x-direction
+plt.plot(x[idxarrx], np.array(h_vtk[idxarrx, 34]), 'o', label='SHEMAT-Suite')
+plt.plot(x[idxarrx], np.array(h_ana_x[idxarrx]), label='analytical')
+plt.gca().set_title('Theis: Transect in x-direction', size=20)
+plt.gca().set_ylabel('Hydraulic head [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.gca().set_xlabel('x [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.grid()
+plt.legend(loc=4)
 plt.show()
 
-plt.plot(x[idxarr], np.array(h_vtk[5, idxarr]), '-o')
-plt.plot(x[idxarr], np.array(h_ana[idxarr]))
+plt.plot(x[idxarrx], h_vtk[idxarrx, 34] - h_ana_x[idxarrx], '-o', label='SHEMAT-Suite - analytical')
+plt.gca().set_title('Theis: Errors in x-direction', size=20)
+plt.gca().set_ylabel('head difference [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.gca().set_xlabel('x [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.grid()
+plt.legend(loc=4)
 plt.show()
 
-# # Logarithmic difference to 20m
-# plt.plot(x, np.log10(20 - np.array(h_vtk[0, :])), '-o')
-# plt.plot(x, np.log10(20 - np.array(h_ana)), '-o')
-# plt.show()
+# Error relative to drawdown
+plt.plot(x[idxarrx], (h_vtk[idxarrx, 34] - h_ana_x[idxarrx]) / (20 - np.array(h_ana_x[idxarrx])), '-o', label='Error normalized by drawdown')
+plt.hlines(np.mean(np.abs((h_vtk[idxarrx, 34] - h_ana_x[idxarrx]) / (20 - np.array(h_ana_x[idxarrx])))), x[0], x[-1], label='Mean absolute normalized error')
+plt.hlines(np.mean(np.abs(((h_vtk[idxarrx, 34] - h_ana_x[idxarrx]) / (20 - np.array(h_ana_x[idxarrx]))))[4:-4]), x[0], x[-1], label='Mean absolute normalized error excluding first/last 4 entries')
+plt.gca().set_title('Theis: Errors relative to drawdown in x-direction', size=20)
+plt.gca().set_ylabel('relative error',
+                     fontsize=20,
+                     labelpad=10)
+plt.gca().set_xlabel('x [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.grid()
+plt.legend(loc=1)
+plt.show()
 
-# # Relative error
-# plt.plot(x[:], (h_vtk[0, 0:] - h_ana[:]) / (20 - np.array(h_ana)), '-o')
-# plt.show()
+
+# Plot transect in y-direction
+plt.plot(y[idxarry], np.array(h_vtk[34, idxarry]), 'o', label='SHEMAT-Suite')
+plt.plot(y[idxarry], np.array(h_ana_y[idxarry]), label='analytical')
+plt.gca().set_title('Theis: Transect in y-direction', size=20)
+plt.gca().set_ylabel('Hydraulic head [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.gca().set_xlabel('y [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.grid()
+plt.legend(loc=4)
+plt.show()
+
+plt.plot(y[idxarry], h_vtk[34, idxarry] - h_ana_y[idxarry], '-o', label='SHEMAT-Suite - analytical')
+plt.gca().set_title('Theis: Errors in y-direction', size=20)
+plt.gca().set_ylabel('head difference [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.gca().set_xlabel('y [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.grid()
+plt.legend(loc=4)
+plt.show()
+
+plt.plot(y[idxarry], (h_vtk[34, idxarry] - h_ana_y[idxarry]) / (20 - np.array(h_ana_y[idxarry])), '-o', label='Error normalized by drawdown')
+plt.hlines(np.mean(np.abs((h_vtk[34, idxarry] - h_ana_y[idxarry]) / (20 - np.array(h_ana_y[idxarry])))), y[0], y[-1], label='Mean absolute normalized error')
+plt.hlines(np.mean(np.abs(((h_vtk[34, idxarry] - h_ana_y[idxarry]) / (20 - np.array(h_ana_y[idxarry]))))[4:-4]), y[0], y[-1], label='Mean absolute normalized error excluding first/last 4 entries')
+plt.gca().set_title('Theis: Errors relative to drawdown in y-direction', size=20)
+plt.gca().set_ylabel('relative error',
+                     fontsize=20,
+                     labelpad=10)
+plt.gca().set_xlabel('y [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.grid()
+plt.legend(loc=1)
+plt.show()
+
+# Plot transect in diagonal direction
+plt.plot(np.sqrt((x[idxarrx])**2 + (y[idxarry])**2), np.array(h_vtk[idxarrx, idxarry]), '-o')
+plt.plot(np.sqrt((x[idxarrx])**2 + (y[idxarry])**2), np.array(h_ana_diag[idxarrdiag]))
+plt.gca().set_title('Theis: Transect in diagonal direction', size=20)
+plt.gca().set_ylabel('Hydraulic head [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.gca().set_xlabel(r'$\sqrt{x^2 + y^2}$ [m]',
+                     fontsize=20,
+                     labelpad=0)
+plt.grid()
+plt.legend(loc=4)
+plt.show()
+
+plt.plot(np.sqrt((x[idxarrx])**2 + (y[idxarry])**2), np.array(h_vtk[idxarrx, idxarry]) - h_ana_diag[idxarrdiag], '-o', label='SHEMAT-Suite - analytical')
+plt.gca().set_title('Theis: Errors in diagonal direction', size=20)
+plt.gca().set_ylabel('head difference [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.gca().set_xlabel(r'$\sqrt{x^2 + y^2}$ [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.grid()
+plt.legend(loc=4)
+plt.show()
+
+plt.plot(np.sqrt((x[idxarrx])**2 + (y[idxarry])**2), (h_vtk[idxarrx, idxarry] - h_ana_diag[idxarry]) / (20 - np.array(h_ana_y[idxarry])), '-o', label='Error normalized by drawdown')
+plt.hlines(np.mean(np.abs((h_vtk[idxarrx, idxarry] - h_ana_diag[idxarrdiag]) / (20 - np.array(h_ana_diag[idxarrdiag])))), y[0], y[-1], label='Mean absolute normalized error')
+plt.hlines(np.mean(np.abs(((h_vtk[idxarrx, idxarry] - h_ana_diag[idxarrdiag]) / (20 - np.array(h_ana_diag[idxarrdiag]))))[10:-10]), y[0], y[-1], label='Mean absolute normalized error excluding first/last 10 entries')
+plt.gca().set_title('Theis: Errors relative to drawdown in diagonal direction', size=20)
+plt.gca().set_ylabel('relative error',
+                     fontsize=20,
+                     labelpad=10)
+plt.gca().set_xlabel('y [m]',
+                     fontsize=20,
+                     labelpad=10)
+plt.grid()
+plt.legend(loc=1)
+plt.show()
