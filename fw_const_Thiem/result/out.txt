@@ -1,0 +1,187 @@
+  
+ ======================================
+ Shem-FW/AD/SM 7.50 (Smarty)                                                    
+  
+ ======================================
+  
+  
+  
+  *** NEW MODEL 
+ 
+   checking input definitions:
+     from file "THIEM"
+  
+   reading model input parameter:
+     from file "THIEM"
+  
+  [R] : title
+  [R] : runmode
+     >>> forward modeling
+  <D> : free=0, confined flow !
+  [R] : linfo
+  [R] : [i0, j0, k0] = [  69,  69,   1]
+  [R] : nonlinear solver parameter
+  [I] : fixed relxation factor assumed
+  [R] : output suffix: .h5:[X], .plt:[ ], .vtk:[X], .txt:[ ]
+  
+   reading flow parameters
+  
+  [R] : flow linear solver (control=  64)
+  [R] : flow nonlinear iteration tolerance
+  [I] : flow nonlinear relaxation factor
+  
+  <D> : no temperature [disabled]
+  
+  
+  <D> : no transport [disabled]
+  
+  
+  <D> : no electric potential [disabled]
+  
+  
+  <D> : grav =   0.9810E+01
+  <D> : no fluid heat production
+  <D> : rref, reference density =   0.9980E+03
+  <D> : tref, reference temperature =   0.2000E+02
+  <D> : fixed rhocm, defined by unit
+  
+   reading zone parameter 
+  
+  [R] : "uindex" - unit index number, unit-cell assignment
+  [I] : approx. speedup for the full solver :   1.00
+  
+  [I] : ... alloc_arrays
+  [R] : "units" - unit (rock) properties
+  unit properties:     por        a_kx        a_ky          kz        comp        a_lx        a_ly          lz           q          rc          df          ec          lc         bcl        bcpd        s_nr        s_wr     unit#
+                    0.1000E+00  0.1000E+01  0.1000E+01  0.1000E-11  0.1000E-07  0.1000E+01  0.1000E+01  0.3350E+01  0.1000E-19  0.2300E+07  0.1000E+02  0.1000E-09  0.0000E+00  0.2000E+01  0.1000E+04  0.5000E-01  0.2000E+00     1
+  
+   reading/preprocessing arrays
+  
+  [R] : delx
+  [R] : dely
+  [R] : delz
+  
+   reading initial values 
+  
+  [R] : head, in [m]
+  [R] : temp, in [degree Celsius]
+  [R] : pres, in [MPa]
+  
+   reading boundary conditions 
+  
+  [R] : head bcn, direction=none , records=     1, bcmy=  0.1000E+19, (offset=     1)
+  [R] : head bcd, simple=right, (size=    69), bcmy=  0.1000E+19, error=ignore, (offset=     2)
+  [R] : head bcd, simple=left , (size=    69), bcmy=  0.1000E+19, error=ignore, (offset=    71)
+             2 BC's ignored (SIMPLE mode)
+  [R] : head bcd, simple=back , (size=    69), bcmy=  0.1000E+19, error=ignore, (offset=   138)
+             2 BC's ignored (SIMPLE mode)
+  [R] : head bcd, simple=front, (size=    69), bcmy=  0.1000E+19, error=ignore, (offset=   205)
+  [R] : head bcd, direction=none , records=   428, bcmy=  0.1000E+19, (offset=   274)
+  
+  <D> : property limitations
+  [R] : No default Darcy velocity - head active!
+  
+   reading external file control
+  
+ 
+   reading time input parameter:
+     from file "THIEM"
+ 
+  [R] : Steady state !
+  [R] : tunit =          0.86400000E+05
+  <D> : tstart=          0.00000000E+00
+  <D> : tshift=          0.00000000E+00
+  <D> : titer =      0
+  [R] : periods, records=   1
+    time :  0.0000E+00 -   0.3500E+01, #      100, linear
+  <D> : no monitoring points !
+  <D> : no output times !
+ 
+ 
+  [W] : "THIEM_status.log"
+  ... forward_init
+  ... pressure (init=0)
+  ... user_init (REINJECTION)
+  
+   reading constant fluid properties:
+     from file "THIEM"
+  
+  [R] : constant fluid properties
+  
+     fluid properties: 
+        rhof       compf         cpf        lamf        visf      (sigmaf)
+  0.1000E+04  0.5000E-07  0.4218E+04  0.6500E+00  0.1000E-02  0.2000E-01
+  
+  [?] : WARNING: overwrite "rref" with constant "rhof"
+  [D] : constant gas properties assumed
+  
+  non-wetting properties: 
+        rhon        visn
+  0.6717E+03  0.5310E-04
+  
+  ... pressure (init=0)
+ 
+  [I] : memory:       3.369 MByte data
+ 
+  ... forward(picard)
+ Calculate difmaxf from loc_nltolf =   1.000000000000000E-010
+ difmaxf =   0.100000000000000     
+ Testing convergence with difmaxf =   0.100000000000000     
+ ENOUGH =   0.100000000000000     
+ Testing   0.100000000000000      for convergence in range 
+  1.000000000000000E-010
+  ... init: history[1]
+ ENOUGH =   1.000000000000000E-021
+ Testing   1.000000000000000E-021 for convergence in range 
+  1.000000000000000E-030
+  ... init: history[2]
+  ... calc_user
+  ... pressure (init=1)
+  ... calc_head
+  ... fcoef
+  ... solve(head)
+  ilu precondition
+  nrm2(R) = 0.1385010858485D-02,  nrm2[r] = 0.1385010858485D-02,  nrm2[r] = 0.1215647182168D-03,  nrm2[r] = 0.1279660792312D-01,  nrm2[r] = 0.6112214584807D-04,  nrm2[r] = 0.5723164601370D-04,  nrm2[r] = 0.5906190053966D-04,  nrm2[r] = 0.6223207086944D-04,  nrm2[r] = 0.1247328890762D-03,  nrm2[r] = 0.4960055475076D-04,  nrm2[r] = 0.4027866410950D-04,  nrm2[r] = 0.4148090725634D-04,  nrm2[r] = 0.2733941994699D-04,  nrm2[r] = 0.2639130679553D-04,  nrm2[r] = 0.2523503180063D-04,  nrm2[r] = 0.4210363501531D-04,  nrm2[r] = 0.7807882913085D-05,  nrm2[r] = 0.6584469125297D-05,  nrm2[r] = 0.2677735304661D-05,  nrm2[r] = 0.2728540390508D-05,  nrm2[r] = 0.3727712362268D-04,  nrm2[r] = 0.3161123325170D-06,  nrm2[r] = 0.2033348475924D-06,  nrm2[r] = 0.2460378983850D-06,  nrm2[r] = 0.9266581902310D-07,  nrm2[r] = 0.7728762435845D-07,  nrm2[r] = 0.4701117512188D-07,  nrm2[r] = 0.7487702812263D-07,  nrm2[r] = 0.4938008589021D-07,  nrm2[r] = 0.1263960735741D-07,  nrm2[r] = 0.9748464919506D-08,  nrm2[r] = 0.4485132213142D-08,  nrm2[r] = 0.6232058194752D-09,  nrm2[r] = 0.2505012767913D-08,  nrm2[r] = 0.2863038999542D-08,  nrm2[r] = 0.2273348302724D-08,  nrm2[r] = 0.2442834487128D-08,  nrm2[r] = 0.1310773833538D-08,  nrm2[r] = 0.1908481599338D-09,  nrm2[r] = 0.1065255955548D-10,  nrm2[r] = 0.2135853404032D-11,  nrm2[r] = 0.2942471439229D-11,  nrm2[r] = 0.3267225593004D-11,  nrm2[r] = 0.2341157727604D-11,  nrm2[r] = 0.1360145785918D-10,  nrm2[r] = 0.2851891739862D-11,  nrm2[r] = 0.8015462948273D-10,  nrm2[r] = 0.5412401950813D-13,  nrm2(R) = 0.3913541490767D-13 , Number of Iterations:    47 (BiCGStab)
+ Compare difmaxfold and difmaxf:   0.100000000000000       - 
+  0.100000000000000     
+ Check change with difmaxf =   0.100000000000000     
+  ... check_change
+   nl iteration rms = 0.10295E+01,  difmax =-0.67474E+01, [   35,   35,    1]
+ difmaxf after check_change:   -6.74737341525489     
+ ENOUGH =   -6.74737341525489     
+ Testing    6.74737341525489      for convergence in range 
+  1.000000000000000E-010
+  [I] : iter_nl =     1, difmaxh = -0.67473734E+01, difmaxt =  0.10000000E-20
+  [W] : "THIEM_status.log"
+  ... setting total salinity
+  ... calc_user
+  ... pressure (init=1)
+  ... calc_head
+  ... fcoef
+  ... solve(head)
+  ilu precondition
+  nrm2(R) = 0.3913850482092D-13 , Number of Iterations:     1 (BiCGStab)
+ Compare difmaxfold and difmaxf:   -6.74737341525489       - 
+  -6.74737341525489     
+ Check change with difmaxf =   -6.74737341525489     
+  ... check_change
+   nl iteration rms = 0.00000E+00,  difmax = 0.00000E+00, [    1,    1,    1]
+ difmaxf after check_change:   0.000000000000000E+000
+ ENOUGH =   0.000000000000000E+000
+ Testing   0.000000000000000E+000 for convergence in range 
+  1.000000000000000E-010
+ Simple case converged:  T
+  [I] : iter_nl =     2, difmaxh =  0.00000000E+00, difmaxt =  0.10000000E-20
+  [W] : "THIEM_status.log"
+  ... setting total salinity
+ delt_count                    -1 delt_double                     0 iter_nlold
+                    25
+  [W] : HDF5 to "THIEM_final.h5"
+  [W] : VTK to "THIEM_final.vtk"
+  [I] : ... dealloc_arrays
+ Deallocated Memory, remaining   4.043579101562500E-004  MB
+  
+  [I] : ... dealloc_data
+  
+ total cpu time:    0: 0.49 min
+ RUN O.K.

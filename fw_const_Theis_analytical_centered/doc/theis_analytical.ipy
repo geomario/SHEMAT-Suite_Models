@@ -1,0 +1,375 @@
+import os
+import numpy as np
+import matplotlib.pyplot as plt
+
+import pskf.tools.plot.plotfunctions as pf
+# from vtk.util.numpy_support import vtk_to_numpy
+
+
+def w(u):
+    """
+    Compute well function approximation from Allen(1954) and Hastings(1955)
+    between 0<u<1. Parameters taken from Srivastava(1998).
+
+    TODO: Implement u>1 from same source.
+
+    Srivastava, R., & Guzman-Guzman, A., Practical approximations of the
+    well function, Ground Water, 36(5), 844–848 (1998).
+    http://dx.doi.org/10.1111/j.1745-6584.1998.tb02203.x
+
+    Parameters
+    ----------
+    u : float
+        Argument of the well function \frac{r^2 S}{4 \delta z K t}.
+        r: distance from the well
+        S: storage coefficient
+        \delta z: thickness of aquifer
+        K: hydraulic conductivity
+        t: time
+
+    Returns
+    ----------
+    w: float
+        Well function for input value u.
+    """
+    if u <= 0:
+        w = np.nan
+    elif u <= 1:
+        # Parameters
+        a0 = -0.57722
+
+        a1 = 0.99999
+
+        a2 = -0.24991
+
+        a3 = 0.05519
+
+        a4 = -0.00976
+
+        a5 = 0.00108
+
+        # Well function
+        w = -(-np.log(u) + a0 + a1 * u + a2 * u * u + a3 * u * u * u +
+              a4 * u * u * u * u + a5 * u * u * u * u * u)
+    else:
+        # Parameters
+        b0 = 0.2677
+
+        b1 = 8.63476
+
+        b2 = 18.05902
+
+        b3 = 8.57333
+
+        b4 = 1
+
+        c0 = 3.95850
+
+        c1 = 21.09965
+
+        c2 = 25.63296
+
+        c3 = 9.57332
+
+        c4 = 1
+
+        # Well function
+        w = -(1 / (u * np.exp(u)) * (
+            b0 + b1 * u + b2 * u * u + b3 * u * u * u + b4 * u * u * u * u) /
+              (c0 + c1 * u + c2 * u * u + c3 * u * u * u + c4 * u * u * u * u))
+
+    return w
+
+
+def h_theis(r, t, h0, Q, delz, K, S):
+    """
+    Compute the head around a pumping well according to the THEIS model.
+    Source: SHEMAT-Book Clauser2003, section 2.6.1, p.57.
+
+    Parameters
+    ----------
+    r : float
+        Distance from well [m]
+
+    t : float
+        time [s]
+
+    h0 : float
+        Undisturbed head without influence of the pumping well in [m].
+
+    Q : float
+        Pumping rate of the well in [m3s-1]
+
+    delz : float
+        Thickness of aquifer in [m]
+
+    K : float
+       Hydraulic conductivity in [m1s-1]
+
+    S : float
+        Storage coefficient [-]
+
+    Returns
+    ----------
+    h : float
+        head at difference r from pumping well and time t. [m]
+    """
+
+    # Compute input for well function
+    u = r**2 * S / (4 * delz * K * t)
+
+    # Compute new head
+    h = h0 - Q / (4 * np.pi * delz * K) * w(u)
+
+    return h
+
+
+# Input values from SHEMAT Book, Clauser 2003
+
+# Pumping rate Q in [m3s-1]
+Q = -0.001
+
+# Thickness of aquifer in [m]
+delz = 20
+
+# Hydraulic conductivity in [m1s-1]
+rhof = 1000.0
+g = 9.81
+k = 10**-12
+mu = 1 * 10**-3
+
+K = rhof * g * k / mu
+
+# Storage coefficient [-]
+phi = 0.1
+alpha = 10**-8
+beta = 5 * 10**-8
+S = rhof * g * (alpha + phi * beta) * delz
+
+# Distance from well [m]
+r = 41.953126
+
+# Time in [s]
+t = 60 * 60 * 24 * 3.5
+
+# Head from vtk
+vtk_reader = pf.my_vtk(
+    os.environ['HOME'] +
+    '/SHEMAT-Suite_Models/fw_const_Theis_analytical_centered/' + 'result/',
+    'THEIS_final.vtk', 'head')
+h_vtk = pf.my_vtk_to_numpy(vtk_reader)
+x = pf.my_vtk_coords(vtk_reader, 'x')
+y = pf.my_vtk_coords(vtk_reader, 'y')
+
+# Analytical formulae
+h_ana_x = np.array(
+    [h_theis(np.abs(rx - x[34]), t, 20, Q, delz, K, S) for rx in x])
+h_ana_y = np.array(
+    [h_theis(np.abs(ry - y[34]), t, 20, Q, delz, K, S) for ry in y])
+h_ana_diag = np.array([
+    h_theis(
+        np.sqrt(np.abs(rx - x[34])**2 + np.abs(ry - y[34])**2), t, 20, Q, delz,
+        K, S) for rx, ry in np.transpose(np.array([x, y]))
+])
+
+idxarrx = np.arange(x.size) != 34  # Exclude number 35
+idxarry = np.arange(y.size) != 34  # Exclude number 35
+idxarrdiag = np.arange((x.size + y.size) / 2) != 34  # Exclude number 35
+
+# Plot transect in x-direction
+plt.plot(x[idxarrx], np.array(h_vtk[idxarrx, 34]), 'o', label='SHEMAT-Suite')
+plt.plot(x[idxarrx], np.array(h_ana_x[idxarrx]), label='analytical')
+plt.gca().set_title('Theis: Transect in x-direction', size=20)
+plt.gca().set_ylabel('Hydraulic head [m]', fontsize=20, labelpad=10)
+plt.gca().set_xlabel('x [m]', fontsize=20, labelpad=10)
+plt.grid()
+plt.legend(loc=4)
+plt.savefig(
+    os.environ['HOME'] +
+    '/SHEMAT-Suite_Models/fw_const_Theis_analytical_centered/'
+    + 'doc/pdfs/theis_x_head.pdf'
+)
+plt.show()
+
+plt.plot(
+    x[idxarrx],
+    h_vtk[idxarrx, 34] - h_ana_x[idxarrx],
+    '-o',
+    label='SHEMAT-Suite - analytical')
+plt.gca().set_title('Theis: Errors in x-direction', size=20)
+plt.gca().set_ylabel('head difference [m]', fontsize=20, labelpad=10)
+plt.gca().set_xlabel('x [m]', fontsize=20, labelpad=10)
+plt.grid()
+plt.legend(loc=4)
+plt.savefig(
+    os.environ['HOME'] +
+    '/SHEMAT-Suite_Models/fw_const_Theis_analytical_centered/'
+    + 'doc/pdfs/theis_x_error.pdf'
+)
+plt.show()
+
+# Error relative to drawdown
+plt.plot(
+    x[idxarrx], (h_vtk[idxarrx, 34] - h_ana_x[idxarrx]) /
+    (20 - np.array(h_ana_x[idxarrx])),
+    '-o',
+    label='Error normalized by drawdown')
+plt.hlines(
+    np.mean(
+        np.abs((h_vtk[idxarrx, 34] - h_ana_x[idxarrx]) /
+               (20 - np.array(h_ana_x[idxarrx])))),
+    x[0],
+    x[-1],
+    label='Mean absolute normalized error')
+plt.hlines(
+    np.mean(
+        np.abs(((h_vtk[idxarrx, 34] - h_ana_x[idxarrx]) /
+                (20 - np.array(h_ana_x[idxarrx]))))[4:-4]),
+    x[0],
+    x[-1],
+    label='Mean absolute normalized error excluding first/last 4 entries')
+plt.gca().set_title(
+    'Theis: Errors relative to drawdown in x-direction', size=20)
+plt.gca().set_ylabel('relative error', fontsize=20, labelpad=10)
+plt.gca().set_xlabel('x [m]', fontsize=20, labelpad=10)
+plt.grid()
+plt.legend(loc=1)
+plt.savefig(
+    os.environ['HOME'] +
+    '/SHEMAT-Suite_Models/fw_const_Theis_analytical_centered/'
+    + 'doc/pdfs/theis_x_error_norm.pdf'
+)
+plt.show()
+
+# Plot transect in y-direction
+plt.plot(y[idxarry], np.array(h_vtk[34, idxarry]), 'o', label='SHEMAT-Suite')
+plt.plot(y[idxarry], np.array(h_ana_y[idxarry]), label='analytical')
+plt.gca().set_title('Theis: Transect in y-direction', size=20)
+plt.gca().set_ylabel('Hydraulic head [m]', fontsize=20, labelpad=10)
+plt.gca().set_xlabel('y [m]', fontsize=20, labelpad=10)
+plt.grid()
+plt.legend(loc=4)
+plt.savefig(
+    os.environ['HOME'] +
+    '/SHEMAT-Suite_Models/fw_const_Theis_analytical_centered/'
+    + 'doc/pdfs/theis_y_head.pdf'
+)
+plt.show()
+
+plt.plot(
+    y[idxarry],
+    h_vtk[34, idxarry] - h_ana_y[idxarry],
+    '-o',
+    label='SHEMAT-Suite - analytical')
+plt.gca().set_title('Theis: Errors in y-direction', size=20)
+plt.gca().set_ylabel('head difference [m]', fontsize=20, labelpad=10)
+plt.gca().set_xlabel('y [m]', fontsize=20, labelpad=10)
+plt.grid()
+plt.legend(loc=4)
+plt.savefig(
+    os.environ['HOME'] +
+    '/SHEMAT-Suite_Models/fw_const_Theis_analytical_centered/'
+    + 'doc/pdfs/theis_y_error.pdf'
+)
+plt.show()
+
+plt.plot(
+    y[idxarry], (h_vtk[34, idxarry] - h_ana_y[idxarry]) /
+    (20 - np.array(h_ana_y[idxarry])),
+    '-o',
+    label='Error normalized by drawdown')
+plt.hlines(
+    np.mean(
+        np.abs((h_vtk[34, idxarry] - h_ana_y[idxarry]) /
+               (20 - np.array(h_ana_y[idxarry])))),
+    y[0],
+    y[-1],
+    label='Mean absolute normalized error')
+plt.hlines(
+    np.mean(
+        np.abs(((h_vtk[34, idxarry] - h_ana_y[idxarry]) /
+                (20 - np.array(h_ana_y[idxarry]))))[4:-4]),
+    y[0],
+    y[-1],
+    label='Mean absolute normalized error excluding first/last 4 entries')
+plt.gca().set_title(
+    'Theis: Errors relative to drawdown in y-direction', size=20)
+plt.gca().set_ylabel('relative error', fontsize=20, labelpad=10)
+plt.gca().set_xlabel('y [m]', fontsize=20, labelpad=10)
+plt.grid()
+plt.legend(loc=1)
+plt.savefig(
+    os.environ['HOME'] +
+    '/SHEMAT-Suite_Models/fw_const_Theis_analytical_centered/'
+    + 'doc/pdfs/theis_y_error_norm.pdf'
+)
+plt.show()
+
+# Plot transect in diagonal direction
+plt.plot(
+    np.sqrt((x[idxarrx])**2 + (y[idxarry])**2),
+    np.array(h_vtk[idxarrx, idxarry]), '-o')
+plt.plot(
+    np.sqrt((x[idxarrx])**2 + (y[idxarry])**2),
+    np.array(h_ana_diag[idxarrdiag]))
+plt.gca().set_title('Theis: Transect in diagonal direction', size=20)
+plt.gca().set_ylabel('Hydraulic head [m]', fontsize=20, labelpad=10)
+plt.gca().set_xlabel(r'$\sqrt{x^2 + y^2}$ [m]', fontsize=20, labelpad=0)
+plt.grid()
+plt.legend(loc=4)
+plt.savefig(
+    os.environ['HOME'] +
+    '/SHEMAT-Suite_Models/fw_const_Theis_analytical_centered/'
+    + 'doc/pdfs/theis_diag_head.pdf'
+)
+plt.show()
+
+plt.plot(
+    np.sqrt((x[idxarrx])**2 + (y[idxarry])**2),
+    np.array(h_vtk[idxarrx, idxarry]) - h_ana_diag[idxarrdiag],
+    '-o',
+    label='SHEMAT-Suite - analytical')
+plt.gca().set_title('Theis: Errors in diagonal direction', size=20)
+plt.gca().set_ylabel('head difference [m]', fontsize=20, labelpad=10)
+plt.gca().set_xlabel(r'$\sqrt{x^2 + y^2}$ [m]', fontsize=20, labelpad=10)
+plt.grid()
+plt.legend(loc=4)
+plt.savefig(
+    os.environ['HOME'] +
+    '/SHEMAT-Suite_Models/fw_const_Theis_analytical_centered/'
+    + 'doc/pdfs/theis_diag_error.pdf'
+)
+plt.show()
+
+plt.plot(
+    np.sqrt((x[idxarrx])**2 + (y[idxarry])**2),
+    (h_vtk[idxarrx, idxarry] - h_ana_diag[idxarry]) /
+    (20 - np.array(h_ana_y[idxarry])),
+    '-o',
+    label='Error normalized by drawdown')
+plt.hlines(
+    np.mean(
+        np.abs((h_vtk[idxarrx, idxarry] - h_ana_diag[idxarrdiag]) /
+               (20 - np.array(h_ana_diag[idxarrdiag])))),
+    y[0],
+    y[-1],
+    label='Mean absolute normalized error')
+plt.hlines(
+    np.mean(
+        np.abs(((h_vtk[idxarrx, idxarry] - h_ana_diag[idxarrdiag]) /
+                (20 - np.array(h_ana_diag[idxarrdiag]))))[5:-5]),
+    y[0],
+    y[-1],
+    label='Mean absolute normalized error excluding first/last 5 entries')
+plt.gca().set_title(
+    'Theis: Errors relative to drawdown in diagonal direction', size=20)
+plt.gca().set_ylabel('relative error', fontsize=20, labelpad=10)
+plt.gca().set_xlabel('y [m]', fontsize=20, labelpad=10)
+plt.grid()
+plt.legend(loc=3)
+plt.savefig(
+    os.environ['HOME'] +
+    '/SHEMAT-Suite_Models/fw_const_Theis_analytical_centered/'
+    + 'doc/pdfs/theis_diag_error_norm.pdf'
+)
+plt.show()

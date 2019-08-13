@@ -24,7 +24,7 @@ the output results.
 ## Current number of testmodels in benchmark ##
 
 ```
-==============>>>>>>>>>>>>>>    22    <<<<<<<<<<<<<<==============
+==============>>>>>>>>>>>>>>    24    <<<<<<<<<<<<<<==============
 ```
 
 ## doc ##
@@ -96,7 +96,9 @@ command in `SHEMATtest.py`.
 | `fw_const_NeumannBox`                  | small 3D internal Neumann boundary condition                       |
 | `fw_bas_NeumannBox`                    | small 3D internal Neumann boundary condition                       |
 | `fw_basc_NeumannBox`                   | small 3D internal Neumann boundary condition                       |
-| `fw_const_Theis_analytical_comparison` | transient Theis problem with analytical comparison                 |
+| `fw_const_Theis_analytical_comparison` | transient Theis problem with boundary well                         |
+| `fw_const_Theis_analytical_centered`   | transient Theis problem with centered well                         |
+| `fw_const_Thiem`                       | steady-state Thiem problem with analytical comparison              |
 
 | **Modes**                              | `fw` | `sm` | `ad` |
 |:--------------------------------------:|:----:|:----:|:----:|
@@ -122,6 +124,8 @@ command in `SHEMATtest.py`.
 | `fw_bas_NeumannBox`                    | x    |      |      |
 | `fw_basc_NeumannBox`                   | x    |      |      |
 | `fw_const_Theis_analytical_comparison` | x    |      |      |
+| `fw_const_Theis_analytical_centered`   | x    |      |      |
+| `fw_const_Thiem`                       | x    |      |      |
 
 | **Props**                              | `const` | `bas` | `basc` | `gheexpl` | `kola` | `ice` |
 |:--------------------------------------:|:-------:|:-----:|:------:|:---------:|:------:|-------|
@@ -147,6 +151,8 @@ command in `SHEMATtest.py`.
 | `fw_bas_NeumannBox`                    |         | x     |        |           |        |       |
 | `fw_basc_NeumannBox`                   |         |       | x      |           |        |       |
 | `fw_const_Theis_analytical_comparison` | x       |       |        |           |        |       |
+| `fw_const_Theis_analytical_centered`   | x       |       |        |           |        |       |
+| `fw_const_Thiem`                       | x       |       |        |           |        |       |
 
 | **Variables**                          | `head` | `temp` | `conc` | `head/temp` | `head/conc` | `head/temp/conc` |
 |:--------------------------------------:|:------:|:------:|:------:|:-----------:|:-----------:|:----------------:|
@@ -172,6 +178,8 @@ command in `SHEMATtest.py`.
 | `fw_bas_NeumannBox`                    | x      |        |        |             |             |                  |
 | `fw_basc_NeumannBox`                   | x      |        |        |             |             |                  |
 | `fw_const_Theis_analytical_comparison` | x      |        |        |             |             |                  |
+| `fw_const_Theis_analytical_centered`   | x      |        |        |             |             |                  |
+| `fw_const_Thiem`                       | x      |        |        |             |             |                  |
 
 | **Grid**                               | `1D` | `2D` | `3D` |
 |:--------------------------------------:|:----:|------|:----:|
@@ -197,6 +205,8 @@ command in `SHEMATtest.py`.
 | `fw_bas_NeumannBox`                    |      |      | x    |
 | `fw_basc_NeumannBox`                   |      |      | x    |
 | `fw_const_Theis_analytical_comparison` |      | x    |      |
+| `fw_const_Theis_analytical_centered`   |      | x    |      |
+| `fw_const_Thiem`                       |      | x    |      |
 
 **(x)**: quasi-dimension, only effects in this number of dimensions
 
@@ -225,6 +235,8 @@ command in `SHEMATtest.py`.
 | `fw_bas_NeumannBox`                    | x              |             |
 | `fw_basc_NeumannBox`                   | x              |             |
 | `fw_const_Theis_analytical_comparison` |                | x           |
+| `fw_const_Theis_analytical_centered`   |                | x           |
+| `fw_const_Thiem`                       | x              |             |
 
 | **Inversion**                          | `Deterministic Inversion` | `EnKF` |
 |:--------------------------------------:|:-------------------------:|:------:|
@@ -250,6 +262,8 @@ command in `SHEMATtest.py`.
 | `fw_bas_NeumannBox`                    |                           |        |
 | `fw_basc_NeumannBox`                   |                           |        |
 | `fw_const_Theis_analytical_comparison` |                           |        |
+| `fw_const_Theis_analytical_centered`   |                           |        |
+| `fw_const_Thiem`                       |                           |        |
 
 | **Cluster architecture**               | `serial` | `openmp` | `mpi` | `Slurm Job` |
 |:--------------------------------------:|:--------:|:--------:|:-----:|:-----------:|
@@ -274,6 +288,8 @@ command in `SHEMATtest.py`.
 | `fw_bas_NeumannBox`                    | x        |          |       |             |
 | `fw_basc_NeumannBox`                   | x        |          |       |             |
 | `fw_const_Theis_analytical_comparison` | x        |          |       |             |
+| `fw_const_Theis_analytical_centered`   | x        |          |       |             |
+| `fw_const_Thiem`                       | x        |          |       |             |
 
 | **Verification method**                | `previous simulation` | `analytical solution`             | `semi-analytical solution` |
 |:--------------------------------------:|:---------------------:|:---------------------------------:|:--------------------------:|
@@ -299,6 +315,8 @@ command in `SHEMATtest.py`.
 | `fw_bas_NeumannBox`                    | x                     |                                   |                            |
 | `fw_basc_NeumannBox`                   | x                     |                                   |                            |
 | `fw_const_Theis_analytical_comparison` | x                     | x, Python script                  |                            |
+| `fw_const_Theis_analytical_centered`   | x                     | x, Python script                  |                            |
+| `fw_const_Thiem`                       | x                     | x, Python script                  |                            |
 
 
 Possibly: Solver, Physical Problems (maybe better a list), possibly

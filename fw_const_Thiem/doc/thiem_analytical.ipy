@@ -1,0 +1,314 @@
+import os
+# import matplotlib as mpl
+# from matplotlib import cm  # Colormap commands (cm.get_cmap())
+import numpy as np
+import matplotlib.pyplot as plt
+
+try:
+    import pskf.tools.plot.plotfunctions as pf
+except ImportError:
+    raise ImportError(
+        'No module named pskf.tools.plot.plotfunctions. \n\n' + 'Solution: ' +
+        'Download pyshemkf from https://github.com/jjokella/pyshemkf and add' +
+        ' the path /<path-to-pyshemkf>/pyshemkf/site-packages to the' +
+        ' PYTHONPATH.')
+
+try:
+    import pskf.scripts.analysis.plot as ap
+except ImportError:
+    raise ImportError(
+        'No module named pskf.tools.plot.plotfunctions. \n\n' + 'Solution: ' +
+        'Download pyshemkf from https://github.com/jjokella/pyshemkf and add' +
+        ' the path /<path-to-pyshemkf>/pyshemkf/site-packages to the' +
+        ' PYTHONPATH.')
+
+# from vtk.util.numpy_support import vtk_to_numpy
+
+
+def h_thiem(r, R, Q, delz, K, h0):
+    """
+    Compute the head around a pumping well according to the THIEM model.
+    Source: Batu1998, Aquifer Hydraulics, 3.2.1.
+
+    Parameters
+    ----------
+    r : float
+        Distance from well [m]
+
+    R : float
+        Distance, at which the well has no influence anymore. This is
+        an input and defined by the user. [m]
+
+    Q : float
+        Pumping rate of the well in [m3s-1]
+
+    delz : float
+        Thickness of aquifer in [m]
+
+    K : float
+       Hydraulic conductivity in [m1s-1]
+
+    h0 : float
+        Undisturbed head without influence of the pumping well in [m].
+        By definition h0 = h(R).
+
+    Returns
+    ----------
+    h : float
+        head at difference r from pumping well and time t. [m]
+    """
+
+    # Compute new head
+    if r > 0:
+        h = h0 + Q / (2 * np.pi * delz * K) * np.log(R / r)
+    else:
+        h = np.nan
+
+    return h
+
+
+# Input values reflecting input file THIEM
+
+# Pumping rate Q in [m3s-1]
+Q = -0.001
+
+# Thickness of aquifer in [m]
+delz = 20
+
+# Hydraulic conductivity in [m1s-1]
+rhof = 1000.0
+g = 9.81
+k = 10**-12
+mu = 1 * 10**-3
+
+K = rhof * g * k / mu
+
+# Distance of no influence of well [m]
+R = 530
+
+# Head without influence of well [m]
+h0 = 20
+
+# Head, x-coordinates, y-coordinates from vtk
+vtk_reader = pf.my_vtk(
+    os.environ['HOME'] + '/SHEMAT-Suite_Models/fw_const_Thiem/' + 'result/',
+    'THIEM_final.vtk', 'head')
+h_vtk = pf.my_vtk_to_numpy(vtk_reader)
+x = pf.my_vtk_coords(vtk_reader, 'x')
+y = pf.my_vtk_coords(vtk_reader, 'y')
+
+# Analytical formulae
+h_ana_x = np.array(
+    [h_thiem(np.abs(rx - x[34]), R, Q, delz, K, h0) for rx in x])
+h_ana_y = np.array(
+    [h_thiem(np.abs(ry - y[34]), R, Q, delz, K, h0) for ry in y])
+h_ana_diag = np.array([
+    h_thiem(
+        np.sqrt(np.abs(rx - x[34])**2 + np.abs(ry - y[34])**2), R, Q, delz, K,
+        h0) for rx, ry in np.transpose(np.array([x, y]))
+])
+
+# Index field excluding the well index
+idxarrx = np.arange(x.size) != 34  # Exclude number 35
+idxarry = np.arange(y.size) != 34  # Exclude number 35
+idxarrdiag = np.arange((x.size + y.size) / 2) != 34  # Exclude number 35
+
+# Plot head field
+fig = plt.figure(1, figsize=[15, 10])
+ax = fig.add_subplot(1, 1, 1)
+ap.plot(
+    ax,
+    x,
+    y,
+    x,
+    y,
+    np.transpose(h_vtk),
+    os.environ['HOME'] +
+    '/SHEMAT-Suite_Models/fw_const_Thiem/doc/pdfs/thiem_head_field.pdf',
+    num_cbar=50)
+plt.gca().set_title('Thiem 2D: Head distribution', size=20)
+cb_ax = pf.cb(
+    fig.add_subplot(1, 2, 1),
+    ax,
+    varname='head',
+    varlabels={'head': r'$\mathrm{h}$ [$\mathrm{m}$]'},
+    labelpad=1.02)
+plt.savefig(
+    os.environ['HOME'] +
+    '/SHEMAT-Suite_Models/fw_const_Thiem/doc/pdfs/thiem_head_field.pdf')
+plt.show()
+
+# Plot transect in x-direction
+plt.plot(x[idxarrx], np.array(h_vtk[idxarrx, 34]), 'o', label='SHEMAT-Suite')
+plt.plot(x[idxarrx], np.array(h_ana_x[idxarrx]), label='analytical')
+plt.gca().set_title('Thiem: Transect in x-direction', size=20)
+plt.gca().set_ylabel('Hydraulic head [m]', fontsize=20, labelpad=10)
+plt.gca().set_xlabel('x [m]', fontsize=20, labelpad=10)
+plt.grid()
+plt.legend(loc=4)
+plt.savefig(os.environ['HOME'] +
+            '/SHEMAT-Suite_Models/fw_const_Thiem/doc/pdfs/thiem_x_head.pdf')
+plt.show()
+
+plt.plot(
+    x[idxarrx],
+    h_vtk[idxarrx, 34] - h_ana_x[idxarrx],
+    '-o',
+    label='SHEMAT-Suite - analytical')
+plt.gca().set_title('Thiem: Errors in x-direction', size=20)
+plt.gca().set_ylabel('head difference [m]', fontsize=20, labelpad=10)
+plt.gca().set_xlabel('x [m]', fontsize=20, labelpad=10)
+plt.grid()
+plt.legend(loc=4)
+plt.savefig(os.environ['HOME'] +
+            '/SHEMAT-Suite_Models/fw_const_Thiem/doc/pdfs/thiem_x_error.pdf')
+plt.show()
+
+# Error relative to drawdown
+plt.plot(
+    x[idxarrx], (h_vtk[idxarrx, 34] - h_ana_x[idxarrx]) /
+    (20 - np.array(h_ana_x[idxarrx])),
+    '-o',
+    label='Error normalized by drawdown')
+plt.hlines(
+    np.mean(
+        np.abs((h_vtk[idxarrx, 34] - h_ana_x[idxarrx]) /
+               (20 - np.array(h_ana_x[idxarrx])))),
+    x[0],
+    x[-1],
+    label='Mean absolute normalized error')
+plt.hlines(
+    np.mean(
+        np.abs(((h_vtk[idxarrx, 34] - h_ana_x[idxarrx]) /
+                (20 - np.array(h_ana_x[idxarrx]))))[4:-4]),
+    x[0],
+    x[-1],
+    label='Mean absolute normalized error excluding first/last 4 entries')
+plt.gca().set_title(
+    'Thiem: Errors relative to drawdown in x-direction', size=20)
+plt.gca().set_ylabel('relative error', fontsize=20, labelpad=10)
+plt.gca().set_xlabel('x [m]', fontsize=20, labelpad=10)
+plt.grid()
+plt.legend(loc=1)
+plt.savefig(
+    os.environ['HOME'] +
+    '/SHEMAT-Suite_Models/fw_const_Thiem/doc/pdfs/thiem_x_error_norm.pdf')
+plt.show()
+
+# Plot transect in y-direction
+plt.plot(y[idxarry], np.array(h_vtk[34, idxarry]), 'o', label='SHEMAT-Suite')
+plt.plot(y[idxarry], np.array(h_ana_y[idxarry]), label='analytical')
+plt.gca().set_title('Thiem: Transect in y-direction', size=20)
+plt.gca().set_ylabel('Hydraulic head [m]', fontsize=20, labelpad=10)
+plt.gca().set_xlabel('y [m]', fontsize=20, labelpad=10)
+plt.grid()
+plt.legend(loc=4)
+plt.savefig(os.environ['HOME'] +
+            '/SHEMAT-Suite_Models/fw_const_Thiem/doc/pdfs/thiem_y_head.pdf')
+plt.show()
+
+plt.plot(
+    y[idxarry],
+    h_vtk[34, idxarry] - h_ana_y[idxarry],
+    '-o',
+    label='SHEMAT-Suite - analytical')
+plt.gca().set_title('Thiem: Errors in y-direction', size=20)
+plt.gca().set_ylabel('head difference [m]', fontsize=20, labelpad=10)
+plt.gca().set_xlabel('y [m]', fontsize=20, labelpad=10)
+plt.grid()
+plt.legend(loc=4)
+plt.savefig(os.environ['HOME'] +
+            '/SHEMAT-Suite_Models/fw_const_Thiem/doc/pdfs/thiem_y_error.pdf')
+plt.show()
+
+plt.plot(
+    y[idxarry], (h_vtk[34, idxarry] - h_ana_y[idxarry]) /
+    (20 - np.array(h_ana_y[idxarry])),
+    '-o',
+    label='Error normalized by drawdown')
+plt.hlines(
+    np.mean(
+        np.abs((h_vtk[34, idxarry] - h_ana_y[idxarry]) /
+               (20 - np.array(h_ana_y[idxarry])))),
+    y[0],
+    y[-1],
+    label='Mean absolute normalized error')
+plt.hlines(
+    np.mean(
+        np.abs(((h_vtk[34, idxarry] - h_ana_y[idxarry]) /
+                (20 - np.array(h_ana_y[idxarry]))))[4:-4]),
+    y[0],
+    y[-1],
+    label='Mean absolute normalized error excluding first/last 4 entries')
+plt.gca().set_title(
+    'Thiem: Errors relative to drawdown in y-direction', size=20)
+plt.gca().set_ylabel('relative error', fontsize=20, labelpad=10)
+plt.gca().set_xlabel('y [m]', fontsize=20, labelpad=10)
+plt.grid()
+plt.legend(loc=1)
+plt.savefig(
+    os.environ['HOME'] +
+    '/SHEMAT-Suite_Models/fw_const_Thiem/doc/pdfs/thiem_y_error_norm.pdf')
+plt.show()
+
+# Plot transect in diagonal direction
+plt.plot(
+    np.sqrt((x[idxarrx])**2 + (y[idxarry])**2),
+    np.array(h_vtk[idxarrx, idxarry]), '-o')
+plt.plot(
+    np.sqrt((x[idxarrx])**2 + (y[idxarry])**2),
+    np.array(h_ana_diag[idxarrdiag]))
+plt.gca().set_title('Thiem: Transect in diagonal direction', size=20)
+plt.gca().set_ylabel('Hydraulic head [m]', fontsize=20, labelpad=10)
+plt.gca().set_xlabel(r'$\sqrt{x^2 + y^2}$ [m]', fontsize=20, labelpad=0)
+plt.grid()
+plt.legend(loc=4)
+plt.savefig(os.environ['HOME'] +
+            '/SHEMAT-Suite_Models/fw_const_Thiem/doc/pdfs/thiem_diag_head.pdf')
+plt.show()
+
+plt.plot(
+    np.sqrt((x[idxarrx])**2 + (y[idxarry])**2),
+    np.array(h_vtk[idxarrx, idxarry]) - h_ana_diag[idxarrdiag],
+    '-o',
+    label='SHEMAT-Suite - analytical')
+plt.gca().set_title('Thiem: Errors in diagonal direction', size=20)
+plt.gca().set_ylabel('head difference [m]', fontsize=20, labelpad=10)
+plt.gca().set_xlabel(r'$\sqrt{x^2 + y^2}$ [m]', fontsize=20, labelpad=10)
+plt.grid()
+plt.legend(loc=4)
+plt.savefig(
+    os.environ['HOME'] +
+    '/SHEMAT-Suite_Models/fw_const_Thiem/doc/pdfs/thiem_diag_error.pdf')
+plt.show()
+
+plt.plot(
+    np.sqrt((x[idxarrx])**2 + (y[idxarry])**2),
+    (h_vtk[idxarrx, idxarry] - h_ana_diag[idxarry]) /
+    (20 - np.array(h_ana_y[idxarry])),
+    '-o',
+    label='Error normalized by drawdown')
+plt.hlines(
+    np.mean(
+        np.abs((h_vtk[idxarrx, idxarry] - h_ana_diag[idxarrdiag]) /
+               (20 - np.array(h_ana_diag[idxarrdiag])))),
+    y[0],
+    y[-1],
+    label='Mean absolute normalized error')
+plt.hlines(
+    np.mean(
+        np.abs(((h_vtk[idxarrx, idxarry] - h_ana_diag[idxarrdiag]) /
+                (20 - np.array(h_ana_diag[idxarrdiag]))))[10:-10]),
+    y[0],
+    y[-1],
+    label='Mean absolute normalized error excluding first/last 10 entries')
+plt.gca().set_title(
+    'Thiem: Errors relative to drawdown in diagonal direction', size=20)
+plt.gca().set_ylabel('relative error', fontsize=20, labelpad=10)
+plt.gca().set_xlabel('y [m]', fontsize=20, labelpad=10)
+plt.grid()
+plt.legend(loc=3)
+plt.savefig(
+    os.environ['HOME'] +
+    '/SHEMAT-Suite_Models/fw_const_Thiem/doc/pdfs/thiem_diag_error_norm.pdf')
+plt.show()
