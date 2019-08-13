@@ -14,7 +14,11 @@ and the SHEMAT-Suite input for the Neumann boundary condition
 # head bcn, records=1, direction=0
 1 1 1 -0.001d0 0
 ```
+## Python scripts ##
 
+`theis_analytical.ipy`: Computes the Theis-analytical solution and
+compares it to the SHEMAT-Suite result loaded from the vtk files in
+`/result/`. The figures are saved in `/doc/pdfs/`.
 
 ## Compilation ##
 

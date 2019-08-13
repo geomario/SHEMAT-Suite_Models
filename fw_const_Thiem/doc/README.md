@@ -9,6 +9,17 @@ conditions.
 The boundary condition of 20m head has been set for all cells that are
 further away from the center of the model than 530m.
 
+## Python scripts ##
+
+`constant_head_locations.ipy`: Computes the cells that lie outside the
+influence radius of the well and prints the boundary condition input
+that sets all these cells to a constant head of `20.0d0`. The output
+is written to `thiem_diffs.txt`.
+
+`thiem_analytical.ipy`: Computes the Thiem-analytical solution and
+compares it to the SHEMAT-Suite result loaded from the vtk files in
+`/result/`. The figures are saved in `/doc/pdfs/`.
+
 ## Compilation ##
 
 The files 
