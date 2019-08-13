@@ -1,5 +1,6 @@
-import matplotlib as mpl
-from matplotlib import cm  # Colormap commands (cm.get_cmap())
+import os
+# import matplotlib as mpl
+# from matplotlib import cm  # Colormap commands (cm.get_cmap())
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -90,10 +91,8 @@ h0 = 20
 
 # Head, x-coordinates, y-coordinates from vtk
 vtk_reader = pf.my_vtk(
-    '/home/jk125262/SHEMAT-Suite_Models/fw_const_Thiem/',
-    # + 'result/'
-    'THIEM_final.vtk',
-    'head')
+    os.environ['HOME'] + '/SHEMAT-Suite_Models/fw_const_Thiem/' + 'result/',
+    'THIEM_final.vtk', 'head')
 h_vtk = pf.my_vtk_to_numpy(vtk_reader)
 x = pf.my_vtk_coords(vtk_reader, 'x')
 y = pf.my_vtk_coords(vtk_reader, 'y')
@@ -112,7 +111,7 @@ h_ana_diag = np.array([
 # Index field excluding the well index
 idxarrx = np.arange(x.size) != 34  # Exclude number 35
 idxarry = np.arange(y.size) != 34  # Exclude number 35
-idxarrdiag = np.arange((x.size + y.size)/2) != 34  # Exclude number 35
+idxarrdiag = np.arange((x.size + y.size) / 2) != 34  # Exclude number 35
 
 # Plot head field
 fig = plt.figure(1, figsize=[15, 10])
@@ -124,8 +123,8 @@ ap.plot(
     x,
     y,
     np.transpose(h_vtk),
-    '/home/jk125262/' +
-    'SHEMAT-Suite_Models/fw_const_Thiem/doc/thiem_analytical.pdf',
+    os.environ['HOME'] +
+    '/SHEMAT-Suite_Models/fw_const_Thiem/doc/pdfs/thiem_head_field.pdf',
     num_cbar=50)
 plt.gca().set_title('Thiem 2D: Head distribution', size=20)
 cb_ax = pf.cb(
@@ -134,126 +133,182 @@ cb_ax = pf.cb(
     varname='head',
     varlabels={'head': r'$\mathrm{h}$ [$\mathrm{m}$]'},
     labelpad=1.02)
+plt.savefig(
+    os.environ['HOME'] +
+    '/SHEMAT-Suite_Models/fw_const_Thiem/doc/pdfs/thiem_head_field.pdf')
 plt.show()
 
 # Plot transect in x-direction
 plt.plot(x[idxarrx], np.array(h_vtk[idxarrx, 34]), 'o', label='SHEMAT-Suite')
 plt.plot(x[idxarrx], np.array(h_ana_x[idxarrx]), label='analytical')
 plt.gca().set_title('Thiem: Transect in x-direction', size=20)
-plt.gca().set_ylabel('Hydraulic head [m]',
-                     fontsize=20,
-                     labelpad=10)
-plt.gca().set_xlabel('x [m]',
-                     fontsize=20,
-                     labelpad=10)
+plt.gca().set_ylabel('Hydraulic head [m]', fontsize=20, labelpad=10)
+plt.gca().set_xlabel('x [m]', fontsize=20, labelpad=10)
 plt.grid()
 plt.legend(loc=4)
+plt.savefig(os.environ['HOME'] +
+            '/SHEMAT-Suite_Models/fw_const_Thiem/doc/pdfs/thiem_x_head.pdf')
 plt.show()
 
-plt.plot(x[idxarrx], h_vtk[idxarrx, 34] - h_ana_x[idxarrx], '-o', label='SHEMAT-Suite - analytical')
+plt.plot(
+    x[idxarrx],
+    h_vtk[idxarrx, 34] - h_ana_x[idxarrx],
+    '-o',
+    label='SHEMAT-Suite - analytical')
 plt.gca().set_title('Thiem: Errors in x-direction', size=20)
-plt.gca().set_ylabel('head difference [m]',
-                     fontsize=20,
-                     labelpad=10)
-plt.gca().set_xlabel('x [m]',
-                     fontsize=20,
-                     labelpad=10)
+plt.gca().set_ylabel('head difference [m]', fontsize=20, labelpad=10)
+plt.gca().set_xlabel('x [m]', fontsize=20, labelpad=10)
 plt.grid()
 plt.legend(loc=4)
+plt.savefig(os.environ['HOME'] +
+            '/SHEMAT-Suite_Models/fw_const_Thiem/doc/pdfs/thiem_x_error.pdf')
 plt.show()
 
 # Error relative to drawdown
-plt.plot(x[idxarrx], (h_vtk[idxarrx, 34] - h_ana_x[idxarrx]) / (20 - np.array(h_ana_x[idxarrx])), '-o', label='Error normalized by drawdown')
-plt.hlines(np.mean(np.abs((h_vtk[idxarrx, 34] - h_ana_x[idxarrx]) / (20 - np.array(h_ana_x[idxarrx])))), x[0], x[-1], label='Mean absolute normalized error')
-plt.hlines(np.mean(np.abs(((h_vtk[idxarrx, 34] - h_ana_x[idxarrx]) / (20 - np.array(h_ana_x[idxarrx]))))[4:-4]), x[0], x[-1], label='Mean absolute normalized error excluding first/last 4 entries')
-plt.gca().set_title('Thiem: Errors relative to drawdown in x-direction', size=20)
-plt.gca().set_ylabel('relative error',
-                     fontsize=20,
-                     labelpad=10)
-plt.gca().set_xlabel('x [m]',
-                     fontsize=20,
-                     labelpad=10)
+plt.plot(
+    x[idxarrx], (h_vtk[idxarrx, 34] - h_ana_x[idxarrx]) /
+    (20 - np.array(h_ana_x[idxarrx])),
+    '-o',
+    label='Error normalized by drawdown')
+plt.hlines(
+    np.mean(
+        np.abs((h_vtk[idxarrx, 34] - h_ana_x[idxarrx]) /
+               (20 - np.array(h_ana_x[idxarrx])))),
+    x[0],
+    x[-1],
+    label='Mean absolute normalized error')
+plt.hlines(
+    np.mean(
+        np.abs(((h_vtk[idxarrx, 34] - h_ana_x[idxarrx]) /
+                (20 - np.array(h_ana_x[idxarrx]))))[4:-4]),
+    x[0],
+    x[-1],
+    label='Mean absolute normalized error excluding first/last 4 entries')
+plt.gca().set_title(
+    'Thiem: Errors relative to drawdown in x-direction', size=20)
+plt.gca().set_ylabel('relative error', fontsize=20, labelpad=10)
+plt.gca().set_xlabel('x [m]', fontsize=20, labelpad=10)
 plt.grid()
 plt.legend(loc=1)
+plt.savefig(
+    os.environ['HOME'] +
+    '/SHEMAT-Suite_Models/fw_const_Thiem/doc/pdfs/thiem_x_error_norm.pdf')
 plt.show()
-
 
 # Plot transect in y-direction
 plt.plot(y[idxarry], np.array(h_vtk[34, idxarry]), 'o', label='SHEMAT-Suite')
 plt.plot(y[idxarry], np.array(h_ana_y[idxarry]), label='analytical')
 plt.gca().set_title('Thiem: Transect in y-direction', size=20)
-plt.gca().set_ylabel('Hydraulic head [m]',
-                     fontsize=20,
-                     labelpad=10)
-plt.gca().set_xlabel('y [m]',
-                     fontsize=20,
-                     labelpad=10)
+plt.gca().set_ylabel('Hydraulic head [m]', fontsize=20, labelpad=10)
+plt.gca().set_xlabel('y [m]', fontsize=20, labelpad=10)
 plt.grid()
 plt.legend(loc=4)
+plt.savefig(os.environ['HOME'] +
+            '/SHEMAT-Suite_Models/fw_const_Thiem/doc/pdfs/thiem_y_head.pdf')
 plt.show()
 
-plt.plot(y[idxarry], h_vtk[34, idxarry] - h_ana_y[idxarry], '-o', label='SHEMAT-Suite - analytical')
+plt.plot(
+    y[idxarry],
+    h_vtk[34, idxarry] - h_ana_y[idxarry],
+    '-o',
+    label='SHEMAT-Suite - analytical')
 plt.gca().set_title('Thiem: Errors in y-direction', size=20)
-plt.gca().set_ylabel('head difference [m]',
-                     fontsize=20,
-                     labelpad=10)
-plt.gca().set_xlabel('y [m]',
-                     fontsize=20,
-                     labelpad=10)
+plt.gca().set_ylabel('head difference [m]', fontsize=20, labelpad=10)
+plt.gca().set_xlabel('y [m]', fontsize=20, labelpad=10)
 plt.grid()
 plt.legend(loc=4)
+plt.savefig(os.environ['HOME'] +
+            '/SHEMAT-Suite_Models/fw_const_Thiem/doc/pdfs/thiem_y_error.pdf')
 plt.show()
 
-plt.plot(y[idxarry], (h_vtk[34, idxarry] - h_ana_y[idxarry]) / (20 - np.array(h_ana_y[idxarry])), '-o', label='Error normalized by drawdown')
-plt.hlines(np.mean(np.abs((h_vtk[34, idxarry] - h_ana_y[idxarry]) / (20 - np.array(h_ana_y[idxarry])))), y[0], y[-1], label='Mean absolute normalized error')
-plt.hlines(np.mean(np.abs(((h_vtk[34, idxarry] - h_ana_y[idxarry]) / (20 - np.array(h_ana_y[idxarry]))))[4:-4]), y[0], y[-1], label='Mean absolute normalized error excluding first/last 4 entries')
-plt.gca().set_title('Thiem: Errors relative to drawdown in y-direction', size=20)
-plt.gca().set_ylabel('relative error',
-                     fontsize=20,
-                     labelpad=10)
-plt.gca().set_xlabel('y [m]',
-                     fontsize=20,
-                     labelpad=10)
+plt.plot(
+    y[idxarry], (h_vtk[34, idxarry] - h_ana_y[idxarry]) /
+    (20 - np.array(h_ana_y[idxarry])),
+    '-o',
+    label='Error normalized by drawdown')
+plt.hlines(
+    np.mean(
+        np.abs((h_vtk[34, idxarry] - h_ana_y[idxarry]) /
+               (20 - np.array(h_ana_y[idxarry])))),
+    y[0],
+    y[-1],
+    label='Mean absolute normalized error')
+plt.hlines(
+    np.mean(
+        np.abs(((h_vtk[34, idxarry] - h_ana_y[idxarry]) /
+                (20 - np.array(h_ana_y[idxarry]))))[4:-4]),
+    y[0],
+    y[-1],
+    label='Mean absolute normalized error excluding first/last 4 entries')
+plt.gca().set_title(
+    'Thiem: Errors relative to drawdown in y-direction', size=20)
+plt.gca().set_ylabel('relative error', fontsize=20, labelpad=10)
+plt.gca().set_xlabel('y [m]', fontsize=20, labelpad=10)
 plt.grid()
 plt.legend(loc=1)
+plt.savefig(
+    os.environ['HOME'] +
+    '/SHEMAT-Suite_Models/fw_const_Thiem/doc/pdfs/thiem_y_error_norm.pdf')
 plt.show()
 
 # Plot transect in diagonal direction
-plt.plot(np.sqrt((x[idxarrx])**2 + (y[idxarry])**2), np.array(h_vtk[idxarrx, idxarry]), '-o')
-plt.plot(np.sqrt((x[idxarrx])**2 + (y[idxarry])**2), np.array(h_ana_diag[idxarrdiag]))
+plt.plot(
+    np.sqrt((x[idxarrx])**2 + (y[idxarry])**2),
+    np.array(h_vtk[idxarrx, idxarry]), '-o')
+plt.plot(
+    np.sqrt((x[idxarrx])**2 + (y[idxarry])**2),
+    np.array(h_ana_diag[idxarrdiag]))
 plt.gca().set_title('Thiem: Transect in diagonal direction', size=20)
-plt.gca().set_ylabel('Hydraulic head [m]',
-                     fontsize=20,
-                     labelpad=10)
-plt.gca().set_xlabel(r'$\sqrt{x^2 + y^2}$ [m]',
-                     fontsize=20,
-                     labelpad=0)
+plt.gca().set_ylabel('Hydraulic head [m]', fontsize=20, labelpad=10)
+plt.gca().set_xlabel(r'$\sqrt{x^2 + y^2}$ [m]', fontsize=20, labelpad=0)
 plt.grid()
 plt.legend(loc=4)
+plt.savefig(os.environ['HOME'] +
+            '/SHEMAT-Suite_Models/fw_const_Thiem/doc/pdfs/thiem_diag_head.pdf')
 plt.show()
 
-plt.plot(np.sqrt((x[idxarrx])**2 + (y[idxarry])**2), np.array(h_vtk[idxarrx, idxarry]) - h_ana_diag[idxarrdiag], '-o', label='SHEMAT-Suite - analytical')
+plt.plot(
+    np.sqrt((x[idxarrx])**2 + (y[idxarry])**2),
+    np.array(h_vtk[idxarrx, idxarry]) - h_ana_diag[idxarrdiag],
+    '-o',
+    label='SHEMAT-Suite - analytical')
 plt.gca().set_title('Thiem: Errors in diagonal direction', size=20)
-plt.gca().set_ylabel('head difference [m]',
-                     fontsize=20,
-                     labelpad=10)
-plt.gca().set_xlabel(r'$\sqrt{x^2 + y^2}$ [m]',
-                     fontsize=20,
-                     labelpad=10)
+plt.gca().set_ylabel('head difference [m]', fontsize=20, labelpad=10)
+plt.gca().set_xlabel(r'$\sqrt{x^2 + y^2}$ [m]', fontsize=20, labelpad=10)
 plt.grid()
 plt.legend(loc=4)
+plt.savefig(
+    os.environ['HOME'] +
+    '/SHEMAT-Suite_Models/fw_const_Thiem/doc/pdfs/thiem_diag_error.pdf')
 plt.show()
 
-plt.plot(np.sqrt((x[idxarrx])**2 + (y[idxarry])**2), (h_vtk[idxarrx, idxarry] - h_ana_diag[idxarry]) / (20 - np.array(h_ana_y[idxarry])), '-o', label='Error normalized by drawdown')
-plt.hlines(np.mean(np.abs((h_vtk[idxarrx, idxarry] - h_ana_diag[idxarrdiag]) / (20 - np.array(h_ana_diag[idxarrdiag])))), y[0], y[-1], label='Mean absolute normalized error')
-plt.hlines(np.mean(np.abs(((h_vtk[idxarrx, idxarry] - h_ana_diag[idxarrdiag]) / (20 - np.array(h_ana_diag[idxarrdiag]))))[10:-10]), y[0], y[-1], label='Mean absolute normalized error excluding first/last 10 entries')
-plt.gca().set_title('Thiem: Errors relative to drawdown in diagonal direction', size=20)
-plt.gca().set_ylabel('relative error',
-                     fontsize=20,
-                     labelpad=10)
-plt.gca().set_xlabel('y [m]',
-                     fontsize=20,
-                     labelpad=10)
+plt.plot(
+    np.sqrt((x[idxarrx])**2 + (y[idxarry])**2),
+    (h_vtk[idxarrx, idxarry] - h_ana_diag[idxarry]) /
+    (20 - np.array(h_ana_y[idxarry])),
+    '-o',
+    label='Error normalized by drawdown')
+plt.hlines(
+    np.mean(
+        np.abs((h_vtk[idxarrx, idxarry] - h_ana_diag[idxarrdiag]) /
+               (20 - np.array(h_ana_diag[idxarrdiag])))),
+    y[0],
+    y[-1],
+    label='Mean absolute normalized error')
+plt.hlines(
+    np.mean(
+        np.abs(((h_vtk[idxarrx, idxarry] - h_ana_diag[idxarrdiag]) /
+                (20 - np.array(h_ana_diag[idxarrdiag]))))[10:-10]),
+    y[0],
+    y[-1],
+    label='Mean absolute normalized error excluding first/last 10 entries')
+plt.gca().set_title(
+    'Thiem: Errors relative to drawdown in diagonal direction', size=20)
+plt.gca().set_ylabel('relative error', fontsize=20, labelpad=10)
+plt.gca().set_xlabel('y [m]', fontsize=20, labelpad=10)
 plt.grid()
-plt.legend(loc=1)
+plt.legend(loc=3)
+plt.savefig(
+    os.environ['HOME'] +
+    '/SHEMAT-Suite_Models/fw_const_Thiem/doc/pdfs/thiem_diag_error_norm.pdf')
 plt.show()
