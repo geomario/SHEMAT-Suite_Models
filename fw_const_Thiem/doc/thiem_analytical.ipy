@@ -17,55 +17,21 @@ try:
     import pskf.scripts.analysis.plot as ap
 except ImportError:
     raise ImportError(
-        'No module named pskf.tools.plot.plotfunctions. \n\n' + 'Solution: ' +
+        'No module named pskf.scripts.analysis.plot. \n\n' + 'Solution: ' +
+        'Download pyshemkf from https://github.com/jjokella/pyshemkf and add' +
+        ' the path /<path-to-pyshemkf>/pyshemkf/site-packages to the' +
+        ' PYTHONPATH.')
+
+try:
+    import pskf.ana.thiem as thiem
+except ImportError:
+    raise ImportError(
+        'No module named pskf.ana.thiem. \n\n' + 'Solution: ' +
         'Download pyshemkf from https://github.com/jjokella/pyshemkf and add' +
         ' the path /<path-to-pyshemkf>/pyshemkf/site-packages to the' +
         ' PYTHONPATH.')
 
 # from vtk.util.numpy_support import vtk_to_numpy
-
-
-def h_thiem(r, R, Q, delz, K, h0):
-    """
-    Compute the head around a pumping well according to the THIEM model.
-    Source: Batu1998, Aquifer Hydraulics, 3.2.1.
-
-    Parameters
-    ----------
-    r : float
-        Distance from well [m]
-
-    R : float
-        Distance, at which the well has no influence anymore. This is
-        an input and defined by the user. [m]
-
-    Q : float
-        Pumping rate of the well in [m3s-1]
-
-    delz : float
-        Thickness of aquifer in [m]
-
-    K : float
-       Hydraulic conductivity in [m1s-1]
-
-    h0 : float
-        Undisturbed head without influence of the pumping well in [m].
-        By definition h0 = h(R).
-
-    Returns
-    ----------
-    h : float
-        head at difference r from pumping well and time t. [m]
-    """
-
-    # Compute new head
-    if r > 0:
-        h = h0 + Q / (2 * np.pi * delz * K) * np.log(R / r)
-    else:
-        h = np.nan
-
-    return h
-
 
 # Input values reflecting input file THIEM
 
@@ -99,11 +65,11 @@ y = pf.my_vtk_coords(vtk_reader, 'y')
 
 # Analytical formulae
 h_ana_x = np.array(
-    [h_thiem(np.abs(rx - x[34]), R, Q, delz, K, h0) for rx in x])
+    [thiem.head(np.abs(rx - x[34]), R, Q, delz, K, h0) for rx in x])
 h_ana_y = np.array(
-    [h_thiem(np.abs(ry - y[34]), R, Q, delz, K, h0) for ry in y])
+    [thiem.head(np.abs(ry - y[34]), R, Q, delz, K, h0) for ry in y])
 h_ana_diag = np.array([
-    h_thiem(
+    thiem.head(
         np.sqrt(np.abs(rx - x[34])**2 + np.abs(ry - y[34])**2), R, Q, delz, K,
         h0) for rx, ry in np.transpose(np.array([x, y]))
 ])
