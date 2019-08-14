@@ -16,9 +16,19 @@ and the SHEMAT-Suite input for the Neumann boundary condition
 ```
 ## Python scripts ##
 
-`theis_analytical.ipy`: Computes the Theis-analytical solution and
-compares it to the SHEMAT-Suite result loaded from the vtk files in
-`/result/`. The figures are saved in `/doc/pdfs/`.
+The Python scripts use functions computing the approximate Theis
+solution from the Python module `pskf`. If you do not have `pskf`:
+Download `pyshemkf` from https://github.com/jjokella/pyshemkf and add
+the path `/<path-to-pyshemkf>/pyshemkf/site-packages` to the
+`PYTHONPATH`.
+
+`theis_analytical.ipy`: Compares the Theis-analytical solution the
+SHEMAT-Suite result loaded from the vtk files in `/result/`. The
+figures are saved in `/doc/pdfs/`.
+
+`theis_monitoring_points.ipy`: Compares the Theis-analytical solution
+at one cell over time the SHEMAT-Suite result loaded from the monitor
+files in `/result/`. The figures are saved in `/doc/pdfs/`.
 
 ## Compilation ##
 
