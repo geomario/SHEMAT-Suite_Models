@@ -116,7 +116,7 @@ idxarrdiag = np.arange((x.size + y.size) / 2) != 34  # Exclude number 35
 # Plot head field
 fig = plt.figure(1, figsize=[15, 10])
 ax = fig.add_subplot(1, 1, 1)
-ap.plot(
+ap.plot_all(
     ax,
     x,
     y,
