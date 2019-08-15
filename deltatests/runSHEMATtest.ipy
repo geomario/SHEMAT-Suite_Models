@@ -52,6 +52,9 @@ is_exec = True
 # Testing input
 is_test = True
 
+# Cleanup all output in model_dir after compilation/execution/testing
+is_cleanup = True
+
 test_models = [
     # "fw_const_TheisProblem",
     # "fw_basc_SaltFlow",
@@ -249,3 +252,26 @@ for test_model in test_models:
 
         runner = unittest.TextTestRunner(verbosity=2)
         runner.run(testing_suite)
+
+###############################################################################
+#                                   Cleanup                                   #
+###############################################################################
+    if is_cleanup:
+
+        print('Run cleanup\n')
+
+        # List all untracked files in the model directory
+        rm.run_script(
+            model_dir, [
+                'git', 'ls-files', model_dir, '-o', '--exclude-standard'],
+            outfile=open(model_dir+'/cleanup.txt', 'w'),
+            wait=True,
+            errout=True)
+
+        # Remove files from list
+        flist = open(model_dir+'/cleanup.txt', 'r')
+        for f in flist:
+            fname = f.strip()
+            if os.path.isfile(model_dir + '/' + fname):
+                os.remove(model_dir + '/' + fname)
+        flist.close()
