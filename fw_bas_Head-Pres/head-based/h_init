@@ -1,0 +1,83 @@
+
+! # =====>>>>>-----------------------------------------------------<<<<<===== # !
+! # =====>>>>>   RUN INFO                                          <<<<<===== # !
+! # =====>>>>>-----------------------------------------------------<<<<<===== # !
+# title
+prestest init                                                                                                                
+# linfo
+1 1 1 1
+# runmode
+0
+# active head
+# PROPS=bas
+# USER=none
+
+! # =====>>>>>-----------------------------------------------------<<<<<===== # !
+! # =====>>>>>   OUTPUT                                            <<<<<===== # !
+! # =====>>>>>-----------------------------------------------------<<<<<===== # !
+# file output vtk hdf plt 
+
+# borehole logs, records=1			!**location of steady state log output**! 											
+25	1	L1					!**i j**!
+
+!==========>>>>> MESH
+# grid
+50 1 50 
+# delx
+50*10. 
+# dely
+10. 
+# delz
+50*10. 
+
+!==========>>>>>  NONLINEAR SOLVER
+# nlsolve
+50  0
+!==========>>>>>  FLOW
+# lsolvef  (linear solver control)
+1.d-8 67  500
+# nliterf (nonlinear iteration control)
+1.0d-6 1.
+
+# head bcd, simple=top
+50*495.
+!# pres bcd, simple=base
+!50*4.85
+
+!==========>>>>>   TEMPERATURE
+# lsolvet  (linear solver control)
+1.d-6  67  500
+# nlitert(nonlinear iteration control)
+1.0d-04 1.
+
+# temp bcd, simple=top
+50*10.D0
+# temp bcn, simple=base
+50*0.035D0 
+
+!==========>>>>>   INITIAL VALUES 
+# head init
+2500*495.
+# temp init
+2500*20.0
+
+
+! # =====>>>>>   ROCKS/UNITS  
+! # ************************************************************************* # !
+! # *** poro | perm-anisotropy in x | perm-anisotropy in y | perm |       *** # !
+! # *** compressilbility | tc-anisotropy in x | tc-anisotropy in y | tc | *** # !
+! # *** heat production | volumetric thermal capacity | dispersivity      *** # !	
+! # *** electrical conductivity | coupling coefficient | Brooks Corey     *** # !
+! # *** - pore size distr. Index | Brooks Corey displacement pressure |   *** # !
+! # *** s_nr | s_wr                                                       *** # !
+! # ************************************************************************* # !
+
+# units
+.15 1.d0 1.d0 1.D-20  1.0d-10 1.d0 1.d0 2.4  0.000001D-6  2.e6 500.0 0.01    1.5d-9 2.0d0 1.0d3 0.05d0 0.2d0  !1
+
+! # =====>>>>>-----------------------------------------------------<<<<<===== # !
+! # =====>>>>>   GEOMETRY                                          <<<<<===== # !
+! # =====>>>>>-----------------------------------------------------<<<<<===== # !
+
+# uindex
+2500*1

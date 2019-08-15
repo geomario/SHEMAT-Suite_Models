@@ -1,0 +1,8 @@
+% Shemat-Suite version: Shem-FW/AD/SM 7.50 (Smarty)                                                     
+%          build: Mon Aug 12 10:23:12 CEST 2019           
+%   build command line: make fw pres hdf PROPS=const USER=none HDF5_LIB=/usr/local_rwth/sw/HDF5/1.8.21/gcc_4.8.5-intelmpi_2018.4.274/lib HDF5_MOD=/usr/local_rwth/sw/HDF5/1.8.21/gcc_4.8.5-intelmpi_2018.4.274/include COMPTYPE=ling64                                                  
+%        Project: "pt_init"
+%
+%    <iteration> <delta pres> <delta temp> <delta satn> (<delta conc> ...)
+          1  0.93132257E-15 -0.14685062E-02  0.10000000E-20
+          2  0.00000000E+00  0.00000000E+00  0.10000000E-20
