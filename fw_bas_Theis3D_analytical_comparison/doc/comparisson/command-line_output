@@ -1,0 +1,3 @@
+('Q: -0.004', 'max error absolute: 0.7110960322', 'mean error absolute: 0.4910740188')
+/usr/bin/ipython:187: RuntimeWarning: divide by zero encountered in log10
+
