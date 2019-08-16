@@ -99,11 +99,16 @@ for test_model in test_models:
     print('!  Compilation backend: ' + compile_backend)
     print('!----------------------------- \n')
 
+    git_branch = (git_branch_input if not sti.git_branch[test_model] else
+                  sti.git_branch[test_model])
+
     shem_type = sti.shem_type[test_model]
     shem_type_name = sti.shem_type_name[test_model]
     compiler = sti.compiler[test_model][compile_backend]
     compiler_name = sti.compiler_name[test_model][compile_backend]
     props = sti.props[test_model]
+    mode = (sti.mode[test_model]['gmake']
+            if not git_branch == 'cmake' else sti.mode[test_model]['cmake'])
 
     flags_dict = sti.flags_dict[test_model]
 
@@ -116,9 +121,6 @@ for test_model in test_models:
 
     testing_suite = sti.testing_suite[test_model]
 
-    git_branch = (git_branch_input if not sti.git_branch[test_model] else
-                  sti.git_branch[test_model])
-
     if is_comp or is_exec:
         #######################################################################
         #                             Directories                             #
@@ -129,7 +131,7 @@ for test_model in test_models:
 
         # exe_name
         exe_name = ("shem_" + shem_type_name + compiler_name + "_" + props +
-                    "_" + git_branch + ".x")
+                    "_" + mode + "_" + git_branch + ".x")
 
         #######################################################################
         #                           Existence checks                          #
@@ -161,6 +163,7 @@ for test_model in test_models:
             compiler,
             compiler_name,
             props,
+            mode,
             flags_dict,
             module_load,
             git_branch,
@@ -262,14 +265,14 @@ for test_model in test_models:
 
         # List all untracked files in the model directory
         rm.run_script(
-            model_dir, [
-                'git', 'ls-files', model_dir, '-o', '--exclude-standard'],
-            outfile=open(model_dir+'/cleanup.txt', 'w'),
+            model_dir,
+            ['git', 'ls-files', model_dir, '-o', '--exclude-standard'],
+            outfile=open(model_dir + '/cleanup.txt', 'w'),
             wait=True,
             errout=True)
 
         # Remove files from list
-        flist = open(model_dir+'/cleanup.txt', 'r')
+        flist = open(model_dir + '/cleanup.txt', 'r')
         for f in flist:
             fname = f.strip()
             if os.path.isfile(model_dir + '/' + fname):
