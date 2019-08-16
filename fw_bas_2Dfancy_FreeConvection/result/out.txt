@@ -1,0 +1,331 @@
+  
+ ======================================
+ Shem-FW/AD/SM 7.50 (Smarty)                                                     
+ ======================================
+  
+  
+  
+  *** NEW MODEL 
+
+   checking input definitions:
+     from file "initial_model"
+  
+   reading model input parameter:
+     from file "initial_model"
+  
+  [R] : title
+  [R] : runmode
+     >>> forward modeling
+  <D> : free=0, confined flow !
+  [R] : linfo
+  [R] : [i0, j0, k0] = [ 220,   1, 119]
+  [R] : nonlinear solver parameter
+  [I] : fixed relxation factor assumed
+  [R] : output suffix: .h5:[X], .plt:[ ], .vtk:[X], .txt:[ ]
+  
+   reading flow parameters
+  
+  [R] : flow linear solver (control=  67)
+  [R] : flow nonlinear iteration tolerance
+  [I] : flow nonlinear relaxation factor
+  
+   reading heat transport parameters
+  
+  [R] : temperature linear solver (control=  67)
+  [R] : temperature nonlinear iteration tolerance
+  [I] : temperature nonlinear relaxation factor
+  
+  <D> : no transport [disabled]
+  
+  
+  <D> : no electric potential [disabled]
+  
+  
+  <D> : grav =   0.9810E+01
+  <D> : no fluid heat production
+  <D> : rref, reference density =   0.9980E+03
+  <D> : tref, reference temperature =   0.2000E+02
+  <D> : fixed rhocm, defined by unit
+  
+   reading zone parameter 
+  
+  [R] : "uindex" - unit index number, unit-cell assignment
+  [I] : approx. speedup for the full solver :   1.00
+  
+  [R] : "units" - unit (rock) properties
+  
+   reading/preprocessing arrays
+  
+  [R] : delx
+  [R] : dely
+  [R] : delz
+  
+   reading initial values 
+  
+  [R] : head, in [m]
+  [R] : temp, in [degree Celsius]
+  [R] : pres, in [MPa]
+  
+   reading boundary conditions 
+  
+  [R] : head bcd, simple=top  , (size=   220), bcmy=  0.1000E+19, error=ignore, (offset=     1)
+  [R] : temp bcd, simple=top  , (size=   220), bcmy=  0.1000E+19, error=ignore, (offset=   221)
+  [R] : temp bcn, simple=base , (size=   220), bcmy=  0.1000E+19, error=ignore, (offset=   441)
+  
+  <D> : property limitations
+  [R] : No default Darcy velocity - head active!
+  
+   reading external file control
+  
+
+   reading time input parameter:
+     from file "initial_model"
+
+  <D> : Steady state !
+  <D> : tunit =          0.10000000E+01 !
+  <D> : tstart=          0.00000000E+00
+  <D> : tshift=          0.00000000E+00
+  <D> : titer =      0
+  <D> : no monitoring points !
+  <D> : no output times !
+
+
+  [W] : "initial_model_status.log"
+ 
+  [I] : memory:      18.075 MByte data
+ 
+  nrm2(R) = 0.2237925123231D-24 (direct)
+  nrm2(R) = 0.7234359807910D-13 (direct)
+  [I] : iter_nl =     1, difmaxh =  0.14560953E+02, difmaxt =  0.13077711E+03
+  nrm2(R) = 0.3988020734854D-24 (direct)
+  nrm2(R) = 0.5659390887407D-13 (direct)
+  [I] : iter_nl =     2, difmaxh = -0.20252643E+03, difmaxt =  0.10045960E+02
+  nrm2(R) = 0.4008033040115D-24 (direct)
+  nrm2(R) = 0.5623952528765D-13 (direct)
+  [I] : iter_nl =     3, difmaxh = -0.10699236E+03, difmaxt =  0.52340502E+01
+  nrm2(R) = 0.3999530526415D-24 (direct)
+  nrm2(R) = 0.5604377049532D-13 (direct)
+  [I] : iter_nl =     4, difmaxh = -0.56460710E+02, difmaxt =  0.27248545E+01
+  nrm2(R) = 0.4013962104552D-24 (direct)
+  nrm2(R) = 0.5561651093759D-13 (direct)
+  [I] : iter_nl =     5, difmaxh = -0.29754313E+02, difmaxt =  0.14174659E+01
+  nrm2(R) = 0.4007113751009D-24 (direct)
+  nrm2(R) = 0.5614716131802D-13 (direct)
+  [I] : iter_nl =     6, difmaxh = -0.15657585E+02, difmaxt =  0.73680544E+00
+  nrm2(R) = 0.4037175523310D-24 (direct)
+  nrm2(R) = 0.5601607240648D-13 (direct)
+  [I] : iter_nl =     7, difmaxh = -0.82275028E+01, difmaxt =  0.38270770E+00
+  nrm2(R) = 0.4009128954877D-24 (direct)
+  nrm2(R) = 0.5567778772467D-13 (direct)
+  [I] : iter_nl =     8, difmaxh = -0.43171103E+01, difmaxt =  0.19863674E+00
+  nrm2(R) = 0.4021244434740D-24 (direct)
+  nrm2(R) = 0.5506955371142D-13 (direct)
+  [I] : iter_nl =     9, difmaxh = -0.22621436E+01, difmaxt =  0.10302326E+00
+  nrm2(R) = 0.4011975128945D-24 (direct)
+  nrm2(R) = 0.5580070395509D-13 (direct)
+  [I] : iter_nl =    10, difmaxh = -0.11837802E+01, difmaxt =  0.53394370E-01
+  nrm2(R) = 0.4028069470104D-24 (direct)
+  nrm2(R) = 0.5548143888266D-13 (direct)
+  [I] : iter_nl =    11, difmaxh = -0.61868193E+00, difmaxt =  0.27653199E-01
+  nrm2(R) = 0.4008509257137D-24 (direct)
+  nrm2(R) = 0.5582710365189D-13 (direct)
+  [I] : iter_nl =    12, difmaxh = -0.32294573E+00, difmaxt =  0.14311522E-01
+  nrm2(R) = 0.4047934623355D-24 (direct)
+  nrm2(R) = 0.5580449329210D-13 (direct)
+  [I] : iter_nl =    13, difmaxh = -0.16837443E+00, difmaxt =  0.74014938E-02
+  nrm2(R) = 0.4053344933704D-24 (direct)
+  nrm2(R) = 0.5579374225368D-13 (direct)
+  [I] : iter_nl =    14, difmaxh = -0.87684775E-01, difmaxt =  0.38251574E-02
+  nrm2(R) = 0.4008285774505D-24 (direct)
+  nrm2(R) = 0.5573644041615D-13 (direct)
+  [I] : iter_nl =    15, difmaxh = -0.45612989E-01, difmaxt =  0.19754937E-02
+  nrm2(R) = 0.3995027208503D-24 (direct)
+  nrm2(R) = 0.5557028613660D-13 (direct)
+  [I] : iter_nl =    16, difmaxh = -0.23701848E-01, difmaxt =  0.10195321E-02
+  nrm2(R) = 0.3993151678851D-24 (direct)
+  nrm2(R) = 0.5492463566130D-13 (direct)
+  [I] : iter_nl =    17, difmaxh = -0.12303177E-01, difmaxt =  0.52589012E-03
+  nrm2(R) = 0.4005167133928D-24 (direct)
+  nrm2(R) = 0.5559685712938D-13 (direct)
+  [I] : iter_nl =    18, difmaxh = -0.63797444E-02, difmaxt =  0.27108117E-03
+  nrm2(R) = 0.4035565073816D-24 (direct)
+  nrm2(R) = 0.5507322280618D-13 (direct)
+  [I] : iter_nl =    19, difmaxh = -0.33048372E-02, difmaxt =  0.13963845E-03
+  nrm2(R) = 0.3993018662478D-24 (direct)
+  nrm2(R) = 0.5529252320737D-13 (direct)
+  [I] : iter_nl =    20, difmaxh = -0.17102727E-02, difmaxt =  0.71880329E-04
+  nrm2(R) = 0.4029621480961D-24 (direct)
+  nrm2(R) = 0.5470781661586D-13 (direct)
+  [I] : iter_nl =    21, difmaxh = -0.88420670E-03, difmaxt =  0.36975321E-04
+  nrm2(R) = 0.4005386520075D-24 (direct)
+  nrm2(R) = 0.5556245583851D-13 (direct)
+  [I] : iter_nl =    22, difmaxh = -0.45669011E-03, difmaxt =  0.19006784E-04
+  nrm2(R) = 0.4018186681392D-24 (direct)
+  nrm2(R) = 0.5563573812632D-13 (direct)
+  [I] : iter_nl =    23, difmaxh = -0.23565404E-03, difmaxt =  0.97633349E-05
+  nrm2(R) = 0.4020536585279D-24 (direct)
+  nrm2(R) = 0.5544517195918D-13 (direct)
+  [I] : iter_nl =    24, difmaxh = -0.12148457E-03, difmaxt =  0.50116120E-05
+  nrm2(R) = 0.4014364582125D-24 (direct)
+  nrm2(R) = 0.5538289720133D-13 (direct)
+  [I] : iter_nl =    25, difmaxh = -0.62568313E-04, difmaxt =  0.25705764E-05
+  nrm2(R) = 0.4014236619064D-24 (direct)
+  nrm2(R) = 0.5548459707604D-13 (direct)
+  [I] : iter_nl =    26, difmaxh = -0.32191076E-04, difmaxt =  0.13175617E-05
+  nrm2(R) = 0.4042309696067D-24 (direct)
+  nrm2(R) = 0.5560528589557D-13 (direct)
+  [I] : iter_nl =    27, difmaxh = -0.16549791E-04, difmaxt =  0.67490495E-06
+  nrm2(R) = 0.4030681902494D-24 (direct)
+  nrm2(R) = 0.5557204961874D-13 (direct)
+  [I] : iter_nl =    28, difmaxh = -0.84984122E-05, difmaxt =  0.34536831E-06
+  nrm2(R) = 0.4041082613965D-24 (direct)
+  nrm2(R) = 0.5586903093767D-13 (direct)
+  [I] : iter_nl =    29, difmaxh = -0.43613509E-05, difmaxt =  0.17658903E-06
+  nrm2(R) = 0.4019521009192D-24 (direct)
+  nrm2(R) = 0.5523198584318D-13 (direct)
+  [I] : iter_nl =    30, difmaxh = -0.22347322E-05, difmaxt =  0.90288012E-07
+  nrm2(R) = 0.4037517866741D-24 (direct)
+  nrm2(R) = 0.5537076940499D-13 (direct)
+  [I] : iter_nl =    31, difmaxh = -0.11452967E-05, difmaxt =  0.46079521E-07
+  nrm2(R) = 0.4018303239800D-24 (direct)
+  nrm2(R) = 0.5487131774244D-13 (direct)
+  [I] : iter_nl =    32, difmaxh = -0.58590831E-06, difmaxt =  0.23481761E-07
+  [W] : HDF5 to "initial_model_final.h5"
+  [W] : VTK to "initial_model_final.vtk"
+ Deallocated Memory, remaining    7.6293945312500000E-006  MB
+  
+  
+  *** NEW MODEL 
+
+   checking input definitions:
+     from file "free_convection"
+  
+   reading model input parameter:
+     from file "free_convection"
+  
+  [R] : title
+  [R] : runmode
+     >>> forward modeling
+  <D> : free=0, confined flow !
+  [R] : linfo
+  [R] : [i0, j0, k0] = [ 220,   1, 119]
+  [R] : nonlinear solver parameter
+  [I] : fixed relxation factor assumed
+  [R] : output suffix: .h5:[X], .plt:[ ], .vtk:[X], .txt:[ ]
+  
+   reading flow parameters
+  
+  [R] : flow linear solver (control=  67)
+  [R] : flow nonlinear iteration tolerance
+  [I] : flow nonlinear relaxation factor
+  
+   reading heat transport parameters
+  
+  [R] : temperature linear solver (control=  67)
+  [R] : temperature nonlinear iteration tolerance
+  [I] : temperature nonlinear relaxation factor
+  
+  <D> : no transport [disabled]
+  
+  
+  <D> : no electric potential [disabled]
+  
+  
+  <D> : grav =   0.9810E+01
+  <D> : no fluid heat production
+  <D> : rref, reference density =   0.9980E+03
+  <D> : tref, reference temperature =   0.2000E+02
+  <D> : fixed rhocm, defined by unit
+  
+   reading zone parameter 
+  
+  [R] : "uindex" - unit index number, unit-cell assignment
+  [I] : approx. speedup for the full solver :   1.00
+  
+  [R] : "units" - unit (rock) properties
+  
+   reading/preprocessing arrays
+  
+  [R] : delx
+  [R] : dely
+  [R] : delz
+  
+   reading initial values 
+  
+   open HDF5 file: initial_model_final.h5
+  [R] : head, in [m]
+   open HDF5 file: initial_model_final.h5
+  [R] : temp, in [degree Celsius]
+  [R] : pres, in [MPa]
+  
+   reading boundary conditions 
+  
+  [R] : head bcd, simple=top  , (size=   220), bcmy=  0.1000E+19, error=ignore, (offset=     1)
+  [R] : temp bcd, simple=top  , (size=   220), bcmy=  0.1000E+19, error=ignore, (offset=   221)
+  [R] : temp bcn, simple=base , (size=   220), bcmy=  0.1000E+19, error=ignore, (offset=   441)
+  
+  <D> : property limitations
+  [R] : No default Darcy velocity - head active!
+  
+   reading external file control
+  
+
+   reading time input parameter:
+     from file "free_convection"
+
+  <D> : Steady state !
+  <D> : tunit =          0.10000000E+01 !
+  <D> : tstart=          0.00000000E+00
+  <D> : tshift=          0.00000000E+00
+  <D> : titer =      0
+  <D> : no monitoring points !
+  <D> : no output times !
+
+
+  [W] : "free_convection_status.log"
+ 
+  [I] : memory:      18.078 MByte data
+ 
+  nrm2(R) = 0.1687939911069D-18 (direct)
+  nrm2(R) = 0.5541727653879D-13 (direct)
+  [I] : iter_nl =     1, difmaxh =  0.92167703E+01, difmaxt = -0.14571108E+01
+  nrm2(R) = 0.1706315067114D-18 (direct)
+  nrm2(R) = 0.5599223808825D-13 (direct)
+  [I] : iter_nl =     2, difmaxh =  0.28695639E+01, difmaxt = -0.54743618E+00
+  nrm2(R) = 0.1683388339095D-18 (direct)
+  nrm2(R) = 0.5576098587093D-13 (direct)
+  [I] : iter_nl =     3, difmaxh =  0.11351412E+01, difmaxt = -0.21972727E+00
+  nrm2(R) = 0.1655201412090D-18 (direct)
+  nrm2(R) = 0.5560760544386D-13 (direct)
+  [I] : iter_nl =     4, difmaxh =  0.45965675E+00, difmaxt = -0.90430917E-01
+  nrm2(R) = 0.1717179674397D-18 (direct)
+  nrm2(R) = 0.5549908650400D-13 (direct)
+  [I] : iter_nl =     5, difmaxh =  0.18983308E+00, difmaxt = -0.37406649E-01
+  nrm2(R) = 0.1696489327872D-18 (direct)
+  nrm2(R) = 0.5603793107988D-13 (direct)
+  [I] : iter_nl =     6, difmaxh =  0.78824727E-01, difmaxt = -0.15508518E-01
+  nrm2(R) = 0.1699572360406D-18 (direct)
+  nrm2(R) = 0.5537185456271D-13 (direct)
+  [I] : iter_nl =     7, difmaxh =  0.32769997E-01, difmaxt = -0.64348425E-02
+  nrm2(R) = 0.1696578282961D-18 (direct)
+  nrm2(R) = 0.5552157863566D-13 (direct)
+  [I] : iter_nl =     8, difmaxh =  0.13627102E-01, difmaxt = -0.26717504E-02
+  nrm2(R) = 0.1676482128364D-18 (direct)
+  nrm2(R) = 0.5602301798324D-13 (direct)
+  [I] : iter_nl =     9, difmaxh =  0.56669300E-02, difmaxt = -0.11099303E-02
+  nrm2(R) = 0.1698013740194D-18 (direct)
+  nrm2(R) = 0.5569506359317D-13 (direct)
+  [I] : iter_nl =    10, difmaxh =  0.23566641E-02, difmaxt = -0.46118803E-03
+  nrm2(R) = 0.1699904478629D-18 (direct)
+  nrm2(R) = 0.5540679746856D-13 (direct)
+  [I] : iter_nl =    11, difmaxh =  0.97990937E-03, difmaxt = -0.19176076E-03
+  [W] : HDF5 to "free_convection_final.h5"
+  [W] : VTK to "free_convection_final.vtk"
+  [W] : Borehole logs to "free_convection_final_L1.dat"
+  [W] : Borehole logs to "free_convection_final_L2.dat"
+  [W] : Borehole logs to "free_convection_final_L3.dat"
+  [W] : Borehole logs to "free_convection_final_L4.dat"
+  [W] : Borehole logs to "free_convection_final_L5.dat"
+ Deallocated Memory, remaining    7.6293945312500000E-006  MB
+ total cpu time:    1:15.81 min
+ RUN O.K.
