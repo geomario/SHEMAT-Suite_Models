@@ -1,0 +1,11 @@
+% Shemat-Suite version: Shem-FW/AD/SM 7.50 (Smarty)                                                     
+%          build: Fri Aug 16 09:09:27 CEST 2019           
+%   build command line: gmake fw pres hdf noomp PROPS=bas USER=none HDF5_MOD=/usr/local_rwth/sw/HDF5/1.8.21/gcc_4.8.5-intelmpi_2018.4.274/include/ HDF5_LIB=/usr/local_rwth/sw/HDF5/1.8.21/gcc_4.8.5-intelmpi_2018.4.274/lib/ COMPTYPE=ling64                                           
+%        Project: "forced_init"
+%
+%    <iteration> <delta pres> <delta temp> <delta satn> (<delta conc> ...)
+          1  0.58089954E+02  0.15511141E+03  0.00000000E+00
+          2  0.12536384E+01  0.15209145E+02  0.00000000E+00
+          3  0.16452359E+00  0.90341257E+00  0.00000000E+00
+          4  0.76841805E-02  0.39812449E-01  0.00000000E+00
+          5  0.28376985E-03  0.13516084E-02  0.00000000E+00
