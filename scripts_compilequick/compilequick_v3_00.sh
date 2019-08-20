@@ -11,6 +11,8 @@ make_dir="${HOME}/SHEMAT-Suite"                     # "${HOME}/SHEMAT-Suite"
 shem_type="fw"			# "sm", "fw"
 shem_type_name="fw"	# "sm_sgsim", "fw"
 
+mode="head"			# "head", "pres"
+
 props="const"
 user="none"
 
@@ -65,10 +67,10 @@ gmake cleanall
 gmake version.inc
 
 #New executable suffix
-new_exe_suffix="${shem_type_name}${compiler_name_new}_${props}_${git_branch}_quick"
+new_exe_suffix="${shem_type_name}${compiler_name_new}_${props}_${mode}_${git_branch}_quick"
 
 #Compilation command
-gmake ${shem_type} COMPTYPE=${compiler} PROPS=${props} USER=${none} ${flags}
+gmake ${shem_type} COMPTYPE=${compiler} PROPS=${props} USER=${user} ${flags}
 
 # Catch compilation errors
 if [ $? -ge 1 ];

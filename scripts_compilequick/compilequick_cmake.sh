@@ -11,6 +11,10 @@ make_dir="${HOME}/SHEMAT-Suite"                     # "${HOME}/SHEMAT-Suite"
 shem_type="fw"			# "sm", "fw"
 shem_type_name="fw"	# "sm_sgsim", "fw"
 
+mode="OFF"			# "ON" (matches gmake's mode =
+				# "pres"), "OFF" (matches gmake's mode
+				# = "head")
+
 props="const"
 user="none"
 
@@ -62,12 +66,12 @@ fi
 gmake cleanall
 
 #New executable suffix
-new_exe_suffix="${shem_type_name}${compiler_name_new}_${props}_${git_branch}_quick"
+new_exe_suffix="${shem_type_name}${compiler_name_new}_${props}_${mode}_${git_branch}_quick"
 
 #Clean make-directory
 mkdir build_${props}
 pushd build_${props}
-cmake -DPROPS=${props} -DUSER=${user} ${flags} ..
+cmake -DPROPS=${props} -DUSER=${user} -Dpres=${mode} ${flags} ..
 
 #Compilation command 
 gmake ${shem_type} -j16

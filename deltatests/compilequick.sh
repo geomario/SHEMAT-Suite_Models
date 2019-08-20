@@ -11,6 +11,8 @@ make_dir="{make_dir_in}"                     # "${HOME}/SHEMAT-Suite"
 shem_type="{shem_type_in}"			# "sm", "fw"
 shem_type_name="{shem_type_name_in}"	# "sm_sgsim", "fw"
 
+mode="{mode_in}"			# "head", "pres"
+
 props="{props_in}"
 user="none"
 
@@ -81,7 +83,7 @@ fi
 gmake cleanall
 
 #New executable suffix
-new_exe_suffix="${shem_type_name}${compiler_name}_${props}_${git_branch}"
+new_exe_suffix="${shem_type_name}${compiler_name}_${props}_${mode}_${git_branch}"
 
 #Compilation command 
 gmake ${shem_type} COMPTYPE=${compiler} PROPS=${props} USER=${user} HDF5_MOD=$HDF5_ROOT/include/ HDF5_LIB=$HDF5_ROOT/lib/ ${flags}
