@@ -84,6 +84,8 @@ test_models = [
     # "fw_bas_Theis3D_analytical_comparison",
     # "fw_bas_2Dfancy_ForcedConvection",  # > 60s, "master-54-pres"
     # "fw_bas_2Dfancy_FreeConvection",    # > 60s, "master-54-pres"
+    "fw_pres_bas_2Dfancy_ForcedConvection",  # > 60s, "master-54-pres"
+    "fw_pres_bas_2Dfancy_FreeConvection",  # > 60s, "master-54-pres"
 ]
 
 ###############################################################################
