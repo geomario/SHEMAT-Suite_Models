@@ -6,8 +6,8 @@ import pskf.tools.plot.plotfunctions as pf
 
 # Head from vtk
 vtk_reader = pf.my_vtk(
-    os.environ['HOME'] + '/SHEMAT-Suite_Models/fw_const_Thiem/',
-    # + 'result/'
+    os.environ['HOME'] + '/SHEMAT-Suite_Models/fw_const_Thiem/'
+    + 'result/',
     'THIEM_final.vtk',
     'head')
 h_vtk = pf.my_vtk_to_numpy(vtk_reader)
