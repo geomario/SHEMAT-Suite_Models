@@ -1,0 +1,11 @@
+% Shemat-Suite version: Shem-FW/AD/SM 7.50 (Smarty)                                                     
+%          build: Fri Aug 16 12:15:34 CEST 2019           
+%   build command line: gmake fw pres hdf noomp PROPS=bas USER=none HDF5_MOD=/usr/local_rwth/sw/HDF5/1.8.21/gcc_4.8.5-intelmpi_2018.4.274/include/ HDF5_LIB=/usr/local_rwth/sw/HDF5/1.8.21/gcc_4.8.5-intelmpi_2018.4.274/lib/ COMPTYPE=ling64                                           
+%        Project: "init_thermal"
+%
+%    <iteration> <delta pres> <delta temp> <delta satn> (<delta conc> ...)
+          1  0.10000000E-20  0.24378386E+02  0.10000000E-20
+          2  0.10000000E-20  0.21329181E+01  0.10000000E-20
+          3  0.10000000E-20  0.11917725E+00  0.10000000E-20
+          4  0.10000000E-20  0.53847059E-02  0.10000000E-20
+          5  0.10000000E-20  0.19716068E-03  0.10000000E-20

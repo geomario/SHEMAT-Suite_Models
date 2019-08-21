@@ -70,7 +70,7 @@ gmake version.inc
 new_exe_suffix="${shem_type_name}${compiler_name_new}_${props}_${user}_${mode}_${git_branch}_quick"
 
 #Compilation command
-gmake ${shem_type} COMPTYPE=${compiler} PROPS=${props} USER=${user} ${flags}
+gmake ${shem_type} COMPTYPE=${compiler} PROPS=${props} USER=${user} ${mode} ${flags}
 
 # Catch compilation errors
 if [ $? -ge 1 ];

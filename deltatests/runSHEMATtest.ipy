@@ -58,7 +58,7 @@ is_cleanup = True
 test_models = [
     # "fw_const_TheisProblem",
     # "fw_basc_SaltFlow",
-    # "fw_basc_SaltFlow_small",
+    # "fw_basc_SaltFlow_small",   # > 10s
     # "ad_const_TemperatureInversion",  # "cmake"
     # "fw_bas_TinyAdvective",
     # "fw_const_Peclet_down",
@@ -82,6 +82,10 @@ test_models = [
     # "fw_const_Thiem",
     # "fw_const_Theis3D_analytical_comparison",
     # "fw_bas_Theis3D_analytical_comparison",
+    # "fw_bas_2Dfancy_ForcedConvection",  # > 60s, "master-54-pres"
+    # "fw_bas_2Dfancy_FreeConvection",    # > 60s, "master-54-pres"
+    "fw_pres_bas_2Dfancy_ForcedConvection",  # > 60s, "master-54-pres"
+    "fw_pres_bas_2Dfancy_FreeConvection",  # > 60s, "master-54-pres"
 ]
 
 ###############################################################################
@@ -126,8 +130,11 @@ for test_model in test_models:
         #                             Directories                             #
         #######################################################################
         # model_dir
-        model_dir = (std.shemat_suite_models_dir + "/" + shem_type + "_" +
-                     props + "_" + model_name)
+        model_dir = ((std.shemat_suite_models_dir + "/" + shem_type + "_" +
+                      props + "_" + model_name)
+                     if sti.mode[test_model]['gmake'] == 'head' else
+                     (std.shemat_suite_models_dir + "/" + shem_type + "_" +
+                      mode + "_" + props + "_" + model_name))
 
         # exe_name
         exe_name = ("shem_" + shem_type_name + compiler_name + "_" + props +
