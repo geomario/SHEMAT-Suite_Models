@@ -64,7 +64,7 @@ fi
 gmake cleanall
 
 #New executable suffix
-new_exe_suffix="${shem_type_name}${compiler_name_new}_${props}_${mode}_${git_branch}_quick"
+new_exe_suffix="${shem_type_name}${compiler_name_new}_${props}_${user}_${mode}_${git_branch}_quick"
 
 #Compilation command
 gmake ${shem_type} COMPTYPE=${compiler} PROPS=${props} USER=${user} ${mode} HDF5_MOD=$HDF5_ROOT/include/ HDF5_LIB=$HDF5_ROOT/lib/ ${flags}
@@ -83,7 +83,12 @@ then
 fi
 
 # Rename executable
-rename shem_${shem_type_name}${compiler_name}_${props}.x shem_${new_exe_suffix}.x shem_${shem_type_name}${compiler_name}_${props}.x
+if [ "${user}" = "none" ];
+then
+    rename shem_${shem_type_name}${compiler_name}_${props}.x shem_${new_exe_suffix}.x shem_${shem_type_name}${compiler_name}_${props}.x
+else
+    rename shem_${shem_type_name}${compiler_name}_${props}_${user}.x shem_${new_exe_suffix}.x shem_${shem_type_name}${compiler_name}_${props}_${user}.x
+fi
 
 # Move executable
 mv shem_${new_exe_suffix}.x ${model_dir}
