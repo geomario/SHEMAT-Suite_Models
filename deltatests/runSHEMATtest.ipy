@@ -50,10 +50,15 @@ compile_backend = 'gcc'  # gcc, intel
 is_exec = True
 
 # Testing input
-is_test = True
+is_test = False
 
 # Cleanup all output in model_dir after compilation/execution/testing
-is_cleanup = True
+is_cleanup = False
+
+# Replace files in 'result' directories
+is_replace_results = True
+# CAUTION: Only use this option if you are sure that you want to replace the
+# results!
 
 test_models = [
     # "fw_const_TheisProblem",
@@ -82,10 +87,10 @@ test_models = [
     # "fw_const_Thiem",
     # "fw_const_Theis3D_analytical_comparison",
     # "fw_bas_Theis3D_analytical_comparison",
-    # "fw_bas_2Dfancy_ForcedConvection",  # > 60s, "master-54-pres"
+    "fw_bas_2Dfancy_ForcedConvection",  # > 60s, "master-54-pres"
     # "fw_bas_2Dfancy_FreeConvection",    # > 60s, "master-54-pres"
-    "fw_pres_bas_2Dfancy_ForcedConvection",  # > 60s, "master-54-pres"
-    "fw_pres_bas_2Dfancy_FreeConvection",  # > 60s, "master-54-pres"
+    # "fw_pres_bas_2Dfancy_ForcedConvection",  # > 60s, "master-54-pres"
+    # "fw_pres_bas_2Dfancy_FreeConvection",  # > 60s, "master-54-pres"
 ]
 
 ###############################################################################
@@ -125,7 +130,7 @@ for test_model in test_models:
 
     testing_suite = sti.testing_suite[test_model]
 
-    if is_comp or is_exec:
+    if is_comp or is_exec or is_replace_results:
         #######################################################################
         #                             Directories                             #
         #######################################################################
@@ -231,7 +236,7 @@ for test_model in test_models:
                 model_dir, ['sbatch', job_script],
                 outfile=open(
                     'stdout_' + shem_type_name + compiler_name + "_" + props +
-                    "_" + git_branch + '.txt', 'w'),
+                    "_" + mode + "_" + git_branch + '.txt', 'w'),
                 wait=True,
                 errout=True)
         else:
@@ -242,7 +247,7 @@ for test_model in test_models:
                 './' + job_script,
                 outfile=open(
                     'stdout_' + shem_type_name + compiler_name + "_" + props +
-                    "_" + git_branch + '.txt', 'w'),
+                    "_" + mode + "_" + git_branch + '.txt', 'w'),
                 wait=True,
                 errout=True)
 
@@ -264,9 +269,76 @@ for test_model in test_models:
         runner.run(testing_suite)
 
 ###############################################################################
+#                               Replace results                               #
+###############################################################################
+    if is_replace_results:
+
+        print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+        print('Replacing results in /result/ directory of ')
+        print('Directory: ' + model_dir)
+        print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+
+        # List of files in result directory (result files)
+        result_files = os.listdir(model_dir + std.result_dir)
+
+        # Loop over result files
+        for result_file in result_files:
+            # Check existence of result file
+            if os.path.isfile(model_dir + std.result_dir + '/' + result_file):
+                # Check existence of corresponding new output
+                if os.path.isfile(model_dir + '/' + result_file):
+                    # Replace result file with new output
+                    os.rename(model_dir + '/' + result_file,
+                              model_dir + std.result_dir + '/' + result_file)
+                else:
+                    raise exceptions.RuntimeError(
+                        "Result file not found in " +
+                        "current SHEMAT-Suite output : " + result_file)
+
+        doc_files = os.listdir(model_dir + '/doc')
+        new_files = os.listdir(model_dir)
+
+        # Add files
+        for new_file in new_files:
+            if 'shem_' in new_file and '.x' in new_file:
+                if not new_file == exe_name:
+                    os.remove(model_dir + '/' + new_file)
+            if (('Makefile' in new_file and 'flags' in new_file)
+                    or ('module' in new_file and '.inc' in new_file)
+                    or ('version' in new_file and '.inc' in new_file)
+                    or ('job.sh' == new_file)
+                    or ('compilequick.out' == new_file)
+                    or ('compilequick_run.sh' == new_file)
+                    or ('stdout' in new_file and '.txt' in new_file)):
+                os.rename(model_dir + '/' + new_file,
+                          model_dir + '/doc/' + new_file)
+
+        # Remove files
+        for doc_file in doc_files:
+            if 'README' in doc_file:
+                with open(model_dir + '/doc/' + doc_file, 'a') as freadme:
+                    f.write('!!!!!!!!\n')
+                    f.write('Results were changed\n\n')
+                    f.write('Please review this README and remove\n')
+                    f.write('this notification if everythin is up-to-date. \n')
+                    f.write('\n')
+            if (('Makefile' in new_file and 'flags' in new_file)
+                    or ('module' in new_file and '.inc' in new_file)
+                    or ('version' in new_file and '.inc' in new_file)
+                    or ('jobs.sh' == new_file)
+                    or ('compilequick.out' == new_file)
+                    or ('compilequick_run.sh' == new_file)
+                    or ('stdout' in new_file and '.txt' in new_file)):
+                os.remove(model_dir + '/doc/' + doc_file)
+
+###############################################################################
 #                                   Cleanup                                   #
 ###############################################################################
     if is_cleanup:
+
+        if is_replace_results:
+            raise exceptions.RuntimeError("Cleanup should not be called, " +
+                                          "when results are replaced")
 
         print('Run cleanup\n')
 
