@@ -1,0 +1,136 @@
+!==========>>>>> INFO
+# title
+benchmarkelder                                                                                                                  
+# linfo
+4*1												!Systemlöser mit einigen Ausgaben
+# runmode           
+0												!einfache Vorwärtsberechnung
+
+!==========>>>>> MESH
+# grid
+44 1 25											!zweidimensionales Model mit 88 Blöcken in x- und 50 Blöcken in z-Richtung
+# delx
+44*13.6363											!Schrittweite in x-Richtung
+# dely
+1      												!Schrittweite in y-Richtung
+# delz
+25*6											!Schrittweite in z-Richtung
+
+# PROPS=basc											!dieses Modul lässt Abhängigkeit von der Salzkonzentration, dem Druck und der Temperatur zu
+# USER = none											!keine benutzerdefinierten Parameter
+
+# file output: 										!Formate der output-Dateien
+
+# active head trac										!zu lösende Differentialgleichungen
+
+
+!==========>>>>> TIME STEP
+# timestep control
+1												!transient
+1.0 1.0 1.0 0.0 										!Strömung, Temperatur und Konzentration haben implizite Zeitschritte, Startpunkt ist Null
+
+# tunit 
+86400.    											!Einheit:Tage
+
+# time periods, records=1
+0.0	   200    20 lin
+
+730	   1461   250 lin
+1461	   4383   800 lin
+4383	   7305   800 lin
+
+!# monitor, records=0
+13 1 24 1
+
+# output times, records=3
+1461
+3652.5
+5748.25
+
+									!Zeitschritte von 70,128 Stunden
+											!Zeitschritte von 87,66 Stunden
+												!Ausgabe nach 4 Jahren
+												!Ausgabe nach 10 Jahren
+ 												!Ausgabe nach 15 Jahren
+
+!==========>>>>> NONLINEAR SOLVER
+# nlsolve
+50 0												!50=maximale Anzahl von Iterationen, 0=fixierte Entlastungsparameter
+
+!==========>>>>> FLOW
+# lsolvef (linear solver control)
+1.d-14 67 500											!1.d-14=Genauigkeit, 67=Name des Lösers, Abbruchkriterium, Vorraussetzungen
+# nliterf (nonlinear iteration control)
+1.0d-12 1											!1.d-12=Genauigkeit, 1=Verhältnis von neuen zu alten Zeitschritten
+# head bcd,records=2
+1  1 25 0. 0    										!obere linke Ecke
+44 1 25 0. 0      										!obere rechte Ecke
+                            									! über den gesamten Rest des Randes kein Zustrom oder Abstrom
+
+
+!==========>>>>>  TRACER									!der Tracer stellt in diesem Fall Salzwasser dar (NaCl)
+# lsolvec (linear solver control)
+1.d-14 67 500											!1.d-14=Genauigkeit, 67=Name des Lösers, Abbruchkriterium, Vorraussetzungen
+# nliterc (nonlinear iteration control)	
+1.0d-10 1.0											!1.d-10=Genauigkeit, 1=Verhältnis von neuen zu alten Zeitschritten
+# nliterc (nonlinear iteration control)
+1.0d-8												!1.d-8=Genauigkeit
+# conc bcd, records=22,  species=1
+12	1	25	6.127355	0
+13	1	25	6.127355	0
+14	1	25	6.127355	0
+15	1	25	6.127355	0
+16	1	25	6.127355	0
+17	1	25	6.127355	0
+18	1	25	6.127355	0
+19	1	25	6.127355	0
+20	1	25	6.127355	0
+21	1	25	6.127355	0
+22	1	25	6.127355	0
+23	1	25	6.127355	0
+24	1	25	6.127355	0
+25	1	25	6.127355	0
+26	1	25	6.127355	0
+27	1	25	6.127355	0
+28	1	25	6.127355	0
+29	1	25	6.127355	0
+30	1	25	6.127355	0
+31	1	25	6.127355	0
+32	1	25	6.127355	0
+33	1	25	6.127355	0
+
+												
+# conc bcd, simple=base,   value=init,	 species=1						!für die gesamte untere Grenze gelten die initialen Bedingungen
+
+# ntrans
+1 0												!elder_transientAnzahl der Tracer=1	Reaktivität=aus
+# transpar
+3.565d-6 58.443											!Diffusionskoeffizient [m²/s]	Molare Masse [g/mol] (hier von NaCl)
+
+# rref
+1000												!Referenzdichte
+
+
+
+!==========>>>>> INITIAL VALUES
+# temp init
+1100*20.0											!initiale Temperatur für das gesamte Gitter
+
+# head init	
+1100*0.												!initiale Standrohrspiegelhöhe für das gesamte Gitter
+
+# tracer0001 init 		
+1056*0. 11*0. 22*6.127355 11*0.	!initiale Konzentration des Tracers, in diesem Fall die Salzkonzentration [mol/L], für jede Zelle
+
+
+		
+
+
+
+
+!==========>>>>> UNIT DESCRIPTION
+# units
+0.1   1.0d0  1.0d0 0.4845d-12 1.0d-10  1.0d0  1.0d0  2.9d0  0.0e-06  2.06d6  10d-5  0.d0  0.0d0   	!Festlegung der Paramter wie Permeablität und Porosität
+
+# uindex
+1100*1													!Geometrie des Modells

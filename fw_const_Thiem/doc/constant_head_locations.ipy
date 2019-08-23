@@ -1,0 +1,44 @@
+import os
+import numpy as np
+
+import pskf.tools.plot.plotfunctions as pf
+# from vtk.util.numpy_support import vtk_to_numpy
+
+# Head from vtk
+vtk_reader = pf.my_vtk(
+    os.environ['HOME'] + '/SHEMAT-Suite_Models/fw_const_Thiem/'
+    + 'result/',
+    'THIEM_final.vtk',
+    'head')
+h_vtk = pf.my_vtk_to_numpy(vtk_reader)
+
+# x-coordinates and y-coordinates from vtk
+x = pf.my_vtk_coords(vtk_reader, 'x')
+y = pf.my_vtk_coords(vtk_reader, 'y')
+z = pf.my_vtk_coords(vtk_reader, 'z')
+
+# Initialize input file string and number of records
+input_string = ""
+n_records = 0
+
+i_well = 35  # SHEMAT-numbering, Python-array: -1
+j_well = 35  # SHEMAT-numbering, Python-array: -1
+k_well = 1  # SHEMAT-numbering, Python-array: -1
+
+head_input = 20.0
+
+R = 530  # no influence length of well
+
+for i in range(x.size):
+    for j in range(y.size):
+        d = np.sqrt((x[i] - x[i_well - 1])**2 + (y[j] - y[j_well - 1])**2)
+        if d > R and i > 0 and j > 0 and i < x.size - 1 and j < y.size - 1:
+            n_records = n_records + 1
+            input_string = input_string + (
+                str(i + 1) + " " + str(j + 1) + " 1 " + str(20.0) + "d0 0\n")
+
+thiem_diffs = open(
+    os.environ['HOME'] +
+    "/SHEMAT-Suite_Models/fw_const_Thiem/doc/thiem_diffs.txt", 'w')
+thiem_diffs.write("# head bcd, records=" + str(n_records) + "\n")
+thiem_diffs.write(input_string)

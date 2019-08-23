@@ -1,13 +1,16 @@
+# SHEMAT-Suite_Models #
+
 Here we collect `SHEMAT-Suite` input files including results. These
 may serve as a benchmark test in the future.
 
+**Exactly one input file per model directory!**
 
 Naming convention:
 
 `runmode_propsmodule_description`
 
 
-Examples: 
+Examples:
 
 `fw_bas_2D-Heat-Transfer`\
 `fw_mphase_const_2D-CO2-injection`\
@@ -15,14 +18,32 @@ Examples:
 
 
 Every Model folder should contain a `/doc` folder, which describes how
-to compile and run the model. And a `/results` folder which collects
-the output results. Please also include an empty `/test` folder. This
-folder will be used in the automated testing.
+to compile and run the model. And a `/result` folder which collects
+the output results.
 
-A short description of the model can also be put in the `/doc`
-folder. This should contain a small note about the runtime needed and
-the number of processes used to obtain this runtime. Please include
-the hash of the git commit of the compiled source code.
+## Current number of testmodels in benchmark ##
+
+```
+==============>>>>>>>>>>>>>>    26    <<<<<<<<<<<<<<==============
+```
+
+## doc ##
+
+### Model description ###
+
+A short description of the model should also be put in the `/doc`
+folder. This should first include a short explanation of the physics
+behind the model. It can also contain a small note about the runtime
+needed and the number of processes used to obtain this runtime.
+
+### Compilation documentation ##
+
+Please include the hash of the git commit of the compiled source code.
+
+Otherwise follow the [Best
+Practices](https://ggewiki.eonerc.rwth-aachen.de/index.php/Compilation#Compilation:_Best_Practices)
+from our Wiki and put the corresponding files (`version.inc`,
+`Makefile.flags`, the zipped source code) in the `/result/` path.
 
 
 ## deltatests ##
@@ -49,3 +70,272 @@ analogous python file for the new `SHEMAT-Suite_Model` directory. This
 should be possible by copying and changing some directory
 specifications. Finally, add an `import` statement and an `addTest`
 command in `SHEMATtest.py`.
+
+## Matrix of models against features ##
+
+| **Models**                             | **Small description**                                              |
+|:--------------------------------------:|:------------------------------------------------------------------:|
+| `ad_const_TemperatureInversion`        | Testmodel for deterministic inversion (AD mode)                    |
+| `fw_basc_SaltFlow`                     | Model Info: Simple 2D transient model for flow and salt transport. |
+| `fw_basc_Salt_small`                   | Smaller version of the SaltFlow model                              |
+| `fw_const_TheisProblem`                | 2D steady state model of a pumping test                            |
+| `fw_bas_TinyAdvective`                 | Testmodel for Advective Heat Transport                             |
+| `fw_const_Peclet_down`                 | vertical temperature profile influenced by vertical flow (down)    |
+| `fw_const_Peclet_up`                   | vertical temperature profile influenced by vertical flow (up)      |
+| `fw_basc_HenryProblem`                 | 2D Henry Problem: concentration entering flow regime               |
+| `fw_kola_HeatConduction2D`             | heat conduction in water/ice mixture                               |
+| `sm_const_MC_small`                    | steady state flow for four random permeability realizations        |
+| `sm_const_wavereal_true`               | 2D concentration flow through SGSim-generated permeability field   |
+| `sm_const_wavereal_enkf`               | Single EnKF-update based on 2D concentration                       |
+| `fw_bas_simpleConvection`              | 3D Steady-state of simple temperature boundary condition           |
+| `fw_bas_simpleConvection_transient`    | Transient 3D simulation of simple temperature boundary condition   |
+| `fw_basc_ElderProblem`                 | Steady-state of Elder Problem                                      |
+| `fw_basc_ElderProblem_transient`       | First time steps of Elder Problem                                  |
+| `fw_ice_GeoSlope`                      | 2D ice module testmodel                                            |
+| `fw_ice_GeoSlope2`                     | 2D ice module testmodel                                            |
+| `fw_const_NeumannBox`                  | small 3D internal Neumann boundary condition                       |
+| `fw_bas_NeumannBox`                    | small 3D internal Neumann boundary condition                       |
+| `fw_basc_NeumannBox`                   | small 3D internal Neumann boundary condition                       |
+| `fw_const_Theis_analytical_comparison` | transient Theis problem with boundary well                         |
+| `fw_const_Theis_analytical_centered`   | transient Theis problem with centered well                         |
+| `fw_const_Thiem`                       | steady-state Thiem problem with analytical comparison              |
+| `fw_const_Theis3D_analytical_comparison` | transient 3D-Theis problem with boundary well                      |
+| `fw_bas_Theis3D_analytical_comparison`   | transient 3D-Theis problem with boundary well, bas                 |
+
+| **Modes**                                | `fw` | `sm` | `ad` |
+|:----------------------------------------:|:----:|:----:|:----:|
+| `ad_const_TemperatureInversion`          |      |      | x    |
+| `fw_basc_SaltFlow`                       | x    |      |      |
+| `fw_basc_Salt_small`                     | x    |      |      |
+| `fw_const_TheisProblem`                  | x    |      |      |
+| `fw_bas_TinyAdvective`                   | x    |      |      |
+| `fw_const_Peclet_down`                   | x    |      |      |
+| `fw_const_Peclet_up`                     | x    |      |      |
+| `fw_basc_HenryProblem`                   | x    |      |      |
+| `fw_kola_HeatConduction2D`               | x    |      |      |
+| `sm_const_MC_small`                      |      | x    |      |
+| `sm_const_wavereal_true`                 |      | x    |      |
+| `sm_const_wavereal_enkf`                 |      | x    |      |
+| `fw_bas_simpleConvection`                | x    |      |      |
+| `fw_bas_simpleConvection_transient`      | x    |      |      |
+| `fw_basc_ElderProblem`                   | x    |      |      |
+| `fw_basc_ElderProblem_transient`         | x    |      |      |
+| `fw_ice_GeoSlope`                        | x    |      |      |
+| `fw_ice_GeoSlope2`                       | x    |      |      |
+| `fw_const_NeumannBox`                    | x    |      |      |
+| `fw_bas_NeumannBox`                      | x    |      |      |
+| `fw_basc_NeumannBox`                     | x    |      |      |
+| `fw_const_Theis_analytical_comparison`   | x    |      |      |
+| `fw_const_Theis_analytical_centered`     | x    |      |      |
+| `fw_const_Thiem`                         | x    |      |      |
+| `fw_const_Theis3D_analytical_comparison` | x    |      |      |
+| `fw_bas_Theis3D_analytical_comparison`   | x    |      |      |
+
+| **Props**                                | `const` | `bas` | `basc` | `gheexpl` | `kola` | `ice` |
+|:----------------------------------------:|:-------:|:-----:|:------:|:---------:|:------:|-------|
+| `ad_const_TemperatureInversion`          | x       |       |        |           |        |       |
+| `fw_basc_SaltFlow`                       |         |       | x      |           |        |       |
+| `fw_basc_Salt_small`                     |         |       | x      |           |        |       |
+| `fw_const_TheisProblem`                  | x       |       |        |           |        |       |
+| `fw_bas_TinyAdvective`                   |         | x     |        |           |        |       |
+| `fw_const_Peclet_down`                   | x       |       |        |           |        |       |
+| `fw_const_Peclet_up`                     | x       |       |        |           |        |       |
+| `fw_basc_HenryProblem`                   |         |       | x      |           |        |       |
+| `fw_kola_HeatConduction2D`               |         |       |        |           | x      |       |
+| `sm_const_MC_small`                      | x       |       |        |           |        |       |
+| `sm_const_wavereal_true`                 | x       |       |        |           |        |       |
+| `sm_const_wavereal_enkf`                 | x       |       |        |           |        |       |
+| `fw_bas_simpleConvection`                |         | x     |        |           |        |       |
+| `fw_bas_simpleConvection_transient`      |         | x     |        |           |        |       |
+| `fw_basc_ElderProblem`                   |         |       | x      |           |        |       |
+| `fw_basc_ElderProblem_transient`         |         |       | x      |           |        |       |
+| `fw_ice_GeoSlope`                        |         |       |        |           |        | x     |
+| `fw_ice_GeoSlope2`                       |         |       |        |           |        | x     |
+| `fw_const_NeumannBox`                    | x       |       |        |           |        |       |
+| `fw_bas_NeumannBox`                      |         | x     |        |           |        |       |
+| `fw_basc_NeumannBox`                     |         |       | x      |           |        |       |
+| `fw_const_Theis_analytical_comparison`   | x       |       |        |           |        |       |
+| `fw_const_Theis_analytical_centered`     | x       |       |        |           |        |       |
+| `fw_const_Thiem`                         | x       |       |        |           |        |       |
+| `fw_const_Theis3D_analytical_comparison` | x       |       |        |           |        |       |
+| `fw_bas_Theis3D_analytical_comparison`   |         | x     |        |           |        |       |
+
+| **Variables**                            | `head` | `temp` | `conc` | `head/temp` | `head/conc` | `head/temp/conc` |
+|:----------------------------------------:|:------:|:------:|:------:|:-----------:|:-----------:|:----------------:|
+| `ad_const_TemperatureInversion`          |        |        |        | x           |             |                  |
+| `fw_basc_SaltFlow`                       |        |        |        |             | x           |                  |
+| `fw_basc_Salt_small`                     |        |        |        |             | x           |                  |
+| `fw_const_TheisProblem`                  | x      |        |        |             |             |                  |
+| `fw_bas_TinyAdvective`                   |        |        |        | x           |             |                  |
+| `fw_const_Peclet_down`                   |        |        |        | x           |             |                  |
+| `fw_const_Peclet_up`                     |        |        |        | x           |             |                  |
+| `fw_basc_HenryProblem`                   |        |        |        |             | x           |                  |
+| `fw_kola_HeatConduction2D`               |        | x      |        |             |             |                  |
+| `sm_const_MC_small`                      | x      |        |        |             |             |                  |
+| `sm_const_wavereal_true`                 |        |        |        |             | x           |                  |
+| `sm_const_wavereal_enkf`                 |        |        |        |             | x           |                  |
+| `fw_bas_simpleConvection`                |        |        |        | x           |             |                  |
+| `fw_bas_simpleConvection_transient`      |        |        |        | x           |             |                  |
+| `fw_basc_ElderProblem`                   |        |        |        |             | x           |                  |
+| `fw_basc_ElderProblem_transient`         |        |        |        |             | x           |                  |
+| `fw_ice_GeoSlope`                        |        |        |        | x           |             |                  |
+| `fw_ice_GeoSlope2`                       |        |        |        | x           |             |                  |
+| `fw_const_NeumannBox`                    | x      |        |        |             |             |                  |
+| `fw_bas_NeumannBox`                      | x      |        |        |             |             |                  |
+| `fw_basc_NeumannBox`                     | x      |        |        |             |             |                  |
+| `fw_const_Theis_analytical_comparison`   | x      |        |        |             |             |                  |
+| `fw_const_Theis_analytical_centered`     | x      |        |        |             |             |                  |
+| `fw_const_Thiem`                         | x      |        |        |             |             |                  |
+| `fw_const_Theis3D_analytical_comparison` | x      |        |        |             |             |                  |
+| `fw_bas_Theis3D_analytical_comparison`   | x      |        |        |             |             |                  |
+
+| **Grid**                                 | `1D` | `2D` | `3D` |
+|:----------------------------------------:|:----:|------|:----:|
+| `ad_const_TemperatureInversion`          |      | x    |      |
+| `fw_basc_SaltFlow`                       |      | x    |      |
+| `fw_basc_Salt_small`                     |      | x    |      |
+| `fw_const_TheisProblem`                  |      | x    |      |
+| `fw_bas_TinyAdvective`                   |      | x    |      |
+| `fw_const_Peclet_down`                   | (x)  | x    |      |
+| `fw_const_Peclet_up`                     | (x)  | x    |      |
+| `fw_basc_HenryProblem`                   |      | x    |      |
+| `fw_kola_HeatConduction2D`               |      | x    |      |
+| `sm_const_MC_small`                      |      | x    |      |
+| `sm_const_wavereal_true`                 |      | x    |      |
+| `sm_const_wavereal_enkf`                 |      | x    |      |
+| `fw_bas_simpleConvection`                |      |      | x    |
+| `fw_bas_simpleConvection_transient`      |      |      | x    |
+| `fw_basc_ElderProblem`                   |      | x    |      |
+| `fw_basc_ElderProblem_transient`         |      | x    |      |
+| `fw_ice_GeoSlope`                        |      | x    |      |
+| `fw_ice_GeoSlope2`                       |      | x    |      |
+| `fw_const_NeumannBox`                    |      |      | x    |
+| `fw_bas_NeumannBox`                      |      |      | x    |
+| `fw_basc_NeumannBox`                     |      |      | x    |
+| `fw_const_Theis_analytical_comparison`   |      | x    |      |
+| `fw_const_Theis_analytical_centered`     |      | x    |      |
+| `fw_const_Thiem`                         |      | x    |      |
+| `fw_const_Theis3D_analytical_comparison` |      |      | x    |
+| `fw_bas_Theis3D_analytical_comparison`   |      |      | x    |
+
+**(x)**: quasi-dimension, only effects in this number of dimensions
+
+
+| **Time**                                 | `Steady State` | `Transient` |
+|:----------------------------------------:|:--------------:|-------------|
+| `ad_const_TemperatureInversion`          | x              |             |
+| `fw_basc_SaltFlow`                       |                | x           |
+| `fw_basc_Salt_small`                     |                | x           |
+| `fw_const_TheisProblem`                  | x              |             |
+| `fw_bas_TinyAdvective`                   | x              |             |
+| `fw_const_Peclet_down`                   | x              |             |
+| `fw_const_Peclet_up`                     | x              |             |
+| `fw_basc_HenryProblem`                   | x              |             |
+| `fw_kola_HeatConduction2D`               | x              |             |
+| `sm_const_MC_small`                      | x              |             |
+| `sm_const_wavereal_true`                 |                | x           |
+| `sm_const_wavereal_enkf`                 |                | x           |
+| `fw_bas_simpleConvection`                | x              |             |
+| `fw_bas_simpleConvection_transient`      |                | x           |
+| `fw_basc_ElderProblem`                   | x              |             |
+| `fw_basc_ElderProblem_transient`         |                | x           |
+| `fw_ice_GeoSlope`                        | x              |             |
+| `fw_ice_GeoSlope2`                       | x              |             |
+| `fw_const_NeumannBox`                    | x              |             |
+| `fw_bas_NeumannBox`                      | x              |             |
+| `fw_basc_NeumannBox`                     | x              |             |
+| `fw_const_Theis_analytical_comparison`   |                | x           |
+| `fw_const_Theis_analytical_centered`     |                | x           |
+| `fw_const_Thiem`                         | x              |             |
+| `fw_const_Theis3D_analytical_comparison` |                | x           |
+| `fw_bas_Theis3D_analytical_comparison`   |                | x           |
+
+| **Inversion**                            | `Deterministic Inversion` | `EnKF` |
+|:----------------------------------------:|:-------------------------:|:------:|
+| `ad_const_TemperatureInversion`          | x                         |        |
+| `fw_basc_SaltFlow`                       |                           |        |
+| `fw_basc_Salt_small`                     |                           |        |
+| `fw_const_TheisProblem`                  |                           |        |
+| `fw_bas_TinyAdvective`                   |                           |        |
+| `fw_const_Peclet_down`                   |                           |        |
+| `fw_const_Peclet_up`                     |                           |        |
+| `fw_basc_HenryProblem`                   |                           |        |
+| `fw_kola_HeatConduction2D`               |                           |        |
+| `sm_const_MC_small`                      |                           |        |
+| `sm_const_wavereal_true`                 |                           |        |
+| `sm_const_wavereal_enkf`                 |                           | x      |
+| `fw_bas_simpleConvection`                |                           |        |
+| `fw_bas_simpleConvection_transient`      |                           |        |
+| `fw_basc_ElderProblem`                   |                           |        |
+| `fw_basc_ElderProblem_transient`         |                           |        |
+| `fw_ice_GeoSlope`                        |                           |        |
+| `fw_ice_GeoSlope2`                       |                           |        |
+| `fw_const_NeumannBox`                    |                           |        |
+| `fw_bas_NeumannBox`                      |                           |        |
+| `fw_basc_NeumannBox`                     |                           |        |
+| `fw_const_Theis_analytical_comparison`   |                           |        |
+| `fw_const_Theis_analytical_centered`     |                           |        |
+| `fw_const_Thiem`                         |                           |        |
+| `fw_const_Theis3D_analytical_comparison` |                           |        |
+| `fw_bas_Theis3D_analytical_comparison`   |                           |        |
+
+| **Cluster architecture**                 | `serial` | `openmp` | `mpi` | `Slurm Job` |
+|:----------------------------------------:|:--------:|:--------:|:-----:|:-----------:|
+| `ad_const_TemperatureInversion`          | x        |          |       |             |
+| `fw_basc_SaltFlow`                       | x        |          |       |             |
+| `fw_basc_Salt_small`                     | x        |          |       |             |
+| `fw_const_TheisProblem`                  | x        |          |       |             |
+| `fw_bas_TinyAdvective`                   | x        |          |       |             |
+| `fw_const_Peclet_down`                   | x        |          |       |             |
+| `fw_const_Peclet_up`                     | x        |          |       |             |
+| `fw_basc_HenryProblem`                   | x        |          |       |             |
+| `fw_kola_HeatConduction2D`               | x        |          |       |             |
+| `sm_const_wavereal_true`                 | x        |          |       |             |
+| `sm_const_wavereal_enkf`                 | x        |          |       |             |
+| `fw_bas_simpleConvection`                | x        |          |       |             |
+| `fw_bas_simpleConvection_transient`      | x        |          |       |             |
+| `fw_basc_ElderProblem`                   | x        |          |       |             |
+| `fw_basc_ElderProblem_transient`         | x        |          |       |             |
+| `fw_ice_GeoSlope`                        | x        |          |       |             |
+| `fw_ice_GeoSlope2`                       | x        |          |       |             |
+| `fw_const_NeumannBox`                    | x        |          |       |             |
+| `fw_bas_NeumannBox`                      | x        |          |       |             |
+| `fw_basc_NeumannBox`                     | x        |          |       |             |
+| `fw_const_Theis_analytical_comparison`   | x        |          |       |             |
+| `fw_const_Theis_analytical_centered`     | x        |          |       |             |
+| `fw_const_Thiem`                         | x        |          |       |             |
+| `fw_const_Theis3D_analytical_comparison` | x        |          |       |             |
+| `fw_bas_Theis3D_analytical_comparison`   | x        |          |       |             |
+
+| **Verification method**                  | `previous simulation` | `analytical solution`             | `semi-analytical solution` |
+|:----------------------------------------:|:---------------------:|:---------------------------------:|:--------------------------:|
+| `ad_const_TemperatureInversion`          | x                     |                                   |                            |
+| `fw_basc_SaltFlow`                       | x                     |                                   |                            |
+| `fw_basc_Salt_small`                     | x                     |                                   |                            |
+| `fw_const_TheisProblem`                  | x                     | x, visual                         |                            |
+| `fw_bas_TinyAdvective`                   | x                     |                                   |                            |
+| `fw_const_Peclet_down`                   | x                     | x, Matlab script                  |                            |
+| `fw_const_Peclet_up`                     | x                     | x, Matlab script                  |                            |
+| `fw_basc_HenryProblem`                   | x                     |                                   | x, visual                  |
+| `fw_kola_HeatConduction2D`               | x                     |                                   |                            |
+| `sm_const_MC_small`                      | x                     |                                   |                            |
+| `sm_const_wavereal_true`                 | x                     |                                   |                            |
+| `sm_const_wavereal_enkf`                 | x                     |                                   |                            |
+| `fw_bas_simpleConvection`                | x                     |                                   |                            |
+| `fw_bas_simpleConvection_transient`      | x                     |                                   |                            |
+| `fw_basc_ElderProblem`                   | x                     | x, larger model in bachelorthesis |                            |
+| `fw_basc_ElderProblem_transient`         | x                     | x, larger model in bachelorthesis |                            |
+| `fw_ice_GeoSlope`                        | x                     |                                   |                            |
+| `fw_ice_GeoSlope2`                       | x                     |                                   |                            |
+| `fw_const_NeumannBox`                    | x                     |                                   |                            |
+| `fw_bas_NeumannBox`                      | x                     |                                   |                            |
+| `fw_basc_NeumannBox`                     | x                     |                                   |                            |
+| `fw_const_Theis_analytical_comparison`   | x                     | x, Python script                  |                            |
+| `fw_const_Theis_analytical_centered`     | x                     | x, Python script                  |                            |
+| `fw_const_Thiem`                         | x                     | x, Python script                  |                            |
+| `fw_const_Theis3D_analytical_comparison` | x                     | x, Python script                  |                            |
+| `fw_bas_Theis3D_analytical_comparison`   | x                     | x, Python script                  |                            |
+
+
+Possibly: Solver, Physical Problems (maybe better a list), possibly
+every single input

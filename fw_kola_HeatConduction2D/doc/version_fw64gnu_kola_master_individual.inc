@@ -1,0 +1,19 @@
+!     this file will be generated automatically - change the Makefile !!!
+!     current version
+      character version*80
+      parameter (version = "Shem-FW/AD/SM 7.50 (Smarty)")
+!     current date
+      character datum*40
+      parameter (datum = "Tue Jun 11 17:40:59 CEST 2019")
+!     build command line
+      character makecmd*256
+      parameter (makecmd = &
+     "gmake "// &
+     "fw "// &
+     "hdf "// &
+     "noomp "// &
+     "PROPS=kola "// &
+     "HDF5_MOD=/usr/local_rwth/sw/HDF5/1.10.4/gcc_4.8.5-intelmpi_2018.4.274/include/ "// &
+     "HDF5_LIB=/usr/local_rwth/sw/HDF5/1.10.4/gcc_4.8.5-intelmpi_2018.4.274/lib/ "// &
+     "COMPTYPE=ling64 "// &
+     "")

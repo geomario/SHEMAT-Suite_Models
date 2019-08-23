@@ -1,32 +1,31 @@
 '''
 Run SHEMAT-Suite executable from deltatests_dir in model_dir
 '''
+import exceptions
 import os
 import time
-import exceptions
-import shutil
-import subprocess
-from pskf.tools.run import runmodule as rm
 import unittest
-# try:
-#     import SHEMATtest
-# except ImportError:
-#     raise ImportError('No module named SHEMATtest. \n\n' + 'Solution: ' +
-#                       ' Add the path /path-to-SHEMAT-Suite_Models/' +
-#                       'SHEMAT-Suite_Models/deltatests/site-packages to the' +
-#                       ' PYTHONPATH.')
+
+try:
+    from pskf.tools.run import runmodule as rm
+except ImportError:
+    raise ImportError(
+        'No module named pskf.tools.run.runmodule. \n\n' + 'Solution: ' +
+        'Download pyshemkf from https://github.com/jjokella/pyshemkf and add' +
+        ' the path /<path-to-pyshemkf>/pyshemkf/site-packages to the' +
+        ' PYTHONPATH.')
 try:
     import SHEMATtest_dirs as std
 except ImportError:
     raise ImportError('No module named SHEMATtest_dirs. \n\n' + 'Solution: ' +
-                      ' Add the path /path-to-SHEMAT-Suite_Models/' +
+                      ' Add the path /<path-to-SHEMAT-Suite_Models>/' +
                       'SHEMAT-Suite_Models/deltatests/site-packages to the' +
                       ' PYTHONPATH.')
 try:
     import SHEMATtest_funcs as stf
 except ImportError:
     raise ImportError('No module named SHEMATtest_funcs. \n\n' + 'Solution: ' +
-                      ' Add the path /path-to-SHEMAT-Suite_Models/' +
+                      ' Add the path /<path-to-SHEMAT-Suite_Models>/' +
                       'SHEMAT-Suite_Models/deltatests/site-packages to the' +
                       ' PYTHONPATH.')
 
@@ -34,7 +33,7 @@ try:
     import SHEMATtest_input as sti
 except ImportError:
     raise ImportError('No module named SHEMATtest_input. \n\n' + 'Solution: ' +
-                      ' Add the path /path-to-SHEMAT-Suite_Models/' +
+                      ' Add the path /<path-to-SHEMAT-Suite_Models>/' +
                       'SHEMAT-Suite_Models/deltatests/site-packages to the' +
                       ' PYTHONPATH.')
 
@@ -44,31 +43,85 @@ except ImportError:
 
 # Compilation input (compare compilequick.sh)
 is_comp = True
+git_branch_input = "master"
+compile_backend = 'gcc'  # gcc, intel
 
 # Execution input
 is_exec = True
 
 # Testing input
-is_test = True
+is_test = False
+
+# Cleanup all output in model_dir after compilation/execution/testing
+is_cleanup = False
+
+# Replace files in 'result' directories
+is_replace_results = True
+# CAUTION: Only use this option if you are sure that you want to replace the
+# results!
 
 test_models = [
     # "fw_const_TheisProblem",
-    "fw_basc_SaltFlow",
+    # "fw_basc_SaltFlow",
+    # "fw_basc_SaltFlow_small",   # > 10s
+    # "ad_const_TemperatureInversion",  # "cmake"
+    # "fw_bas_TinyAdvective",
+    # "fw_const_Peclet_down",
+    # "fw_const_Peclet_up",
+    # "fw_basc_HenryProblem",
+    # "fw_kola_HeatConduction2D",
+    # "sm_const_MC_small",
+    # "sm_const_wavereal_true",
+    # "sm_const_wavereal_enkf",
+    # "fw_bas_simpleConvection",
+    # "fw_bas_simpleConvection_transient",
+    # "fw_basc_ElderProblem",
+    # "fw_basc_ElderProblem_transient",
+    # "fw_ice_GeoSlope",
+    # "fw_ice_GeoSlope2",
+    # "fw_const_NeumannBox",
+    # "fw_bas_NeumannBox",
+    # "fw_basc_NeumannBox",
+    # "fw_const_Theis_analytical_comparison",
+    # "fw_const_Theis_analytical_centered",
+    # "fw_const_Thiem",
+    # "fw_const_Theis3D_analytical_comparison",
+    # "fw_bas_Theis3D_analytical_comparison",
+    "fw_bas_2Dfancy_ForcedConvection",  # > 60s, "master-54-pres"
+    # "fw_bas_2Dfancy_FreeConvection",    # > 60s, "master-54-pres"
+    # "fw_pres_bas_2Dfancy_ForcedConvection",  # > 60s, "master-54-pres"
+    # "fw_pres_bas_2Dfancy_FreeConvection",  # > 60s, "master-54-pres"
 ]
 
+###############################################################################
+#                            Loop over test models                            #
+###############################################################################
 for test_model in test_models:
 
-    #######################################################################
-    #                         Test Model input                            #
-    #######################################################################
+    print('!----------------------------- ')
+    print('!----------------------------- ')
+    print('!  TESTMODEL: ' + test_model)
+    print('!----------------------------- ')
+    print('!----------------------------- \n')
+
+    print('!----------------------------- ')
+    print('!  Compilation backend: ' + compile_backend)
+    print('!----------------------------- \n')
+
+    git_branch = (git_branch_input if not sti.git_branch[test_model] else
+                  sti.git_branch[test_model])
+
     shem_type = sti.shem_type[test_model]
     shem_type_name = sti.shem_type_name[test_model]
-    compiler = sti.compiler[test_model]
-    compiler_name = sti.compiler_name[test_model]
+    compiler = sti.compiler[test_model][compile_backend]
+    compiler_name = sti.compiler_name[test_model][compile_backend]
     props = sti.props[test_model]
+    mode = (sti.mode[test_model]['gmake']
+            if not git_branch == 'cmake' else sti.mode[test_model]['cmake'])
 
-    flags = sti.flags[test_model]
-    git_branch = sti.git_branch[test_model]
+    flags_dict = sti.flags_dict[test_model]
+
+    module_load = sti.module_load[test_model][compile_backend]
 
     model_name = sti.model_name[test_model]
 
@@ -77,38 +130,32 @@ for test_model in test_models:
 
     testing_suite = sti.testing_suite[test_model]
 
-    if is_comp or is_exec:
+    if is_comp or is_exec or is_replace_results:
         #######################################################################
         #                             Directories                             #
         #######################################################################
-        # SHEMAT-Suite_Models dir
-        std.shemat_suite_models_dir = (
-            os.environ['HOME'] + "/SHEMAT-Suite_Models")
-
-        # SHEMAT-Suite dir
-        make_dir = os.environ['HOME'] + "/SHEMAT-Suite"
-
-        # deltatests_dir
-        deltatests_dir = std.shemat_suite_models_dir + "/deltatests"
-
         # model_dir
-        model_dir = (std.shemat_suite_models_dir + "/" + shem_type_name + "_" +
-                     props + "_" + model_name)
+        model_dir = ((std.shemat_suite_models_dir + "/" + shem_type + "_" +
+                      props + "_" + model_name)
+                     if sti.mode[test_model]['gmake'] == 'head' else
+                     (std.shemat_suite_models_dir + "/" + shem_type + "_" +
+                      mode + "_" + props + "_" + model_name))
 
         # exe_name
         exe_name = ("shem_" + shem_type_name + compiler_name + "_" + props +
-                    "_" + git_branch + ".x")
+                    "_" + mode + "_" + git_branch + ".x")
 
         #######################################################################
         #                           Existence checks                          #
         #######################################################################
-        if not os.path.isdir(deltatests_dir):
+        if not os.path.isdir(std.deltatests_dir):
             raise exceptions.RuntimeError("Directory not found: " +
-                                          deltatests_dir)
+                                          std.deltatests_dir)
         if not os.path.isdir(model_dir):
             raise exceptions.RuntimeError("Directory not found: " + model_dir)
-        if not os.path.isdir(make_dir):
-            raise exceptions.RuntimeError("Directory not found: " + make_dir)
+        if not os.path.isdir(std.make_dir):
+            raise exceptions.RuntimeError("Directory not found: " +
+                                          std.make_dir)
 
 ###############################################################################
 #                                 Compilation                                 #
@@ -121,14 +168,16 @@ for test_model in test_models:
         print('--------------- \n')
 
         stf.compilequick(
-            deltatests_dir,
-            make_dir,
+            model_dir,
+            std.make_dir,
             shem_type,
             shem_type_name,
             compiler,
             compiler_name,
             props,
-            flags,
+            mode,
+            flags_dict,
+            module_load,
             git_branch,
         )
 
@@ -140,12 +189,12 @@ for test_model in test_models:
 #                               Existence checks                              #
 ###############################################################################
     if is_exec:
-        if not os.path.isfile(deltatests_dir + "/" + exe_name):
-            raise exceptions.RuntimeError("File not found: " + deltatests_dir +
-                                          "/" + exe_name)
-        if not os.path.isfile(deltatests_dir + "/" + job_script):
-            raise exceptions.RuntimeError("File not found: " + deltatests_dir +
-                                          "/" + job_script)
+        if not os.path.isfile(model_dir + "/" + exe_name):
+            raise exceptions.RuntimeError("File not found: " +
+                                          std.deltatests_dir + "/" + exe_name)
+        if not os.path.isfile(std.deltatests_dir + "/" + job_script):
+            raise exceptions.RuntimeError(
+                "File not found: " + std.deltatests_dir + "/" + job_script)
 
 ###############################################################################
 #                                  Execution                                  #
@@ -157,41 +206,48 @@ for test_model in test_models:
         print('Start executing')
         print('--------------- \n')
 
-        # Copy executable and job_script
-        shutil.copyfile(deltatests_dir + "/" + exe_name,
-                        model_dir + "/" + exe_name)
+        # Prepare job_script
+        f = open(std.deltatests_dir + '/' + job_script, 'r')
+        fcontent = f.read()
+        f.close()
+
+        fcontentwrite = fcontent.format(
+            shem_type_name=shem_type_name,
+            props=props,
+            model_name=model_name,
+            exe_name=exe_name,
+            module0=module_load[0],
+            module1=module_load[1],
+            module2=module_load[2],
+            module3=module_load[3],
+            module4=module_load[4],
+        )
+
+        fnew = open(model_dir + '/' + job_script, 'w')
+        fnew.write(fcontentwrite)
+        fnew.close()
 
         # Change file permission
-        os.chmod(model_dir + '/' + exe_name, 0770)
+        os.chmod(model_dir + '/' + job_script, 0770)
 
-        # Prepare job_script
-        if use_batch_script:
-            f = open(deltatests_dir + '/' + 'job.sh', 'r')
-            fcontent = f.read()
-            f.close()
-
-            fcontentwrite = fcontent.format(
-                shem_type_name=shem_type_name,
-                props=props,
-                model_name=model_name,
-                exe_name=exe_name)
-
-            fnew = open(model_dir + '/' + 'job.sh', 'w')
-            fnew.write(fcontentwrite)
-            fnew.close()
-
-        # Run executable
+        # Run job_script
         if use_batch_script:
             rm.run_script(
                 model_dir, ['sbatch', job_script],
-                outfile=subprocess.PIPE,
+                outfile=open(
+                    'stdout_' + shem_type_name + compiler_name + "_" + props +
+                    "_" + mode + "_" + git_branch + '.txt', 'w'),
                 wait=True,
                 errout=True)
         else:
+            print(model_dir)
+            print('./' + exe_name)
             rm.run_script(
                 model_dir,
-                './' + exe_name,
-                outfile=subprocess.PIPE,
+                './' + job_script,
+                outfile=open(
+                    'stdout_' + shem_type_name + compiler_name + "_" + props +
+                    "_" + mode + "_" + git_branch + '.txt', 'w'),
                 wait=True,
                 errout=True)
 
@@ -206,5 +262,98 @@ for test_model in test_models:
         print('Start testing')
         print('------------- \n')
 
+        # Set result dir and check existence
+        std.result_dir = sti.result_dirs[test_model][compile_backend]
+
         runner = unittest.TextTestRunner(verbosity=2)
         runner.run(testing_suite)
+
+###############################################################################
+#                               Replace results                               #
+###############################################################################
+    if is_replace_results:
+
+        print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+        print('Replacing results in /result/ directory of ')
+        print('Directory: ' + model_dir)
+        print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+
+        # List of files in result directory (result files)
+        result_files = os.listdir(model_dir + std.result_dir)
+
+        # Loop over result files
+        for result_file in result_files:
+            # Check existence of result file
+            if os.path.isfile(model_dir + std.result_dir + '/' + result_file):
+                # Check existence of corresponding new output
+                if os.path.isfile(model_dir + '/' + result_file):
+                    # Replace result file with new output
+                    os.rename(model_dir + '/' + result_file,
+                              model_dir + std.result_dir + '/' + result_file)
+                else:
+                    raise exceptions.RuntimeError(
+                        "Result file not found in " +
+                        "current SHEMAT-Suite output : " + result_file)
+
+        doc_files = os.listdir(model_dir + '/doc')
+        new_files = os.listdir(model_dir)
+
+        # Add files
+        for new_file in new_files:
+            if 'shem_' in new_file and '.x' in new_file:
+                if not new_file == exe_name:
+                    os.remove(model_dir + '/' + new_file)
+            if (('Makefile' in new_file and 'flags' in new_file)
+                    or ('module' in new_file and '.inc' in new_file)
+                    or ('version' in new_file and '.inc' in new_file)
+                    or ('job.sh' == new_file)
+                    or ('compilequick.out' == new_file)
+                    or ('compilequick_run.sh' == new_file)
+                    or ('stdout' in new_file and '.txt' in new_file)):
+                os.rename(model_dir + '/' + new_file,
+                          model_dir + '/doc/' + new_file)
+
+        # Remove files
+        for doc_file in doc_files:
+            if 'README' in doc_file:
+                with open(model_dir + '/doc/' + doc_file, 'a') as freadme:
+                    f.write('!!!!!!!!\n')
+                    f.write('Results were changed\n\n')
+                    f.write('Please review this README and remove\n')
+                    f.write('this notification if everythin is up-to-date. \n')
+                    f.write('\n')
+            if (('Makefile' in new_file and 'flags' in new_file)
+                    or ('module' in new_file and '.inc' in new_file)
+                    or ('version' in new_file and '.inc' in new_file)
+                    or ('jobs.sh' == new_file)
+                    or ('compilequick.out' == new_file)
+                    or ('compilequick_run.sh' == new_file)
+                    or ('stdout' in new_file and '.txt' in new_file)):
+                os.remove(model_dir + '/doc/' + doc_file)
+
+###############################################################################
+#                                   Cleanup                                   #
+###############################################################################
+    if is_cleanup:
+
+        if is_replace_results:
+            raise exceptions.RuntimeError("Cleanup should not be called, " +
+                                          "when results are replaced")
+
+        print('Run cleanup\n')
+
+        # List all untracked files in the model directory
+        rm.run_script(
+            model_dir,
+            ['git', 'ls-files', model_dir, '-o', '--exclude-standard'],
+            outfile=open(model_dir + '/cleanup.txt', 'w'),
+            wait=True,
+            errout=True)
+
+        # Remove files from list
+        flist = open(model_dir + '/cleanup.txt', 'r')
+        for f in flist:
+            fname = f.strip()
+            if os.path.isfile(model_dir + '/' + fname):
+                os.remove(model_dir + '/' + fname)
+        flist.close()

@@ -1,0 +1,1903 @@
+  
+ ======================================
+ Shem-FW/AD/SM 7.50 (Smarty)                                                     
+ ======================================
+  
+  
+  
+  *** NEW MODEL 
+
+   checking input definitions:
+     from file "salt_small"
+warning: ignore line      1: "#==========>>>>> INFO"
+warning: ignore line      9: "#==========>>>>> MESH"
+  
+   reading model input parameter:
+     from file "salt_small"
+  
+  [R] : title
+  [R] : runmode
+     >>> forward modeling
+  <D> : free=0, confined flow !
+  [R] : linfo
+  [R] : [i0, j0, k0] = [  10,   1,  10]
+  [R] : nonlinear solver parameter
+  [I] : fixed relxation factor assumed
+  [R] : output suffix: .h5:[ ], .plt:[ ], .vtk:[X], .txt:[ ]
+  
+   reading flow parameters
+  
+  [R] : flow linear solver (control=  67)
+  [R] : flow nonlinear iteration tolerance
+  [I] : flow nonlinear relaxation factor
+  
+  <D> : no temperature [disabled]
+  
+  
+   reading chemical transport parameters
+  
+  [R] : tracers, reactive components=   1   0
+  [R] : transport linear solver (control=  67)
+  [R] : transport nonlinear iteration tolerance
+  [I] : transport nonlinear relaxation factor
+  
+  <D> : no electric potential [disabled]
+  
+  
+  <D> : grav =   0.9810E+01
+  <D> : no fluid heat production
+  [R] : rref, reference density =   0.9980E+03
+  <D> : tref, reference temperature =   0.2000E+02
+  <D> : fixed rhocm, defined by unit
+  
+   reading zone parameter 
+  
+  [R] : "uindex" - unit index number, unit-cell assignment
+  [I] : approx. speedup for the full solver :   1.00
+  
+  [R] : "units" - unit (rock) properties
+  
+   reading/preprocessing arrays
+  
+  [R] : delx
+  [R] : dely
+  [R] : delz
+  
+   reading initial values 
+  
+  [R] : head, in [m]
+  [R] : temp, in [degree Celsius]
+  [R] : pres, in [MPa]
+  [R] : tracer0001, in [Mol/l]
+  
+   reading boundary conditions 
+  
+  
+  [R] :      1 diffusion constants and mol masses
+  <D> : property limitations
+  [R] : No default Darcy velocity - head active!
+  
+   reading external file control
+  
+
+   reading time input parameter:
+     from file "salt_small"
+
+  [R] : timestep control
+  [R] : tunit =          0.86400000E+05
+  <D> : tstart=          0.00000000E+00
+  <D> : tshift=          0.00000000E+00
+  <D> : titer =      0
+  [R] : periods, records=   2
+    time :  0.0000E+00 -   0.1000E+01, #        2, linear
+    time :  0.1000E+01 -   0.1000E+02, #        5, linear
+  <D> : no monitoring points !
+  <D> : no output times !
+
+
+  [W] : "salt_small_status.log"
+ 
+  [I] : memory:       0.073 MByte data
+ 
+  
+  >>>> new time step:      1
+  >>>>     cum. time=   0.50000000E+00/  0.10000000E+02
+  >>>>     time step=   0.50000000E+00
+  nrm2(R) = 0.2785799301429D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.141E+07y:  0.000E+00z:  0.141E+07
+
+  nrm2(R) = 0.7912808194289D-20 (direct)
+  [I] : iter_nl =     1, difmaxh =  0.24597268E-02, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.40470780E+00
+  nrm2(R) = 0.2682768634913D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.4949561235560D-20 (direct)
+  [I] : iter_nl =     2, difmaxh = -0.15163897E-01, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.73482487E-02
+  nrm2(R) = 0.2133188607921D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.5998183480960D-20 (direct)
+  [I] : iter_nl =     3, difmaxh = -0.24667586E-03, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.16506815E-03
+  nrm2(R) = 0.2457292936265D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.7593992807421D-20 (direct)
+  [I] : iter_nl =     4, difmaxh = -0.15727194E-05, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.33236720E-05
+  nrm2(R) = 0.2066847165516D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.4814447315986D-20 (direct)
+  [I] : iter_nl =     5, difmaxh = -0.83430919E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.62048637E-07
+  nrm2(R) = 0.2329694566363D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.6230633984311D-20 (direct)
+  [I] : iter_nl =     6, difmaxh =  0.15954882E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.28592464E-08
+  nrm2(R) = 0.2228509715964D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.6812743499446D-20 (direct)
+  [I] : iter_nl =     7, difmaxh =  0.19289459E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.75239925E-10
+  nrm2(R) = 0.2264866087008D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.6538450528544D-20 (direct)
+  [I] : iter_nl =     8, difmaxh = -0.24003981E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.36270709E-11
+  nrm2(R) = 0.2572031893626D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.7577873653666D-20 (direct)
+  [I] : iter_nl =     9, difmaxh =  0.20829418E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.26134650E-12
+  nrm2(R) = 0.2521991979580D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.7768725524575D-20 (direct)
+  [I] : iter_nl =    10, difmaxh = -0.70184072E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.15820678E-12
+  nrm2(R) = 0.2067254516810D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.5819363759176D-20 (direct)
+  [I] : iter_nl =    11, difmaxh =  0.97477795E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.26356695E-12
+  nrm2(R) = 0.2580249326294D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.8024467523211D-20 (direct)
+  [I] : iter_nl =    12, difmaxh = -0.59366343E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.21449509E-12
+  nrm2(R) = 0.2568851331269D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.6391827165864D-20 (direct)
+  [I] : iter_nl =    13, difmaxh =  0.30507437E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.17552626E-12
+  nrm2(R) = 0.2578724932357D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.7213065138374D-20 (direct)
+  [I] : iter_nl =    14, difmaxh = -0.12844339E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.18862689E-12
+  nrm2(R) = 0.2362820817440D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.7048012905052D-20 (direct)
+  [I] : iter_nl =    15, difmaxh =  0.48124349E-09, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.13918033E-12
+  nrm2(R) = 0.2453706509124D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.7121922768027D-20 (direct)
+  [I] : iter_nl =    16, difmaxh = -0.12647661E-11, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.25801583E-12
+  [W] : "salt_small_status.log"
+  
+  >>>> new time step:      2
+  >>>>     cum. time=   0.10000000E+01/  0.10000000E+02
+  >>>>     time step=   0.50000000E+00
+  nrm2(R) = 0.2301148457062D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.6200262384850D-20 (direct)
+  [I] : iter_nl =     1, difmaxh = -0.12094306E-06, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.20364484E+00
+  nrm2(R) = 0.2284907871249D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.7123024592660D-20 (direct)
+  [I] : iter_nl =     2, difmaxh = -0.24764466E-02, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.16270801E-02
+  nrm2(R) = 0.2308118766279D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.4423696330102D-20 (direct)
+  [I] : iter_nl =     3, difmaxh =  0.35934926E-04, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.14642077E-04
+  nrm2(R) = 0.2073724048517D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.5614570730042D-20 (direct)
+  [I] : iter_nl =     4, difmaxh = -0.12276231E-06, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.43353165E-06
+  nrm2(R) = 0.2397831318723D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.3782601286497D-20 (direct)
+  [I] : iter_nl =     5, difmaxh =  0.61128560E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.78510534E-08
+  nrm2(R) = 0.2084079274972D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.6030901991400D-20 (direct)
+  [I] : iter_nl =     6, difmaxh = -0.71231980E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.32544215E-09
+  nrm2(R) = 0.2232146010643D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.6159145821597D-20 (direct)
+  [I] : iter_nl =     7, difmaxh =  0.22662547E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.68463013E-11
+  nrm2(R) = 0.2676359455718D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.5501360367288D-20 (direct)
+  [I] : iter_nl =     8, difmaxh = -0.19195596E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.36107228E-12
+  nrm2(R) = 0.2499242129908D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.5673051091491D-20 (direct)
+  [I] : iter_nl =     9, difmaxh =  0.15982380E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.11474155E-12
+  nrm2(R) = 0.2658220775864D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.5453608800591D-20 (direct)
+  [I] : iter_nl =    10, difmaxh =  0.20644961E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.16059376E-12
+  nrm2(R) = 0.2309146185505D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.5328934238243D-20 (direct)
+  [I] : iter_nl =    11, difmaxh = -0.41487311E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.10252910E-12
+  nrm2(R) = 0.2347693717305D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.4872099097405D-20 (direct)
+  [I] : iter_nl =    12, difmaxh = -0.12533903E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.86874952E-13
+  nrm2(R) = 0.2251793008267D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.4575638880756D-20 (direct)
+  [I] : iter_nl =    13, difmaxh =  0.25517366E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.11618484E-12
+  nrm2(R) = 0.2659823000868D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.6151504336227D-20 (direct)
+  [I] : iter_nl =    14, difmaxh =  0.11031744E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.13755663E-12
+  nrm2(R) = 0.2324312526334D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.4772652611044D-20 (direct)
+  [I] : iter_nl =    15, difmaxh = -0.43049653E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.87541085E-13
+  nrm2(R) = 0.2650525609308D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.3714163357317D-20 (direct)
+  [I] : iter_nl =    16, difmaxh =  0.65481629E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.12745360E-12
+  nrm2(R) = 0.2666341405951D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.5149565860077D-20 (direct)
+  [I] : iter_nl =    17, difmaxh = -0.24181332E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.12678747E-12
+  nrm2(R) = 0.2521869389257D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.5257416490211D-20 (direct)
+  [I] : iter_nl =    18, difmaxh = -0.17402328E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.10624834E-12
+  nrm2(R) = 0.2483253451590D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.4084502636268D-20 (direct)
+  [I] : iter_nl =    19, difmaxh = -0.34947050E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.92093000E-13
+  nrm2(R) = 0.2387158153266D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.5473685781163D-20 (direct)
+  [I] : iter_nl =    20, difmaxh =  0.82946201E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.85986773E-13
+  nrm2(R) = 0.2239305489480D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.6900770748198D-20 (direct)
+  [I] : iter_nl =    21, difmaxh = -0.33785383E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.12784218E-12
+  nrm2(R) = 0.2128415181197D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.5411021217324D-20 (direct)
+  [I] : iter_nl =    22, difmaxh =  0.62215051E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.13128387E-12
+  nrm2(R) = 0.2409300553816D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.5144513345465D-20 (direct)
+  [I] : iter_nl =    23, difmaxh = -0.81495273E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.13938850E-12
+  nrm2(R) = 0.2324800611973D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.4237414353804D-20 (direct)
+  [I] : iter_nl =    24, difmaxh =  0.60892944E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.17330581E-12
+  nrm2(R) = 0.2563414426982D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.7281533158105D-20 (direct)
+  [I] : iter_nl =    25, difmaxh = -0.63961565E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.14627188E-12
+  nrm2(R) = 0.2745609316606D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.5744343538023D-20 (direct)
+  [I] : iter_nl =    26, difmaxh = -0.10864269E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.99642516E-13
+  nrm2(R) = 0.2578837739831D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.5241708623062D-20 (direct)
+  [I] : iter_nl =    27, difmaxh =  0.68516215E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.13067325E-12
+  nrm2(R) = 0.2090443346003D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.5520714838509D-20 (direct)
+  [I] : iter_nl =    28, difmaxh = -0.19411672E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.15776269E-12
+  nrm2(R) = 0.2242836639528D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.4062248298452D-20 (direct)
+  [I] : iter_nl =    29, difmaxh = -0.25397640E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.72164497E-13
+  nrm2(R) = 0.2613657326521D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.6255090633817D-20 (direct)
+  [I] : iter_nl =    30, difmaxh =  0.25581812E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.11768364E-12
+  nrm2(R) = 0.2689499690139D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.144E+07y:  0.000E+00z:  0.144E+07
+
+  nrm2(R) = 0.4536890022614D-20 (direct)
+  [I] : iter_nl =    31, difmaxh = -0.10921042E-10, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.11485257E-12
+  [W] : "salt_small_status.log"
+  
+  >>>> new time step:      3
+  >>>>     cum. time=   0.28000000E+01/  0.10000000E+02
+  >>>>     time step=   0.18000000E+01
+  nrm2(R) = 0.2370938427562D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.518E+07y:  0.000E+00z:  0.518E+07
+
+  nrm2(R) = 0.2038756244968D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     1, difmaxh = -0.17875522E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.22468887E+00
+  nrm2(R) = 0.2250162781598D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.517E+07y:  0.000E+00z:  0.517E+07
+
+  nrm2(R) = 0.2274534736639D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     2, difmaxh = -0.37283954E-02, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.15575051E-02
+  nrm2(R) = 0.2498831856994D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.517E+07y:  0.000E+00z:  0.517E+07
+
+  nrm2(R) = 0.2143665338044D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     3, difmaxh =  0.65997887E-04, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.19977636E-04
+  nrm2(R) = 0.2674008217467D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.517E+07y:  0.000E+00z:  0.517E+07
+
+  nrm2(R) = 0.2253361497161D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     4, difmaxh = -0.37385747E-06, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.41223360E-06
+  nrm2(R) = 0.2555338073790D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.517E+07y:  0.000E+00z:  0.517E+07
+
+  nrm2(R) = 0.2757496218490D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     5, difmaxh = -0.33371116E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.71780566E-08
+  nrm2(R) = 0.2464997584453D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.517E+07y:  0.000E+00z:  0.517E+07
+
+  nrm2(R) = 0.2155128731527D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     6, difmaxh =  0.29507078E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.25025026E-09
+  nrm2(R) = 0.2265742677523D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.517E+07y:  0.000E+00z:  0.517E+07
+
+  nrm2(R) = 0.1347229410212D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     7, difmaxh = -0.47213007E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.48305804E-11
+  nrm2(R) = 0.2540972202860D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.517E+07y:  0.000E+00z:  0.517E+07
+
+warning: oscillating convergence in HEAD, [min:max] = [-0.47213007E-08: 0.46013255E-08], period lenght=  2
+  nrm2(R) = 0.1989708093678D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     8, difmaxh =  0.46013255E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.25371372E-12
+  [W] : "salt_small_status.log"
+  
+  >>>> new time step:      4
+  >>>>     cum. time=   0.46000000E+01/  0.10000000E+02
+  >>>>     time step=   0.18000000E+01
+  nrm2(R) = 0.2357584940723D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.517E+07y:  0.000E+00z:  0.517E+07
+
+  nrm2(R) = 0.2009232434989D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     1, difmaxh = -0.21674751E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.91393214E-01
+  nrm2(R) = 0.2692194672430D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.1569885074760D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     2, difmaxh =  0.18545680E-02, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.48037887E-03
+  nrm2(R) = 0.2406695358872D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.1734428710588D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     3, difmaxh =  0.24648068E-04, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.46728036E-05
+  nrm2(R) = 0.2557523207117D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.1716603663941D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     4, difmaxh = -0.12861033E-06, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.98539317E-07
+  nrm2(R) = 0.2109501704855D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.1769561869992D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     5, difmaxh = -0.31071288E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.12417776E-08
+  nrm2(R) = 0.2170828974228D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.1796470237328D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     6, difmaxh =  0.13902849E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.32596578E-10
+  nrm2(R) = 0.2403030141662D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.1410410621193D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     7, difmaxh =  0.96780184E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.49378557E-12
+  nrm2(R) = 0.2295322650397D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.2032499752015D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     8, difmaxh = -0.14936617E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.14110935E-12
+  nrm2(R) = 0.2221504072430D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.1617354503974D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     9, difmaxh =  0.75143376E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.13133938E-12
+  nrm2(R) = 0.2398309124146D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.1701737104971D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    10, difmaxh = -0.57638516E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.16681101E-12
+  nrm2(R) = 0.2208139154129D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.1751194300222D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    11, difmaxh = -0.28360816E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.10846879E-12
+  nrm2(R) = 0.1938046735757D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.1531497148775D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    12, difmaxh =  0.63110406E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.61617378E-13
+  nrm2(R) = 0.2468489904194D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.1767051406225D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    13, difmaxh = -0.10912792E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.86611274E-13
+  nrm2(R) = 0.2311468316162D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.1612670439726D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    14, difmaxh = -0.22394744E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.73593909E-13
+  nrm2(R) = 0.2569856310181D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.2093149444970D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    15, difmaxh =  0.16621669E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.81074036E-13
+  nrm2(R) = 0.2521638410719D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.1758182072556D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    16, difmaxh = -0.12678086E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.10083601E-12
+  nrm2(R) = 0.2381339468258D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.1728953912707D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    17, difmaxh = -0.51282001E-09, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.15867863E-12
+  nrm2(R) = 0.2060058511815D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.1586929998284D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    18, difmaxh =  0.11448904E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.16583956E-12
+  nrm2(R) = 0.2384663871015D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.1961565995915D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    19, difmaxh =  0.45791921E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.12795320E-12
+  nrm2(R) = 0.2306224815526D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.1505623235163D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    20, difmaxh = -0.51778173E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.88984375E-13
+  nrm2(R) = 0.2732075836191D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.1622929205030D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    21, difmaxh =  0.17209274E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.12154167E-12
+  nrm2(R) = 0.1975619859228D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.2017738872272D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    22, difmaxh = -0.17954207E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.10519363E-12
+  nrm2(R) = 0.2361232338489D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.2063437477648D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    23, difmaxh = -0.25198652E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.84210416E-13
+  nrm2(R) = 0.2553674958401D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.1736500951450D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    24, difmaxh =  0.30476052E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.10622059E-12
+  nrm2(R) = 0.2393505430247D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.1802119610065D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    25, difmaxh = -0.26492337E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.11821100E-12
+  nrm2(R) = 0.2600232924384D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.1862497765628D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    26, difmaxh =  0.29908954E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.95728980E-13
+  nrm2(R) = 0.2368844263198D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.1879323769090D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    27, difmaxh = -0.21329313E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.13335166E-12
+  nrm2(R) = 0.2394006624581D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.1570212796570D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    28, difmaxh =  0.94871666E-10, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.11832202E-12
+  [W] : "salt_small_status.log"
+  
+  >>>> new time step:      5
+  >>>>     cum. time=   0.64000000E+01/  0.10000000E+02
+  >>>>     time step=   0.18000000E+01
+  nrm2(R) = 0.2219739323045D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.516E+07y:  0.000E+00z:  0.515E+07
+
+  nrm2(R) = 0.1318479191533D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     1, difmaxh = -0.11280243E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.45156400E-01
+  nrm2(R) = 0.2373775716790D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.515E+07y:  0.000E+00z:  0.514E+07
+
+  nrm2(R) = 0.1480131017713D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     2, difmaxh =  0.12470565E-02, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.22023259E-03
+  nrm2(R) = 0.2388297364585D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.515E+07y:  0.000E+00z:  0.514E+07
+
+  nrm2(R) = 0.1330990926078D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     3, difmaxh =  0.10145279E-04, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.14435810E-05
+  nrm2(R) = 0.2224892235330D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.515E+07y:  0.000E+00z:  0.514E+07
+
+  nrm2(R) = 0.1335310363569D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     4, difmaxh =  0.61436566E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.26405369E-07
+  nrm2(R) = 0.2573624313471D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.515E+07y:  0.000E+00z:  0.514E+07
+
+  nrm2(R) = 0.1761679546972D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     5, difmaxh = -0.49488591E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.26777532E-09
+  nrm2(R) = 0.2469174186490D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.515E+07y:  0.000E+00z:  0.514E+07
+
+  nrm2(R) = 0.1841752138085D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     6, difmaxh = -0.16598143E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.43652304E-11
+  nrm2(R) = 0.2422375640855D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.515E+07y:  0.000E+00z:  0.514E+07
+
+  nrm2(R) = 0.1667934174304D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     7, difmaxh = -0.16417090E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.11746160E-12
+  nrm2(R) = 0.2225409167832D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.515E+07y:  0.000E+00z:  0.514E+07
+
+  nrm2(R) = 0.1516301258885D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     8, difmaxh =  0.12605824E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.70568551E-13
+  nrm2(R) = 0.2238092907479D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.515E+07y:  0.000E+00z:  0.514E+07
+
+  nrm2(R) = 0.1702365835797D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     9, difmaxh = -0.10367160E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.12141677E-12
+  nrm2(R) = 0.2597995222444D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.515E+07y:  0.000E+00z:  0.514E+07
+
+  nrm2(R) = 0.1453952941990D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    10, difmaxh = -0.11406378E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.11823875E-12
+  nrm2(R) = 0.2268777137383D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.515E+07y:  0.000E+00z:  0.514E+07
+
+  nrm2(R) = 0.1573070490672D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    11, difmaxh =  0.10356388E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.99462105E-13
+  nrm2(R) = 0.2163193805577D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.515E+07y:  0.000E+00z:  0.514E+07
+
+  nrm2(R) = 0.1521130944723D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    12, difmaxh =  0.17711415E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.10624834E-12
+  nrm2(R) = 0.2383608932932D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.515E+07y:  0.000E+00z:  0.514E+07
+
+  nrm2(R) = 0.1643202979185D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    13, difmaxh = -0.20702643E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.89692143E-13
+  nrm2(R) = 0.2714552819232D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.515E+07y:  0.000E+00z:  0.514E+07
+
+  nrm2(R) = 0.1341575774248D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    14, difmaxh = -0.13648091E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.11568524E-12
+  nrm2(R) = 0.2797134715316D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.515E+07y:  0.000E+00z:  0.514E+07
+
+  nrm2(R) = 0.1447326878840D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    15, difmaxh =  0.17813342E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.96866959E-13
+  nrm2(R) = 0.2518430739056D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.515E+07y:  0.000E+00z:  0.514E+07
+
+warning: oscillating convergence in HEAD, [min:max] = [-0.13648091E-07: 0.17813342E-07], period lenght=  3
+  nrm2(R) = 0.1691074417051D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    16, difmaxh = -0.40880792E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.81171181E-13
+  [W] : "salt_small_status.log"
+  
+  >>>> new time step:      6
+  >>>>     cum. time=   0.82000000E+01/  0.10000000E+02
+  >>>>     time step=   0.18000000E+01
+  nrm2(R) = 0.2642870388411D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.515E+07y:  0.000E+00z:  0.514E+07
+
+  nrm2(R) = 0.1382903495978D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     1, difmaxh = -0.72703301E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.25557214E-01
+  nrm2(R) = 0.2313373339726D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1573519308662D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     2, difmaxh =  0.83787766E-03, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.10620073E-03
+  nrm2(R) = 0.2209839771258D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1368115723594D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     3, difmaxh =  0.44319515E-05, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.61793556E-06
+  nrm2(R) = 0.2343311689509D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1474814551086D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     4, difmaxh =  0.48464678E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.70075850E-08
+  nrm2(R) = 0.2229850107016D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1481243757967D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     5, difmaxh = -0.41618868E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.57319781E-10
+  nrm2(R) = 0.2211287407491D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1333345358659D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     6, difmaxh =  0.20802581E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.57023830E-12
+  nrm2(R) = 0.2442861923295D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1539733109585D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     7, difmaxh =  0.12508934E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.11764201E-12
+  nrm2(R) = 0.2175207679870D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1486732378461D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     8, difmaxh =  0.18841696E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.11539381E-12
+  nrm2(R) = 0.2310958017467D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1572280399095D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     9, difmaxh = -0.31016860E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.89303565E-13
+  nrm2(R) = 0.2301756311551D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1555789302463D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    10, difmaxh =  0.12174802E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.10647039E-12
+  nrm2(R) = 0.2654840986928D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1575910845821D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    11, difmaxh =  0.68158954E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.83627549E-13
+  nrm2(R) = 0.2067571811665D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1585233753206D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    12, difmaxh = -0.23514524E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.73857587E-13
+  nrm2(R) = 0.2712370938848D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1434963592629D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    13, difmaxh =  0.92716732E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.91093799E-13
+  nrm2(R) = 0.2668313584913D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1429751001192D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    14, difmaxh =  0.11018741E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.80546680E-13
+  nrm2(R) = 0.2761929553148D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1715412251888D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    15, difmaxh = -0.63009651E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.75675577E-13
+  nrm2(R) = 0.2456564264190D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1588586529755D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    16, difmaxh = -0.97090478E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.64157013E-13
+  nrm2(R) = 0.2464279534441D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1303384687854D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    17, difmaxh = -0.51099533E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.11825263E-12
+  nrm2(R) = 0.2256897517509D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1498380086397D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    18, difmaxh =  0.86121972E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.46310178E-13
+  nrm2(R) = 0.2291442716881D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1617921296583D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    19, difmaxh = -0.12069940E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.80893625E-13
+  nrm2(R) = 0.2259811615884D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1466283042072D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    20, difmaxh =  0.20105738E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.65419892E-13
+  nrm2(R) = 0.2355895783071D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1645895705992D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    21, difmaxh =  0.44913406E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.93244856E-13
+  nrm2(R) = 0.2232287807520D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1644671378093D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    22, difmaxh = -0.57465144E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.84571239E-13
+  nrm2(R) = 0.2369245800364D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1526623168649D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    23, difmaxh = -0.85702396E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.81143425E-13
+  nrm2(R) = 0.2622121676883D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1512560311490D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    24, difmaxh =  0.23305020E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.71290196E-13
+  nrm2(R) = 0.2229994103585D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1305398986430D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    25, difmaxh = -0.23015971E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.74662498E-13
+  nrm2(R) = 0.2342953277127D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1391773107754D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    26, difmaxh =  0.74569257E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.63532513E-13
+  nrm2(R) = 0.2180578591631D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1531391707305D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    27, difmaxh = -0.11758061E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.58134053E-13
+  nrm2(R) = 0.2723225062006D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1582275219051D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    28, difmaxh = -0.28608369E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.62588823E-13
+  nrm2(R) = 0.2571664864217D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1496581652413D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    29, difmaxh = -0.13161916E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.98629438E-13
+  nrm2(R) = 0.2298844166969D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1536344977999D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    30, difmaxh = -0.33723495E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.67237882E-13
+  nrm2(R) = 0.2379640837861D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1487998371903D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    31, difmaxh = -0.11339338E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.63948846E-13
+  nrm2(R) = 0.2355755462795D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1595641478693D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    32, difmaxh =  0.26350534E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.83003049E-13
+  nrm2(R) = 0.2174750800447D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1405237446020D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    33, difmaxh =  0.15347688E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.73260842E-13
+  nrm2(R) = 0.2377656961138D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1547109934296D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    34, difmaxh = -0.75193043E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.90302765E-13
+  nrm2(R) = 0.2424505412485D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1470175261684D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    35, difmaxh =  0.97721227E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.77340911E-13
+  nrm2(R) = 0.2437734295483D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1618029556761D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    36, difmaxh = -0.18373029E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.59868777E-13
+  nrm2(R) = 0.2399937734977D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1853380814034D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    37, difmaxh =  0.46695448E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.98324127E-13
+  nrm2(R) = 0.2625347010850D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1524915479754D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    38, difmaxh = -0.13194999E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.61492478E-13
+  nrm2(R) = 0.2351908104562D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1664612970474D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    39, difmaxh =  0.57831642E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.88720697E-13
+  nrm2(R) = 0.2403028092889D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1508487170564D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    40, difmaxh = -0.59692695E-09, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.67057471E-13
+  nrm2(R) = 0.2154696934671D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1490776835694D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    41, difmaxh =  0.19479053E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.73649420E-13
+  nrm2(R) = 0.2118996874425D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1463652560519D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    42, difmaxh = -0.13836868E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.94535491E-13
+  nrm2(R) = 0.2490154325425D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1493608769124D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    43, difmaxh =  0.29274304E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.12384538E-12
+  nrm2(R) = 0.2185186898873D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1541083434980D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    44, difmaxh = -0.11017811E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.12602419E-12
+  nrm2(R) = 0.2316594383372D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1573032213445D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    45, difmaxh = -0.19996847E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.78340112E-13
+  nrm2(R) = 0.2616264498259D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1502524344955D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    46, difmaxh =  0.66759043E-09, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.10476342E-12
+  nrm2(R) = 0.2499626961834D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1455913074389D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    47, difmaxh =  0.13169547E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.62269634E-13
+  nrm2(R) = 0.2473986878777D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1833951759955D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    48, difmaxh = -0.11518381E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.62255756E-13
+  nrm2(R) = 0.2251034164601D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1438301306589D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    49, difmaxh = -0.51021303E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.58120175E-13
+  nrm2(R) = 0.2640094424962D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1522788959441D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    50, difmaxh =  0.10903385E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.60673688E-13
+ Nonlinear iteration reached maximum iteration           50 . Set flag_delt to -2.
+  [W] : "salt_small_status.log"
+  
+  >>>> new time step:      7
+  >>>>     cum. time=   0.10000000E+02/  0.10000000E+02
+  >>>>     time step=   0.18000000E+01
+  nrm2(R) = 0.2077681573227D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1545949003520D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     1, difmaxh =  0.83835332E-03, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.25552735E-01
+  nrm2(R) = 0.2262243064741D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1475986929372D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     2, difmaxh =  0.39002408E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.21084431E-09
+  nrm2(R) = 0.2479432672389D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1499139751096D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     3, difmaxh = -0.40247443E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.25454361E-11
+  nrm2(R) = 0.2507182371315D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1619165851610D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     4, difmaxh =  0.13924208E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.76036399E-13
+  nrm2(R) = 0.2468357288945D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1181487292929D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     5, difmaxh =  0.10859935E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.10820511E-12
+  nrm2(R) = 0.2607153141179D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1579463637344D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     6, difmaxh =  0.10872220E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.89164787E-13
+  nrm2(R) = 0.2141621280318D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1481805355788D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     7, difmaxh = -0.18950047E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.60632055E-13
+  nrm2(R) = 0.2450758553954D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1478551042575D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     8, difmaxh =  0.69647470E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.10343115E-12
+  nrm2(R) = 0.2316183964451D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1662875817765D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =     9, difmaxh =  0.74104634E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.84807161E-13
+  nrm2(R) = 0.1943422544679D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1664691888889D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    10, difmaxh = -0.86214627E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.64108441E-13
+  nrm2(R) = 0.2338226827141D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1804185400921D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    11, difmaxh = -0.16836736E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.76084972E-13
+  nrm2(R) = 0.2219091774756D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1443756027064D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    12, difmaxh = -0.11342109E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.75883744E-13
+  nrm2(R) = 0.2541036505603D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1524814967907D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    13, difmaxh =  0.15470988E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.90219499E-13
+  nrm2(R) = 0.2501737493869D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1360910968457D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    14, difmaxh = -0.11531078E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.12410906E-12
+  nrm2(R) = 0.2532130650595D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1391552843190D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    15, difmaxh =  0.11996804E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.85570440E-13
+  nrm2(R) = 0.2531350661021D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1785214444722D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    16, difmaxh = -0.57634253E-09, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.59695304E-13
+  nrm2(R) = 0.2385517423195D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1477454798903D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    17, difmaxh = -0.18324577E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.73024919E-13
+  nrm2(R) = 0.2208625981055D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1339031431924D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    18, difmaxh =  0.12276686E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.67792993E-13
+  nrm2(R) = 0.2526865508403D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1345165578149D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    19, difmaxh = -0.68763342E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.71068151E-13
+  nrm2(R) = 0.2595868128715D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1418697466178D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    20, difmaxh =  0.63338774E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.10846879E-12
+  nrm2(R) = 0.2387408536155D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1411936973943D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    21, difmaxh =  0.74120976E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.93147712E-13
+  nrm2(R) = 0.2395330310203D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1467596514797D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    22, difmaxh =  0.62685288E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.77243767E-13
+  nrm2(R) = 0.2560973089906D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1346792296658D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    23, difmaxh =  0.68410912E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.95326524E-13
+  nrm2(R) = 0.2011748943830D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1616188147487D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    24, difmaxh = -0.74752080E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.66155414E-13
+  nrm2(R) = 0.2557511315392D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1507296492546D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    25, difmaxh =  0.10343065E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.68584027E-13
+  nrm2(R) = 0.2350185293644D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1359123949469D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    26, difmaxh = -0.46292854E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.87485574E-13
+  nrm2(R) = 0.2197879866699D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1593389492213D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    27, difmaxh =  0.11480473E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.85362273E-13
+  nrm2(R) = 0.2178417150770D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1628173872921D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    28, difmaxh = -0.29838930E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.58758554E-13
+  nrm2(R) = 0.2375582694968D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1525317460907D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    29, difmaxh = -0.19338579E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.90330521E-13
+  nrm2(R) = 0.2138670956218D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1475808906584D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    30, difmaxh =  0.21854326E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.62561067E-13
+  nrm2(R) = 0.2641643651399D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1467775533646D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    31, difmaxh =  0.90597680E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.95201624E-13
+  nrm2(R) = 0.2308442840617D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1442511919662D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    32, difmaxh =  0.74094331E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.63629657E-13
+  nrm2(R) = 0.2366285894411D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1542091853469D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    33, difmaxh = -0.97680086E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.75398021E-13
+  nrm2(R) = 0.2036901845816D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1345165578149D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    34, difmaxh =  0.12639482E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.83405505E-13
+  nrm2(R) = 0.2364084197385D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1535033275971D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    35, difmaxh =  0.62452017E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.81976093E-13
+  nrm2(R) = 0.2382422474095D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1461556751253D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    36, difmaxh = -0.18929143E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.66599504E-13
+  nrm2(R) = 0.2411070305023D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1880123122940D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    37, difmaxh =  0.86767855E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.62005956E-13
+  nrm2(R) = 0.2442192027922D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1519492735376D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    38, difmaxh =  0.11054269E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.60187966E-13
+  nrm2(R) = 0.2529091571883D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1536743969430D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    39, difmaxh =  0.97317425E-08, difmaxt =  0.10000000E-20
+        difmaxc[*] = -0.64989680E-13
+  nrm2(R) = 0.2467827472954D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1622920772998D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    40, difmaxh = -0.13215370E-07, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.98934749E-13
+  nrm2(R) = 0.2353823551896D-16 (direct)
+!!!: neumann head greater than 1/2 :
+x:    0.514E+07y:  0.000E+00z:  0.513E+07
+
+  nrm2(R) = 0.1400805395415D-20 (direct)
+!!!: neumann temp number (species   1) greater than 1 :
+x:    0.103E+01y:  0.000E+00z:  0.103E+01
+
+  [I] : iter_nl =    41, difmaxh =  0.61092464E-10, difmaxt =  0.10000000E-20
+        difmaxc[*] =  0.10003109E-12
+  [W] : "salt_small_status.log"
+  [I] : final time step =        7, simulation time  0.100000E+02
+  [W] : VTK to "salt_small_final.vtk"
+ Deallocated Memory, remaining    7.6293945312500000E-006  MB
+ total cpu time:    0: 0.60 min
+ RUN O.K.

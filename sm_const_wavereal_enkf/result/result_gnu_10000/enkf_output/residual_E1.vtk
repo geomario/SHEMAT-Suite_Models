@@ -1,0 +1,289 @@
+# vtk DataFile Version 2.0
+residuals
+ASCII
+DATASET RECTILINEAR_GRID
+DIMENSIONS        2      1      1
+X_COORDINATES        2 float
+    0.000000E+00    0.100000E+01
+Y_COORDINATES        1 float
+    0.100000E+01
+Z_COORDINATES        1 float
+    0.100000E+01
+
+CELL_DATA       1
+SCALARS obsnr        float 1
+LOOKUP_TABLE default:mean
+    1
+SCALARS obstime      float 1
+LOOKUP_TABLE default:mean
+    0.100000E+00
+SCALARS res_head_bef float 1
+LOOKUP_TABLE default:mean
+    0.126033E+01
+SCALARS rms_head_bef float 1
+LOOKUP_TABLE default:mean
+    0.362143E-01
+SCALARS res_temp_bef float 1
+LOOKUP_TABLE default:mean
+    0.000000E+00
+SCALARS rms_temp_bef float 1
+LOOKUP_TABLE default:mean
+    0.000000E+00
+SCALARS res_conc_bef float 1
+LOOKUP_TABLE default:mean
+    0.302450E+00
+SCALARS rms_conc_bef float 1
+LOOKUP_TABLE default:mean
+    0.177405E-01
+SCALARS res_kz_bef   float 1
+LOOKUP_TABLE default:mean
+    0.374807E+03
+SCALARS rms_kz_bef   float 1
+LOOKUP_TABLE default:mean
+    0.624514E+00
+SCALARS res_lz_bef   float 1
+LOOKUP_TABLE default:mean
+    0.000000E+00
+SCALARS rms_lz_bef   float 1
+LOOKUP_TABLE default:mean
+    0.000000E+00
+SCALARS res_por_bef  float 1
+LOOKUP_TABLE default:mean
+    0.000000E+00
+SCALARS rms_por_bef  float 1
+LOOKUP_TABLE default:mean
+    0.000000E+00
+SCALARS res_head_aft float 1
+LOOKUP_TABLE default:mean
+    0.126199E+01
+SCALARS rms_head_aft float 1
+LOOKUP_TABLE default:mean
+    0.362382E-01
+SCALARS res_temp_aft float 1
+LOOKUP_TABLE default:mean
+    0.000000E+00
+SCALARS rms_temp_aft float 1
+LOOKUP_TABLE default:mean
+    0.000000E+00
+SCALARS res_conc_aft float 1
+LOOKUP_TABLE default:mean
+    0.302494E+00
+SCALARS rms_conc_aft float 1
+LOOKUP_TABLE default:mean
+    0.177418E-01
+SCALARS res_kz_aft   float 1
+LOOKUP_TABLE default:mean
+    0.375434E+03
+SCALARS rms_kz_aft   float 1
+LOOKUP_TABLE default:mean
+    0.625036E+00
+SCALARS res_lz_aft   float 1
+LOOKUP_TABLE default:mean
+    0.000000E+00
+SCALARS rms_lz_aft   float 1
+LOOKUP_TABLE default:mean
+    0.000000E+00
+SCALARS res_por_aft  float 1
+LOOKUP_TABLE default:mean
+    0.000000E+00
+SCALARS rms_por_aft  float 1
+LOOKUP_TABLE default:mean
+    0.000000E+00
+SCALARS rm_kz_aft_1  float 1
+LOOKUP_TABLE default:mean
+    0.100133E+01
+SCALARS rm_kz_aft_2  float 1
+LOOKUP_TABLE default:mean
+    0.970403E+00
+SCALARS rm_kz_aft_3  float 1
+LOOKUP_TABLE default:mean
+    0.772409E+00
+SCALARS rm_kz_aft_4  float 1
+LOOKUP_TABLE default:mean
+    0.474528E+00
+SCALARS rm_kz_aft_5  float 1
+LOOKUP_TABLE default:mean
+    0.111029E+01
+SCALARS rm_kz_aft_6  float 1
+LOOKUP_TABLE default:mean
+    0.624927E+00
+SCALARS rm_kz_aft_7  float 1
+LOOKUP_TABLE default:mean
+    0.115781E+01
+SCALARS rm_kz_aft_8  float 1
+LOOKUP_TABLE default:mean
+    0.559254E+00
+SCALARS rm_kz_aft_9  float 1
+LOOKUP_TABLE default:mean
+    0.133681E+01
+SCALARS rm_kz_aft_10 float 1
+LOOKUP_TABLE default:mean
+    0.518168E+00
+SCALARS rm_kz_aft_11 float 1
+LOOKUP_TABLE default:mean
+    0.823791E+00
+SCALARS rm_kz_aft_12 float 1
+LOOKUP_TABLE default:mean
+    0.879212E+00
+SCALARS rm_kz_aft_13 float 1
+LOOKUP_TABLE default:mean
+    0.693550E+00
+SCALARS rm_kz_aft_14 float 1
+LOOKUP_TABLE default:mean
+    0.688148E+00
+SCALARS rm_kz_aft_15 float 1
+LOOKUP_TABLE default:mean
+    0.960238E+00
+SCALARS rm_kz_aft_16 float 1
+LOOKUP_TABLE default:mean
+    0.640156E+00
+SCALARS rm_kz_aft_17 float 1
+LOOKUP_TABLE default:mean
+    0.855131E+00
+SCALARS rm_kz_aft_18 float 1
+LOOKUP_TABLE default:mean
+    0.844926E+00
+SCALARS rm_kz_aft_19 float 1
+LOOKUP_TABLE default:mean
+    0.100100E+01
+SCALARS rm_kz_aft_20 float 1
+LOOKUP_TABLE default:mean
+    0.536965E+00
+SCALARS rm_kz_aft_21 float 1
+LOOKUP_TABLE default:mean
+    0.937368E+00
+SCALARS rm_kz_aft_22 float 1
+LOOKUP_TABLE default:mean
+    0.731198E+00
+SCALARS rm_kz_aft_23 float 1
+LOOKUP_TABLE default:mean
+    0.121001E+01
+SCALARS rm_kz_aft_24 float 1
+LOOKUP_TABLE default:mean
+    0.563558E+00
+SCALARS rm_kz_aft_25 float 1
+LOOKUP_TABLE default:mean
+    0.906363E+00
+SCALARS rm_kz_aft_26 float 1
+LOOKUP_TABLE default:mean
+    0.499932E+00
+SCALARS rm_kz_aft_27 float 1
+LOOKUP_TABLE default:mean
+    0.161226E+01
+SCALARS rm_kz_aft_28 float 1
+LOOKUP_TABLE default:mean
+    0.696139E+00
+SCALARS rm_kz_aft_29 float 1
+LOOKUP_TABLE default:mean
+    0.111043E+01
+SCALARS rm_kz_aft_30 float 1
+LOOKUP_TABLE default:mean
+    0.542195E+00
+SCALARS rm_kz_aft_31 float 1
+LOOKUP_TABLE default:mean
+    0.837594E+00
+SCALARS rm_kz_aft_32 float 1
+LOOKUP_TABLE default:mean
+    0.670956E+00
+SCALARS rm_kz_aft_33 float 1
+LOOKUP_TABLE default:mean
+    0.955089E+00
+SCALARS rm_kz_aft_34 float 1
+LOOKUP_TABLE default:mean
+    0.799512E+00
+SCALARS rm_kz_aft_35 float 1
+LOOKUP_TABLE default:mean
+    0.118116E+01
+SCALARS rm_kz_aft_36 float 1
+LOOKUP_TABLE default:mean
+    0.102935E+01
+SCALARS rm_kz_aft_37 float 1
+LOOKUP_TABLE default:mean
+    0.530873E+00
+SCALARS rm_kz_aft_38 float 1
+LOOKUP_TABLE default:mean
+    0.672410E+00
+SCALARS rm_kz_aft_39 float 1
+LOOKUP_TABLE default:mean
+    0.599170E+00
+SCALARS rm_kz_aft_40 float 1
+LOOKUP_TABLE default:mean
+    0.878742E+00
+SCALARS rm_kz_aft_41 float 1
+LOOKUP_TABLE default:mean
+    0.827442E+00
+SCALARS rm_kz_aft_42 float 1
+LOOKUP_TABLE default:mean
+    0.943185E+00
+SCALARS rm_kz_aft_43 float 1
+LOOKUP_TABLE default:mean
+    0.633877E+00
+SCALARS rm_kz_aft_44 float 1
+LOOKUP_TABLE default:mean
+    0.119677E+01
+SCALARS rm_kz_aft_45 float 1
+LOOKUP_TABLE default:mean
+    0.657600E+00
+SCALARS rm_kz_aft_46 float 1
+LOOKUP_TABLE default:mean
+    0.827313E+00
+SCALARS rm_kz_aft_47 float 1
+LOOKUP_TABLE default:mean
+    0.590858E+00
+SCALARS rm_kz_aft_48 float 1
+LOOKUP_TABLE default:mean
+    0.106610E+01
+SCALARS rm_kz_aft_49 float 1
+LOOKUP_TABLE default:mean
+    0.570578E+00
+SCALARS rm_kz_aft_50 float 1
+LOOKUP_TABLE default:mean
+    0.107755E+01
+SCALARS rm_kz_aft_51 float 1
+LOOKUP_TABLE default:mean
+    0.508907E+00
+SCALARS rm_kz_aft_52 float 1
+LOOKUP_TABLE default:mean
+    0.793104E+00
+SCALARS rm_kz_aft_53 float 1
+LOOKUP_TABLE default:mean
+    0.549211E+00
+SCALARS rm_kz_aft_54 float 1
+LOOKUP_TABLE default:mean
+    0.150312E+01
+SCALARS rm_kz_aft_55 float 1
+LOOKUP_TABLE default:mean
+    0.623488E+00
+SCALARS rm_kz_aft_56 float 1
+LOOKUP_TABLE default:mean
+    0.823624E+00
+SCALARS rm_kz_aft_57 float 1
+LOOKUP_TABLE default:mean
+    0.489775E+00
+SCALARS rm_kz_aft_58 float 1
+LOOKUP_TABLE default:mean
+    0.890593E+00
+SCALARS rm_kz_aft_59 float 1
+LOOKUP_TABLE default:mean
+    0.527992E+00
+SCALARS rm_kz_aft_60 float 1
+LOOKUP_TABLE default:mean
+    0.837423E+00
+SCALARS rm_h_aft_em  float 1
+LOOKUP_TABLE default:mean
+    0.125074E+00
+SCALARS rm_t_aft_em  float 1
+LOOKUP_TABLE default:mean
+    0.000000E+00
+SCALARS rm_c_aft_em  float 1
+LOOKUP_TABLE default:mean
+    0.177527E-01
+SCALARS rm_kz_aft_em float 1
+LOOKUP_TABLE default:mean
+    0.808310E+00
+SCALARS rm_lz_aft_em float 1
+LOOKUP_TABLE default:mean
+    0.000000E+00
+SCALARS rm_pr_aft_em float 1
+LOOKUP_TABLE default:mean
+    0.000000E+00

@@ -1,0 +1,8 @@
+% Shemat-Suite version: Shem-FW/AD/SM 7.50 (Smarty)                                                     
+%          build: Wed May  8 15:42:39 CEST 2019           
+%   build command line: gmake fw noomp hdf PROPS=const HDF5_MOD=/usr/local_rwth/sw/HDF5/1.10.4/gcc_4.8.5-intelmpi_2018.4.274/include/ HDF5_LIB=/usr/local_rwth/sw/HDF5/1.10.4/gcc_4.8.5-intelmpi_2018.4.274/lib/ COMPTYPE=ling64                                                        
+%        Project: "Peclet_down"
+%
+%    <iteration> <delta head> <delta temp> (<delta conc> ...)
+          1  0.99497487E+01  0.19552831E+02
+          2  0.00000000E+00  0.00000000E+00

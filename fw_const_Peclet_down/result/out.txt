@@ -1,0 +1,138 @@
+  
+ ======================================
+ Shem-FW/AD/SM 7.50 (Smarty)                                                     
+ ======================================
+  
+  
+  
+  *** NEW MODEL 
+
+   checking input definitions:
+     from file "Peclet_down"
+  
+   reading model input parameter:
+     from file "Peclet_down"
+  
+  [R] : title
+  [R] : runmode
+     >>> inverse modeling (extra steady state)
+  <D> : free=0, confined flow !
+  [R] : linfo
+  [R] : [i0, j0, k0] = [   3,   1, 200]
+  [R] : nonlinear solver parameter
+  [I] : fixed relxation factor assumed
+  [R] : output suffix: .h5:[X], .plt:[ ], .vtk:[X], .txt:[ ]
+  
+   reading flow parameters
+  
+  [R] : flow linear solver (control=  67)
+  [R] : flow nonlinear iteration tolerance
+  [I] : flow nonlinear relaxation factor
+  
+   reading heat transport parameters
+  
+  [R] : temperature linear solver (control=  67)
+  [R] : temperature nonlinear iteration tolerance
+  [I] : temperature nonlinear relaxation factor
+  
+  <D> : no transport [disabled]
+  
+  
+  <D> : no electric potential [disabled]
+  
+  
+  [R] : grav  0.9810E+01 (>1.0d-30)
+  <D> : no fluid heat production
+  <D> : rref, reference density =   0.9980E+03
+  <D> : tref, reference temperature =   0.2000E+02
+  <D> : fixed rhocm, defined by unit
+  
+   reading zone parameter 
+  
+  [R] : "uindex" - unit index number, unit-cell assignment
+  [I] : approx. speedup for the full solver :   1.00
+  
+  [R] : "units" - unit (rock) properties
+  
+   reading/preprocessing arrays
+  
+  [R] : delx
+  [R] : dely
+  [R] : delz
+  
+   reading initial values 
+  
+  [R] : head, in [m]
+  [R] : temp, in [degree Celsius]
+  [R] : pres, in [MPa]
+  
+   reading boundary conditions 
+  
+  [R] : head bcd, simple=top  , (size=     3), bcmy=  0.1000E+19, error=ignore, (offset=     1)
+  [R] : head bcd, simple=base , (size=     3), bcmy=  0.1000E+19, error=ignore, (offset=     4)
+  [R] : temp bcd, simple=top  , (size=     3), bcmy=  0.1000E+19, error=ignore, (offset=     7)
+  [R] : temp bcd, simple=base , (size=     3), bcmy=  0.1000E+19, error=ignore, (offset=    10)
+  
+  <D> : property limitations
+  [R] : No default Darcy velocity - head active!
+  
+   reading external file control
+  
+
+   reading time input parameter:
+     from file "Peclet_down"
+
+  <D> : Steady state !
+  <D> : tunit =          0.10000000E+01 !
+  <D> : tstart=          0.00000000E+00
+  <D> : tshift=          0.00000000E+00
+  <D> : titer =      0
+  <D> : no monitoring points !
+  <D> : no output times !
+
+
+
+   reading observed data
+     from file "Peclet_down"
+
+  <D> : no observed data found, records=0
+  [W] : "Peclet_down_status.log"
+  
+   reading constant fluid properties:
+     from file "Peclet_down"
+  
+  [R] : constant fluid properties
+  
+     fluid properties: 
+        rhof       compf         cpf        lamf        visf      (sigmaf)
+  0.9980E+03  0.0000E+00  0.4218E+04  0.6500E+00  0.2000E-03  0.2000E-01
+  
+  [?] : WARNING: overwrite "rref" with constant "rhof"
+  [D] : constant gas properties assumed
+  
+  non-wetting properties: 
+        rhon        visn
+  0.6717E+03  0.5310E-04
+  
+ 
+  [I] : memory:       0.424 MByte data
+ 
+  Unsymmetric matrix with            6  unsym. points !
+  PLU:            0 errors was found.
+  damax(R) = 0.2286988957587D-18, nrm2(R) 0.1411117232564D-17
+  Unsymmetric matrix with          854  unsym. points !
+  PLU:            0 errors was found.
+  damax(R) = 0.4840573387366D-13, nrm2(R) 0.2186013199749D-12
+  [I] : iter_nl =     1, difmaxh =  0.99497487E+01, difmaxt =  0.19552831E+02
+  Unsymmetric matrix with            6  unsym. points !
+  PLU:            0 errors was found.
+  damax(R) = 0.2286988957587D-18, nrm2(R) 0.1411117232564D-17
+  Unsymmetric matrix with          854  unsym. points !
+  PLU:            0 errors was found.
+  damax(R) = 0.4840573387366D-13, nrm2(R) 0.2186013199749D-12
+  [I] : iter_nl =     2, difmaxh =  0.00000000E+00, difmaxt =  0.00000000E+00
+  [W] : HDF5 to "Peclet_down_final.h5"
+  [W] : VTK to "Peclet_down_final.vtk"
+ Deallocated Memory, remaining    7.6293945312500000E-006  MB
+ total cpu time:    0: 0.06 min
+ RUN O.K.

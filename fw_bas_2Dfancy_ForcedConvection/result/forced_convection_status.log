@@ -1,0 +1,21 @@
+% Shemat-Suite version: Shem-FW/AD/SM 7.50 (Smarty)                                                     
+%          build: Fri Aug 16 13:41:57 CEST 2019           
+%   build command line: gmake fw hdf noomp PROPS=bas USER=none HDF5_MOD=/usr/local_rwth/sw/HDF5/1.8.21/gcc_4.8.5-intelmpi_2018.4.274/include/ HDF5_LIB=/usr/local_rwth/sw/HDF5/1.8.21/gcc_4.8.5-intelmpi_2018.4.274/lib/ COMPTYPE=ling64                                                
+%        Project: "forced_convection"
+%
+%    <iteration> <delta head> <delta temp> (<delta conc> ...)
+          1  0.73728974E+02 -0.36783537E+02
+          2  0.73038496E+02 -0.43778337E+02
+          3  0.82406932E+02  0.10457750E+02
+          4 -0.12744545E+02 -0.12513951E+01
+          5  0.19814775E+01  0.54613208E+00
+          6 -0.88366320E+00 -0.13969680E+00
+          7  0.20033550E+00 -0.49793056E-01
+          8 -0.50247961E-01 -0.31172457E-01
+          9  0.25942190E-01 -0.15143017E-01
+         10  0.86731935E-02 -0.84841618E-02
+         11  0.62433630E-02 -0.45293905E-02
+         12  0.31584505E-02 -0.25198026E-02
+         13  0.19272817E-02 -0.13971318E-02
+         14  0.10790322E-02 -0.78596426E-03
+         15  0.63106632E-03 -0.44376903E-03

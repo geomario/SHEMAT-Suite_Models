@@ -1,0 +1,9 @@
+% Shemat-Suite version: Shem-FW/AD/SM 7.50 (Smarty)                                                     
+%          build: Mon Aug 12 10:42:38 CEST 2019           
+%   build command line: make fw hdf PROPS=bas USER=none HDF5_LIB=/usr/local_rwth/sw/HDF5/1.8.21/gcc_4.8.5-intelmpi_2018.4.274/lib HDF5_MOD=/usr/local_rwth/sw/HDF5/1.8.21/gcc_4.8.5-intelmpi_2018.4.274/include COMPTYPE=ling64                                                         
+%        Project: "ht_init"
+%
+%    <iteration> <delta head> <delta temp> (<delta conc> ...)
+          1  0.43603496E+00 -0.22326176E-08
+          2  0.69930582E-03 -0.11759482E-11
+          3  0.67466959E-06 -0.11546319E-12
